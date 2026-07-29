@@ -11,7 +11,7 @@ const avatarSrc = "/konstantin-avatar.png";
 
 const navigationItems = [
   { label: "Main", href: "/#hero" },
-  { label: "Capabilities", href: "#work", sectionId: "work" },
+  { label: "Capabilities", href: "/capabilities" },
   { label: "About", href: "#about", sectionId: "about" },
   { label: "Contact", href: "#contact", sectionId: "contact" },
   { label: "Download CV", href: "#cv" },
@@ -41,8 +41,8 @@ export default function NavigationHeader({
   heroId = "hero",
 }: NavigationHeaderProps) {
   const [animationState, setAnimationState] = useState<
-    "hidden" | "entering" | "exiting"
-  >(alwaysVisible ? "entering" : "hidden");
+    "hidden" | "visible" | "entering" | "exiting"
+  >(alwaysVisible ? "visible" : "hidden");
   const isVisibleRef = useRef(alwaysVisible);
   const exitTimeoutRef = useRef<number | null>(null);
 
@@ -130,7 +130,9 @@ export default function NavigationHeader({
     <header
       className={[
         "fixed left-0 top-0 z-50 flex w-full flex-col items-center justify-center px-[var(--padding-side)] py-5",
-        animationState === "entering"
+        animationState === "visible"
+          ? ""
+          : animationState === "entering"
           ? "navigation-header-enter"
           : "navigation-header-exit pointer-events-none",
       ].join(" ")}
@@ -186,9 +188,8 @@ export default function NavigationHeader({
                   scrollToElementById("hero");
                 }
 
-                if (item.href === "#work") {
-                  event.preventDefault();
-                  scrollToElementById("work");
+                if (item.href === "/capabilities") {
+                  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
                 }
               }}
             >

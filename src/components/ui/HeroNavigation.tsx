@@ -2,10 +2,10 @@
 
 import type { CSSProperties, HTMLAttributes } from "react";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import HeroActionGroup from "@/components/ui/HeroActionGroup";
 import HeroButton from "@/components/ui/HeroButton";
-import { scrollToElementById } from "@/lib/smoothScroll";
 
 type HeroNavigationState = "default" | "capabilities" | "about" | "contact" | "cv";
 
@@ -140,6 +140,7 @@ export default function HeroNavigation({
   style,
   ...props
 }: HeroNavigationProps) {
+  const router = useRouter();
   const [hoveredItem, setHoveredItem] = useState<HeroNavigationState | null>(null);
   const state = hoveredItem ?? "default";
   const heroNavigationStyle = {
@@ -183,7 +184,7 @@ export default function HeroNavigation({
               }}
               onClick={() => {
                 if (item.id === "capabilities") {
-                  scrollToElementById("work");
+                  router.push("/capabilities", { scroll: true });
                 }
               }}
               selected={itemState !== null && itemState === hoveredItem}
