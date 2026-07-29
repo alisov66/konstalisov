@@ -29,7 +29,10 @@ export default async function CapabilityPage({
   return (
     <main className="min-h-screen bg-[var(--bg-beige)] text-[var(--text-primary)]">
       <NavigationHeader alwaysVisible />
-      <CapabilitiesSection value={selectedCapability.id as CapabilityId} />
+      <CapabilitiesSection
+        scrollToArticleOnMount
+        value={selectedCapability.id as CapabilityId}
+      />
     </main>
   );
 }

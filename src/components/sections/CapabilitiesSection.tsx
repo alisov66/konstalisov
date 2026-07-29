@@ -1,7 +1,7 @@
 "use client";
 
 import type { CSSProperties, ReactNode } from "react";
-import { useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 import TabGroup, { type TabGroupTab } from "@/components/ui/TabGroup";
 import {
@@ -54,6 +54,8 @@ const tabs: TabGroupTab[] = capabilities.map((capability) => ({
   id: capability.id,
   label: capability.label,
 }));
+
+const headerClearance = 136;
 
 type StyleVars = CSSProperties & Record<`--${string}`, string | number>;
 
@@ -1805,10 +1807,39 @@ function ActiveArticle({ value }: { value: string }) {
 }
 
 export interface CapabilitiesSectionProps {
+  scrollToArticleOnMount?: boolean;
+  showIntroduction?: boolean;
   value?: CapabilityId;
 }
 
+export function CapabilitiesIntroduction() {
+  return (
+    <section className="flex w-full flex-col items-start bg-[var(--bg-beige)] px-[var(--padding-side)] pb-[var(--base-30)] pt-[var(--base-40)]">
+      <div className="flex w-full max-w-[820px] flex-col items-start gap-[var(--base-6)]">
+        <h1
+          className="w-full text-[var(--text-primary)]"
+          style={typeStyle(tokens.typography.heading.h1)}
+        >
+          Capabilities
+        </h1>
+        <p
+          className="w-full text-[var(--text-primary)]"
+          style={typeStyle(tokens.typography.body.medium)}
+        >
+          Explore the core areas of my product design practice. Each capability
+          brings together one or more case studies that demonstrate how I
+          approach complex product challenges — from expert workflows and
+          scalable design systems to enterprise platforms and mobile
+          experiences.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export default function CapabilitiesSection({
+  scrollToArticleOnMount = false,
+  showIntroduction = true,
   value = defaultCapabilityId,
 }: CapabilitiesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -1820,7 +1851,7 @@ export default function CapabilitiesSection({
     "--capabilities-menu-width": "277px",
   };
 
-  function scrollArticleToStart() {
+  const scrollArticleToStart = useCallback(() => {
     const article = articleRef.current;
 
     if (!article) {
@@ -1828,51 +1859,63 @@ export default function CapabilitiesSection({
     }
 
     const html = document.documentElement;
-    const sectionPaddingTop = sectionRef.current
-      ? parseFloat(window.getComputedStyle(sectionRef.current).paddingTop) || 0
-      : 0;
     const top =
-      article.getBoundingClientRect().top + window.scrollY - sectionPaddingTop;
+      article.getBoundingClientRect().top + window.scrollY - headerClearance;
 
     html.classList.add("no-smooth-scroll");
     window.scrollTo({ top, left: 0, behavior: "auto" });
     requestAnimationFrame(() => {
       html.classList.remove("no-smooth-scroll");
     });
-  }
+  }, []);
+
+  useEffect(() => {
+    if (!scrollToArticleOnMount) {
+      return;
+    }
+
+    const frame = requestAnimationFrame(scrollArticleToStart);
+
+    return () => {
+      cancelAnimationFrame(frame);
+    };
+  }, [scrollArticleToStart, scrollToArticleOnMount]);
 
   function handleValueChange() {
     scrollArticleToStart();
   }
 
   return (
-    <section
-      id="work"
-      className="flex w-full flex-col items-start gap-[var(--base-10)] bg-[var(--bg-beige)] px-[var(--padding-side)] pt-[136px] lg:flex-row lg:gap-[var(--capabilities-column-gap)]"
-      ref={sectionRef}
-      style={sectionStyle}
-    >
-      <div className="flex w-full shrink-0 flex-col items-start gap-[var(--base-20)] bg-[var(--bg-beige)] pt-[var(--base-10)] lg:sticky lg:top-[136px] lg:w-[var(--capabilities-menu-width)]">
-        <h2
-          className="text-center text-[var(--text-accent)]"
-          style={typeStyle(tokens.typography.heading.h2)}
-        >
-          Capabilities
-        </h2>
-        <TabGroup
-          className="flex-wrap items-start"
-          onValueChange={handleValueChange}
-          tabs={tabs}
-          value={currentValue}
-        />
-      </div>
-
-      <div
-        ref={articleRef}
-        className="flex min-w-0 flex-1 scroll-mt-[var(--base-10)] flex-col items-start pt-[var(--base-10)]"
+    <>
+      {showIntroduction ? <CapabilitiesIntroduction /> : null}
+      <section
+        id="work"
+        className="flex w-full flex-col items-start gap-[var(--base-10)] bg-[var(--bg-beige)] px-[var(--padding-side)] lg:flex-row lg:gap-[var(--capabilities-column-gap)]"
+        ref={sectionRef}
+        style={sectionStyle}
       >
-        <ActiveArticle value={currentValue} />
-      </div>
-    </section>
+        <div className="flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pt-[var(--base-10)] lg:sticky lg:top-[136px] lg:w-[var(--capabilities-menu-width)]">
+          <h2
+            className="text-center text-[var(--text-accent)]"
+            style={typeStyle(tokens.typography.heading.h4)}
+          >
+            Explore
+          </h2>
+          <TabGroup
+            className="flex-wrap items-start"
+            onValueChange={handleValueChange}
+            tabs={tabs}
+            value={currentValue}
+          />
+        </div>
+
+        <div
+          ref={articleRef}
+          className="flex min-w-0 flex-1 scroll-mt-[var(--base-10)] flex-col items-start pt-[var(--base-10)]"
+        >
+          <ActiveArticle value={currentValue} />
+        </div>
+      </section>
+    </>
   );
 }

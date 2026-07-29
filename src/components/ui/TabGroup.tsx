@@ -48,6 +48,7 @@ export default function TabGroup({
               key={tab.id}
               onClick={() => onValueChange(tab.id)}
               role="tab"
+              scroll={false}
               style={getTabButtonStyle(selected)}
             >
               {tab.label}
