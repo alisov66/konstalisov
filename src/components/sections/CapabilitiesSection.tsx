@@ -1894,7 +1894,7 @@ export default function CapabilitiesSection({
         ref={sectionRef}
         style={sectionStyle}
       >
-        <div className="flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pt-[var(--base-10)] lg:sticky lg:top-[148px] lg:w-[var(--capabilities-menu-width)]">
+        <div className="flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pt-[var(--base-10)] lg:sticky lg:top-[88px] lg:w-[var(--capabilities-menu-width)]">
           <h2
             className="text-center text-[var(--text-accent)]"
             style={typeStyle(tokens.typography.heading.h4)}
