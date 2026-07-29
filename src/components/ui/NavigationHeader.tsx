@@ -7,8 +7,7 @@ import NaviButton from "@/components/ui/NaviButton";
 import { scrollToElementById } from "@/lib/smoothScroll";
 import { tokens } from "@/styles/tokens";
 
-const avatarSrc =
-  "https://www.figma.com/api/mcp/asset/af579064-5b10-4c23-9205-8e636c616322";
+const avatarSrc = "/konstantin-avatar.png";
 
 const navigationItems = [
   { label: "Main", href: "/#hero" },
@@ -154,7 +153,7 @@ export default function NavigationHeader({
         >
           <span className="relative size-[52px] shrink-0 overflow-hidden">
             <img
-              alt="Konstantin Alisov"
+              alt=""
               className="absolute inset-0 size-full max-w-none object-cover"
               src={avatarSrc}
             />

@@ -3,7 +3,7 @@ import HeroNavigation from "@/components/ui/HeroNavigation";
 import NavigationHeader from "@/components/ui/NavigationHeader";
 import { tokens } from "@/styles/tokens";
 
-const imgPic = "https://www.figma.com/api/mcp/asset/eb178129-96cf-4168-98a4-9dbf54cd0dc6";
+const imgPic = "/konstantin-avatar.png";
 
 const heroItems = [
   { id: "capabilities", label: "Capabilities" },
