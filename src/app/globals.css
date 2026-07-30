@@ -210,6 +210,14 @@ html.no-smooth-scroll * {
   scroll-behavior: auto !important;
 }
 
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .navigation-header-enter {
   animation: navigation-header-enter 150ms ease-out both;
   will-change: opacity, transform;

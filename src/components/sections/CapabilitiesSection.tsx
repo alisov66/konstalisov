@@ -1901,12 +1901,14 @@ export default function CapabilitiesSection({
           >
             Explore
           </h2>
-          <TabGroup
-            className="flex-wrap items-start"
-            onValueChange={handleValueChange}
-            tabs={tabs}
-            value={currentValue}
-          />
+          <div className="no-scrollbar -mx-[var(--padding-side)] w-[calc(100%+var(--padding-side)*2)] overflow-x-auto px-[var(--padding-side)] lg:mx-0 lg:w-full lg:overflow-visible lg:px-0">
+            <TabGroup
+              className="w-max flex-nowrap items-start lg:w-full lg:flex-wrap"
+              onValueChange={handleValueChange}
+              tabs={tabs}
+              value={currentValue}
+            />
+          </div>
         </div>
 
         <div
