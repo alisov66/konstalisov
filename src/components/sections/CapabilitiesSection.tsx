@@ -1904,8 +1904,7 @@ export default function CapabilitiesSection({
         parseFloat(rootStyles.getPropertyValue("--base-10")) || 40;
       const nextMenuTop = Math.max(
         Math.ceil(headerNav?.getBoundingClientRect().bottom || headerClearance) -
-          menuTopPadding -
-          20,
+          menuTopPadding,
         0,
       );
 
@@ -1992,7 +1991,9 @@ export default function CapabilitiesSection({
         <div
           className={[
             "sticky top-[var(--capabilities-mobile-menu-top)] z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pb-[var(--base-5)] pt-[var(--base-10)] transition-transform duration-[150ms] ease-in lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:translate-y-0 lg:pb-0",
-            mobileMenuVisible ? "translate-y-0" : "-translate-y-full",
+            mobileMenuVisible
+              ? "translate-y-0"
+              : "-translate-y-[calc(100%+20px)]",
           ].join(" ")}
           ref={menuRef}
         >
