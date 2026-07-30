@@ -162,7 +162,7 @@ export default function NavigationHeader({
       <nav
         aria-label="Primary"
         className={[
-          "flex w-full max-w-[var(--container-max)] flex-col items-start justify-center rounded-[var(--lg)] bg-[var(--bg-beige-light)] px-[var(--base-3)] py-[var(--base-2)] md:flex-row md:items-center md:justify-between md:gap-[var(--base-6)]",
+          "flex w-full flex-col items-start justify-center rounded-[var(--lg)] bg-[var(--bg-beige-light)] px-[var(--base-3)] py-[var(--base-2)] md:max-w-[var(--container-max)] md:flex-row md:items-center md:justify-between md:gap-[var(--base-6)]",
           menuOpen ? "gap-[var(--base-2)]" : "",
         ].join(" ")}
       >
