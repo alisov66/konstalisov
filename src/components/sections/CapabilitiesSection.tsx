@@ -56,6 +56,7 @@ const tabs: TabGroupTab[] = capabilities.map((capability) => ({
 }));
 
 const headerClearance = 136;
+const mobileTabsScrollStorageKey = "capabilities-mobile-tabs-scroll-left";
 
 type StyleVars = CSSProperties & Record<`--${string}`, string | number>;
 
@@ -1844,6 +1845,7 @@ export default function CapabilitiesSection({
 }: CapabilitiesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const articleRef = useRef<HTMLDivElement>(null);
+  const tabsScrollerRef = useRef<HTMLDivElement>(null);
   const currentValue = getCapabilityById(value)?.id || defaultCapabilityId;
 
   const sectionStyle: StyleVars = {
@@ -1881,7 +1883,43 @@ export default function CapabilitiesSection({
     };
   }, [scrollArticleToStart, scrollToArticleOnMount]);
 
+  useEffect(() => {
+    const tabsScroller = tabsScrollerRef.current;
+
+    if (!tabsScroller) {
+      return;
+    }
+
+    const frame = requestAnimationFrame(() => {
+      const storedScrollLeft = Number(
+        window.sessionStorage.getItem(mobileTabsScrollStorageKey),
+      );
+
+      if (Number.isFinite(storedScrollLeft)) {
+        tabsScroller.scrollLeft = storedScrollLeft;
+      }
+    });
+
+    return () => {
+      cancelAnimationFrame(frame);
+    };
+  }, [currentValue]);
+
+  function saveTabsScrollPosition() {
+    const tabsScroller = tabsScrollerRef.current;
+
+    if (!tabsScroller) {
+      return;
+    }
+
+    window.sessionStorage.setItem(
+      mobileTabsScrollStorageKey,
+      String(tabsScroller.scrollLeft),
+    );
+  }
+
   function handleValueChange() {
+    saveTabsScrollPosition();
     scrollArticleToStart();
   }
 
@@ -1901,7 +1939,11 @@ export default function CapabilitiesSection({
           >
             Explore
           </h2>
-          <div className="no-scrollbar -mx-[var(--padding-side)] w-[calc(100%+var(--padding-side)*2)] overflow-x-auto px-[var(--padding-side)] lg:mx-0 lg:w-full lg:overflow-visible lg:px-0">
+          <div
+            className="no-scrollbar -mx-[var(--padding-side)] w-[calc(100%+var(--padding-side)*2)] overflow-x-auto px-[var(--padding-side)] lg:mx-0 lg:w-full lg:overflow-visible lg:px-0"
+            onScroll={saveTabsScrollPosition}
+            ref={tabsScrollerRef}
+          >
             <TabGroup
               className="w-max flex-nowrap items-start lg:w-full lg:flex-wrap"
               onValueChange={handleValueChange}
