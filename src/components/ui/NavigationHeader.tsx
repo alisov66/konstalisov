@@ -162,11 +162,11 @@ export default function NavigationHeader({
       <nav
         aria-label="Primary"
         className={[
-          "flex w-full flex-col items-start justify-center rounded-[var(--lg)] bg-[var(--bg-beige-light)] px-[var(--base-3)] py-[var(--base-2)] md:max-w-[var(--container-max)] md:flex-row md:items-center md:justify-between md:gap-[var(--base-6)]",
+          "flex w-full flex-col items-start justify-center rounded-[var(--lg)] bg-[var(--bg-beige-light)] px-[var(--base-3)] py-[var(--base-2)] md:max-w-[var(--container-max)] md:flex-row md:items-center md:justify-start md:gap-[var(--base-5)]",
           menuOpen ? "gap-[var(--base-2)]" : "",
         ].join(" ")}
       >
-        <div className="flex w-full items-center justify-between md:w-auto">
+        <div className="flex w-full items-center justify-between md:min-w-0 md:flex-1">
           <Link
             aria-label="Go to homepage"
             className="flex min-w-0 shrink-0 items-center gap-[var(--base-2)] text-[var(--text-primary)] no-underline transition-opacity duration-[150ms] ease-in hover:opacity-50 focus-visible:opacity-50 focus-visible:outline-none"
