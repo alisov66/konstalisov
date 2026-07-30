@@ -552,7 +552,9 @@ html.no-smooth-scroll * {
         calc(-50% + var(--navi-blob-offset-a-y, 0px)),
         0
       )
-      rotate(var(--navi-blob-rotate-a, 0deg)) scaleX(20) scaleY(16);
+      rotate(var(--navi-blob-rotate-a, 0deg))
+      scaleX(calc(20 * var(--navi-blob-scale, 1)))
+      scaleY(calc(16 * var(--navi-blob-scale, 1)));
   }
 }
 
@@ -564,7 +566,9 @@ html.no-smooth-scroll * {
         calc(-50% + var(--navi-blob-offset-a-y, 0px)),
         0
       )
-      rotate(var(--navi-blob-rotate-a, 0deg)) scaleX(20) scaleY(16);
+      rotate(var(--navi-blob-rotate-a, 0deg))
+      scaleX(calc(20 * var(--navi-blob-scale, 1)))
+      scaleY(calc(16 * var(--navi-blob-scale, 1)));
   }
 
   64% {
@@ -614,7 +618,9 @@ html.no-smooth-scroll * {
         calc(-50% + var(--navi-blob-offset-b-y, -7px)),
         0
       )
-      rotate(var(--navi-blob-rotate-b, 0deg)) scaleX(18) scaleY(14);
+      rotate(var(--navi-blob-rotate-b, 0deg))
+      scaleX(calc(18 * var(--navi-blob-scale, 1)))
+      scaleY(calc(14 * var(--navi-blob-scale, 1)));
   }
 }
 
@@ -626,7 +632,9 @@ html.no-smooth-scroll * {
         calc(-50% + var(--navi-blob-offset-b-y, -7px)),
         0
       )
-      rotate(var(--navi-blob-rotate-b, 0deg)) scaleX(18) scaleY(14);
+      rotate(var(--navi-blob-rotate-b, 0deg))
+      scaleX(calc(18 * var(--navi-blob-scale, 1)))
+      scaleY(calc(14 * var(--navi-blob-scale, 1)));
   }
 
   56% {
@@ -676,7 +684,9 @@ html.no-smooth-scroll * {
         calc(-50% + var(--navi-blob-offset-c-y, 8px)),
         0
       )
-      rotate(var(--navi-blob-rotate-c, 0deg)) scaleX(17) scaleY(13);
+      rotate(var(--navi-blob-rotate-c, 0deg))
+      scaleX(calc(17 * var(--navi-blob-scale, 1)))
+      scaleY(calc(13 * var(--navi-blob-scale, 1)));
   }
 }
 
@@ -688,7 +698,9 @@ html.no-smooth-scroll * {
         calc(-50% + var(--navi-blob-offset-c-y, 8px)),
         0
       )
-      rotate(var(--navi-blob-rotate-c, 0deg)) scaleX(17) scaleY(13);
+      rotate(var(--navi-blob-rotate-c, 0deg))
+      scaleX(calc(17 * var(--navi-blob-scale, 1)))
+      scaleY(calc(13 * var(--navi-blob-scale, 1)));
   }
 
   48% {
@@ -738,7 +750,9 @@ html.no-smooth-scroll * {
         calc(-50% + var(--navi-blob-offset-d-y, 12px)),
         0
       )
-      rotate(var(--navi-blob-rotate-d, 0deg)) scaleX(16) scaleY(12);
+      rotate(var(--navi-blob-rotate-d, 0deg))
+      scaleX(calc(16 * var(--navi-blob-scale, 1)))
+      scaleY(calc(12 * var(--navi-blob-scale, 1)));
   }
 }
 
@@ -750,7 +764,9 @@ html.no-smooth-scroll * {
         calc(-50% + var(--navi-blob-offset-d-y, 12px)),
         0
       )
-      rotate(var(--navi-blob-rotate-d, 0deg)) scaleX(16) scaleY(12);
+      rotate(var(--navi-blob-rotate-d, 0deg))
+      scaleX(calc(16 * var(--navi-blob-scale, 1)))
+      scaleY(calc(12 * var(--navi-blob-scale, 1)));
   }
 
   42% {

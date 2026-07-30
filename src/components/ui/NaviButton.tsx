@@ -94,8 +94,11 @@ export default function NaviButton({
   children,
   className,
   state = "default",
+  onPointerCancel,
+  onPointerDown,
   onPointerEnter,
   onPointerLeave,
+  onPointerUp,
   onFocus,
   onBlur,
   ...props
@@ -105,6 +108,7 @@ export default function NaviButton({
     isHover ? "fill" : "idle",
   );
   const [hoverOrigin, setHoverOrigin] = useState({ x: "50%", y: "50%" });
+  const [blobScale, setBlobScale] = useState(1);
   const [blobVariantIndex, setBlobVariantIndex] = useState(0);
   const blobVariant = blobVariants[blobVariantIndex];
   const drainTimeoutRef = useRef<number | null>(null);
@@ -126,11 +130,18 @@ export default function NaviButton({
     const rect = event.currentTarget.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
+    const farthestCornerDistance = Math.max(
+      Math.hypot(x, y),
+      Math.hypot(rect.width - x, y),
+      Math.hypot(x, rect.height - y),
+      Math.hypot(rect.width - x, rect.height - y),
+    );
 
     setHoverOrigin({
       x: `${x}px`,
       y: `${y}px`,
     });
+    setBlobScale(Math.max(farthestCornerDistance / 128, 1));
   };
 
   const handlePointerEnter: PointerEventHandler<HTMLAnchorElement> = (event) => {
@@ -162,6 +173,33 @@ export default function NaviButton({
     }
 
     onPointerLeave?.(event);
+  };
+
+  const handleTouchFill: PointerEventHandler<HTMLAnchorElement> = (event) => {
+    if (event.pointerType !== "touch" && event.pointerType !== "pen") {
+      return;
+    }
+
+    clearDrainTimeout();
+    updateHoverOrigin(event);
+    setBlobVariantIndex(
+      (currentIndex) => (currentIndex + 1) % blobVariants.length,
+    );
+    setHoverState("fill");
+  };
+
+  const handleTouchDrain: PointerEventHandler<HTMLAnchorElement> = (event) => {
+    if (event.pointerType !== "touch" && event.pointerType !== "pen") {
+      return;
+    }
+
+    clearDrainTimeout();
+    updateHoverOrigin(event);
+    setHoverState(isHover ? "fill" : "drain");
+    drainTimeoutRef.current = window.setTimeout(() => {
+      drainTimeoutRef.current = null;
+      setHoverState(isHover ? "fill" : "idle");
+    }, 300);
   };
 
   return (
@@ -198,11 +236,24 @@ export default function NaviButton({
         setHoverState("fill");
         onFocus?.(event);
       }}
+      onPointerCancel={(event) => {
+        handleTouchDrain(event);
+        onPointerCancel?.(event);
+      }}
+      onPointerDown={(event) => {
+        handleTouchFill(event);
+        onPointerDown?.(event);
+      }}
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
+      onPointerUp={(event) => {
+        handleTouchDrain(event);
+        onPointerUp?.(event);
+      }}
       style={{
         "--navi-hover-x": hoverOrigin.x,
         "--navi-hover-y": hoverOrigin.y,
+        "--navi-blob-scale": blobScale,
         "--navi-blob-radius-a": blobVariant.radiusA,
         "--navi-blob-radius-b": blobVariant.radiusB,
         "--navi-blob-radius-c": blobVariant.radiusC,
