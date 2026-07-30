@@ -210,6 +210,7 @@ export default function NavigationHeader({
           ? "navigation-header-enter"
           : "navigation-header-exit pointer-events-none",
       ].join(" ")}
+      data-navigation-header
     >
       {isMobileLayout ? (
         <button

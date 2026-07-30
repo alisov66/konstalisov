@@ -1847,13 +1847,15 @@ export default function CapabilitiesSection({
   const menuRef = useRef<HTMLDivElement>(null);
   const lastScrollYRef = useRef(0);
   const ignoreScrollUntilRef = useRef(0);
-  const [mobileMenuPinned, setMobileMenuPinned] = useState(false);
+  const mobileMenuTopRef = useRef(headerClearance);
+  const [mobileMenuTop, setMobileMenuTop] = useState(headerClearance);
   const [mobileMenuVisible, setMobileMenuVisible] = useState(true);
   const currentValue = getCapabilityById(value)?.id || defaultCapabilityId;
 
   const sectionStyle: StyleVars = {
     "--capabilities-column-gap": "100px",
     "--capabilities-menu-width": "277px",
+    "--capabilities-mobile-menu-top": `${mobileMenuTop}px`,
   };
 
   const scrollArticleToStart = useCallback(() => {
@@ -1893,11 +1895,32 @@ export default function CapabilitiesSection({
     const media = window.matchMedia("(max-width: 1023px)");
     let frame = 0;
 
+    const updateMenuTop = () => {
+      const headerNav = document.querySelector<HTMLElement>(
+        "[data-navigation-header] nav",
+      );
+      const rootStyles = window.getComputedStyle(document.documentElement);
+      const menuTopPadding =
+        parseFloat(rootStyles.getPropertyValue("--base-10")) || 40;
+      const nextMenuTop = Math.max(
+        Math.ceil(headerNav?.getBoundingClientRect().bottom || headerClearance) -
+          menuTopPadding,
+        0,
+      );
+
+      if (nextMenuTop === mobileMenuTopRef.current) {
+        return;
+      }
+
+      mobileMenuTopRef.current = nextMenuTop;
+      setMobileMenuTop(nextMenuTop);
+    };
+
     const updateVisibility = () => {
       frame = 0;
+      updateMenuTop();
 
       if (!media.matches) {
-        setMobileMenuPinned(false);
         setMobileMenuVisible(true);
         lastScrollYRef.current = window.scrollY;
         return;
@@ -1905,11 +1928,11 @@ export default function CapabilitiesSection({
 
       const nextScrollY = Math.max(window.scrollY, 0);
       const scrollDelta = nextScrollY - lastScrollYRef.current;
-      const menuTop = menuRef.current?.offsetTop || 0;
-      const stickyStart = Math.max(menuTop - headerClearance, 0);
+      const menuTop =
+        (sectionRef.current?.getBoundingClientRect().top || 0) +
+        window.scrollY;
+      const stickyStart = Math.max(menuTop - mobileMenuTopRef.current, 0);
       const nextMenuPinned = nextScrollY >= stickyStart;
-
-      setMobileMenuPinned(nextMenuPinned);
 
       if (performance.now() < ignoreScrollUntilRef.current) {
         setMobileMenuVisible(true);
@@ -1967,8 +1990,7 @@ export default function CapabilitiesSection({
       >
         <div
           className={[
-            "sticky top-[136px] z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pb-[var(--base-5)] transition-transform duration-[150ms] ease-in lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:translate-y-0 lg:pb-0 lg:pt-[var(--base-10)]",
-            mobileMenuPinned ? "pt-0" : "pt-[var(--base-10)]",
+            "sticky top-[var(--capabilities-mobile-menu-top)] z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pb-[var(--base-5)] pt-[var(--base-10)] transition-transform duration-[150ms] ease-in lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:translate-y-0 lg:pb-0",
             mobileMenuVisible ? "translate-y-0" : "-translate-y-full",
           ].join(" ")}
           ref={menuRef}
