@@ -260,12 +260,12 @@ html.no-smooth-scroll * {
 }
 
 .menu-button__line--top {
-  left: 50%;
+  left: calc(50% - 8px);
   width: 16px;
 }
 
 .menu-button__line--bottom {
-  left: calc(50% - 2px);
+  left: calc(50% - 6px);
   width: 12px;
 }
 
