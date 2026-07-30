@@ -2018,32 +2018,37 @@ export default function CapabilitiesSection({
       >
         <div
           className={[
-            "sticky top-0 z-40 w-full shrink-0 overflow-hidden bg-[var(--bg-beige)] transition-[height] duration-[150ms] ease-in lg:top-[88px] lg:z-auto lg:h-auto lg:w-[var(--capabilities-menu-width)] lg:overflow-visible",
-            mobileMenuCollapsed
-              ? "h-0"
-              : mobileMenuHeight
-                ? "h-[var(--capabilities-mobile-menu-height)]"
-                : "h-auto",
+            "sticky top-0 z-40 w-full shrink-0 overflow-hidden bg-[var(--bg-beige)] lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:overflow-visible",
+            mobileMenuCollapsed ? "pointer-events-none" : "",
           ].join(" ")}
           ref={menuRef}
           style={mobileMenuStyle}
         >
           <div
-            className="flex w-full flex-col items-start gap-[var(--base-5)] py-[var(--base-5)] lg:pb-0 lg:pt-[var(--base-10)]"
+            className={[
+              "overflow-hidden transition-[height] duration-[150ms] ease-in lg:h-auto lg:overflow-visible",
+              mobileMenuCollapsed
+                ? "h-0"
+                : mobileMenuHeight
+                  ? "h-[var(--capabilities-mobile-menu-height)]"
+                  : "h-auto",
+            ].join(" ")}
             ref={menuContentRef}
           >
-            <h2
-              className="text-center text-[var(--text-accent)]"
-              style={typeStyle(tokens.typography.heading.h4)}
-            >
-              Explore
-            </h2>
-            <TabGroup
-              className="flex-wrap items-start"
-              onValueChange={handleValueChange}
-              tabs={tabs}
-              value={currentValue}
-            />
+            <div className="flex w-full flex-col items-start gap-[var(--base-5)] py-[var(--base-5)] lg:pb-0 lg:pt-[var(--base-10)]">
+              <h2
+                className="text-center text-[var(--text-accent)]"
+                style={typeStyle(tokens.typography.heading.h4)}
+              >
+                Explore
+              </h2>
+              <TabGroup
+                className="flex-wrap items-start"
+                onValueChange={handleValueChange}
+                tabs={tabs}
+                value={currentValue}
+              />
+            </div>
           </div>
         </div>
 
