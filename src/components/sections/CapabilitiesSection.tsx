@@ -1,7 +1,7 @@
 "use client";
 
 import type { CSSProperties, ReactNode } from "react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 import TabGroup, { type TabGroupTab } from "@/components/ui/TabGroup";
 import {
@@ -1814,7 +1814,7 @@ export interface CapabilitiesSectionProps {
 
 export function CapabilitiesIntroduction() {
   return (
-    <section className="flex w-full flex-col items-start bg-[var(--bg-beige)] px-[var(--padding-side)] pb-[var(--base-30)] pt-[var(--base-40)]">
+    <section className="flex w-full flex-col items-start bg-[var(--bg-beige)] px-[var(--padding-side)] pb-[var(--base-5)] pt-[var(--base-24)] lg:pb-[var(--base-30)] lg:pt-[var(--base-40)]">
       <div className="flex w-full max-w-[820px] flex-col items-start gap-[var(--base-6)]">
         <h1
           className="w-full text-[var(--text-primary)]"
@@ -1844,18 +1844,11 @@ export default function CapabilitiesSection({
 }: CapabilitiesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const articleRef = useRef<HTMLDivElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
-  const lastScrollYRef = useRef(0);
-  const ignoreScrollUntilRef = useRef(0);
-  const mobileMenuTopRef = useRef(headerClearance);
-  const [mobileMenuTop, setMobileMenuTop] = useState(headerClearance);
-  const [mobileMenuVisible, setMobileMenuVisible] = useState(true);
   const currentValue = getCapabilityById(value)?.id || defaultCapabilityId;
 
   const sectionStyle: StyleVars = {
     "--capabilities-column-gap": "100px",
     "--capabilities-menu-width": "277px",
-    "--capabilities-mobile-menu-top": `${mobileMenuTop}px`,
   };
 
   const scrollArticleToStart = useCallback(() => {
@@ -1869,9 +1862,6 @@ export default function CapabilitiesSection({
     const top =
       article.getBoundingClientRect().top + window.scrollY - headerClearance;
 
-    setMobileMenuVisible(true);
-    ignoreScrollUntilRef.current = performance.now() + 300;
-    lastScrollYRef.current = top;
     html.classList.add("no-smooth-scroll");
     window.scrollTo({ top, left: 0, behavior: "auto" });
     requestAnimationFrame(() => {
@@ -1891,86 +1881,6 @@ export default function CapabilitiesSection({
     };
   }, [scrollArticleToStart, scrollToArticleOnMount]);
 
-  useEffect(() => {
-    const media = window.matchMedia("(max-width: 1023px)");
-    let frame = 0;
-
-    const updateMenuTop = () => {
-      const headerNav = document.querySelector<HTMLElement>(
-        "[data-navigation-header] nav",
-      );
-      const nextMenuTop = Math.max(
-        Math.ceil(headerNav?.getBoundingClientRect().bottom || headerClearance),
-        0,
-      );
-
-      if (nextMenuTop === mobileMenuTopRef.current) {
-        return;
-      }
-
-      mobileMenuTopRef.current = nextMenuTop;
-      setMobileMenuTop(nextMenuTop);
-    };
-
-    const updateVisibility = () => {
-      frame = 0;
-      updateMenuTop();
-
-      if (!media.matches) {
-        setMobileMenuVisible(true);
-        lastScrollYRef.current = window.scrollY;
-        return;
-      }
-
-      const nextScrollY = Math.max(window.scrollY, 0);
-      const scrollDelta = nextScrollY - lastScrollYRef.current;
-      const menuTop =
-        (sectionRef.current?.getBoundingClientRect().top || 0) +
-        window.scrollY;
-      const stickyStart = Math.max(menuTop - mobileMenuTopRef.current, 0);
-      const nextMenuPinned = nextScrollY >= stickyStart;
-
-      if (performance.now() < ignoreScrollUntilRef.current) {
-        setMobileMenuVisible(true);
-        lastScrollYRef.current = nextScrollY;
-        return;
-      }
-
-      if (!nextMenuPinned || nextScrollY <= 0) {
-        setMobileMenuVisible(true);
-      } else if (scrollDelta > 4) {
-        setMobileMenuVisible(false);
-      } else if (scrollDelta < -4) {
-        setMobileMenuVisible(true);
-      }
-
-      lastScrollYRef.current = nextScrollY;
-    };
-
-    const scheduleUpdate = () => {
-      if (frame) {
-        return;
-      }
-
-      frame = window.requestAnimationFrame(updateVisibility);
-    };
-
-    updateVisibility();
-    window.addEventListener("scroll", scheduleUpdate, { passive: true });
-    window.addEventListener("resize", scheduleUpdate);
-    media.addEventListener("change", scheduleUpdate);
-
-    return () => {
-      if (frame) {
-        window.cancelAnimationFrame(frame);
-      }
-
-      window.removeEventListener("scroll", scheduleUpdate);
-      window.removeEventListener("resize", scheduleUpdate);
-      media.removeEventListener("change", scheduleUpdate);
-    };
-  }, []);
-
   function handleValueChange() {
     scrollArticleToStart();
   }
@@ -1980,18 +1890,12 @@ export default function CapabilitiesSection({
       {showIntroduction ? <CapabilitiesIntroduction /> : null}
       <section
         id="work"
-        className="flex w-full flex-col items-start gap-[var(--base-10)] bg-[var(--bg-beige)] px-[var(--padding-side)] lg:flex-row lg:gap-[var(--capabilities-column-gap)]"
+        className="flex w-full flex-col items-start gap-0 bg-[var(--bg-beige)] px-[var(--padding-side)] lg:flex-row lg:gap-[var(--capabilities-column-gap)]"
         ref={sectionRef}
         style={sectionStyle}
       >
         <div
-          className={[
-            "sticky top-[var(--capabilities-mobile-menu-top)] z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pb-[var(--base-5)] pt-[var(--base-5)] transition-[opacity,transform] duration-[150ms] ease-in lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:translate-y-0 lg:pb-0 lg:opacity-100 lg:pt-[var(--base-10)]",
-            mobileMenuVisible
-              ? "translate-y-0 opacity-100"
-              : "-translate-y-[calc(100%+20px)] opacity-0",
-          ].join(" ")}
-          ref={menuRef}
+          className="sticky top-0 z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] py-[var(--base-5)] lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:pb-0 lg:pt-[var(--base-10)]"
         >
           <h2
             className="text-center text-[var(--text-accent)]"
@@ -2009,7 +1913,7 @@ export default function CapabilitiesSection({
 
         <div
           ref={articleRef}
-          className="flex min-w-0 flex-1 scroll-mt-[var(--base-10)] flex-col items-start pt-[var(--base-10)]"
+          className="flex min-w-0 flex-1 scroll-mt-[var(--base-10)] flex-col items-start pt-[var(--base-5)] lg:pt-[var(--base-10)]"
         >
           <ActiveArticle value={currentValue} />
         </div>
