@@ -1899,12 +1899,8 @@ export default function CapabilitiesSection({
       const headerNav = document.querySelector<HTMLElement>(
         "[data-navigation-header] nav",
       );
-      const rootStyles = window.getComputedStyle(document.documentElement);
-      const menuTopPadding =
-        parseFloat(rootStyles.getPropertyValue("--base-10")) || 40;
       const nextMenuTop = Math.max(
-        Math.ceil(headerNav?.getBoundingClientRect().bottom || headerClearance) -
-          menuTopPadding,
+        Math.ceil(headerNav?.getBoundingClientRect().bottom || headerClearance),
         0,
       );
 
