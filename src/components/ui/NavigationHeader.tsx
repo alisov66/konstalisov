@@ -211,10 +211,20 @@ export default function NavigationHeader({
           : "navigation-header-exit pointer-events-none",
       ].join(" ")}
     >
+      {isMobileLayout ? (
+        <button
+          aria-label="Close navigation menu"
+          className="navigation-header-backdrop fixed inset-0"
+          data-open={menuOpen}
+          onClick={() => setMenuOpen(false)}
+          type="button"
+        />
+      ) : null}
+
       <nav
         aria-label="Primary"
         className={[
-          "relative flex w-full max-w-[var(--container-max)] items-center rounded-[var(--lg)] bg-[var(--bg-beige-light)] px-[var(--base-3)] py-[var(--base-2)]",
+          "relative z-10 flex w-full max-w-[var(--container-max)] items-center rounded-[var(--lg)] bg-[var(--bg-beige-light)] px-[var(--base-3)] py-[var(--base-2)]",
           isMobileLayout
             ? "flex-col items-start justify-center"
             : "flex-row justify-between",

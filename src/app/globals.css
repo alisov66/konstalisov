@@ -326,6 +326,18 @@ html.no-smooth-scroll * {
   transform: translate3d(0, 0, 0);
 }
 
+.navigation-header-backdrop {
+  background: rgb(0 0 0 / 30%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms ease-in;
+}
+
+.navigation-header-backdrop[data-open="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @keyframes menu-button-top-menu-to-cross {
   0%,
   47.51% {
