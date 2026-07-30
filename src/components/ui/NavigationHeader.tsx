@@ -341,12 +341,10 @@ export default function NavigationHeader({
             data-open={menuOpen}
             id="navigation-header-mobile-actions"
           >
-            <div className="flex min-h-0 flex-wrap items-center justify-center gap-0 overflow-hidden">
+            <div className="flex min-h-0 flex-col items-start justify-center overflow-hidden">
               {navigationItems.map((item) => (
                 <NaviButton
-                  className={
-                    item.label === "Download CV" ? undefined : "flex-1"
-                  }
+                  className="w-full"
                   href={item.href}
                   key={item.label}
                   onClick={(event) =>
