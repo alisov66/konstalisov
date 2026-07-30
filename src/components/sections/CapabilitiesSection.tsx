@@ -1904,7 +1904,8 @@ export default function CapabilitiesSection({
         parseFloat(rootStyles.getPropertyValue("--base-10")) || 40;
       const nextMenuTop = Math.max(
         Math.ceil(headerNav?.getBoundingClientRect().bottom || headerClearance) -
-          menuTopPadding,
+          menuTopPadding -
+          20,
         0,
       );
 
