@@ -1986,7 +1986,7 @@ export default function CapabilitiesSection({
       >
         <div
           className={[
-            "sticky top-[var(--capabilities-mobile-menu-top)] z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pb-[var(--base-5)] pt-[var(--base-10)] transition-[opacity,transform] duration-[150ms] ease-in lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:translate-y-0 lg:pb-0 lg:opacity-100",
+            "sticky top-[var(--capabilities-mobile-menu-top)] z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pb-[var(--base-5)] pt-[var(--base-5)] transition-[opacity,transform] duration-[150ms] ease-in lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:translate-y-0 lg:pb-0 lg:opacity-100 lg:pt-[var(--base-10)]",
             mobileMenuVisible
               ? "translate-y-0 opacity-100"
               : "-translate-y-[calc(100%+20px)] opacity-0",
