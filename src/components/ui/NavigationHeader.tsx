@@ -344,6 +344,7 @@ export default function NavigationHeader({
             <div className="flex min-h-0 flex-wrap items-center justify-center gap-0 overflow-hidden">
               {navigationItems.map((item) => (
                 <NaviButton
+                  className={item.label === "Main" ? "flex-1" : undefined}
                   href={item.href}
                   key={item.label}
                   onClick={(event) =>
