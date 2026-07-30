@@ -1,7 +1,7 @@
 "use client";
 
 import type { CSSProperties, ReactNode } from "react";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import TabGroup, { type TabGroupTab } from "@/components/ui/TabGroup";
 import {
@@ -1844,6 +1844,10 @@ export default function CapabilitiesSection({
 }: CapabilitiesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const articleRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const lastScrollYRef = useRef(0);
+  const [mobileMenuHeight, setMobileMenuHeight] = useState(0);
+  const [mobileMenuVisible, setMobileMenuVisible] = useState(true);
   const currentValue = getCapabilityById(value)?.id || defaultCapabilityId;
 
   const sectionStyle: StyleVars = {
@@ -1881,6 +1885,80 @@ export default function CapabilitiesSection({
     };
   }, [scrollArticleToStart, scrollToArticleOnMount]);
 
+  useEffect(() => {
+    const menu = menuRef.current;
+
+    if (!menu) {
+      return;
+    }
+
+    const updateMenuHeight = () => {
+      setMobileMenuHeight(menu.offsetHeight);
+    };
+
+    updateMenuHeight();
+
+    const observer = new ResizeObserver(updateMenuHeight);
+    observer.observe(menu);
+    window.addEventListener("resize", updateMenuHeight);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updateMenuHeight);
+    };
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 1023px)");
+    let frame = 0;
+
+    const updateVisibility = () => {
+      frame = 0;
+
+      if (!media.matches) {
+        setMobileMenuVisible(true);
+        lastScrollYRef.current = window.scrollY;
+        return;
+      }
+
+      const nextScrollY = Math.max(window.scrollY, 0);
+      const scrollDelta = nextScrollY - lastScrollYRef.current;
+
+      if (nextScrollY <= 0) {
+        setMobileMenuVisible(true);
+      } else if (scrollDelta > 4) {
+        setMobileMenuVisible(false);
+      } else if (scrollDelta < -4) {
+        setMobileMenuVisible(true);
+      }
+
+      lastScrollYRef.current = nextScrollY;
+    };
+
+    const scheduleUpdate = () => {
+      if (frame) {
+        return;
+      }
+
+      frame = window.requestAnimationFrame(updateVisibility);
+    };
+
+    updateVisibility();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    media.addEventListener("change", scheduleUpdate);
+
+    return () => {
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+      }
+
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      media.removeEventListener("change", scheduleUpdate);
+    };
+  }, []);
+
   function handleValueChange() {
     scrollArticleToStart();
   }
@@ -1894,7 +1972,13 @@ export default function CapabilitiesSection({
         ref={sectionRef}
         style={sectionStyle}
       >
-        <div className="flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pt-[var(--base-10)] lg:sticky lg:top-[88px] lg:w-[var(--capabilities-menu-width)]">
+        <div
+          className={[
+            "fixed left-0 top-0 z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] px-[var(--padding-side)] pb-[var(--base-5)] pt-[var(--base-10)] transition-transform duration-[150ms] ease-in lg:sticky lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:translate-y-0 lg:px-0 lg:pb-0",
+            mobileMenuVisible ? "translate-y-0" : "-translate-y-full",
+          ].join(" ")}
+          ref={menuRef}
+        >
           <h2
             className="text-center text-[var(--text-accent)]"
             style={typeStyle(tokens.typography.heading.h4)}
@@ -1908,6 +1992,12 @@ export default function CapabilitiesSection({
             value={currentValue}
           />
         </div>
+
+        <div
+          aria-hidden
+          className="w-full shrink-0 lg:hidden"
+          style={{ height: mobileMenuHeight }}
+        />
 
         <div
           ref={articleRef}
