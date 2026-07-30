@@ -45,7 +45,12 @@ export default function NavigationHeader({
   const [animationState, setAnimationState] = useState<
     "hidden" | "visible" | "entering" | "exiting"
   >(alwaysVisible ? "visible" : "hidden");
+  const [isMobileLayout, setIsMobileLayout] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const isMobileLayoutRef = useRef(false);
+  const navRef = useRef<HTMLElement>(null);
+  const measuringActionsRef = useRef<HTMLDivElement>(null);
+  const measuringLogoRef = useRef<HTMLAnchorElement>(null);
   const isVisibleRef = useRef(alwaysVisible);
   const exitTimeoutRef = useRef<number | null>(null);
 
@@ -125,6 +130,53 @@ export default function NavigationHeader({
     };
   }, [alwaysVisible, heroId]);
 
+  useEffect(() => {
+    const updateLayoutMode = () => {
+      const nav = navRef.current;
+      const logo = measuringLogoRef.current;
+      const actions = measuringActionsRef.current;
+
+      if (!nav || !logo || !actions) {
+        return;
+      }
+
+      const navStyles = window.getComputedStyle(nav);
+      const contentWidth =
+        nav.clientWidth -
+        parseFloat(navStyles.paddingLeft) -
+        parseFloat(navStyles.paddingRight);
+      const availableGap =
+        contentWidth - logo.offsetWidth - actions.scrollWidth;
+      const nextIsMobileLayout = availableGap < 20;
+
+      if (nextIsMobileLayout === isMobileLayoutRef.current) {
+        return;
+      }
+
+      isMobileLayoutRef.current = nextIsMobileLayout;
+      setIsMobileLayout(nextIsMobileLayout);
+
+      if (!nextIsMobileLayout) {
+        window.setTimeout(() => setMenuOpen(false), 0);
+      }
+    };
+
+    updateLayoutMode();
+
+    const observer = new ResizeObserver(updateLayoutMode);
+
+    if (navRef.current) {
+      observer.observe(navRef.current);
+    }
+
+    window.addEventListener("resize", updateLayoutMode);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updateLayoutMode);
+    };
+  }, []);
+
   if (animationState === "hidden") {
     return null;
   }
@@ -162,11 +214,52 @@ export default function NavigationHeader({
       <nav
         aria-label="Primary"
         className={[
-          "flex w-full flex-col items-start justify-center rounded-[var(--lg)] bg-[var(--bg-beige-light)] px-[var(--base-3)] py-[var(--base-2)] md:max-w-[var(--container-max)] md:flex-row md:items-center md:justify-start md:gap-[var(--base-5)]",
+          "relative flex w-full max-w-[var(--container-max)] items-center rounded-[var(--lg)] bg-[var(--bg-beige-light)] px-[var(--base-3)] py-[var(--base-2)]",
+          isMobileLayout
+            ? "flex-col items-start justify-center"
+            : "flex-row justify-between",
           menuOpen ? "gap-[var(--base-2)]" : "",
         ].join(" ")}
+        ref={navRef}
       >
-        <div className="flex w-full items-center justify-between md:min-w-0 md:flex-1">
+        <div
+          aria-hidden
+          className="pointer-events-none invisible absolute left-0 top-0 flex h-0 items-center overflow-hidden"
+        >
+          <Link
+            className="flex shrink-0 items-center gap-[var(--base-2)]"
+            href="/#hero"
+            ref={measuringLogoRef}
+            tabIndex={-1}
+          >
+            <span className="relative size-[52px] shrink-0" />
+            <span className="flex w-[172px] flex-col gap-0">
+              <span style={typeStyle(tokens.typography.body.medium)}>
+                Konstantin Alisov
+              </span>
+              <span style={typeStyle(tokens.typography.body.small)}>
+                Product designer
+              </span>
+            </span>
+          </Link>
+          <div
+            className="flex shrink-0 items-center"
+            ref={measuringActionsRef}
+          >
+            {navigationItems.map((item) => (
+              <NaviButton href={item.href} key={item.label} tabIndex={-1}>
+                {item.label}
+              </NaviButton>
+            ))}
+          </div>
+        </div>
+
+        <div
+          className={[
+            "flex items-center justify-between",
+            isMobileLayout ? "w-full" : "shrink-0",
+          ].join(" ")}
+        >
           <Link
             aria-label="Go to homepage"
             className="flex min-w-0 shrink-0 items-center gap-[var(--base-2)] text-[var(--text-primary)] no-underline transition-opacity duration-[150ms] ease-in hover:opacity-50 focus-visible:opacity-50 focus-visible:outline-none"
@@ -174,7 +267,12 @@ export default function NavigationHeader({
             href="/#hero"
             onClick={(event) => handleNavigationClick(event, "/#hero", true)}
           >
-            <span className="relative size-[44px] shrink-0 overflow-hidden md:size-[52px]">
+            <span
+              className={[
+                "relative shrink-0 overflow-hidden",
+                isMobileLayout ? "size-[44px]" : "size-[52px]",
+              ].join(" ")}
+            >
               <img
                 alt=""
                 className="absolute left-[-6%] top-[-6%] size-[112%] max-w-none object-cover"
@@ -182,7 +280,12 @@ export default function NavigationHeader({
               />
             </span>
 
-            <span className="hidden w-[172px] min-w-0 flex-col gap-0 md:flex">
+            <span
+              className={[
+                "w-[172px] min-w-0 flex-col gap-0",
+                isMobileLayout ? "hidden" : "flex",
+              ].join(" ")}
+            >
               <span
                 className="truncate text-[var(--text-primary)]"
                 style={typeStyle(tokens.typography.body.medium)}
@@ -198,46 +301,51 @@ export default function NavigationHeader({
             </span>
           </Link>
 
-          <MenuButton
-            aria-controls="navigation-header-mobile-actions"
-            className="md:hidden"
-            onOpenChange={setMenuOpen}
-            open={menuOpen}
-          />
+          {isMobileLayout ? (
+            <MenuButton
+              aria-controls="navigation-header-mobile-actions"
+              onOpenChange={setMenuOpen}
+              open={menuOpen}
+            />
+          ) : null}
         </div>
 
-        <div className="hidden shrink-0 items-center md:flex">
-          {navigationItems.map((item) => (
-            <NaviButton
-              href={item.href}
-              key={item.label}
-              onClick={(event) => handleNavigationClick(event, item.href)}
-            >
-              {item.label}
-            </NaviButton>
-          ))}
-        </div>
-
-        <div
-          className="navigation-header-mobile-actions grid w-full overflow-hidden md:hidden"
-          data-open={menuOpen}
-          id="navigation-header-mobile-actions"
-        >
-          <div className="flex min-h-0 flex-col items-start justify-center overflow-hidden">
+        {!isMobileLayout ? (
+          <div className="flex shrink-0 items-center">
             {navigationItems.map((item) => (
               <NaviButton
-                className="w-full"
                 href={item.href}
                 key={item.label}
-                onClick={(event) =>
-                  handleNavigationClick(event, item.href, true)
-                }
+                onClick={(event) => handleNavigationClick(event, item.href)}
               >
                 {item.label}
               </NaviButton>
             ))}
           </div>
-        </div>
+        ) : null}
+
+        {isMobileLayout ? (
+          <div
+            className="navigation-header-mobile-actions grid w-full overflow-hidden"
+            data-open={menuOpen}
+            id="navigation-header-mobile-actions"
+          >
+            <div className="flex min-h-0 flex-col items-start justify-center overflow-hidden">
+              {navigationItems.map((item) => (
+                <NaviButton
+                  className="w-full"
+                  href={item.href}
+                  key={item.label}
+                  onClick={(event) =>
+                    handleNavigationClick(event, item.href, true)
+                  }
+                >
+                  {item.label}
+                </NaviButton>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </nav>
     </header>
   );
