@@ -1,7 +1,7 @@
 "use client";
 
 import type { CSSProperties, ReactNode } from "react";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import TabGroup, { type TabGroupTab } from "@/components/ui/TabGroup";
 import {
@@ -1844,6 +1844,13 @@ export default function CapabilitiesSection({
 }: CapabilitiesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const articleRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuContentRef = useRef<HTMLDivElement>(null);
+  const downScrollStartRef = useRef<number | null>(null);
+  const scrollDirectionRef = useRef<"down" | "up" | null>(null);
+  const lastScrollYRef = useRef(0);
+  const [mobileMenuCollapsed, setMobileMenuCollapsed] = useState(false);
+  const [mobileMenuHeight, setMobileMenuHeight] = useState(0);
   const currentValue = getCapabilityById(value)?.id || defaultCapabilityId;
 
   const sectionStyle: StyleVars = {
@@ -1881,6 +1888,121 @@ export default function CapabilitiesSection({
     };
   }, [scrollArticleToStart, scrollToArticleOnMount]);
 
+  useEffect(() => {
+    const menuContent = menuContentRef.current;
+
+    if (!menuContent) {
+      return;
+    }
+
+    let frame = 0;
+
+    const updateMenuHeight = () => {
+      frame = 0;
+      setMobileMenuHeight(menuContent.scrollHeight);
+    };
+
+    const scheduleUpdate = () => {
+      if (frame) {
+        return;
+      }
+
+      frame = window.requestAnimationFrame(updateMenuHeight);
+    };
+
+    scheduleUpdate();
+
+    const observer = new ResizeObserver(scheduleUpdate);
+    observer.observe(menuContent);
+    window.addEventListener("resize", scheduleUpdate);
+
+    return () => {
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+      }
+
+      observer.disconnect();
+      window.removeEventListener("resize", scheduleUpdate);
+    };
+  }, []);
+
+  const mobileMenuStyle: StyleVars = {
+    "--capabilities-mobile-menu-height": `${mobileMenuHeight}px`,
+  };
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 1023px)");
+    let frame = 0;
+
+    const updateMobileMenu = () => {
+      frame = 0;
+
+      if (!media.matches) {
+        setMobileMenuCollapsed(false);
+        lastScrollYRef.current = window.scrollY;
+        return;
+      }
+
+      const section = sectionRef.current;
+      const nextScrollY = Math.max(window.scrollY, 0);
+      const scrollDelta = nextScrollY - lastScrollYRef.current;
+      const menuTop = section
+        ? section.getBoundingClientRect().top + window.scrollY
+        : 0;
+      const isSticky = nextScrollY >= menuTop;
+
+      if (!isSticky) {
+        setMobileMenuCollapsed(false);
+        downScrollStartRef.current = null;
+        scrollDirectionRef.current = null;
+      } else if (scrollDelta < -2) {
+        setMobileMenuCollapsed(false);
+        downScrollStartRef.current = null;
+        scrollDirectionRef.current = "up";
+      } else if (scrollDelta > 2) {
+        if (scrollDirectionRef.current !== "down") {
+          downScrollStartRef.current = Math.max(
+            lastScrollYRef.current,
+            menuTop,
+          );
+          scrollDirectionRef.current = "down";
+        }
+
+        if (
+          downScrollStartRef.current !== null &&
+          nextScrollY - downScrollStartRef.current >= 20
+        ) {
+          setMobileMenuCollapsed(true);
+        }
+      }
+
+      lastScrollYRef.current = nextScrollY;
+    };
+
+    const scheduleUpdate = () => {
+      if (frame) {
+        return;
+      }
+
+      frame = window.requestAnimationFrame(updateMobileMenu);
+    };
+
+    updateMobileMenu();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    media.addEventListener("change", scheduleUpdate);
+
+    return () => {
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+      }
+
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      media.removeEventListener("change", scheduleUpdate);
+    };
+  }, []);
+
   function handleValueChange() {
     scrollArticleToStart();
   }
@@ -1895,20 +2017,34 @@ export default function CapabilitiesSection({
         style={sectionStyle}
       >
         <div
-          className="sticky top-0 z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] py-[var(--base-5)] lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:pb-0 lg:pt-[var(--base-10)]"
+          className={[
+            "sticky top-0 z-40 w-full shrink-0 overflow-hidden bg-[var(--bg-beige)] transition-[height] duration-[150ms] ease-in lg:top-[88px] lg:z-auto lg:h-auto lg:w-[var(--capabilities-menu-width)] lg:overflow-visible",
+            mobileMenuCollapsed
+              ? "h-0"
+              : mobileMenuHeight
+                ? "h-[var(--capabilities-mobile-menu-height)]"
+                : "h-auto",
+          ].join(" ")}
+          ref={menuRef}
+          style={mobileMenuStyle}
         >
-          <h2
-            className="text-center text-[var(--text-accent)]"
-            style={typeStyle(tokens.typography.heading.h4)}
+          <div
+            className="flex w-full flex-col items-start gap-[var(--base-5)] py-[var(--base-5)] lg:pb-0 lg:pt-[var(--base-10)]"
+            ref={menuContentRef}
           >
-            Explore
-          </h2>
-          <TabGroup
-            className="flex-wrap items-start"
-            onValueChange={handleValueChange}
-            tabs={tabs}
-            value={currentValue}
-          />
+            <h2
+              className="text-center text-[var(--text-accent)]"
+              style={typeStyle(tokens.typography.heading.h4)}
+            >
+              Explore
+            </h2>
+            <TabGroup
+              className="flex-wrap items-start"
+              onValueChange={handleValueChange}
+              tabs={tabs}
+              value={currentValue}
+            />
+          </div>
         </div>
 
         <div
