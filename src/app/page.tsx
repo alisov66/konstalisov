@@ -1,3 +1,4 @@
+import AboutSection from "@/components/sections/AboutSection";
 import CapabilitiesGrid from "@/components/sections/CapabilitiesGrid";
 import HeroNavigation from "@/components/ui/HeroNavigation";
 import NavigationHeader from "@/components/ui/NavigationHeader";
@@ -83,6 +84,7 @@ export default function Home() {
         />
       </section>
       <CapabilitiesGrid />
+      <AboutSection />
     </main>
   );
 }

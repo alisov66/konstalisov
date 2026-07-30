@@ -1,0 +1,136 @@
+import HeroButton from "@/components/ui/HeroButton";
+import { tokens } from "@/styles/tokens";
+
+const profilePhotoSrc = "/about/profile-photo.png";
+
+function typeStyle(token: {
+  fontSize: string | number;
+  lineHeight: string | number;
+  fontWeight: string | number;
+}) {
+  return {
+    fontSize: token.fontSize,
+    lineHeight: token.lineHeight,
+    fontWeight: token.fontWeight,
+  };
+}
+
+export default function AboutSection() {
+  return (
+    <section
+      className="flex w-full flex-col items-start gap-[var(--base-20)] bg-[var(--bg-beige-light)] px-[var(--padding-side)] py-[var(--base-30)]"
+      id="about"
+    >
+      <h2
+        className="w-full text-[var(--text-accent)]"
+        style={typeStyle(tokens.typography.heading.h2)}
+      >
+        About
+      </h2>
+
+      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-col items-start gap-[var(--base-16)] lg:flex-row lg:gap-[var(--base-20)]">
+        <div className="flex w-full max-w-[450px] shrink-0 flex-col gap-[var(--base-5)]">
+          <div className="relative aspect-[3/4] w-full overflow-hidden lg:h-[600px] lg:aspect-auto">
+            <img
+              alt="Konstantin Alisov"
+              className="size-full object-cover"
+              src={profilePhotoSrc}
+            />
+          </div>
+
+          <div className="flex flex-col gap-[var(--base-1)]">
+            <p
+              className="text-[var(--text-accent)]"
+              style={typeStyle(tokens.typography.heading.h5)}
+            >
+              Currently based
+            </p>
+            <p
+              className="text-[var(--text-primary)]"
+              style={typeStyle(tokens.typography.body.medium)}
+            >
+              Bilbao, Spain
+            </p>
+          </div>
+        </div>
+
+        <div className="flex w-full flex-1 flex-col items-start gap-[var(--base-20)]">
+          <div className="flex w-full max-w-[820px] flex-col gap-[var(--base-3)] text-[var(--text-primary)]">
+            <h3 style={typeStyle(tokens.typography.heading.h3)}>
+              I enjoy figuring out how complicated things work
+            </h3>
+            <p style={typeStyle(tokens.typography.body.medium)}>
+              I&apos;m naturally drawn to understanding how complicated things
+              work. Whether it&apos;s scientific research, financial systems,
+              or product architecture, I enjoy asking questions, uncovering
+              patterns, and turning complexity into products people can use with
+              confidence.
+            </p>
+            <p style={typeStyle(tokens.typography.body.medium)}>
+              The products I work on are different, but the motivation is
+              usually the same: helping people feel confident in complex
+              environments.
+            </p>
+          </div>
+
+          <div className="grid w-full grid-cols-1 gap-[var(--base-10)] text-[var(--text-primary)] md:grid-cols-3">
+            <div className="flex flex-col gap-[var(--base-3)]">
+              <h4
+                className="text-[var(--text-accent)]"
+                style={typeStyle(tokens.typography.heading.h4)}
+              >
+                Exploring
+              </h4>
+              <ul
+                className="list-disc pl-[30px]"
+                style={typeStyle(tokens.typography.body.medium)}
+              >
+                <li className="mb-[var(--base-2)]">
+                  Exploring AI-assisted development
+                </li>
+                <li className="mb-[var(--base-2)]">
+                  Learning modern frontend technologies
+                </li>
+                <li>Building products with Next.js, Tailwind CSS & Vercel</li>
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-[var(--base-3)]">
+              <h4
+                className="text-[var(--text-accent)]"
+                style={typeStyle(tokens.typography.heading.h4)}
+              >
+                Building
+              </h4>
+              <p style={typeStyle(tokens.typography.body.medium)}>
+                <strong className="font-[var(--font-weight-semibold)]">
+                  This portfolio was designed and developed by me using Next.js,
+                  Tailwind CSS, and Vercel.
+                </strong>{" "}
+                Understanding implementation helps me design products that are
+                realistic to build and collaborate more effectively with
+                engineers.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-[var(--base-3)]">
+              <h4
+                className="text-[var(--text-accent)]"
+                style={typeStyle(tokens.typography.heading.h4)}
+              >
+                Working style
+              </h4>
+              <p style={typeStyle(tokens.typography.body.medium)}>
+                I enjoy partnering closely with product managers and engineers,
+                bringing structure to ambiguous problems through systems
+                thinking before polishing interfaces.
+              </p>
+            </div>
+          </div>
+
+          <HeroButton>Download CV</HeroButton>
+        </div>
+      </div>
+    </section>
+  );
+}
