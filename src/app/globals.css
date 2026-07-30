@@ -251,6 +251,155 @@ html.no-smooth-scroll * {
   position: relative;
 }
 
+.menu-button__line {
+  background: var(--border-primary);
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  transform-origin: center;
+}
+
+.menu-button__line--top {
+  left: 50%;
+  width: 16px;
+}
+
+.menu-button__line--bottom {
+  left: calc(50% - 2px);
+  width: 12px;
+}
+
+.menu-button[data-state="menu"] .menu-button__line--top {
+  transform: translateY(-4.5px);
+}
+
+.menu-button[data-state="menu"] .menu-button__line--bottom {
+  transform: translateY(4.5px);
+}
+
+.menu-button[data-state="cross"] .menu-button__line--top {
+  transform: translateY(-0.5px) rotate(45deg);
+}
+
+.menu-button[data-state="cross"] .menu-button__line--bottom {
+  transform: translateY(-0.5px) rotate(-45deg);
+  width: 16px;
+}
+
+.menu-button[data-state="menuToCross"] .menu-button__line--top {
+  animation: menu-button-top-menu-to-cross 300ms linear forwards;
+}
+
+.menu-button[data-state="menuToCross"] .menu-button__line--bottom {
+  animation:
+    menu-button-bottom-menu-to-cross-transform 300ms linear forwards,
+    menu-button-bottom-menu-to-cross-width 300ms linear forwards;
+}
+
+.menu-button[data-state="crossToMenu"] .menu-button__line--top {
+  animation: menu-button-top-cross-to-menu 300ms linear forwards;
+}
+
+.menu-button[data-state="crossToMenu"] .menu-button__line--bottom {
+  animation:
+    menu-button-bottom-cross-to-menu-transform 300ms linear forwards,
+    menu-button-bottom-cross-to-menu-width 300ms linear forwards;
+}
+
+.navigation-header-mobile-actions {
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transform: translate3d(0, -8px, 0);
+  transition:
+    grid-template-rows 300ms cubic-bezier(0.5, 0, 0.5, 1),
+    opacity 150ms ease-in,
+    transform 300ms cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.navigation-header-mobile-actions[data-open="true"] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes menu-button-top-menu-to-cross {
+  0%,
+  47.51% {
+    transform: translateY(-4.5px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-0.5px) rotate(45deg);
+  }
+}
+
+@keyframes menu-button-bottom-menu-to-cross-transform {
+  0%,
+  47.51% {
+    transform: translateY(4.5px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-0.5px) rotate(-45deg);
+  }
+}
+
+@keyframes menu-button-bottom-menu-to-cross-width {
+  from {
+    width: 12px;
+  }
+
+  to {
+    width: 16px;
+  }
+}
+
+@keyframes menu-button-top-cross-to-menu {
+  0%,
+  48.65% {
+    transform: translateY(-0.5px) rotate(45deg);
+  }
+
+  100% {
+    transform: translateY(-4.5px) rotate(0deg);
+  }
+}
+
+@keyframes menu-button-bottom-cross-to-menu-transform {
+  0%,
+  48.65% {
+    transform: translateY(-0.5px) rotate(-45deg);
+  }
+
+  100% {
+    transform: translateY(4.5px) rotate(0deg);
+  }
+}
+
+@keyframes menu-button-bottom-cross-to-menu-width {
+  0%,
+  48.65% {
+    width: 16px;
+  }
+
+  100% {
+    width: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-button[data-state="menuToCross"] .menu-button__line--top,
+  .menu-button[data-state="menuToCross"] .menu-button__line--bottom,
+  .menu-button[data-state="crossToMenu"] .menu-button__line--top,
+  .menu-button[data-state="crossToMenu"] .menu-button__line--bottom {
+    animation-duration: 1ms;
+  }
+
+  .navigation-header-mobile-actions {
+    transition-duration: 1ms;
+  }
+}
+
 .navi-button__blob {
   background: var(--navi-blob-color, var(--button-hero-hover));
   left: var(--navi-hover-x, 50%);
