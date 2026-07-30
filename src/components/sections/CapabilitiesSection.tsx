@@ -1932,7 +1932,7 @@ export default function CapabilitiesSection({
         ref={sectionRef}
         style={sectionStyle}
       >
-        <div className="sticky top-0 z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] py-[var(--base-5)] lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:pb-0 lg:pt-[var(--base-10)]">
+        <div className="sticky top-[72px] z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] py-[var(--base-5)] lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:pb-0 lg:pt-[var(--base-10)]">
           <h2
             className="text-center text-[var(--text-accent)]"
             style={typeStyle(tokens.typography.heading.h4)}
