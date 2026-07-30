@@ -225,10 +225,10 @@ export default function NavigationHeader({
       <nav
         aria-label="Primary"
         className={[
-          "relative z-10 flex w-full max-w-[var(--container-max)] items-center rounded-[var(--lg)] bg-[var(--bg-beige-light)] px-[var(--base-3)] py-[var(--base-2)]",
+          "relative z-10 flex w-full max-w-[var(--container-max)] items-center rounded-[var(--lg)] bg-[var(--bg-beige-light)]",
           isMobileLayout
-            ? "flex-col items-start justify-center"
-            : "flex-row justify-between",
+            ? "flex-col items-start justify-center px-[var(--base-2)] py-[var(--base-1)]"
+            : "flex-row justify-between px-[var(--base-3)] py-[var(--base-2)]",
           menuOpen ? "gap-[var(--base-2)]" : "",
         ].join(" ")}
         ref={navRef}
@@ -281,7 +281,7 @@ export default function NavigationHeader({
             <span
               className={[
                 "relative shrink-0 overflow-hidden",
-                isMobileLayout ? "size-[44px]" : "size-[52px]",
+                isMobileLayout ? "size-[36px]" : "size-[52px]",
               ].join(" ")}
             >
               <img
@@ -337,14 +337,13 @@ export default function NavigationHeader({
 
         {isMobileLayout ? (
           <div
-            className="navigation-header-mobile-actions grid w-full overflow-hidden"
+            className="navigation-header-mobile-actions grid w-full overflow-hidden bg-[var(--bg-beige-light)]"
             data-open={menuOpen}
             id="navigation-header-mobile-actions"
           >
-            <div className="flex min-h-0 flex-col items-start justify-center overflow-hidden">
+            <div className="flex min-h-0 flex-wrap items-center justify-center gap-0 overflow-hidden">
               {navigationItems.map((item) => (
                 <NaviButton
-                  className="w-full"
                   href={item.href}
                   key={item.label}
                   onClick={(event) =>
