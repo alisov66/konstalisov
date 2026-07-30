@@ -1847,6 +1847,7 @@ export default function CapabilitiesSection({
   const menuRef = useRef<HTMLDivElement>(null);
   const lastScrollYRef = useRef(0);
   const ignoreScrollUntilRef = useRef(0);
+  const [mobileMenuPinned, setMobileMenuPinned] = useState(false);
   const [mobileMenuVisible, setMobileMenuVisible] = useState(true);
   const currentValue = getCapabilityById(value)?.id || defaultCapabilityId;
 
@@ -1896,6 +1897,7 @@ export default function CapabilitiesSection({
       frame = 0;
 
       if (!media.matches) {
+        setMobileMenuPinned(false);
         setMobileMenuVisible(true);
         lastScrollYRef.current = window.scrollY;
         return;
@@ -1904,6 +1906,10 @@ export default function CapabilitiesSection({
       const nextScrollY = Math.max(window.scrollY, 0);
       const scrollDelta = nextScrollY - lastScrollYRef.current;
       const menuTop = menuRef.current?.offsetTop || 0;
+      const stickyStart = Math.max(menuTop - headerClearance, 0);
+      const nextMenuPinned = nextScrollY >= stickyStart;
+
+      setMobileMenuPinned(nextMenuPinned);
 
       if (performance.now() < ignoreScrollUntilRef.current) {
         setMobileMenuVisible(true);
@@ -1911,7 +1917,7 @@ export default function CapabilitiesSection({
         return;
       }
 
-      if (nextScrollY < menuTop || nextScrollY <= 0) {
+      if (!nextMenuPinned || nextScrollY <= 0) {
         setMobileMenuVisible(true);
       } else if (scrollDelta > 4) {
         setMobileMenuVisible(false);
@@ -1961,7 +1967,8 @@ export default function CapabilitiesSection({
       >
         <div
           className={[
-            "sticky top-[136px] z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pb-[var(--base-5)] pt-[var(--base-10)] transition-transform duration-[150ms] ease-in lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:translate-y-0 lg:pb-0",
+            "sticky top-[136px] z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pb-[var(--base-5)] transition-transform duration-[150ms] ease-in lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:translate-y-0 lg:pb-0 lg:pt-[var(--base-10)]",
+            mobileMenuPinned ? "pt-0" : "pt-[var(--base-10)]",
             mobileMenuVisible ? "translate-y-0" : "-translate-y-full",
           ].join(" ")}
           ref={menuRef}
