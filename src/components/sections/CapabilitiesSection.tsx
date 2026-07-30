@@ -1844,6 +1844,7 @@ export default function CapabilitiesSection({
 }: CapabilitiesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const articleRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
   const lastScrollYRef = useRef(0);
   const [mobileMenuVisible, setMobileMenuVisible] = useState(true);
   const currentValue = getCapabilityById(value)?.id || defaultCapabilityId;
@@ -1898,8 +1899,9 @@ export default function CapabilitiesSection({
 
       const nextScrollY = Math.max(window.scrollY, 0);
       const scrollDelta = nextScrollY - lastScrollYRef.current;
+      const menuTop = menuRef.current?.offsetTop || 0;
 
-      if (nextScrollY <= 0) {
+      if (nextScrollY < menuTop || nextScrollY <= 0) {
         setMobileMenuVisible(true);
       } else if (scrollDelta > 4) {
         setMobileMenuVisible(false);
@@ -1952,6 +1954,7 @@ export default function CapabilitiesSection({
             "sticky top-0 z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pb-[var(--base-5)] pt-[var(--base-10)] transition-transform duration-[150ms] ease-in lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:translate-y-0 lg:pb-0",
             mobileMenuVisible ? "translate-y-0" : "-translate-y-full",
           ].join(" ")}
+          ref={menuRef}
         >
           <h2
             className="text-center text-[var(--text-accent)]"
