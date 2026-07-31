@@ -80,6 +80,8 @@
   --article-paragraph-weight: 400;
   --article-paragraph-semibold-weight: 600;
   --article-paragraph-spacing: 12px;
+  --article-list-to-paragraph-gap: 24px;
+  --article-paragraph-to-list-gap: 16px;
 
   /* Body */
 
@@ -184,6 +186,8 @@
     --article-h3-line: 32px;
     --article-paragraph-size: 18px;
     --article-paragraph-line: 30px;
+    --article-list-to-paragraph-gap: 20px;
+    --article-paragraph-to-list-gap: 12px;
 
     --body-medium-size: 18px;
     --body-medium-line: 28px;

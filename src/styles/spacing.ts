@@ -27,6 +27,8 @@ const rawSpacing = {
   article: {
     "article/max width": "var(--article-max-width)",
     "article/paragraphGap": "var(--article-paragraph-gap)",
+    "article/list to paragraph gap": "var(--article-list-to-paragraph-gap)",
+    "article/paragraph to list gap": "var(--article-paragraph-to-list-gap)",
     "article/h1Gap": "var(--article-h1-gap)",
     "article/h2Gap": "var(--article-h2-gap)",
     "article/h3Gap": "var(--article-h3-gap)",
@@ -73,6 +75,8 @@ export const spacing = {
   article: {
     maxWidth: rawSpacing.article["article/max width"],
     paragraphGap: rawSpacing.article["article/paragraphGap"],
+    listToParagraphGap: rawSpacing.article["article/list to paragraph gap"],
+    paragraphToListGap: rawSpacing.article["article/paragraph to list gap"],
     h1Gap: rawSpacing.article["article/h1Gap"],
     h2Gap: rawSpacing.article["article/h2Gap"],
     h3Gap: rawSpacing.article["article/h3Gap"],
