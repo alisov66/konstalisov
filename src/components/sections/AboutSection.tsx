@@ -29,8 +29,8 @@ export default function AboutSection() {
       </h2>
 
       <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-wrap items-start gap-[var(--base-16)] lg:gap-[var(--base-20)]">
-        <div className="flex w-full max-w-[600px] shrink-0 flex-col gap-[var(--base-5)]">
-          <div className="relative aspect-[3/4] w-full overflow-hidden lg:h-[600px] lg:aspect-auto">
+        <div className="flex shrink-0 flex-col gap-[var(--base-5)]">
+          <div className="relative aspect-[3/4] w-full max-w-[450px] overflow-hidden min-[482px]:h-[600px] min-[482px]:w-[450px] min-[482px]:max-h-[600px] min-[482px]:aspect-auto">
             <img
               alt="Konstantin Alisov"
               className="size-full object-cover"
@@ -54,7 +54,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-20)] min-[760px]:min-w-[600px]">
+        <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-20)] min-[482px]:min-w-[450px]">
           <div className="flex w-full max-w-[820px] flex-col gap-[var(--base-3)] text-[var(--text-primary)]">
             <h3 style={typeStyle(tokens.typography.heading.h3)}>
               I enjoy figuring out how complicated things work
