@@ -171,7 +171,7 @@ export default function HeroNavigation({
     : undefined;
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const mediaQuery = window.matchMedia("(max-width: 1023px)");
     const updateTabletLayout = () => {
       setIsTabletLayout(mediaQuery.matches);
     };
@@ -229,6 +229,33 @@ export default function HeroNavigation({
     };
   }, [isTabletLayout]);
 
+  const renderHeroButton = (item: HeroNavigationItem) => {
+    const itemState = getNavigationState(item.id);
+
+    return (
+      <HeroButton
+        key={item.id}
+        onBlur={() => {
+          setHoveredItem(null);
+        }}
+        onFocus={() => {
+          setHoveredItem(itemState);
+        }}
+        onMouseEnter={() => {
+          setHoveredItem(itemState);
+        }}
+        onClick={() => {
+          router.push(item.href);
+        }}
+        selected={itemState !== null && itemState === hoveredItem}
+        size={renderedButtonSize}
+        type="button"
+      >
+        {item.label}
+      </HeroButton>
+    );
+  };
+
   return (
     <section
       {...props}
@@ -248,37 +275,23 @@ export default function HeroNavigation({
       <HeroActionGroup
         className={
           isTabletLayout
-            ? "w-[315px] max-w-full flex-wrap overflow-visible"
+            ? "w-max max-w-full flex-col overflow-visible"
             : "max-w-full overflow-visible"
         }
         style={heroActionGroupStyle}
       >
-        {items.map((item) => {
-          const itemState = getNavigationState(item.id);
-
-          return (
-            <HeroButton
-              key={item.id}
-              onBlur={() => {
-                setHoveredItem(null);
-              }}
-              onFocus={() => {
-                setHoveredItem(itemState);
-              }}
-              onMouseEnter={() => {
-                setHoveredItem(itemState);
-              }}
-              onClick={() => {
-                router.push(item.href);
-              }}
-              selected={itemState !== null && itemState === hoveredItem}
-              size={renderedButtonSize}
-              type="button"
-            >
-              {item.label}
-            </HeroButton>
-          );
-        })}
+        {isTabletLayout ? (
+          <>
+            <div className="flex items-center justify-center gap-[var(--hero-action-gap)]">
+              {items.slice(0, 2).map(renderHeroButton)}
+            </div>
+            <div className="flex items-center justify-center gap-[var(--hero-action-gap)]">
+              {items.slice(2, 4).map(renderHeroButton)}
+            </div>
+          </>
+        ) : (
+          items.map(renderHeroButton)
+        )}
       </HeroActionGroup>
 
       {showPattern && !isTabletLayout ? <HeroPattern state={state} /> : null}
