@@ -14,9 +14,9 @@ const avatarSrc = "/konstantin-avatar.png";
 const navigationItems = [
   { label: "Main", href: "/#hero" },
   { label: "Capabilities", href: "/capabilities" },
-  { label: "About", href: "#about", sectionId: "about" },
-  { label: "Contact", href: "#contact", sectionId: "contact" },
-  { label: "Download CV", href: "#cv" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+  { label: "Download CV", href: "/cv" },
 ];
 
 const headerClearance = 136;

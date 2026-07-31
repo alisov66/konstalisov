@@ -2,6 +2,7 @@
 
 import type { CSSProperties, HTMLAttributes } from "react";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import HeroActionGroup from "@/components/ui/HeroActionGroup";
 import HeroButton from "@/components/ui/HeroButton";
@@ -82,6 +83,7 @@ const dotColorByState: Record<HeroNavigationState, string> = {
 };
 
 export interface HeroNavigationItem {
+  href: string;
   id: string;
   label: string;
 }
@@ -139,6 +141,7 @@ export default function HeroNavigation({
   style,
   ...props
 }: HeroNavigationProps) {
+  const router = useRouter();
   const [hoveredItem, setHoveredItem] = useState<HeroNavigationState | null>(null);
   const state = hoveredItem ?? "default";
   const heroNavigationStyle = {
@@ -181,9 +184,7 @@ export default function HeroNavigation({
                 setHoveredItem(itemState);
               }}
               onClick={() => {
-                if (item.id === "capabilities" || item.id === "about") {
-                  window.location.hash = item.id;
-                }
+                router.push(item.href);
               }}
               selected={itemState !== null && itemState === hoveredItem}
               type="button"

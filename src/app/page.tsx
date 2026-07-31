@@ -1,16 +1,13 @@
-import AboutSection from "@/components/sections/AboutSection";
-import CapabilitiesGrid from "@/components/sections/CapabilitiesGrid";
 import HeroNavigation from "@/components/ui/HeroNavigation";
-import NavigationHeader from "@/components/ui/NavigationHeader";
 import { tokens } from "@/styles/tokens";
 
 const imgPic = "/konstantin-avatar.png";
 
 const heroItems = [
-  { id: "capabilities", label: "Capabilities" },
-  { id: "about", label: "About" },
-  { id: "contact", label: "Contact" },
-  { id: "cv", label: "Download CV" },
+  { id: "capabilities", label: "Capabilities", href: "/capabilities" },
+  { id: "about", label: "About", href: "/about" },
+  { id: "contact", label: "Contact", href: "/contact" },
+  { id: "cv", label: "Download CV", href: "/cv" },
 ];
 
 function typeStyle(token: {
@@ -28,7 +25,6 @@ function typeStyle(token: {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[var(--bg-beige)] text-[var(--text-primary)]">
-      <NavigationHeader heroId="hero" />
       <section
         className="mx-auto flex min-h-screen w-full max-w-[1024px] flex-col items-center gap-[var(--base-10)] px-[var(--padding-side)] pt-[var(--base-10)]"
         id="hero"
@@ -83,8 +79,6 @@ export default function Home() {
           items={heroItems}
         />
       </section>
-      <CapabilitiesGrid />
-      <AboutSection />
     </main>
   );
 }
