@@ -168,7 +168,7 @@ export default function CapabilitiesGrid() {
   return (
     <section
       className="flex w-full flex-col items-center gap-[var(--base-10)] bg-[var(--bg-beige)] px-[var(--padding-side)] pb-[var(--base-10)] pt-[var(--base-30)]"
-      id="work"
+      id="capabilities"
     >
       <h2
         className="w-full text-center text-[var(--text-accent)]"
