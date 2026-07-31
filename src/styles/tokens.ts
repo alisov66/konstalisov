@@ -44,6 +44,7 @@ export const tokens = {
 
     border: {
       primary: "var(--border-primary)",
+      secondary: "var(--border-secondary)",
       width: {
         thin: "var(--border-width-thin)",
         medium: "var(--border-width-medium)",
