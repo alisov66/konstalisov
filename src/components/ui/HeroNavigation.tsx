@@ -243,7 +243,7 @@ export default function HeroNavigation({
       <HeroActionGroup
         className={
           isTouchLayout
-            ? "grid max-w-full grid-cols-2 gap-[var(--base-3)] overflow-visible"
+            ? "grid max-w-full grid-cols-2 gap-0 overflow-visible"
             : "max-w-full overflow-visible"
         }
       >
