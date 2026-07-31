@@ -29,7 +29,7 @@ export default function AboutSection() {
       </h2>
 
       <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-wrap items-start gap-[var(--base-10)] min-[1600px]:gap-[var(--base-20)]">
-        <div className="flex w-full max-w-[600px] shrink-0 flex-col gap-[var(--base-5)] min-[482px]:sticky min-[482px]:top-0 min-[482px]:w-[450px]">
+        <div className="flex w-full max-w-[600px] shrink-0 flex-col gap-[var(--base-5)] min-[482px]:sticky min-[482px]:top-[108px] min-[482px]:w-[450px]">
           <div className="relative aspect-[3/4] max-h-[600px] w-full max-w-[450px] shrink-0 overflow-hidden min-[482px]:h-[600px] min-[482px]:aspect-auto">
             <img
               alt="Konstantin Alisov"
