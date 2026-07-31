@@ -102,6 +102,16 @@ const rawTypography = {
       lineHeight: "var(--button-medium-line)",
     },
 
+    sSemibold: {
+      fontSize: "var(--button-small-size)",
+      lineHeight: "var(--button-small-line)",
+    },
+
+    smallSemibold: {
+      fontSize: "var(--button-small-size)",
+      lineHeight: "var(--button-small-line)",
+    },
+
     lSemibold: {
       fontSize: "var(--button-large-size)",
       lineHeight: "var(--button-large-line)",
@@ -244,6 +254,18 @@ export const typography = {
 
     mediumSemibold: {
       ...rawTypography.button.mediumSemibold,
+      fontWeight: fontWeight.semibold,
+      paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
+    },
+
+    sSemibold: {
+      ...rawTypography.button.sSemibold,
+      fontWeight: fontWeight.semibold,
+      paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
+    },
+
+    smallSemibold: {
+      ...rawTypography.button.smallSemibold,
       fontWeight: fontWeight.semibold,
       paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
     },

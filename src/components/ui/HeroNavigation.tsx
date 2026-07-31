@@ -1,18 +1,25 @@
 "use client";
 
 import type { CSSProperties, HTMLAttributes } from "react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import HeroActionGroup from "@/components/ui/HeroActionGroup";
 import HeroButton from "@/components/ui/HeroButton";
 
 type HeroNavigationState = "default" | "capabilities" | "about" | "contact" | "cv";
+type HeroNavigationButtonSize = "L" | "M" | "S";
 
 type Dot = readonly [x: number, y: number, size: number];
 
 type HeroNavigationStyle = CSSProperties &
   Record<`--hero-navigation-${string}`, string | number>;
+
+const buttonRowMinWidth: Record<HeroNavigationButtonSize, number> = {
+  L: 488,
+  M: 416,
+  S: 328,
+};
 
 const dotsByState: Record<HeroNavigationState, readonly Dot[]> = {
   default: [
@@ -142,7 +149,9 @@ export default function HeroNavigation({
   ...props
 }: HeroNavigationProps) {
   const router = useRouter();
+  const navigationRef = useRef<HTMLElement | null>(null);
   const [hoveredItem, setHoveredItem] = useState<HeroNavigationState | null>(null);
+  const [buttonSize, setButtonSize] = useState<HeroNavigationButtonSize>("L");
   const state = hoveredItem ?? "default";
   const heroNavigationStyle = {
     "--hero-navigation-dot-transition":
@@ -151,6 +160,46 @@ export default function HeroNavigation({
       "all var(--motion-gentle-duration) var(--motion-gentle-easing)",
     "--hero-navigation-width": "577px",
   } satisfies HeroNavigationStyle;
+
+  useEffect(() => {
+    const updateButtonSize = () => {
+      const navigation = navigationRef.current;
+
+      if (!navigation) {
+        return;
+      }
+
+      const availableWidth = navigation.clientWidth;
+      const nextButtonSize =
+        availableWidth >= buttonRowMinWidth.L
+          ? "L"
+          : availableWidth >= buttonRowMinWidth.M
+            ? "M"
+            : "S";
+
+      setButtonSize((currentButtonSize) =>
+        currentButtonSize === nextButtonSize
+          ? currentButtonSize
+          : nextButtonSize,
+      );
+    };
+
+    updateButtonSize();
+
+    const observer = new ResizeObserver(updateButtonSize);
+    const navigation = navigationRef.current;
+
+    if (navigation) {
+      observer.observe(navigation);
+    }
+
+    window.addEventListener("resize", updateButtonSize);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updateButtonSize);
+    };
+  }, []);
 
   return (
     <section
@@ -165,6 +214,7 @@ export default function HeroNavigation({
         setHoveredItem(null);
         props.onMouseLeave?.(event);
       }}
+      ref={navigationRef}
       style={{ ...heroNavigationStyle, ...style }}
     >
       <HeroActionGroup className="max-w-full overflow-visible">
@@ -187,6 +237,7 @@ export default function HeroNavigation({
                 router.push(item.href);
               }}
               selected={itemState !== null && itemState === hoveredItem}
+              size={buttonSize}
               type="button"
             >
               {item.label}

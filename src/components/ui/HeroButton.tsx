@@ -92,7 +92,7 @@ const blobVariants = [
 export interface HeroButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   selected?: boolean;
-  size?: "L" | "M";
+  size?: "L" | "M" | "S";
 }
 
 export default function HeroButton({
@@ -116,9 +116,11 @@ export default function HeroButton({
   const blobVariant = blobVariants[blobVariantIndex];
   const drainTimeoutRef = useRef<number | null>(null);
   const typography =
-    size === "M"
-      ? tokens.typography.button.mediumSemibold
-      : tokens.typography.button.large;
+    size === "S"
+      ? tokens.typography.button.sSemibold
+      : size === "M"
+        ? tokens.typography.button.mediumSemibold
+        : tokens.typography.button.large;
 
   const clearDrainTimeout = () => {
     if (drainTimeoutRef.current === null) {
@@ -175,9 +177,17 @@ export default function HeroButton({
     "--hero-button-text": tokens.colors.button.hero.text,
     "--hero-button-radius": tokens.radius.pill,
     "--hero-button-padding-x":
-      size === "M" ? tokens.spacing.base[4] : tokens.spacing.base[6],
+      size === "S"
+        ? tokens.spacing.base[3]
+        : size === "M"
+          ? tokens.spacing.base[4]
+          : tokens.spacing.base[6],
     "--hero-button-padding-y":
-      size === "M" ? tokens.spacing.base[3] : tokens.spacing.base[4],
+      size === "S"
+        ? tokens.spacing.base[2]
+        : size === "M"
+          ? tokens.spacing.base[3]
+          : tokens.spacing.base[4],
     "--hero-button-font-size": typography.fontSize,
     "--hero-button-line-height": typography.lineHeight,
     "--hero-button-font-weight": typography.fontWeight,
@@ -211,7 +221,6 @@ export default function HeroButton({
         "hero-button inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap",
         "rounded-[var(--hero-button-radius)] bg-[var(--hero-button-bg)] px-[var(--hero-button-padding-x)] py-[var(--hero-button-padding-y)]",
         "text-[length:var(--hero-button-font-size)] font-[var(--hero-button-font-weight)] leading-[var(--hero-button-line-height)] text-[var(--hero-button-text)]",
-        "max-md:px-[var(--base-4)] max-md:py-[var(--base-3)] max-md:text-[length:var(--button-medium-size)] max-md:leading-[var(--button-medium-line)] max-md:font-[var(--font-weight-semibold)]",
         "[transition:var(--hero-button-transition)]",
         className,
       ]

@@ -101,6 +101,10 @@
   --button-medium-weight: 500;
   --button-medium-semibold-weight: 600;
 
+  --button-small-size: 12px;
+  --button-small-line: 16px;
+  --button-small-weight: 600;
+
   --button-large-size: 20px;
   --button-large-line: 24px;
   --button-large-weight: 600;
