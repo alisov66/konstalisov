@@ -74,10 +74,10 @@ export default function AboutSection() {
           </div>
 
           <div className="flex w-full flex-col items-start gap-[var(--base-10)] text-[var(--text-primary)]">
-            <div className="flex w-full min-w-[292px] max-w-[820px] flex-col gap-[var(--base-3)]">
+            <div className="flex w-full min-w-[292px] max-w-[820px] flex-col gap-[var(--base-1)]">
               <h4
                 className="text-[var(--text-accent)]"
-                style={typeStyle(tokens.typography.heading.h4)}
+                style={typeStyle(tokens.typography.heading.h5)}
               >
                 Exploring
               </h4>
@@ -95,10 +95,10 @@ export default function AboutSection() {
               </ul>
             </div>
 
-            <div className="flex w-full min-w-[292px] max-w-[820px] flex-col gap-[var(--base-3)]">
+            <div className="flex w-full min-w-[292px] max-w-[820px] flex-col gap-[var(--base-1)]">
               <h4
                 className="text-[var(--text-accent)]"
-                style={typeStyle(tokens.typography.heading.h4)}
+                style={typeStyle(tokens.typography.heading.h5)}
               >
                 Building
               </h4>
@@ -113,10 +113,10 @@ export default function AboutSection() {
               </p>
             </div>
 
-            <div className="flex w-full min-w-[292px] max-w-[820px] flex-col gap-[var(--base-3)]">
+            <div className="flex w-full min-w-[292px] max-w-[820px] flex-col gap-[var(--base-1)]">
               <h4
                 className="text-[var(--text-accent)]"
-                style={typeStyle(tokens.typography.heading.h4)}
+                style={typeStyle(tokens.typography.heading.h5)}
               >
                 Working style
               </h4>
