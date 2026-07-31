@@ -152,7 +152,9 @@ export default function HeroNavigation({
   const navigationRef = useRef<HTMLElement | null>(null);
   const [hoveredItem, setHoveredItem] = useState<HeroNavigationState | null>(null);
   const [buttonSize, setButtonSize] = useState<HeroNavigationButtonSize>("L");
+  const [isTouchLayout, setIsTouchLayout] = useState(false);
   const state = hoveredItem ?? "default";
+  const renderedButtonSize = isTouchLayout ? "L" : buttonSize;
   const heroNavigationStyle = {
     "--hero-navigation-dot-transition":
       "cx var(--motion-gentle-duration) var(--motion-gentle-easing), cy var(--motion-gentle-duration) var(--motion-gentle-easing), fill var(--motion-gentle-duration) var(--motion-gentle-easing), r var(--motion-gentle-duration) var(--motion-gentle-easing)",
@@ -162,6 +164,26 @@ export default function HeroNavigation({
   } satisfies HeroNavigationStyle;
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(hover: none), (pointer: coarse)");
+    const updateTouchLayout = () => {
+      setIsTouchLayout(
+        mediaQuery.matches || navigator.maxTouchPoints > 0,
+      );
+    };
+
+    updateTouchLayout();
+    mediaQuery.addEventListener("change", updateTouchLayout);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateTouchLayout);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isTouchLayout) {
+      return;
+    }
+
     const updateButtonSize = () => {
       const navigation = navigationRef.current;
 
@@ -200,7 +222,7 @@ export default function HeroNavigation({
       observer.disconnect();
       window.removeEventListener("resize", updateButtonSize);
     };
-  }, []);
+  }, [isTouchLayout]);
 
   return (
     <section
@@ -218,7 +240,13 @@ export default function HeroNavigation({
       ref={navigationRef}
       style={{ ...heroNavigationStyle, ...style }}
     >
-      <HeroActionGroup className="max-w-full overflow-visible">
+      <HeroActionGroup
+        className={
+          isTouchLayout
+            ? "grid max-w-full grid-cols-2 gap-[var(--base-3)] overflow-visible"
+            : "max-w-full overflow-visible"
+        }
+      >
         {items.map((item) => {
           const itemState = getNavigationState(item.id);
 
@@ -238,7 +266,7 @@ export default function HeroNavigation({
                 router.push(item.href);
               }}
               selected={itemState !== null && itemState === hoveredItem}
-              size={buttonSize}
+              size={renderedButtonSize}
               type="button"
             >
               {item.label}
@@ -247,7 +275,7 @@ export default function HeroNavigation({
         })}
       </HeroActionGroup>
 
-      {showPattern ? <HeroPattern state={state} /> : null}
+      {showPattern && !isTouchLayout ? <HeroPattern state={state} /> : null}
     </section>
   );
 }
