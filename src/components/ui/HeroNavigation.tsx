@@ -166,7 +166,7 @@ export default function HeroNavigation({
   } satisfies HeroNavigationStyle;
   const heroActionGroupStyle = isTabletLayout
     ? ({
-        "--hero-action-gap": "var(--base-5)",
+        "--hero-action-gap": "var(--base-3)",
       } satisfies HeroActionGroupOverrideStyle)
     : undefined;
 
@@ -248,7 +248,7 @@ export default function HeroNavigation({
       <HeroActionGroup
         className={
           isTabletLayout
-            ? "!grid w-max max-w-full grid-cols-[max-content_max-content] justify-items-center gap-x-[var(--base-5)] gap-y-[var(--base-3)] overflow-visible"
+            ? "w-[315px] max-w-full flex-wrap overflow-visible"
             : "max-w-full overflow-visible"
         }
         style={heroActionGroupStyle}
