@@ -75,7 +75,6 @@ export default function Home() {
         </div>
 
         <HeroNavigation
-          className="shrink-0"
           items={heroItems}
         />
       </section>

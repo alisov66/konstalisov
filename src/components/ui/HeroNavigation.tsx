@@ -169,7 +169,8 @@ export default function HeroNavigation({
         return;
       }
 
-      const availableWidth = navigation.clientWidth;
+      const parentWidth = navigation.parentElement?.clientWidth;
+      const availableWidth = parentWidth || navigation.clientWidth;
       const nextButtonSize =
         availableWidth >= buttonRowMinWidth.L
           ? "L"
@@ -205,7 +206,7 @@ export default function HeroNavigation({
     <section
       {...props}
       className={[
-        "flex flex-col items-center [transition:var(--hero-navigation-shell-transition)]",
+        "flex w-full max-w-full flex-col items-center [transition:var(--hero-navigation-shell-transition)]",
         className,
       ]
         .filter(Boolean)
