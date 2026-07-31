@@ -29,8 +29,8 @@ export default function AboutSection() {
       </h2>
 
       <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-wrap items-start gap-[var(--base-16)] lg:gap-[var(--base-20)]">
-        <div className="flex min-w-px max-w-[450px] flex-1 flex-col gap-[var(--base-5)]">
-          <div className="relative aspect-[3/4] max-h-[600px] w-full max-w-[450px] shrink-0 overflow-hidden">
+        <div className="flex w-full max-w-[450px] shrink-0 flex-col gap-[var(--base-5)] min-[482px]:w-[450px]">
+          <div className="relative aspect-[3/4] max-h-[600px] w-full max-w-[450px] shrink-0 overflow-hidden min-[482px]:h-[600px] min-[482px]:aspect-auto">
             <img
               alt="Konstantin Alisov"
               className="size-full object-cover"
@@ -38,7 +38,7 @@ export default function AboutSection() {
             />
           </div>
 
-          <div className="flex flex-col gap-[var(--base-1)]">
+          <div className="flex w-full flex-col gap-[var(--base-1)]">
             <p
               className="text-[var(--text-accent)]"
               style={typeStyle(tokens.typography.heading.h5)}
@@ -54,7 +54,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="flex w-[min(958px,100%)] min-w-0 shrink-0 flex-col items-start gap-[var(--base-20)] min-[332px]:min-w-[300px]">
+        <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-20)] min-[332px]:min-w-[300px]">
           <div className="flex w-full max-w-[820px] flex-col gap-[var(--base-3)] text-[var(--text-primary)]">
             <h3 style={typeStyle(tokens.typography.heading.h3)}>
               I enjoy figuring out how complicated things work
