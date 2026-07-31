@@ -106,30 +106,30 @@ function getNavigationState(id: string): HeroNavigationState | null {
 
 function HeroPattern({ state }: { state: HeroNavigationState }) {
   return (
-    <div
+    <svg
       aria-hidden
-      className="relative h-[259px] w-full max-w-[577px] shrink-0 overflow-visible"
+      className="relative aspect-[577/259] w-full max-w-[577px] shrink-0 overflow-visible"
+      viewBox="0 0 577 259"
     >
       {dotsByState[state].map(([x, y, size], index) => {
         const dotSize = 12;
         const inset = (size - dotSize) / 2;
         const dotStyle: CSSProperties = {
-          backgroundColor: dotColorByState[state],
-          height: `${(dotSize / 259) * 100}%`,
-          left: `${((x + inset) / 577) * 100}%`,
-          top: `${((y + inset) / 259) * 100}%`,
-          width: `${(dotSize / 577) * 100}%`,
+          fill: dotColorByState[state],
         };
 
         return (
-          <span
-            className="absolute rounded-full [transition:var(--hero-navigation-dot-transition)]"
+          <circle
+            className="[transition:var(--hero-navigation-dot-transition)]"
+            cx={x + inset + dotSize / 2}
+            cy={y + inset + dotSize / 2}
             key={`tile-${index + 1}`}
+            r={dotSize / 2}
             style={dotStyle}
           />
         );
       })}
-    </div>
+    </svg>
   );
 }
 
@@ -145,7 +145,7 @@ export default function HeroNavigation({
   const state = hoveredItem ?? "default";
   const heroNavigationStyle = {
     "--hero-navigation-dot-transition":
-      "background-color var(--motion-gentle-duration) var(--motion-gentle-easing), height var(--motion-gentle-duration) var(--motion-gentle-easing), left var(--motion-gentle-duration) var(--motion-gentle-easing), top var(--motion-gentle-duration) var(--motion-gentle-easing), width var(--motion-gentle-duration) var(--motion-gentle-easing)",
+      "cx var(--motion-gentle-duration) var(--motion-gentle-easing), cy var(--motion-gentle-duration) var(--motion-gentle-easing), fill var(--motion-gentle-duration) var(--motion-gentle-easing), r var(--motion-gentle-duration) var(--motion-gentle-easing)",
     "--hero-navigation-shell-transition":
       "all var(--motion-gentle-duration) var(--motion-gentle-easing)",
     "--hero-navigation-width": "577px",
