@@ -248,7 +248,7 @@ export default function HeroNavigation({
       <HeroActionGroup
         className={
           isTabletLayout
-            ? "grid max-w-full grid-cols-2 overflow-visible"
+            ? "!grid w-max max-w-full grid-cols-[max-content_max-content] overflow-visible"
             : "max-w-full overflow-visible"
         }
         style={heroActionGroupStyle}
