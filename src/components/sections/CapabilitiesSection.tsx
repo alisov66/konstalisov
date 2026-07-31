@@ -1818,7 +1818,7 @@ export function CapabilitiesIntroduction() {
     <section className="flex w-full flex-col items-start bg-[var(--bg-beige)] px-[var(--padding-side)] pb-[var(--base-5)] pt-[var(--base-24)] lg:pb-[var(--base-30)] lg:pt-[var(--base-40)]">
       <div className="flex w-full max-w-[820px] flex-col items-start gap-[var(--base-6)]">
         <h1
-          className="w-full text-[var(--text-primary)]"
+          className="w-full text-[var(--text-accent)]"
           style={typeStyle(tokens.typography.heading.h1)}
         >
           Capabilities
