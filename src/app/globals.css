@@ -978,15 +978,20 @@ a {
 }
 
 .hero-section {
-  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start !important;
   gap: var(--base-5);
+  min-height: 100svh;
   padding-top: var(--base-10);
   padding-bottom: var(--base-10);
 }
 
 @media (min-width: 768px) {
   .hero-section {
-    justify-content: center;
+    justify-content: center !important;
     gap: var(--base-10);
+    min-height: 100vh;
+    min-height: 100svh;
   }
 }
