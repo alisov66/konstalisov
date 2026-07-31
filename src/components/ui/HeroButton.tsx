@@ -211,6 +211,7 @@ export default function HeroButton({
         "hero-button inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap",
         "rounded-[var(--hero-button-radius)] bg-[var(--hero-button-bg)] px-[var(--hero-button-padding-x)] py-[var(--hero-button-padding-y)]",
         "text-[length:var(--hero-button-font-size)] font-[var(--hero-button-font-weight)] leading-[var(--hero-button-line-height)] text-[var(--hero-button-text)]",
+        "max-md:px-[var(--base-4)] max-md:py-[var(--base-3)] max-md:text-[length:var(--button-medium-size)] max-md:leading-[var(--button-medium-line)] max-md:font-[var(--font-weight-semibold)]",
         "[transition:var(--hero-button-transition)]",
         className,
       ]
