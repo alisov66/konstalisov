@@ -14,6 +14,8 @@ type Dot = readonly [x: number, y: number, size: number];
 
 type HeroNavigationStyle = CSSProperties &
   Record<`--hero-navigation-${string}`, string | number>;
+type HeroActionGroupOverrideStyle = CSSProperties &
+  Record<"--hero-action-gap", string>;
 
 const buttonRowMinWidth: Record<HeroNavigationButtonSize, number> = {
   L: 488,
@@ -162,6 +164,11 @@ export default function HeroNavigation({
       "all var(--motion-gentle-duration) var(--motion-gentle-easing)",
     "--hero-navigation-width": "577px",
   } satisfies HeroNavigationStyle;
+  const heroActionGroupStyle = isTabletLayout
+    ? ({
+        "--hero-action-gap": "var(--base-3)",
+      } satisfies HeroActionGroupOverrideStyle)
+    : undefined;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 767px)");
@@ -241,9 +248,10 @@ export default function HeroNavigation({
       <HeroActionGroup
         className={
           isTabletLayout
-            ? "grid max-w-full grid-cols-2 gap-[var(--base-3)] overflow-visible"
+            ? "grid max-w-full grid-cols-2 overflow-visible"
             : "max-w-full overflow-visible"
         }
+        style={heroActionGroupStyle}
       >
         {items.map((item) => {
           const itemState = getNavigationState(item.id);

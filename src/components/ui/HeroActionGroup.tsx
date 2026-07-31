@@ -3,8 +3,10 @@ import type { CSSProperties, HTMLAttributes, ReactNode } from "react";
 type HeroActionGroupStyle = CSSProperties &
   Record<`--hero-action-${string}`, string | number>;
 
-export interface HeroActionGroupProps extends HTMLAttributes<HTMLDivElement> {
+export interface HeroActionGroupProps
+  extends Omit<HTMLAttributes<HTMLDivElement>, "style"> {
   children: ReactNode;
+  style?: HeroActionGroupStyle;
 }
 
 export default function HeroActionGroup({
