@@ -28,8 +28,8 @@ export default function AboutSection() {
         About
       </h2>
 
-      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-col items-start gap-[var(--base-16)] lg:flex-row lg:gap-[var(--base-20)]">
-        <div className="flex w-full max-w-[450px] shrink-0 flex-col gap-[var(--base-5)]">
+      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-wrap items-start gap-[var(--base-16)] lg:gap-[var(--base-20)]">
+        <div className="flex w-full max-w-[600px] shrink-0 flex-col gap-[var(--base-5)]">
           <div className="relative aspect-[3/4] w-full overflow-hidden lg:h-[600px] lg:aspect-auto">
             <img
               alt="Konstantin Alisov"
@@ -54,7 +54,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="flex w-full flex-1 flex-col items-start gap-[var(--base-20)]">
+        <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-20)] min-[760px]:min-w-[600px]">
           <div className="flex w-full max-w-[820px] flex-col gap-[var(--base-3)] text-[var(--text-primary)]">
             <h3 style={typeStyle(tokens.typography.heading.h3)}>
               I enjoy figuring out how complicated things work
@@ -73,8 +73,8 @@ export default function AboutSection() {
             </p>
           </div>
 
-          <div className="grid w-full grid-cols-1 gap-[var(--base-10)] text-[var(--text-primary)] md:grid-cols-3">
-            <div className="flex flex-col gap-[var(--base-3)]">
+          <div className="flex w-full flex-wrap items-start gap-[var(--base-10)] text-[var(--text-primary)]">
+            <div className="flex min-w-[292px] max-w-[820px] flex-1 flex-col gap-[var(--base-3)]">
               <h4
                 className="text-[var(--text-accent)]"
                 style={typeStyle(tokens.typography.heading.h4)}
@@ -95,7 +95,7 @@ export default function AboutSection() {
               </ul>
             </div>
 
-            <div className="flex flex-col gap-[var(--base-3)]">
+            <div className="flex min-w-[292px] max-w-[820px] flex-1 flex-col gap-[var(--base-3)]">
               <h4
                 className="text-[var(--text-accent)]"
                 style={typeStyle(tokens.typography.heading.h4)}
@@ -113,7 +113,7 @@ export default function AboutSection() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-[var(--base-3)]">
+            <div className="flex min-w-[292px] max-w-[820px] flex-1 flex-col gap-[var(--base-3)]">
               <h4
                 className="text-[var(--text-accent)]"
                 style={typeStyle(tokens.typography.heading.h4)}
