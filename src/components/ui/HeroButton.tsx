@@ -170,9 +170,9 @@ export default function HeroButton({
     "--hero-button-radius": tokens.radius.pill,
     "--hero-button-padding-x": tokens.spacing.base[6],
     "--hero-button-padding-y": tokens.spacing.base[4],
-    "--hero-button-font-size": tokens.typography.heading.h5.fontSize,
-    "--hero-button-line-height": tokens.typography.heading.h5.lineHeight,
-    "--hero-button-font-weight": tokens.typography.heading.h5.fontWeight,
+    "--hero-button-font-size": tokens.typography.button.large.fontSize,
+    "--hero-button-line-height": tokens.typography.button.large.lineHeight,
+    "--hero-button-font-weight": tokens.typography.button.large.fontWeight,
     "--hero-button-transition":
       "background-color 300ms ease-in, color 150ms ease-in, box-shadow 300ms ease-in, transform 300ms ease-in",
     "--navi-blob-color": tokens.colors.button.hero.hover,

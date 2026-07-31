@@ -76,6 +76,11 @@ const rawTypography = {
       fontSize: "var(--button-medium-size)",
       lineHeight: "var(--button-medium-line)",
     },
+
+    large: {
+      fontSize: "var(--button-large-size)",
+      lineHeight: "var(--button-large-line)",
+    },
   },
 } as const;
 
@@ -168,6 +173,12 @@ export const typography = {
     medium: {
       ...rawTypography.button.medium,
       fontWeight: fontWeight.medium,
+      paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
+    },
+
+    large: {
+      ...rawTypography.button.large,
+      fontWeight: fontWeight.semibold,
       paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
     },
   },
