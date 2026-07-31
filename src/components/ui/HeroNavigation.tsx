@@ -152,9 +152,9 @@ export default function HeroNavigation({
   const navigationRef = useRef<HTMLElement | null>(null);
   const [hoveredItem, setHoveredItem] = useState<HeroNavigationState | null>(null);
   const [buttonSize, setButtonSize] = useState<HeroNavigationButtonSize>("L");
-  const [isTouchLayout, setIsTouchLayout] = useState(false);
+  const [isTabletLayout, setIsTabletLayout] = useState(false);
   const state = hoveredItem ?? "default";
-  const renderedButtonSize = isTouchLayout ? "L" : buttonSize;
+  const renderedButtonSize = isTabletLayout ? "L" : buttonSize;
   const heroNavigationStyle = {
     "--hero-navigation-dot-transition":
       "cx var(--motion-gentle-duration) var(--motion-gentle-easing), cy var(--motion-gentle-duration) var(--motion-gentle-easing), fill var(--motion-gentle-duration) var(--motion-gentle-easing), r var(--motion-gentle-duration) var(--motion-gentle-easing)",
@@ -164,23 +164,21 @@ export default function HeroNavigation({
   } satisfies HeroNavigationStyle;
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(hover: none), (pointer: coarse)");
-    const updateTouchLayout = () => {
-      setIsTouchLayout(
-        mediaQuery.matches || navigator.maxTouchPoints > 0,
-      );
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const updateTabletLayout = () => {
+      setIsTabletLayout(mediaQuery.matches);
     };
 
-    updateTouchLayout();
-    mediaQuery.addEventListener("change", updateTouchLayout);
+    updateTabletLayout();
+    mediaQuery.addEventListener("change", updateTabletLayout);
 
     return () => {
-      mediaQuery.removeEventListener("change", updateTouchLayout);
+      mediaQuery.removeEventListener("change", updateTabletLayout);
     };
   }, []);
 
   useEffect(() => {
-    if (isTouchLayout) {
+    if (isTabletLayout) {
       return;
     }
 
@@ -222,7 +220,7 @@ export default function HeroNavigation({
       observer.disconnect();
       window.removeEventListener("resize", updateButtonSize);
     };
-  }, [isTouchLayout]);
+  }, [isTabletLayout]);
 
   return (
     <section
@@ -242,7 +240,7 @@ export default function HeroNavigation({
     >
       <HeroActionGroup
         className={
-          isTouchLayout
+          isTabletLayout
             ? "grid max-w-full grid-cols-2 gap-[var(--base-3)] overflow-visible"
             : "max-w-full overflow-visible"
         }
@@ -275,7 +273,7 @@ export default function HeroNavigation({
         })}
       </HeroActionGroup>
 
-      {showPattern && !isTouchLayout ? <HeroPattern state={state} /> : null}
+      {showPattern && !isTabletLayout ? <HeroPattern state={state} /> : null}
     </section>
   );
 }
