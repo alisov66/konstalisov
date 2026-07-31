@@ -976,11 +976,3 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-@media (hover: none), (pointer: coarse) {
-  .hero-section {
-    justify-content: flex-start;
-    gap: var(--base-5);
-    padding-top: var(--base-10);
-  }
-}

@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[var(--bg-beige)] text-[var(--text-primary)]">
       <section
-        className="hero-section mx-auto flex min-h-screen w-full max-w-[1024px] flex-col items-center gap-[var(--base-5)] px-[var(--padding-side)] pb-[var(--base-10)] pt-[var(--base-10)] md:justify-center md:gap-[var(--base-10)] md:py-[var(--base-10)]"
+        className="hero-section mx-auto flex min-h-screen w-full max-w-[1024px] flex-col items-center justify-start gap-[var(--base-5)] px-[var(--padding-side)] pb-[var(--base-10)] pt-[var(--base-10)]"
         id="hero"
       >
         <div className="flex w-full flex-col items-center gap-[var(--base-3)]">
