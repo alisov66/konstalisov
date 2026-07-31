@@ -245,10 +245,10 @@ export default function NavigationHeader({
           >
             <span className="relative size-[52px] shrink-0" />
             <span className="flex w-[172px] flex-col gap-0">
-              <span style={typeStyle(tokens.typography.body.medium)}>
+              <span style={typeStyle(tokens.typography.body.sSemibold)}>
                 Konstantin Alisov
               </span>
-              <span style={typeStyle(tokens.typography.body.small)}>
+              <span style={typeStyle(tokens.typography.body.s)}>
                 Product designer
               </span>
             </span>
@@ -299,13 +299,13 @@ export default function NavigationHeader({
             >
               <span
                 className="truncate text-[var(--text-primary)]"
-                style={typeStyle(tokens.typography.body.medium)}
+                style={typeStyle(tokens.typography.body.sSemibold)}
               >
                 Konstantin Alisov
               </span>
               <span
-                className="truncate text-[var(--text-secondary)]"
-                style={typeStyle(tokens.typography.body.small)}
+                className="truncate text-[var(--text-primary)]"
+                style={typeStyle(tokens.typography.body.s)}
               >
                 Product designer
               </span>
