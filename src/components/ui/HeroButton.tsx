@@ -92,12 +92,14 @@ const blobVariants = [
 export interface HeroButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   selected?: boolean;
+  size?: "L" | "M";
 }
 
 export default function HeroButton({
   children,
   className,
   selected = false,
+  size = "L",
   onBlur,
   onFocus,
   onPointerEnter,
@@ -113,6 +115,10 @@ export default function HeroButton({
   const [blobVariantIndex, setBlobVariantIndex] = useState(0);
   const blobVariant = blobVariants[blobVariantIndex];
   const drainTimeoutRef = useRef<number | null>(null);
+  const typography =
+    size === "M"
+      ? tokens.typography.button.mediumSemibold
+      : tokens.typography.button.large;
 
   const clearDrainTimeout = () => {
     if (drainTimeoutRef.current === null) {
@@ -168,11 +174,13 @@ export default function HeroButton({
     "--hero-button-hover-bg": tokens.colors.button.hero.hover,
     "--hero-button-text": tokens.colors.button.hero.text,
     "--hero-button-radius": tokens.radius.pill,
-    "--hero-button-padding-x": tokens.spacing.base[6],
-    "--hero-button-padding-y": tokens.spacing.base[4],
-    "--hero-button-font-size": tokens.typography.button.large.fontSize,
-    "--hero-button-line-height": tokens.typography.button.large.lineHeight,
-    "--hero-button-font-weight": tokens.typography.button.large.fontWeight,
+    "--hero-button-padding-x":
+      size === "M" ? tokens.spacing.base[4] : tokens.spacing.base[6],
+    "--hero-button-padding-y":
+      size === "M" ? tokens.spacing.base[3] : tokens.spacing.base[4],
+    "--hero-button-font-size": typography.fontSize,
+    "--hero-button-line-height": typography.lineHeight,
+    "--hero-button-font-weight": typography.fontWeight,
     "--hero-button-transition":
       "background-color 300ms ease-in, color 150ms ease-in, box-shadow 300ms ease-in, transform 300ms ease-in",
     "--navi-blob-color": tokens.colors.button.hero.hover,
