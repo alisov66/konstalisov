@@ -19,7 +19,7 @@ export default function ContactPage() {
   return (
     <main className="flex min-h-dvh flex-col bg-[var(--bg-beige)] text-[var(--text-primary)]">
       <NavigationHeader alwaysVisible />
-      <section className="mb-[var(--base-24)] flex w-full flex-1 flex-col items-start bg-[var(--bg-beige)] px-[var(--padding-side)] py-[var(--base-24)] min-[768px]:mb-[var(--base-30)] min-[768px]:py-[var(--base-30)]">
+      <section className="flex min-h-0 w-full flex-1 flex-col items-start bg-[var(--bg-beige)] px-[var(--padding-side)] py-[var(--base-24)] min-[768px]:py-[var(--base-30)]">
         <div className="flex w-full max-w-[var(--container-max)] flex-col gap-[var(--base-6)]">
           <h1
             className="w-full text-[var(--text-accent)]"
@@ -36,7 +36,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="mt-[var(--base-10)] grid w-full max-w-[var(--container-max)] flex-1 auto-rows-fr grid-cols-1 gap-[var(--base-4)] min-[900px]:grid-cols-2 min-[1280px]:mt-[var(--base-20)] min-[1280px]:gap-[var(--base-10)]">
+        <div className="mt-[var(--base-10)] grid min-h-0 w-full max-w-[var(--container-max)] flex-1 auto-rows-fr grid-cols-1 gap-[var(--base-4)] min-[900px]:grid-cols-2 min-[1280px]:mt-[var(--base-20)] min-[1280px]:gap-[var(--base-10)]">
           <ContactButton href="mailto:alisovdesign@gmail.com">
             Email
           </ContactButton>
