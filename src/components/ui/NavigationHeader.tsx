@@ -225,7 +225,7 @@ export default function NavigationHeader({
       <nav
         aria-label="Primary"
         className={[
-          "relative z-10 flex w-full max-w-[var(--container-max)] items-center rounded-[var(--lg)] border border-[var(--border-secondary)] border-solid bg-[var(--bg-beige-light)]",
+          "relative z-10 flex w-full max-w-[var(--container-max)] items-center rounded-[var(--lg)] bg-[var(--bg-beige-light)]",
           isMobileLayout
             ? "flex-col items-start justify-center px-[var(--base-2)] py-[var(--base-1)]"
             : "flex-row justify-between px-[var(--base-3)] py-[var(--base-2)]",
