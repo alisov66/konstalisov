@@ -20,7 +20,7 @@ export default function ContactPage() {
     <main className="flex min-h-dvh flex-col bg-[var(--bg-beige)] text-[var(--text-primary)]">
       <NavigationHeader alwaysVisible />
       <section className="flex min-h-0 w-full flex-1 flex-col items-start bg-[var(--bg-beige)] px-[var(--padding-side)] py-[var(--base-24)] min-[768px]:py-[var(--base-30)]">
-        <div className="flex w-full max-w-[var(--container-max)] flex-col gap-[var(--base-6)]">
+        <div className="flex w-full flex-col gap-[var(--base-6)] min-[768px]:max-w-[820px]">
           <h1
             className="w-full text-[var(--text-accent)]"
             style={typeStyle(tokens.typography.heading.h1)}
@@ -31,8 +31,10 @@ export default function ContactPage() {
             className="w-full text-[var(--text-primary)]"
             style={typeStyle(tokens.typography.body.medium)}
           >
-            I&apos;m always open to thoughtful conversations about product
-            design, systems, and complex workflows.
+            Every great product starts with a conversation.
+            <br />
+            If my work resonates with you, I&apos;d love to hear about the
+            challenges you&apos;re solving.
           </p>
         </div>
 
