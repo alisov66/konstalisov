@@ -15,23 +15,10 @@ function typeStyle(token: {
 
 export default function Footer() {
   return (
-    <footer className="flex w-full flex-col items-start justify-between gap-[var(--base-5)] border-t border-[var(--border-secondary)] px-[var(--padding-side)] py-[var(--base-6)] min-[768px]:flex-row min-[768px]:items-center">
-      <div
-        className="flex shrink-0 flex-col items-start justify-center whitespace-nowrap"
-        style={typeStyle(tokens.typography.body.s)}
-      >
-        <p
-          className="text-[var(--text-secondary)]"
-          style={{ fontWeight: tokens.typography.fontWeight.semibold }}
-        >
-          © Konstantin Alisov
-        </p>
-        <p className="text-[var(--text-tertiary)]">2026</p>
-      </div>
-
+    <footer className="flex w-full flex-col items-center justify-start gap-[var(--base-5)] border-t border-[var(--border-secondary)] px-[var(--padding-side)] py-[var(--base-6)] min-[768px]:h-[96px] min-[768px]:flex-row min-[768px]:justify-between">
       <nav
         aria-label="Footer links"
-        className="flex shrink-0 items-center gap-[var(--base-5)]"
+        className="order-1 flex shrink-0 items-center justify-center gap-[var(--base-5)] min-[768px]:order-2"
       >
         <FooterLink href="mailto:alisovdesign@gmail.com">Email</FooterLink>
         <FooterLink
@@ -42,6 +29,19 @@ export default function Footer() {
           LinkedIn
         </FooterLink>
       </nav>
+
+      <div
+        className="order-2 flex min-w-0 flex-col items-center justify-center whitespace-nowrap text-center min-[768px]:order-1 min-[768px]:flex-1 min-[768px]:items-start min-[768px]:text-left"
+        style={typeStyle(tokens.typography.body.s)}
+      >
+        <p
+          className="text-[var(--text-primary)]"
+          style={{ fontWeight: tokens.typography.fontWeight.semibold }}
+        >
+          © Konstantin Alisov
+        </p>
+        <p className="text-[var(--text-tertiary)]">2026</p>
+      </div>
     </footer>
   );
 }
