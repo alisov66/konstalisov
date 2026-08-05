@@ -94,9 +94,9 @@ export default function ContactButton({
     <a
       {...props}
       className={[
-        "contact-button group flex min-h-[320px] w-full items-center justify-center rounded-[var(--xl)] bg-[var(--bg-beige-light)] p-[var(--base-6)] text-center text-[var(--text-primary)] no-underline",
+        "contact-button group flex h-full min-h-[320px] w-full items-center justify-center rounded-[var(--xl)] bg-[var(--bg-beige-light)] p-[var(--base-6)] text-center text-[var(--text-primary)] no-underline",
         "transition-[background-color,transform] duration-300 ease-out hover:bg-[var(--button-hero-hover)] focus-visible:bg-[var(--button-hero-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--text-primary)]",
-        "min-[768px]:min-h-[460px] min-[1280px]:h-[689px]",
+        "min-[768px]:min-h-[460px]",
         className,
       ]
         .filter(Boolean)

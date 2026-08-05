@@ -17,9 +17,9 @@ function typeStyle(token: {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-[var(--bg-beige)] text-[var(--text-primary)]">
+    <main className="flex min-h-dvh flex-col bg-[var(--bg-beige)] text-[var(--text-primary)]">
       <NavigationHeader alwaysVisible />
-      <section className="flex w-full flex-col items-start bg-[var(--bg-beige)] px-[var(--padding-side)] pb-[var(--base-6)] pt-[var(--base-30)]">
+      <section className="flex w-full flex-1 flex-col items-start bg-[var(--bg-beige)] px-[var(--padding-side)] pb-[var(--base-6)] pt-[var(--base-30)]">
         <h1
           className="w-full text-[var(--text-accent)]"
           style={typeStyle(tokens.typography.heading.h2)}
@@ -34,7 +34,7 @@ export default function ContactPage() {
           systems, and complex workflows.
         </p>
 
-        <div className="mt-[var(--base-20)] grid w-full max-w-[var(--container-max)] grid-cols-1 gap-[var(--base-10)] min-[900px]:grid-cols-2">
+        <div className="mt-[var(--base-20)] grid w-full max-w-[var(--container-max)] flex-1 auto-rows-fr grid-cols-1 gap-[var(--base-10)] min-[900px]:grid-cols-2">
           <ContactButton href="mailto:alisovdesign@gmail.com">
             Email
           </ContactButton>
