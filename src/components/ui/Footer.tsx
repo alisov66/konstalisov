@@ -15,7 +15,7 @@ function typeStyle(token: {
 
 export default function Footer() {
   return (
-    <footer className="flex w-full flex-col items-center justify-start gap-[var(--base-5)] border-t border-[var(--border-secondary)] px-[var(--padding-side)] py-[var(--base-6)] min-[768px]:h-[96px] min-[768px]:flex-row min-[768px]:justify-between">
+    <footer className="flex h-[152px] w-full shrink-0 flex-col items-center justify-start gap-[var(--base-5)] border-t border-[var(--border-secondary)] px-[var(--padding-side)] py-[var(--base-6)] min-[768px]:h-[96px] min-[768px]:flex-row min-[768px]:justify-between">
       <nav
         aria-label="Footer links"
         className="order-1 flex shrink-0 items-center justify-center gap-[var(--base-5)] min-[768px]:order-2"
