@@ -19,22 +19,24 @@ export default function ContactPage() {
   return (
     <main className="flex min-h-dvh flex-col bg-[var(--bg-beige)] text-[var(--text-primary)]">
       <NavigationHeader alwaysVisible />
-      <section className="flex w-full flex-1 flex-col items-start bg-[var(--bg-beige)] px-[var(--padding-side)] pb-[var(--base-6)] pt-[var(--base-30)]">
-        <h1
-          className="w-full text-[var(--text-accent)]"
-          style={typeStyle(tokens.typography.heading.h2)}
-        >
-          Contact
-        </h1>
-        <p
-          className="mt-[var(--base-20)] w-full max-w-[var(--container-max)] text-[var(--text-primary)]"
-          style={typeStyle(tokens.typography.body.medium)}
-        >
-          I&apos;m always open to thoughtful conversations about product design,
-          systems, and complex workflows.
-        </p>
+      <section className="flex w-full flex-1 flex-col items-start bg-[var(--bg-beige)] px-[var(--padding-side)] py-[var(--base-18)] min-[768px]:py-[var(--base-30)]">
+        <div className="flex w-full max-w-[var(--container-max)] flex-col gap-[var(--base-6)]">
+          <h1
+            className="w-full text-[var(--text-accent)]"
+            style={typeStyle(tokens.typography.heading.h2)}
+          >
+            Contact
+          </h1>
+          <p
+            className="w-full text-[var(--text-primary)]"
+            style={typeStyle(tokens.typography.body.medium)}
+          >
+            I&apos;m always open to thoughtful conversations about product
+            design, systems, and complex workflows.
+          </p>
+        </div>
 
-        <div className="mt-[var(--base-20)] grid w-full max-w-[var(--container-max)] flex-1 auto-rows-fr grid-cols-1 gap-[var(--base-10)] min-[900px]:grid-cols-2">
+        <div className="mt-[var(--base-10)] grid w-full max-w-[var(--container-max)] flex-1 auto-rows-fr grid-cols-1 gap-[var(--base-4)] min-[900px]:grid-cols-2 min-[1280px]:mt-[var(--base-20)] min-[1280px]:gap-[var(--base-10)]">
           <ContactButton href="mailto:alisovdesign@gmail.com">
             Email
           </ContactButton>
