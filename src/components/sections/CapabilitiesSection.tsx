@@ -1928,7 +1928,7 @@ export default function CapabilitiesSection({
       {showIntroduction ? <CapabilitiesIntroduction /> : null}
       <section
         id="work"
-        className="flex w-full flex-col items-start gap-0 bg-[var(--bg-beige)] px-[var(--padding-side)] lg:flex-row lg:gap-[var(--capabilities-column-gap)]"
+        className="mb-[var(--base-24)] flex w-full flex-col items-start gap-0 bg-[var(--bg-beige)] px-[var(--padding-side)] min-[768px]:mb-[var(--base-30)] lg:flex-row lg:gap-[var(--capabilities-column-gap)]"
         ref={sectionRef}
         style={sectionStyle}
       >

@@ -19,7 +19,7 @@ export default function ContactPage() {
   return (
     <main className="flex min-h-dvh flex-col bg-[var(--bg-beige)] text-[var(--text-primary)]">
       <NavigationHeader alwaysVisible />
-      <section className="flex w-full flex-1 flex-col items-start bg-[var(--bg-beige)] px-[var(--padding-side)] py-[var(--base-24)] min-[768px]:py-[var(--base-30)]">
+      <section className="mb-[var(--base-24)] flex w-full flex-1 flex-col items-start bg-[var(--bg-beige)] px-[var(--padding-side)] py-[var(--base-24)] min-[768px]:mb-[var(--base-30)] min-[768px]:py-[var(--base-30)]">
         <div className="flex w-full max-w-[var(--container-max)] flex-col gap-[var(--base-6)]">
           <h1
             className="w-full text-[var(--text-accent)]"

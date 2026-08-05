@@ -18,7 +18,7 @@ export default function CvPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-beige)] text-[var(--text-primary)]">
       <NavigationHeader alwaysVisible />
-      <section className="flex min-h-screen w-full items-start px-[var(--padding-side)] pt-[var(--base-40)]">
+      <section className="mb-[var(--base-24)] flex min-h-screen w-full items-start px-[var(--padding-side)] pt-[var(--base-40)] min-[768px]:mb-[var(--base-30)]">
         <h1
           className="text-[var(--text-accent)]"
           style={typeStyle(tokens.typography.heading.h1)}
