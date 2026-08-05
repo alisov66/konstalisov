@@ -2,25 +2,21 @@
 
 :root {
   /* Figma variables: Color / Mode 1 */
-  --bg-beige: #eceae6;
-  --bg-beige-light: #faf8f2;
-  --bg-gray: #fafafa;
-  --bg-mint-green: #f6ffed;
-  --bg-violet: #ced3ff;
-
   --text-primary: #111111;
   --text-secondary: #4c4c4c;
   --text-tertiary: #a4a4a4;
   --text-inverted: #ffffff;
   --text-accent: #c9652a;
 
+  --bg-beige: #eceae6;
+  --bg-beige-light: #faf8f2;
+  --bg-gray: #fafafa;
+  --bg-violet: #ced3ff;
+  --bg-mint-green: #f6ffed;
+
   --button-primary: #161633;
   --button-primary-hover: #383740;
   --button-primary-text: #ffffff;
-
-  --button-hero: #f4d69b;
-  --button-hero-hover: #ffc450;
-  --button-hero-text: #111111;
 
   --button-secondary: #f6f2e9;
   --button-secondary-hover: #f4d69b;
@@ -29,7 +25,12 @@
   --button-secondary-selected-text: #ffffff;
 
   --border-primary: #111111;
-  --border-secondary: #eceae6;
+  --border-secondary: #a4a4a4;
+  --border-tertiary: #eceae6;
+
+  --button-hero: #f4d69b;
+  --button-hero-hover: #ffc450;
+  --button-hero-text: #111111;
 
   /* Figma variables: Border Width / Mode 1 */
   --border-width-thin: 1px;
