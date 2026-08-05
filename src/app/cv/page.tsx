@@ -1,4 +1,5 @@
 import NavigationHeader from "@/components/ui/NavigationHeader";
+import Footer from "@/components/ui/Footer";
 import { tokens } from "@/styles/tokens";
 
 function typeStyle(token: {
@@ -25,6 +26,7 @@ export default function CvPage() {
           Download CV
         </h1>
       </section>
+      <Footer />
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 
 import CapabilitiesSection from "@/components/sections/CapabilitiesSection";
+import Footer from "@/components/ui/Footer";
 import NavigationHeader from "@/components/ui/NavigationHeader";
 import {
   capabilities,
@@ -33,6 +34,7 @@ export default async function CapabilityPage({
         scrollToArticleOnMount
         value={selectedCapability.id as CapabilityId}
       />
+      <Footer />
     </main>
   );
 }
