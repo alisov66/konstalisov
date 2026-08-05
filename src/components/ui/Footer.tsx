@@ -34,12 +34,7 @@ export default function Footer() {
         className="order-2 flex min-w-0 flex-col items-center justify-center whitespace-nowrap text-center min-[768px]:order-1 min-[768px]:flex-1 min-[768px]:items-start min-[768px]:text-left"
         style={typeStyle(tokens.typography.body.s)}
       >
-        <p
-          className="text-[var(--text-primary)]"
-          style={{ fontWeight: tokens.typography.fontWeight.semibold }}
-        >
-          © Konstantin Alisov
-        </p>
+        <p className="text-[var(--text-primary)]">© Konstantin Alisov</p>
         <p className="text-[var(--text-tertiary)]">2026</p>
       </div>
     </footer>
