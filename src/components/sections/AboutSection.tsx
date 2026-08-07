@@ -18,7 +18,7 @@ function typeStyle(token: {
 export default function AboutSection() {
   return (
     <section
-      className="mb-[var(--base-24)] flex w-full flex-col items-start gap-[var(--base-20)] bg-[var(--bg-beige)] px-[var(--padding-side)] py-[var(--base-30)] min-[768px]:mb-[var(--base-30)]"
+      className="mb-[var(--base-20)] flex w-full flex-col items-start gap-[var(--base-20)] bg-[var(--bg-beige)] px-[var(--padding-side)] py-[var(--base-30)]"
       id="about"
     >
       <h1
