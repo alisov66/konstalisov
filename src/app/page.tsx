@@ -7,7 +7,7 @@ const heroItems = [
   { id: "capabilities", label: "Capabilities", href: "/capabilities" },
   { id: "about", label: "About", href: "/about" },
   { id: "contact", label: "Contact", href: "/contact" },
-  { id: "cv", label: "Download CV", href: "/cv" },
+  { id: "cv", label: "CV", href: "/cv" },
 ];
 
 function typeStyle(token: {

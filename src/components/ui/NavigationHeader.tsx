@@ -16,7 +16,7 @@ const navigationItems = [
   { label: "Capabilities", href: "/capabilities" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
-  { label: "Download CV", href: "/cv" },
+  { label: "CV", href: "/cv" },
 ];
 
 const headerClearance = 136;

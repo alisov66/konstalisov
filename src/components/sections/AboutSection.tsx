@@ -128,7 +128,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <HeroButton>Download CV</HeroButton>
+          <HeroButton>View CV</HeroButton>
         </div>
       </div>
     </section>
