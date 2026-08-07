@@ -28,7 +28,7 @@ export default function FooterLink({
       {...props}
       className={[
         "inline-flex shrink-0 items-center justify-center rounded-[var(--pill)] px-[var(--base-4)] py-[var(--base-2)]",
-        "text-[var(--text-primary)] transition-colors duration-150 ease-in hover:bg-[var(--bg-beige-light)] focus-visible:bg-[var(--bg-beige-light)] focus-visible:outline-none",
+        "text-[var(--text-primary)] transition-colors duration-150 ease-in hover:bg-[var(--button-hero-hover)] focus-visible:bg-[var(--button-hero-hover)] focus-visible:outline-none",
         className,
       ]
         .filter(Boolean)
