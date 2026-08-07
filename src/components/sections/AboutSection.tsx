@@ -54,7 +54,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-20)] min-[332px]:min-w-[300px] min-[482px]:min-w-[min(400px,100%)]">
+        <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-15)] min-[332px]:min-w-[300px] min-[482px]:min-w-[min(400px,100%)]">
           <div className="flex w-full max-w-[820px] flex-col gap-[var(--base-3)] text-[var(--text-primary)]">
             <h3 style={typeStyle(tokens.typography.heading.h3)}>
               I enjoy figuring out how complicated things work
