@@ -96,6 +96,10 @@
   --body-small-line: 24px;
   --body-small-weight: 400;
 
+  --body-xsmall-size: 14px;
+  --body-xsmall-line: 22px;
+  --body-xsmall-weight: 400;
+
   /* Buttons */
 
   --button-medium-size: 16px;
@@ -177,8 +181,8 @@
     /* Figma variables: Typography / Mobile mode */
     --h1-size: 64px;
     --h1-line: 72px;
-    --h2-size: 32px;
-    --h2-line: 40px;
+    --h2-size: 40px;
+    --h2-line: 48px;
     --h3-size: 28px;
     --h3-line: 36px;
     --h4-size: 24px;
@@ -197,6 +201,8 @@
 
     --body-medium-size: 18px;
     --body-medium-line: 28px;
+    --body-xsmall-size: 12px;
+    --body-xsmall-line: 20px;
 
     /* Figma variables: Spacing / Mobile mode */
     --article-paragraph-gap: 20px;

@@ -79,6 +79,16 @@ const rawTypography = {
       fontSize: "var(--body-small-size)",
       lineHeight: "var(--body-small-line)",
     },
+
+    xs: {
+      fontSize: "var(--body-xsmall-size)",
+      lineHeight: "var(--body-xsmall-line)",
+    },
+
+    xsmall: {
+      fontSize: "var(--body-xsmall-size)",
+      lineHeight: "var(--body-xsmall-line)",
+    },
   },
 
   button: {
@@ -229,6 +239,18 @@ export const typography = {
     smallSemibold: {
       ...rawTypography.body.small,
       fontWeight: fontWeight.semibold,
+      paragraphSpacing: 4,
+    },
+
+    xs: {
+      ...rawTypography.body.xs,
+      fontWeight: fontWeight.regular,
+      paragraphSpacing: 4,
+    },
+
+    xsmall: {
+      ...rawTypography.body.xsmall,
+      fontWeight: fontWeight.regular,
       paragraphSpacing: 4,
     },
   },
