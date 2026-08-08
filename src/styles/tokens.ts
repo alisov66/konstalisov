@@ -17,8 +17,6 @@ export const tokens = {
       beigeSoft: "var(--bg-beige-soft)",
       beigeLight: "var(--bg-beige-light)",
       gray: "var(--bg-gray)",
-      violet: "var(--bg-violet)",
-      mintGreen: "var(--bg-mint-green)",
     },
 
     button: {
@@ -45,8 +43,6 @@ export const tokens = {
 
     border: {
       primary: "var(--border-primary)",
-      secondary: "var(--border-secondary)",
-      tertiary: "var(--border-tertiary)",
       width: {
         thin: "var(--border-width-thin)",
         medium: "var(--border-width-medium)",
