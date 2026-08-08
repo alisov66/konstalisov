@@ -1,5 +1,6 @@
 import Footer from "@/components/ui/Footer";
 import NavigationHeader from "@/components/ui/NavigationHeader";
+import NaviButton from "@/components/ui/NaviButton";
 import { tokens } from "@/styles/tokens";
 
 const cvPdfHref = "/Konstantin-Alisov-CV.pdf";
@@ -313,14 +314,13 @@ export default function CvPage() {
             and collaborate more effectively with engineers.
           </p>
 
-          <a
-            className="hero-button inline-flex w-fit shrink-0 items-center justify-center whitespace-nowrap rounded-[var(--pill)] bg-[var(--button-hero)] px-[var(--base-6)] py-[var(--base-4)] text-[var(--button-hero-text)] transition-colors duration-300 ease-in hover:bg-[var(--button-hero-hover)] focus-visible:bg-[var(--button-hero-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--text-primary)]"
+          <NaviButton
+            className="w-fit"
             download
             href={cvPdfHref}
-            style={typeStyle(tokens.typography.button.large)}
           >
             Download PDF
-          </a>
+          </NaviButton>
         </section>
 
         <section className="flex w-full max-w-[var(--container-max)] flex-col gap-[var(--base-6)]">
