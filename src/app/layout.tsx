@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
+import { siteUrl } from "./seo";
 import "./globals.css";
 
 const workSans = Work_Sans({
@@ -8,6 +9,7 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: siteUrl,
   title: "Konstantin Alisov",
   description: "Product Designer Portfolio",
 };

@@ -1,7 +1,16 @@
 import HeroNavigation from "@/components/ui/HeroNavigation";
+import { pageMetadata } from "@/app/seo";
 import { tokens } from "@/styles/tokens";
 
 const imgPic = "/konstantin-avatar.png";
+
+export const metadata = pageMetadata({
+  title: "Konstantin Alisov",
+  description:
+    "Product designer creating clarity in complex systems.",
+  path: "/",
+  image: "/og/home.png",
+});
 
 const heroItems = [
   { id: "capabilities", label: "Capabilities", href: "/capabilities" },

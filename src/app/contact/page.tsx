@@ -1,7 +1,16 @@
 import NavigationHeader from "@/components/ui/NavigationHeader";
 import Footer from "@/components/ui/Footer";
 import ContactButton from "@/components/ui/ContactButton";
+import { pageMetadata } from "@/app/seo";
 import { tokens } from "@/styles/tokens";
+
+export const metadata = pageMetadata({
+  title: "Contact | Konstantin Alisov",
+  description:
+    "Get in touch with Konstantin Alisov for thoughtful conversations about product design, systems, and complex workflows.",
+  path: "/contact",
+  image: "/og/contact.png",
+});
 
 function typeStyle(token: {
   fontSize: string | number;

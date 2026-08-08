@@ -1,9 +1,18 @@
 import Footer from "@/components/ui/Footer";
 import ButtonPrimary from "@/components/ui/ButtonPrimary";
 import NavigationHeader from "@/components/ui/NavigationHeader";
+import { pageMetadata } from "@/app/seo";
 import { tokens } from "@/styles/tokens";
 
 const cvPdfHref = "/Konstantin-Alisov-CV.pdf";
+
+export const metadata = pageMetadata({
+  title: "CV | Konstantin Alisov",
+  description:
+    "View Konstantin Alisov's product design CV, experience, expertise, and tools.",
+  path: "/cv",
+  image: "/og/cv.png",
+});
 
 const coreExpertise = [
   "Complex workflow design",
