@@ -169,7 +169,7 @@ function SkillTags({ tags }: { tags: string[] }) {
     <div className="flex w-full max-w-[820px] flex-wrap gap-[var(--base-2)]">
       {tags.map((tag) => (
         <span
-          className="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-[var(--pill)] bg-[var(--bg-beige-light)] px-[var(--base-3)] py-[var(--base-1)] text-[var(--text-primary)] [word-break:break-word]"
+          className="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-[var(--pill)] bg-[var(--bg-beige-soft)] px-[var(--base-3)] py-[var(--base-1)] text-[var(--text-primary)] [word-break:break-word]"
           key={tag}
           style={typeStyle(tokens.typography.body.medium)}
         >
