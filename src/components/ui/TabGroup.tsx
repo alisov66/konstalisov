@@ -31,7 +31,12 @@ export default function TabGroup({
   return (
     <div
       {...props}
-      className={["flex items-start", className].filter(Boolean).join(" ")}
+      className={[
+        "flex flex-wrap items-start px-[var(--base-5)]",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
       role="tablist"
       style={{ gap: tokens.spacing.base[2], ...style }}
     >

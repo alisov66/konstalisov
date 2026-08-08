@@ -11,16 +11,14 @@ export interface TabButtonProps
 }
 
 export function getTabButtonStyle(selected = false): TabButtonStyle {
-  const textColor = selected
-    ? tokens.colors.text.inverted
-    : tokens.colors.text.primary;
+  const textColor = tokens.colors.button.hero.text;
 
   return {
     "--tab-button-bg": selected
-      ? tokens.colors.button.secondary.selected
-      : tokens.colors.button.secondary.default,
+      ? tokens.colors.button.hero.hover
+      : "transparent",
     "--tab-button-hover-bg": selected
-      ? tokens.colors.button.secondary.selected
+      ? tokens.colors.button.hero.hover
       : tokens.colors.button.secondary.hover,
     "--tab-button-text": textColor,
     "--tab-button-radius": tokens.radius.pill,
@@ -29,12 +27,8 @@ export function getTabButtonStyle(selected = false): TabButtonStyle {
     "--tab-button-font-size": tokens.typography.button.medium.fontSize,
     "--tab-button-line-height": tokens.typography.button.medium.lineHeight,
     "--tab-button-font-weight": tokens.typography.button.medium.fontWeight,
-    "--tab-button-hover-shadow": selected
-      ? "none"
-      : "inset 0 0 0 1px rgb(17 17 17 / 0.04)",
-    "--tab-button-active-shadow": selected
-      ? "none"
-      : "inset 0 0 0 999px rgb(17 17 17 / 0.04)",
+    "--tab-button-hover-shadow": "none",
+    "--tab-button-active-shadow": "none",
     color: textColor,
   } satisfies TabButtonStyle;
 }
