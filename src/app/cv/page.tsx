@@ -1,5 +1,5 @@
 import Footer from "@/components/ui/Footer";
-import HeroButton from "@/components/ui/HeroButton";
+import ButtonPrimary from "@/components/ui/ButtonPrimary";
 import NavigationHeader from "@/components/ui/NavigationHeader";
 import { tokens } from "@/styles/tokens";
 
@@ -314,12 +314,12 @@ export default function CvPage() {
             and collaborate more effectively with engineers.
           </p>
 
-          <HeroButton
+          <ButtonPrimary
             className="w-fit"
             href={cvPdfHref}
           >
             Download PDF
-          </HeroButton>
+          </ButtonPrimary>
         </section>
 
         <section className="flex w-full max-w-[var(--container-max)] flex-col gap-[var(--base-6)]">

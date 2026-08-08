@@ -4,8 +4,8 @@ import type { MouseEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
+import ButtonSecondary from "@/components/ui/ButtonSecondary";
 import MenuButton from "@/components/ui/MenuButton";
-import NaviButton from "@/components/ui/NaviButton";
 import { scrollToElementById } from "@/lib/smoothScroll";
 import { tokens } from "@/styles/tokens";
 
@@ -258,9 +258,9 @@ export default function NavigationHeader({
             ref={measuringActionsRef}
           >
             {navigationItems.map((item) => (
-              <NaviButton href={item.href} key={item.label} tabIndex={-1}>
+              <ButtonSecondary href={item.href} key={item.label} tabIndex={-1}>
                 {item.label}
-              </NaviButton>
+              </ButtonSecondary>
             ))}
           </div>
         </div>
@@ -324,13 +324,13 @@ export default function NavigationHeader({
         {!isMobileLayout ? (
           <div className="flex shrink-0 items-center">
             {navigationItems.map((item) => (
-              <NaviButton
+              <ButtonSecondary
                 href={item.href}
                 key={item.label}
                 onClick={(event) => handleNavigationClick(event, item.href)}
               >
                 {item.label}
-              </NaviButton>
+              </ButtonSecondary>
             ))}
           </div>
         ) : null}
@@ -343,7 +343,7 @@ export default function NavigationHeader({
           >
             <div className="flex min-h-0 flex-col items-start justify-center overflow-hidden">
               {navigationItems.map((item) => (
-                <NaviButton
+                <ButtonSecondary
                   className="w-full"
                   href={item.href}
                   key={item.label}
@@ -352,7 +352,7 @@ export default function NavigationHeader({
                   }
                 >
                   {item.label}
-                </NaviButton>
+                </ButtonSecondary>
               ))}
             </div>
           </div>

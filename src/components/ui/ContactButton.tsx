@@ -109,7 +109,7 @@ export default function ContactButton({
           "--contact-button-transform": transform,
           transform: "var(--contact-button-transform)",
           transformStyle: "preserve-3d",
-          ...typeStyle(tokens.typography.button.large),
+          ...typeStyle(tokens.typography.button.mSemibold),
           ...style,
         } as ContactButtonStyle
       }

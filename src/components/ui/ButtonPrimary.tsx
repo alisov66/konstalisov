@@ -11,7 +11,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { tokens } from "@/styles/tokens";
 
-type HeroButtonStyle = CSSProperties &
+type ButtonPrimaryStyle = CSSProperties &
   Record<`--hero-button-${string}`, string | number> &
   Record<`--navi-${string}`, string | number>;
 
@@ -90,24 +90,23 @@ const blobVariants = [
   },
 ];
 
-type HeroButtonElement = HTMLAnchorElement | HTMLButtonElement;
+type ButtonPrimaryElement = HTMLAnchorElement | HTMLButtonElement;
 
-export interface HeroButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonPrimaryProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   download?: AnchorHTMLAttributes<HTMLAnchorElement>["download"];
   href?: string;
   rel?: string;
   selected?: boolean;
-  size?: "L" | "M" | "S";
   target?: string;
 }
 
-export default function HeroButton({
+export default function ButtonPrimary({
   children,
   className,
   href,
   selected = false,
-  size = "L",
   onBlur,
   onFocus,
   onPointerEnter,
@@ -115,7 +114,7 @@ export default function HeroButton({
   style,
   type = "button",
   ...props
-}: HeroButtonProps) {
+}: ButtonPrimaryProps) {
   const [hoverState, setHoverState] = useState<"idle" | "fill" | "drain">(
     selected ? "fill" : "idle",
   );
@@ -123,12 +122,7 @@ export default function HeroButton({
   const [blobVariantIndex, setBlobVariantIndex] = useState(0);
   const blobVariant = blobVariants[blobVariantIndex];
   const drainTimeoutRef = useRef<number | null>(null);
-  const typography =
-    size === "S"
-      ? tokens.typography.button.sSemibold
-      : size === "M"
-        ? tokens.typography.button.mediumSemibold
-        : tokens.typography.button.large;
+  const typography = tokens.typography.button.mMedium;
 
   const clearDrainTimeout = () => {
     if (drainTimeoutRef.current === null) {
@@ -142,7 +136,7 @@ export default function HeroButton({
   useEffect(() => clearDrainTimeout, []);
 
   const updateHoverOrigin = (
-    event: Parameters<PointerEventHandler<HeroButtonElement>>[0],
+    event: Parameters<PointerEventHandler<ButtonPrimaryElement>>[0],
   ) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -154,7 +148,9 @@ export default function HeroButton({
     });
   };
 
-  const handlePointerEnter: PointerEventHandler<HeroButtonElement> = (event) => {
+  const handlePointerEnter: PointerEventHandler<ButtonPrimaryElement> = (
+    event,
+  ) => {
     clearDrainTimeout();
     updateHoverOrigin(event);
     setBlobVariantIndex((currentIndex) => {
@@ -165,12 +161,14 @@ export default function HeroButton({
         : nextIndex;
     });
     setHoverState("fill");
-    (onPointerEnter as PointerEventHandler<HeroButtonElement> | undefined)?.(
+    (onPointerEnter as PointerEventHandler<ButtonPrimaryElement> | undefined)?.(
       event,
     );
   };
 
-  const handlePointerLeave: PointerEventHandler<HeroButtonElement> = (event) => {
+  const handlePointerLeave: PointerEventHandler<ButtonPrimaryElement> = (
+    event,
+  ) => {
     clearDrainTimeout();
     updateHoverOrigin(event);
     setHoverState("drain");
@@ -178,7 +176,7 @@ export default function HeroButton({
       drainTimeoutRef.current = null;
       setHoverState("idle");
     }, 300);
-    (onPointerLeave as PointerEventHandler<HeroButtonElement> | undefined)?.(
+    (onPointerLeave as PointerEventHandler<ButtonPrimaryElement> | undefined)?.(
       event,
     );
   };
@@ -188,18 +186,8 @@ export default function HeroButton({
     "--hero-button-hover-bg": tokens.colors.button.hero.hover,
     "--hero-button-text": tokens.colors.button.hero.text,
     "--hero-button-radius": tokens.radius.pill,
-    "--hero-button-padding-x":
-      size === "S"
-        ? tokens.spacing.base[3]
-        : size === "M"
-          ? tokens.spacing.base[4]
-          : tokens.spacing.base[6],
-    "--hero-button-padding-y":
-      size === "S"
-        ? tokens.spacing.base[2]
-        : size === "M"
-          ? tokens.spacing.base[3]
-          : tokens.spacing.base[4],
+    "--hero-button-padding-x": tokens.spacing.base[6],
+    "--hero-button-padding-y": tokens.spacing.base[4],
     "--hero-button-font-size": typography.fontSize,
     "--hero-button-line-height": typography.lineHeight,
     "--hero-button-font-weight": typography.fontWeight,
@@ -224,7 +212,7 @@ export default function HeroButton({
     "--navi-blob-rotate-b": blobVariant.rotateB,
     "--navi-blob-rotate-c": blobVariant.rotateC,
     "--navi-blob-rotate-d": blobVariant.rotateD,
-  } satisfies HeroButtonStyle;
+  } satisfies ButtonPrimaryStyle;
 
   const buttonClassName = [
         "hero-button inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap",
@@ -235,7 +223,7 @@ export default function HeroButton({
       ]
         .filter(Boolean)
         .join(" ");
-  const handleBlur: HeroButtonProps["onBlur"] = (event) => {
+  const handleBlur: ButtonPrimaryProps["onBlur"] = (event) => {
         clearDrainTimeout();
         setHoverState("drain");
         drainTimeoutRef.current = window.setTimeout(() => {
@@ -244,7 +232,7 @@ export default function HeroButton({
         }, 300);
         onBlur?.(event);
       };
-  const handleFocus: HeroButtonProps["onFocus"] = (event) => {
+  const handleFocus: ButtonPrimaryProps["onFocus"] = (event) => {
         clearDrainTimeout();
         setHoverOrigin({ x: "50%", y: "50%" });
         setBlobVariantIndex(

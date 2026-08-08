@@ -85,12 +85,13 @@ const blobVariants = [
   },
 ];
 
-export interface NaviButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface ButtonSecondaryProps
+  extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
   state?: "default" | "hover";
 }
 
-export default function NaviButton({
+export default function ButtonSecondary({
   children,
   className,
   state = "default",
@@ -102,7 +103,7 @@ export default function NaviButton({
   onFocus,
   onBlur,
   ...props
-}: NaviButtonProps) {
+}: ButtonSecondaryProps) {
   const isHover = state === "hover";
   const [hoverState, setHoverState] = useState<"idle" | "fill" | "drain">(
     isHover ? "fill" : "idle",
@@ -270,9 +271,9 @@ export default function NaviButton({
         "--navi-blob-rotate-b": blobVariant.rotateB,
         "--navi-blob-rotate-c": blobVariant.rotateC,
         "--navi-blob-rotate-d": blobVariant.rotateD,
-        fontSize: tokens.typography.button.medium.fontSize,
-        lineHeight: tokens.typography.button.medium.lineHeight,
-        fontWeight: tokens.typography.button.medium.fontWeight,
+        fontSize: tokens.typography.button.mMedium.fontSize,
+        lineHeight: tokens.typography.button.mMedium.lineHeight,
+        fontWeight: tokens.typography.button.mMedium.fontWeight,
         ...props.style,
       } as CSSProperties}
     >

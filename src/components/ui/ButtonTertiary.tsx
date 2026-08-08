@@ -2,7 +2,7 @@ import type { AnchorHTMLAttributes, ReactNode } from "react";
 
 import { tokens } from "@/styles/tokens";
 
-interface FooterLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+interface ButtonTertiaryProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
 }
 
@@ -18,11 +18,11 @@ function typeStyle(token: {
   };
 }
 
-export default function FooterLink({
+export default function ButtonTertiary({
   children,
   className,
   ...props
-}: FooterLinkProps) {
+}: ButtonTertiaryProps) {
   return (
     <a
       {...props}

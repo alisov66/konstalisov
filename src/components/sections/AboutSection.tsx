@@ -1,4 +1,4 @@
-import HeroButton from "@/components/ui/HeroButton";
+import ButtonPrimary from "@/components/ui/ButtonPrimary";
 import { tokens } from "@/styles/tokens";
 
 const profilePhotoSrc = "/about/profile-photo.jpg";
@@ -128,7 +128,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <HeroButton>Download CV</HeroButton>
+          <ButtonPrimary>Download CV</ButtonPrimary>
         </div>
       </div>
     </section>
