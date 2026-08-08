@@ -32,7 +32,7 @@ export default function TabGroup({
     <div
       {...props}
       className={[
-        "flex flex-wrap items-start px-[var(--base-5)]",
+        "flex flex-wrap items-start",
         className,
       ]
         .filter(Boolean)
