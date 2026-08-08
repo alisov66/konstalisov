@@ -316,7 +316,6 @@ export default function CvPage() {
 
           <NaviButton
             className="w-fit"
-            download
             href={cvPdfHref}
           >
             Download PDF
