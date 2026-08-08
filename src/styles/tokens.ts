@@ -14,6 +14,7 @@ export const tokens = {
 
     background: {
       beige: "var(--bg-beige)",
+      beigeSoft: "var(--bg-beige-soft)",
       beigeLight: "var(--bg-beige-light)",
       gray: "var(--bg-gray)",
       violet: "var(--bg-violet)",
