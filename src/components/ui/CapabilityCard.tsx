@@ -340,7 +340,7 @@ export default function CapabilityCard({
     <Link
       className={[
         "capability-card group flex min-h-[280px] w-[312px] flex-col items-start gap-[var(--base-3)] rounded-[var(--xl)] bg-[var(--bg-beige-light)] p-[var(--base-6)] text-[var(--text-primary)] no-underline",
-        "transition-[background-color,transform] duration-300 ease-out hover:bg-[var(--button-hero-hover)] focus-visible:bg-[var(--button-hero-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--text-primary)]",
+        "transition-[background-color,transform] duration-300 ease-out hover:bg-[var(--button-fill-accent)] focus-visible:bg-[var(--button-fill-accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--text-primary)]",
         className,
       ]
         .filter(Boolean)

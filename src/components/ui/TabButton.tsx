@@ -11,15 +11,15 @@ export interface TabButtonProps
 }
 
 export function getTabButtonStyle(selected = false): TabButtonStyle {
-  const textColor = tokens.colors.button.hero.text;
+  const textColor = tokens.colors.button.text;
 
   return {
     "--tab-button-bg": selected
-      ? tokens.colors.button.hero.hover
+      ? tokens.colors.button.fillAccent
       : "transparent",
     "--tab-button-hover-bg": selected
-      ? tokens.colors.button.hero.hover
-      : tokens.colors.button.secondary.hover,
+      ? tokens.colors.button.fillAccent
+      : tokens.colors.button.fillAccentMuted,
     "--tab-button-text": textColor,
     "--tab-button-radius": tokens.radius.pill,
     "--tab-button-padding-x": tokens.spacing.base[4],

@@ -49,7 +49,7 @@ export default function MenuButton({
         "menu-button flex shrink-0 cursor-pointer flex-col items-start justify-center rounded-[var(--lg)] p-[var(--base-3)] text-[var(--text-primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--text-primary)]",
         phase === "idle"
           ? "bg-[var(--bg-beige-light)]"
-          : "bg-[var(--button-secondary-hover)]",
+          : "bg-[var(--button-fill-accent-muted)]",
         className,
       ]
         .filter(Boolean)

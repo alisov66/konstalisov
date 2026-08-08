@@ -13,21 +13,12 @@
   --bg-beige-light: #faf8f2;
   --bg-gray: #fafafa;
 
-  --button-primary: #161633;
-  --button-primary-hover: #383740;
-  --button-primary-text: #ffffff;
-
-  --button-secondary: #f6f2e9;
-  --button-secondary-hover: #f4d69b;
-  --button-secondary-selected: #161633;
-  --button-secondary-text: #111111;
-  --button-secondary-selected-text: #ffffff;
+  --button-fill-accent: #ffc450;
+  --button-fill-accent-muted: #f4d69b;
+  --button-fill-light: #faf8f2;
+  --button-text: #111111;
 
   --border-primary: #111111;
-
-  --button-hero: #f4d69b;
-  --button-hero-hover: #ffc450;
-  --button-hero-text: #111111;
 
   /* Figma variables: Border Width / Mode 1 */
   --border-width-thin: 1px;
@@ -464,7 +455,7 @@ html.no-smooth-scroll * {
 }
 
 .navi-button__blob {
-  background: var(--navi-blob-color, var(--button-hero-hover));
+  background: var(--navi-blob-color, var(--button-fill-accent));
   left: var(--navi-hover-x, 50%);
   opacity: 0;
   pointer-events: none;

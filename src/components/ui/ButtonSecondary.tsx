@@ -209,9 +209,9 @@ export default function ButtonSecondary({
       className={[
         "navi-button inline-flex shrink-0 flex-col items-start justify-center whitespace-nowrap rounded-[var(--pill)] bg-[var(--bg-beige-light)] px-[var(--base-4)] py-[var(--base-3)] no-underline",
         isHover
-          ? "text-[var(--button-hero-text)]"
+          ? "text-[var(--button-text)]"
           : "text-[var(--text-primary)]",
-        "hover:text-[var(--button-hero-text)] focus-visible:text-[var(--button-hero-text)]",
+        "hover:text-[var(--button-text)] focus-visible:text-[var(--button-text)]",
         "transition-colors duration-[150ms] ease-in focus-visible:outline-none",
         className,
       ]

@@ -95,7 +95,7 @@ export default function ContactButton({
       {...props}
       className={[
         "contact-button group flex h-full min-h-0 w-full items-center justify-center rounded-[var(--xl)] bg-[var(--bg-beige-light)] p-[var(--base-6)] text-center text-[var(--text-primary)] no-underline",
-        "transition-[background-color,transform] duration-300 ease-out hover:bg-[var(--button-hero-hover)] focus-visible:bg-[var(--button-hero-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--text-primary)]",
+        "transition-[background-color,transform] duration-300 ease-out hover:bg-[var(--button-fill-accent)] focus-visible:bg-[var(--button-fill-accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--text-primary)]",
         className,
       ]
         .filter(Boolean)

@@ -182,9 +182,9 @@ export default function ButtonPrimary({
   };
 
   const heroButtonStyle = {
-    "--hero-button-bg": tokens.colors.button.hero.default,
-    "--hero-button-hover-bg": tokens.colors.button.hero.hover,
-    "--hero-button-text": tokens.colors.button.hero.text,
+    "--hero-button-bg": tokens.colors.button.fillAccentMuted,
+    "--hero-button-hover-bg": tokens.colors.button.fillAccent,
+    "--hero-button-text": tokens.colors.button.text,
     "--hero-button-radius": tokens.radius.pill,
     "--hero-button-padding-x": tokens.spacing.base[6],
     "--hero-button-padding-y": tokens.spacing.base[4],
@@ -193,7 +193,7 @@ export default function ButtonPrimary({
     "--hero-button-font-weight": typography.fontWeight,
     "--hero-button-transition":
       "background-color 300ms ease-in, color 150ms ease-in, box-shadow 300ms ease-in, transform 300ms ease-in",
-    "--navi-blob-color": tokens.colors.button.hero.hover,
+    "--navi-blob-color": tokens.colors.button.fillAccent,
     "--navi-hover-x": hoverOrigin.x,
     "--navi-hover-y": hoverOrigin.y,
     "--navi-blob-radius-a": blobVariant.radiusA,

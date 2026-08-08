@@ -20,25 +20,10 @@ export const tokens = {
     },
 
     button: {
-      primary: {
-        default: "var(--button-primary)",
-        hover: "var(--button-primary-hover)",
-        text: "var(--button-primary-text)",
-      },
-
-      secondary: {
-        default: "var(--button-secondary)",
-        hover: "var(--button-secondary-hover)",
-        selected: "var(--button-secondary-selected)",
-        text: "var(--button-secondary-text)",
-        selectedText: "var(--button-secondary-selected-text)",
-      },
-
-      hero: {
-        default: "var(--button-hero)",
-        hover: "var(--button-hero-hover)",
-        text: "var(--button-hero-text)",
-      },
+      fillAccent: "var(--button-fill-accent)",
+      fillAccentMuted: "var(--button-fill-accent-muted)",
+      fillLight: "var(--button-fill-light)",
+      text: "var(--button-text)",
     },
 
     border: {

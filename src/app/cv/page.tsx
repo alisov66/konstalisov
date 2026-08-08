@@ -186,7 +186,7 @@ function AccentSummary({ children }: { children: string }) {
     <div className="flex w-full max-w-[832px] items-stretch gap-[var(--base-2)]">
       <span
         aria-hidden
-        className="w-[4px] shrink-0 rounded-[var(--pill)] bg-[var(--button-hero-hover)]"
+        className="w-[4px] shrink-0 rounded-[var(--pill)] bg-[var(--button-fill-accent)]"
       />
       <p
         className="max-w-[820px] text-[var(--text-primary)]"
