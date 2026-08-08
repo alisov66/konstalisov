@@ -56,7 +56,7 @@ export default function Home() {
 
         <div className="flex w-full flex-col items-center gap-[var(--base-6)] text-center">
           <h2
-            className="w-full text-[var(--text-primary)]"
+            className="w-full text-[var(--text-accent)]"
             style={typeStyle(tokens.typography.heading.h1)}
           >
             Designing clarity
