@@ -1,6 +1,6 @@
 import Footer from "@/components/ui/Footer";
+import HeroButton from "@/components/ui/HeroButton";
 import NavigationHeader from "@/components/ui/NavigationHeader";
-import NaviButton from "@/components/ui/NaviButton";
 import { tokens } from "@/styles/tokens";
 
 const cvPdfHref = "/Konstantin-Alisov-CV.pdf";
@@ -314,12 +314,12 @@ export default function CvPage() {
             and collaborate more effectively with engineers.
           </p>
 
-          <NaviButton
+          <HeroButton
             className="w-fit"
             href={cvPdfHref}
           >
             Download PDF
-          </NaviButton>
+          </HeroButton>
         </section>
 
         <section className="flex w-full max-w-[var(--container-max)] flex-col gap-[var(--base-6)]">

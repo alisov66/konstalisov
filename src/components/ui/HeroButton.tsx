@@ -1,6 +1,7 @@
 "use client";
 
 import type {
+  AnchorHTMLAttributes,
   ButtonHTMLAttributes,
   CSSProperties,
   PointerEventHandler,
@@ -89,15 +90,22 @@ const blobVariants = [
   },
 ];
 
+type HeroButtonElement = HTMLAnchorElement | HTMLButtonElement;
+
 export interface HeroButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
+  download?: AnchorHTMLAttributes<HTMLAnchorElement>["download"];
+  href?: string;
+  rel?: string;
   selected?: boolean;
   size?: "L" | "M" | "S";
+  target?: string;
 }
 
 export default function HeroButton({
   children,
   className,
+  href,
   selected = false,
   size = "L",
   onBlur,
@@ -134,7 +142,7 @@ export default function HeroButton({
   useEffect(() => clearDrainTimeout, []);
 
   const updateHoverOrigin = (
-    event: Parameters<PointerEventHandler<HTMLButtonElement>>[0],
+    event: Parameters<PointerEventHandler<HeroButtonElement>>[0],
   ) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -146,7 +154,7 @@ export default function HeroButton({
     });
   };
 
-  const handlePointerEnter: PointerEventHandler<HTMLButtonElement> = (event) => {
+  const handlePointerEnter: PointerEventHandler<HeroButtonElement> = (event) => {
     clearDrainTimeout();
     updateHoverOrigin(event);
     setBlobVariantIndex((currentIndex) => {
@@ -157,10 +165,12 @@ export default function HeroButton({
         : nextIndex;
     });
     setHoverState("fill");
-    onPointerEnter?.(event);
+    (onPointerEnter as PointerEventHandler<HeroButtonElement> | undefined)?.(
+      event,
+    );
   };
 
-  const handlePointerLeave: PointerEventHandler<HTMLButtonElement> = (event) => {
+  const handlePointerLeave: PointerEventHandler<HeroButtonElement> = (event) => {
     clearDrainTimeout();
     updateHoverOrigin(event);
     setHoverState("drain");
@@ -168,7 +178,9 @@ export default function HeroButton({
       drainTimeoutRef.current = null;
       setHoverState("idle");
     }, 300);
-    onPointerLeave?.(event);
+    (onPointerLeave as PointerEventHandler<HeroButtonElement> | undefined)?.(
+      event,
+    );
   };
 
   const heroButtonStyle = {
@@ -214,20 +226,16 @@ export default function HeroButton({
     "--navi-blob-rotate-d": blobVariant.rotateD,
   } satisfies HeroButtonStyle;
 
-  return (
-    <button
-      {...props}
-      className={[
+  const buttonClassName = [
         "hero-button inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap",
         "rounded-[var(--hero-button-radius)] bg-[var(--hero-button-bg)] px-[var(--hero-button-padding-x)] py-[var(--hero-button-padding-y)]",
         "text-[length:var(--hero-button-font-size)] font-[var(--hero-button-font-weight)] leading-[var(--hero-button-line-height)] text-[var(--hero-button-text)]",
-        "[transition:var(--hero-button-transition)]",
+        "[transition:var(--hero-button-transition)] no-underline",
         className,
       ]
         .filter(Boolean)
-        .join(" ")}
-      data-hover={hoverState}
-      onBlur={(event) => {
+        .join(" ");
+  const handleBlur: HeroButtonProps["onBlur"] = (event) => {
         clearDrainTimeout();
         setHoverState("drain");
         drainTimeoutRef.current = window.setTimeout(() => {
@@ -235,8 +243,8 @@ export default function HeroButton({
           setHoverState("idle");
         }, 300);
         onBlur?.(event);
-      }}
-      onFocus={(event) => {
+      };
+  const handleFocus: HeroButtonProps["onFocus"] = (event) => {
         clearDrainTimeout();
         setHoverOrigin({ x: "50%", y: "50%" });
         setBlobVariantIndex(
@@ -244,12 +252,9 @@ export default function HeroButton({
         );
         setHoverState("fill");
         onFocus?.(event);
-      }}
-      onPointerEnter={handlePointerEnter}
-      onPointerLeave={handlePointerLeave}
-      style={{ ...heroButtonStyle, ...style }}
-      type={type}
-    >
+      };
+  const content = (
+    <>
       <span
         aria-hidden="true"
         className="navi-button__blob navi-button__blob--a"
@@ -267,6 +272,44 @@ export default function HeroButton({
         className="navi-button__blob navi-button__blob--d"
       />
       <span className="relative z-[1]">{children}</span>
+    </>
+  );
+
+  if (href) {
+    return (
+      <a
+        {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
+        className={buttonClassName}
+        data-hover={hoverState}
+        href={href}
+        onBlur={
+          handleBlur as unknown as AnchorHTMLAttributes<HTMLAnchorElement>["onBlur"]
+        }
+        onFocus={
+          handleFocus as unknown as AnchorHTMLAttributes<HTMLAnchorElement>["onFocus"]
+        }
+        onPointerEnter={handlePointerEnter}
+        onPointerLeave={handlePointerLeave}
+        style={{ ...heroButtonStyle, ...style }}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <button
+      {...props}
+      className={buttonClassName}
+      data-hover={hoverState}
+      onBlur={handleBlur}
+      onFocus={handleFocus}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
+      style={{ ...heroButtonStyle, ...style }}
+      type={type}
+    >
+      {content}
     </button>
   );
 }
