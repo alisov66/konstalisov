@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const siteUrl = new URL("https://konstantin-portfolio-five.vercel.app");
+export const siteUrl = new URL("https://konstalisov.com");
 
 type PageMetadataOptions = {
   title: string;
