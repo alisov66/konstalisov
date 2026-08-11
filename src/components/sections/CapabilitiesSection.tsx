@@ -415,38 +415,6 @@ function ComplexWorkflowArticle() {
               patterns at scale.
             </li>
           </List>
-          <Gap size={tokens.spacing.article.subsectionGap} />
-
-          <Subsection title="Persistent context during exploration">
-            <Paragraph>
-              Researchers frequently compare alignment patterns against metadata
-              while navigating large datasets horizontally. Without persistent
-              context, important metadata quickly disappears from view.
-              Introduced pinnable metadata columns that remain visible while
-              exploring the alignment. Researchers can maintain context without
-              interrupting navigation.
-            </Paragraph>
-          </Subsection>
-          <Gap size={tokens.spacing.article.mediaGap} />
-          <ArticleImage
-            alt="Pinned metadata columns"
-            className="aspect-[2424/1554] opacity-20"
-            src={images.msaFig6}
-          />
-          <Gap size={tokens.spacing.article.mediaToCaptionGap} />
-          <List>
-            <li>Pinned</li>
-          </List>
-          <Gap size={tokens.spacing.article.mediaGap} />
-          <ArticleImage
-            alt="Unpinned metadata columns"
-            className="aspect-[2424/1554] opacity-20"
-            src={images.msaFig6}
-          />
-          <Gap size={tokens.spacing.article.mediaToCaptionGap} />
-          <List>
-            <li>Unpinned</li>
-          </List>
         </Section>
 
         <Gap size={tokens.spacing.article.sectionGap} />
