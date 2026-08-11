@@ -107,8 +107,8 @@ export default function AboutSection() {
               </h4>
               <p style={typeStyle(tokens.typography.body.medium)}>
                 <strong className="font-[var(--font-weight-semibold)]">
-                  This portfolio was designed and developed by me using Next.js,
-                  Tailwind CSS, and Vercel.
+                  I designed this portfolio and built it using AI-assisted
+                  development with Next.js, Tailwind CSS, GitHub, and Vercel.
                 </strong>{" "}
                 Understanding implementation helps me design products that are
                 realistic to build and collaborate more effectively with
