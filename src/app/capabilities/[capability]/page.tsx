@@ -32,7 +32,7 @@ export async function generateMetadata({
     title: `${selectedCapability.label} | Konstantin Alisov`,
     description: selectedCapability.summary,
     path: `/capabilities/${selectedCapability.id}`,
-    image: "/og/capabilities.png",
+    image: `/og/capabilities/${selectedCapability.id}.png`,
   });
 }
 
