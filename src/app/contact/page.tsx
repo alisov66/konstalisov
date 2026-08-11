@@ -40,7 +40,7 @@ export default function ContactPage() {
             className="w-full text-[var(--text-primary)]"
             style={typeStyle(tokens.typography.body.medium)}
           >
-            Every great product starts with a conversation.
+            Every thoughtful product starts with a conversation.
             <br />
             If my work resonates with you, I&apos;d love to hear about the
             challenges you&apos;re solving.
