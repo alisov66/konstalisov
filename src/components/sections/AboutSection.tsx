@@ -131,11 +131,8 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <ButtonPrimary
-            download
-            href="/Konstantin-Alisov-CV.pdf"
-          >
-            Download CV
+          <ButtonPrimary href="/cv">
+            View CV
           </ButtonPrimary>
         </div>
       </div>
