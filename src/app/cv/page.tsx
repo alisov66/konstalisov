@@ -325,8 +325,9 @@ export default function CvPage() {
 
           <ButtonPrimary
             className="w-fit"
-            download
             href={cvPdfHref}
+            rel="noreferrer"
+            target="_blank"
           >
             Download PDF
           </ButtonPrimary>
