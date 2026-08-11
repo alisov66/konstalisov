@@ -1,6 +1,7 @@
 import HeroNavigation from "@/components/ui/HeroNavigation";
 import { pageMetadata } from "@/app/seo";
 import { tokens } from "@/styles/tokens";
+import Image from "next/image";
 
 const imgPic = "/konstantin-avatar.png";
 
@@ -40,9 +41,12 @@ export default function Home() {
       >
         <div className="flex w-full flex-col items-center gap-[var(--base-3)]">
           <div className="relative size-[80px] shrink-0 overflow-hidden">
-            <img
+            <Image
               alt=""
               className="absolute inset-0 size-full object-cover"
+              fill
+              preload
+              sizes="80px"
               src={imgPic}
             />
           </div>

@@ -3,6 +3,7 @@
 import type { MouseEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import ButtonSecondary from "@/components/ui/ButtonSecondary";
 import MenuButton from "@/components/ui/MenuButton";
@@ -284,9 +285,11 @@ export default function NavigationHeader({
                 isMobileLayout ? "size-[36px]" : "size-[52px]",
               ].join(" ")}
             >
-              <img
+              <Image
                 alt=""
                 className="absolute left-[-6%] top-[-6%] size-[112%] max-w-none object-cover"
+                fill
+                sizes="(max-width: 767px) 40px, 58px"
                 src={avatarSrc}
               />
             </span>
