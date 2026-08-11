@@ -7,13 +7,12 @@ import Image from "next/image";
 
 import ButtonSecondary from "@/components/ui/ButtonSecondary";
 import MenuButton from "@/components/ui/MenuButton";
-import { scrollToElementById } from "@/lib/smoothScroll";
 import { tokens } from "@/styles/tokens";
 
 const avatarSrc = "/konstantin-avatar.png";
 
 const navigationItems = [
-  { label: "Main", href: "/#hero" },
+  { label: "Main", href: "/" },
   { label: "Capabilities", href: "/capabilities" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -187,11 +186,6 @@ export default function NavigationHeader({
     href: string,
     closeMenu = false,
   ) => {
-    if (href === "/#hero" && document.getElementById("hero")) {
-      event.preventDefault();
-      scrollToElementById("hero");
-    }
-
     if (href === "/capabilities") {
       window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     }
@@ -240,7 +234,7 @@ export default function NavigationHeader({
         >
           <Link
             className="flex shrink-0 items-center gap-[var(--base-2)]"
-            href="/#hero"
+            href="/"
             ref={measuringLogoRef}
             tabIndex={-1}
           >
@@ -276,8 +270,8 @@ export default function NavigationHeader({
             aria-label="Go to homepage"
             className="flex min-w-0 shrink-0 items-center gap-[var(--base-2)] text-[var(--text-primary)] no-underline transition-opacity duration-[150ms] ease-in hover:opacity-50 focus-visible:opacity-50 focus-visible:outline-none"
             data-name="logo"
-            href="/#hero"
-            onClick={(event) => handleNavigationClick(event, "/#hero", true)}
+            href="/"
+            onClick={(event) => handleNavigationClick(event, "/", true)}
           >
             <span
               className={[
