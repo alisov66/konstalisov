@@ -32,6 +32,7 @@ const images = {
   workspaceHeader: "/capabilities/workspace-header.png",
   hierarchy: "/capabilities/hierarchy.png",
   msaHeader: "/capabilities/msa-header.png",
+  unifyingHeadersFig7: "/capabilities/unifying-headers-7.png",
   complexDecisions1: "/capabilities/complex-decisions-1.png",
   complexDecisions2: "/capabilities/complex-decisions-2.png",
   complexDecisions3: "/capabilities/complex-decisions-3.png",
@@ -635,6 +636,11 @@ function ComplexWorkflowArticle() {
 }
 
 function DesignSystemsArticle() {
+  const labelStyle = {
+    ...typeStyle(tokens.typography.article.paragraph),
+    fontWeight: tokens.typography.fontWeight.semibold,
+  };
+
   return (
     <ArticleShell>
       <H1>Scalable header architecture</H1>
@@ -643,59 +649,61 @@ function DesignSystemsArticle() {
       <Section title="Context">
         <CopyBlock>
           <Paragraph>
-            Platforma contains a growing collection of analytical tools,
-            dialogs, side sheets, and full-screen workspaces.
+            Platforma contains dialogs, side sheets, and analytical workspaces
+            used across multiple applications.
           </Paragraph>
           <Paragraph>
-            As new features were introduced, headers evolved independently.
-            Similar interfaces used different hierarchy levels, layouts, and
-            action placements.
+            As the platform evolved, header patterns diverged. Similar
+            interfaces used different hierarchy levels, layouts, and action
+            placement rules.
           </Paragraph>
           <Paragraph>
-            The development of the MSA Workspace introduced new requirements,
-            including workspace controls, graph-building actions, and workspace
-            collapse behavior that existing header patterns could not support
-            consistently.
+            At the same time, new analytical tools such as the MSA Workspace
+            introduced requirements that existing patterns could not support.
           </Paragraph>
         </CopyBlock>
-      </Section>
-
-      <Gap size={tokens.spacing.article.mediaGap} />
-      <ArticleImage
-        alt="Scalable header architecture"
-        className="aspect-[1776/1760] w-[450px] max-w-full"
-        src={images.headerArchitecture}
-      />
-      <Gap size={tokens.spacing.article.mediaGap} />
-      <Gap size={tokens.spacing.article.sectionGap} />
-
-      <Section title="Insights">
-        <CopyBlock>
-          <Paragraph>Product exploration revealed two recurring problems:</Paragraph>
-          <List>
-            <li>Similar interfaces used different header structures and interaction patterns.</li>
-            <li>New analytical workflows required increasingly sophisticated header behavior.</li>
-          </List>
-          <Paragraph>
-            Without a shared system, every new feature risked introducing
-            another custom variation.
-          </Paragraph>
-        </CopyBlock>
+        <Gap size={tokens.spacing.article.mediaGap} />
+        <ArticleImage
+          alt="Scalable header architecture"
+          className="aspect-[1776/1760] w-[450px] max-w-full"
+          src={images.headerArchitecture}
+        />
       </Section>
 
       <Gap size={tokens.spacing.article.sectionGap} />
 
       <Section title="Challenge">
+        <Paragraph>
+          Create a reusable header architecture that supports dialogs, side
+          sheets, and complex analytical workspaces while maintaining consistency
+          and enabling future applications to build on the same foundation.
+        </Paragraph>
+      </Section>
+
+      <Gap size={tokens.spacing.article.sectionGap} />
+
+      <Section title="Design principles">
         <CopyBlock>
           <Paragraph>
-            Design a scalable header architecture that supports different
-            interface contexts while remaining flexible enough for future
-            analytical workflows.
+            Rather than creating one universal header, I focused on building a
+            family of related patterns that share common rules while adapting to
+            different contexts.
           </Paragraph>
-          <Paragraph>
-            The solution needed to work across dialogs, side sheets, and complex
-            workspaces without forcing all experiences into a single component.
-          </Paragraph>
+          <Paragraph>The system was guided by three principles:</Paragraph>
+          <List>
+            <li>
+              Consistency — users should recognize actions and navigation
+              everywhere.
+            </li>
+            <li>
+              Context awareness — dialogs, sheets, and workspaces require
+              different levels of interaction.
+            </li>
+            <li>
+              Scalability — future workflows should extend existing patterns
+              instead of introducing new ones.
+            </li>
+          </List>
         </CopyBlock>
       </Section>
 
@@ -710,26 +718,50 @@ function DesignSystemsArticle() {
           </Paragraph>
         </Subsection>
         <Gap size={tokens.spacing.article.mediaGap} />
-        <Paragraph>Dialog header</Paragraph>
+        <p style={labelStyle}>Dialog header</p>
+        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
         <ArticleImage
           alt="Dialog header pattern"
           className="aspect-[2984/1904]"
           src={images.dialogHeader}
         />
+        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+        <List>
+          <li>
+            Optimized for focused, short-lived workflows with a clear primary
+            task and close action.
+          </li>
+        </List>
         <Gap size={tokens.spacing.article.mediaGap} />
-        <Paragraph>Sheet header</Paragraph>
+        <p style={labelStyle}>Sheet header</p>
+        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
         <ArticleImage
           alt="Sheet header pattern"
           className="aspect-[2984/1904]"
           src={images.sheetHeader}
         />
+        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+        <List>
+          <li>
+            Supports contextual editing while preserving visibility of the
+            underlying workspace.
+          </li>
+        </List>
         <Gap size={tokens.spacing.article.mediaGap} />
-        <Paragraph>Workspace header</Paragraph>
+        <p style={labelStyle}>Workspace header</p>
+        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
         <ArticleImage
           alt="Workspace header pattern"
           className="aspect-[2984/1904]"
           src={images.workspaceHeader}
         />
+        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+        <List>
+          <li>
+            Accommodates navigation, actions, controls, and workspace-specific
+            tools within complex analytical environments.
+          </li>
+        </List>
 
         <Gap size={tokens.spacing.article.mediaGap} />
         <Gap size={tokens.spacing.article.subsectionGap} />
@@ -737,14 +769,23 @@ function DesignSystemsArticle() {
         <Subsection title="Consistent hierarchy across the platform">
           <CopyBlock>
             <Paragraph>
-              Defined a hierarchy model that communicates the scope of each
-              interface context.
+              Established hierarchy levels that communicate the scope and
+              importance of each interface context.
             </Paragraph>
-            <Paragraph>
-              Workspace Header uses H2 for analytical environments. Dialog
-              Header also uses H2 for primary task contexts. Sheet Header uses
-              H3 to signal a subordinate context within a workspace.
-            </Paragraph>
+            <List>
+              <li>
+                Workspace Header → <strong>H2</strong>, establishing the primary
+                hierarchy level for analytical environments.
+              </li>
+              <li>
+                Dialog Header → <strong>H2</strong>, representing a primary task
+                context.
+              </li>
+              <li>
+                Sheet Header → <strong>H3</strong>, indicating a subordinate
+                context within a workspace.
+              </li>
+            </List>
           </CopyBlock>
         </Subsection>
         <Gap size={tokens.spacing.article.mediaGap} />
@@ -757,44 +798,102 @@ function DesignSystemsArticle() {
         <Gap size={tokens.spacing.article.mediaGap} />
         <Gap size={tokens.spacing.article.subsectionGap} />
 
-        <Subsection title="Support for complex analytical workflows">
+        <Subsection title="Predictable action placement">
           <CopyBlock>
             <Paragraph>
-              The MSA Workspace required functionality beyond traditional page
-              headers.
+              Defined a structured header layout that organizes actions
+              according to their role and importance.
             </Paragraph>
-            <Paragraph>Examples include:</Paragraph>
+            <Paragraph>The pattern includes:</Paragraph>
             <List>
-              <li>Workspace collapse controls</li>
-              <li>Graph creation actions</li>
-              <li>Analysis-specific controls</li>
-              <li>Dynamic action groups</li>
+              <li>Title area</li>
+              <li>Primary actions</li>
+              <li>Action groups</li>
+              <li>Workspace controls</li>
+              <li>Responsive wrapping behavior</li>
             </List>
+            <Paragraph>
+              This reduced implementation ambiguity, improved consistency across
+              applications, and ensured actions remain predictable regardless of
+              context.
+            </Paragraph>
           </CopyBlock>
         </Subsection>
         <Gap size={tokens.spacing.article.mediaGap} />
         <ArticleImage
-          alt="MSA header"
+          alt="Predictable header action placement"
           className="aspect-[2560/460]"
           src={images.msaHeader}
         />
+
+        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={tokens.spacing.article.subsectionGap} />
+
+        <Subsection title="Extensible architecture for future workflows">
+          <CopyBlock>
+            <Paragraph>
+              Established hierarchy, action placement, and interaction patterns
+              created a reusable foundation for future analytical workflows.
+            </Paragraph>
+            <Paragraph>
+              This reduced design debt, improved consistency, and accelerated
+              the delivery of new product capabilities.
+            </Paragraph>
+          </CopyBlock>
+        </Subsection>
+        <Gap size={tokens.spacing.article.mediaGap} />
+        <ArticleImage
+          alt="Extensible header architecture"
+          className="aspect-[2560/460]"
+          src={images.unifyingHeadersFig7}
+        />
+        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+        <List>
+          <li>
+            A common header foundation scales from simple dialogs to complex
+            analytical workspaces.
+          </li>
+        </List>
+      </Section>
+
+      <Gap size={tokens.spacing.article.sectionGap} />
+
+      <Section title="Implementation">
+        <List>
+          <li>Defined component architecture</li>
+          <li>Documented usage rules</li>
+          <li>Established hierarchy guidelines</li>
+          <li>Defined action placement rules</li>
+          <li>Supported responsive behavior</li>
+          <li>Worked with developers on implementation</li>
+        </List>
+      </Section>
+
+      <Gap size={tokens.spacing.article.sectionGap} />
+
+      <Section title="My role">
+        <List>
+          <li>Research and problem definition</li>
+          <li>Header architecture design</li>
+          <li>Component specification</li>
+          <li>Responsive behavior</li>
+          <li>Documentation and implementation guidelines</li>
+          <li>Developer collaboration</li>
+        </List>
       </Section>
 
       <Gap size={tokens.spacing.article.sectionGap} />
 
       <Section title="Outcome">
-        <CopyBlock>
-          <Paragraph>
-            Established a scalable header architecture that unified dialogs,
-            side sheets, and analytical workspaces under a shared set of design
-            principles.
-          </Paragraph>
-          <Paragraph>
-            The system improved consistency, reduced design debt, simplified
-            implementation, and created a foundation capable of supporting future
-            analytical workflows.
-          </Paragraph>
-        </CopyBlock>
+        <List>
+          <li>Unified header patterns across dialogs, sheets, and workspaces</li>
+          <li>Reduced need for one-off header solutions</li>
+          <li>Established reusable hierarchy and action placement rules</li>
+          <li>
+            Enabled future analytical applications to build on a shared
+            architecture
+          </li>
+        </List>
       </Section>
     </ArticleShell>
   );
