@@ -1146,21 +1146,17 @@ function ProductDesignScaleArticle() {
 
       <Section title="Challenge">
         <CopyBlock>
-          <Paragraph>Design the product ecosystem, not individual pages.</Paragraph>
           <Paragraph>
-            The website was treated as a connected product ecosystem rather than
-            a collection of marketing pages.
+            Platforma had grown into a broad ecosystem of scientific workflows,
+            platform capabilities, deployment options, developer tools, and
+            resources — but the website did not communicate how these pieces
+            connected.
           </Paragraph>
-          <Paragraph>Content was organized around:</Paragraph>
-          <List>
-            <li>Solutions</li>
-            <li>Platform</li>
-            <li>Resources</li>
-            <li>Company</li>
-          </List>
           <Paragraph>
-            This structure helped visitors understand how individual
-            capabilities relate to the broader platform.
+            The challenge was to create an information architecture that could
+            represent the product as one coherent platform while remaining
+            understandable to audiences with different goals and levels of
+            technical expertise.
           </Paragraph>
         </CopyBlock>
       </Section>
@@ -1406,9 +1402,9 @@ function MobileExperiencesArticle() {
             challenges:
           </Paragraph>
           <List>
-            <li>minimizing transaction costs;</li>
-            <li>evaluating transaction risk;</li>
-            <li>protecting wallet reputation;</li>
+            <li>minimizing transaction costs.</li>
+            <li>evaluating transaction risk.</li>
+            <li>protecting wallet reputation.</li>
             <li>managing idle capital.</li>
           </List>
           <Paragraph>
@@ -1453,8 +1449,8 @@ function MobileExperiencesArticle() {
             areas:
           </Paragraph>
           <List>
-            <li>transaction cost optimization;</li>
-            <li>risk management;</li>
+            <li>transaction cost optimization.</li>
+            <li>risk management.</li>
             <li>capital efficiency.</li>
           </List>
         </CopyBlock>
@@ -1480,7 +1476,7 @@ function MobileExperiencesArticle() {
           </Paragraph>
         </Subsection>
         <Gap size={tokens.spacing.article.subsectionGap} />
-        <Subsection title="Support proactive risk managment">
+        <Subsection title="Support proactive risk management">
           <Paragraph>
             Help users identify and isolate risk before it affects primary
             assets.
@@ -1537,8 +1533,8 @@ function MobileExperiencesArticle() {
             </Paragraph>
             <Paragraph>Users can immediately understand:</Paragraph>
             <List>
-              <li>available Energy;</li>
-              <li>estimated transaction capacity;</li>
+              <li>available Energy.</li>
+              <li>estimated transaction capacity.</li>
               <li>resource consumption status.</li>
             </List>
             <Paragraph>
@@ -1651,7 +1647,7 @@ function MobileExperiencesArticle() {
         <Subsection title="Outcome">
           <Paragraph>
             By combining AML verification with dedicated transfer wallets, the
-            product supports a complete risk-management workflow-from evaluating
+            product supports a complete risk-management workflow—from evaluating
             external addresses before a transfer to safely integrating verified
             assets into long-term holdings.
           </Paragraph>
@@ -1699,10 +1695,10 @@ function MobileExperiencesArticle() {
             </Paragraph>
             <Paragraph>Users can:</Paragraph>
             <List>
-              <li>create staking positions;</li>
-              <li>monitor active stakes;</li>
-              <li>review earnings;</li>
-              <li>unstake assets;</li>
+              <li>create staking positions.</li>
+              <li>monitor active stakes.</li>
+              <li>review earnings.</li>
+              <li>unstake assets.</li>
               <li>enable automatic reward reinvestment.</li>
             </List>
             <Paragraph>
@@ -1758,10 +1754,10 @@ function MobileExperiencesArticle() {
             </Paragraph>
             <Paragraph>The pattern is used for:</Paragraph>
             <List>
-              <li>Energy purchases;</li>
-              <li>account management;</li>
-              <li>currency preferences;</li>
-              <li>contextual settings;</li>
+              <li>Energy purchases.</li>
+              <li>account management.</li>
+              <li>currency preferences.</li>
+              <li>contextual settings.</li>
               <li>lightweight operational workflows.</li>
             </List>
             <Paragraph>
@@ -1810,10 +1806,10 @@ function MobileExperiencesArticle() {
           </Paragraph>
           <Paragraph>The product helps users:</Paragraph>
           <List>
-            <li>optimize transaction costs through Energy management;</li>
-            <li>assess and mitigate asset reputation risks;</li>
-            <li>separate trusted and untrusted transaction flows;</li>
-            <li>generate value from idle capital through staking;</li>
+            <li>optimize transaction costs through Energy management.</li>
+            <li>assess and mitigate asset reputation risks.</li>
+            <li>separate trusted and untrusted transaction flows.</li>
+            <li>generate value from idle capital through staking.</li>
             <li>manage complex workflows without leaving the mobile experience.</li>
           </List>
           <Paragraph>
