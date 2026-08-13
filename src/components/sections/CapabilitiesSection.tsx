@@ -1913,6 +1913,7 @@ export default function CapabilitiesSection({
 
   const sectionStyle: StyleVars = {
     "--capabilities-column-gap": "100px",
+    "--capabilities-article-min-width": "var(--article-max-width)",
     "--capabilities-menu-width": "277px",
   };
 
@@ -1991,11 +1992,11 @@ export default function CapabilitiesSection({
       {showIntroduction ? <CapabilitiesIntroduction /> : null}
       <section
         id="work"
-        className="mb-[var(--base-20)] flex w-full flex-col items-start gap-0 bg-[var(--bg-beige)] px-[var(--padding-side)] min-[1440px]:flex-row min-[1440px]:gap-[var(--capabilities-column-gap)]"
+        className="mb-[var(--base-20)] flex w-full flex-col items-start gap-0 bg-[var(--bg-beige)] px-[var(--padding-side)] min-[1280px]:flex-row min-[1280px]:gap-[var(--capabilities-column-gap)]"
         ref={sectionRef}
         style={sectionStyle}
       >
-        <div className="sticky top-[72px] z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pb-0 pt-[var(--base-10)] min-[1440px]:top-[128px] min-[1440px]:z-auto min-[1440px]:w-[var(--capabilities-menu-width)]">
+        <div className="sticky top-[72px] z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pb-[var(--base-5)] pt-[var(--base-10)] min-[1280px]:top-[128px] min-[1280px]:z-auto min-[1280px]:w-[var(--capabilities-menu-width)] min-[1280px]:pb-0">
           <h2
             className="text-center text-[var(--text-accent)]"
             style={typeStyle(typography.heading.h4)}
@@ -2003,12 +2004,12 @@ export default function CapabilitiesSection({
             Explore
           </h2>
           <div
-            className="no-scrollbar -mx-[var(--padding-side)] w-[calc(100%+var(--padding-side)*2)] overflow-x-auto px-[var(--padding-side)] min-[1440px]:mx-0 min-[1440px]:w-full min-[1440px]:overflow-visible min-[1440px]:px-0"
+            className="no-scrollbar -mx-[var(--padding-side)] w-[calc(100%+var(--padding-side)*2)] overflow-x-auto px-[var(--padding-side)] min-[1280px]:mx-0 min-[1280px]:w-full min-[1280px]:overflow-visible min-[1280px]:px-0"
             onScroll={saveTabsScrollPosition}
             ref={tabsScrollerRef}
           >
             <TabGroup
-              className="w-max flex-nowrap items-start min-[1440px]:w-full min-[1440px]:flex-wrap"
+              className="w-max flex-nowrap items-start min-[1280px]:w-full min-[1280px]:flex-wrap"
               onValueChange={handleValueChange}
               tabs={tabs}
               value={currentValue}
@@ -2018,7 +2019,7 @@ export default function CapabilitiesSection({
 
         <div
           ref={articleRef}
-          className="flex min-w-0 flex-1 scroll-mt-[var(--base-10)] flex-col items-start pt-[var(--base-5)] min-[1440px]:pt-[var(--base-10)]"
+          className="flex min-w-0 flex-1 scroll-mt-[var(--base-10)] flex-col items-start pt-[var(--base-5)] min-[1280px]:min-w-[var(--capabilities-article-min-width)] min-[1280px]:pt-[var(--base-10)]"
         >
           <ActiveArticle value={currentValue} />
         </div>
