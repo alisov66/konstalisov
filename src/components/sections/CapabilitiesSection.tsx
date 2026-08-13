@@ -1968,9 +1968,19 @@ export default function CapabilitiesSection({
         return;
       }
 
-      const activeTabCenter = activeTab.offsetLeft + activeTab.offsetWidth / 2;
-      const targetScrollLeft = activeTabCenter - tabsScroller.clientWidth / 2;
       const maxScrollLeft = tabsScroller.scrollWidth - tabsScroller.clientWidth;
+      const activeTabLeft = activeTab.offsetLeft;
+      const activeTabRight = activeTabLeft + activeTab.offsetWidth;
+      const visibleLeft = tabsScroller.scrollLeft;
+      const visibleRight = visibleLeft + tabsScroller.clientWidth;
+      let targetScrollLeft = visibleLeft;
+
+      if (activeTabLeft < visibleLeft) {
+        targetScrollLeft = activeTabLeft;
+      } else if (activeTabRight > visibleRight) {
+        targetScrollLeft = activeTabRight - tabsScroller.clientWidth;
+      }
+
       const clampedScrollLeft = Math.max(
         0,
         Math.min(targetScrollLeft, maxScrollLeft),
