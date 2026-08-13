@@ -209,14 +209,16 @@ function AccentSummary({ children }: { children: string }) {
 
 function ParagraphList({ items }: { items: string[] }) {
   return (
-    <div
-      className="flex max-w-[820px] flex-col gap-[var(--base-4)] text-[var(--text-primary)]"
+    <ul
+      className="flex max-w-[820px] list-disc flex-col gap-[var(--base-2)] pl-[30px] text-[var(--text-primary)]"
       style={typeStyle(typography.body.m)}
     >
       {items.map((item) => (
-        <p key={item}>{item}</p>
+        <li key={item}>
+          {item}
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
@@ -283,9 +285,9 @@ export default function CvPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-beige)] text-[var(--text-primary)]">
       <NavigationHeader alwaysVisible />
-      <section className="flex w-full flex-col gap-[var(--base-20)] px-[var(--padding-side)] pb-[var(--base-20)] pt-[var(--base-30)]">
-        <section className="flex w-full max-w-[var(--container-max)] flex-col gap-[var(--base-6)]">
-          <div className="flex w-full max-w-[680px] flex-col gap-[var(--base-6)]">
+      <section className="flex w-full flex-col items-center gap-[var(--base-20)] px-[var(--padding-side)] pb-[var(--base-20)] pt-[var(--base-30)]">
+        <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
+          <div className="flex w-full flex-col gap-[var(--base-6)]">
             <h1
               className="text-[var(--text-accent)]"
               style={typeStyle(typography.heading.h1)}
@@ -336,12 +338,12 @@ export default function CvPage() {
           </ButtonPrimary>
         </section>
 
-        <section className="flex w-full max-w-[var(--container-max)] flex-col gap-[var(--base-6)]">
+        <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
           <SectionHeading>Core expertise</SectionHeading>
           <SkillTags tags={coreExpertise} />
         </section>
 
-        <section className="flex w-full max-w-[var(--container-max)] flex-col gap-[var(--base-6)]">
+        <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
           <SectionHeading>Experience</SectionHeading>
 
           <div className="flex w-full flex-col gap-[var(--base-10)]">
@@ -353,7 +355,7 @@ export default function CvPage() {
                 >
                   {company.company}
                 </h3>
-                <div className="flex w-full flex-col gap-[var(--base-10)]">
+                <div className="flex w-full flex-col gap-[var(--base-6)]">
                   {company.roles.map((role) => (
                     <ExperienceRole key={`${company.company}-${role.title}`} {...role} />
                   ))}
@@ -363,7 +365,7 @@ export default function CvPage() {
           </div>
         </section>
 
-        <section className="flex w-full max-w-[var(--container-max)] flex-col gap-[var(--base-6)]">
+        <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
           <SectionHeading>Education & training</SectionHeading>
           <div className="flex flex-col gap-[var(--base-6)]">
             {education.map((item) => (
@@ -376,7 +378,7 @@ export default function CvPage() {
           </div>
         </section>
 
-        <section className="flex w-full max-w-[var(--container-max)] flex-col gap-[var(--base-6)]">
+        <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
           <SectionHeading>Certifications</SectionHeading>
           <div className="flex flex-col gap-[var(--base-6)]">
             {certifications.map((item) => (
@@ -389,7 +391,7 @@ export default function CvPage() {
           </div>
         </section>
 
-        <section className="flex w-full max-w-[var(--container-max)] flex-col gap-[var(--base-6)]">
+        <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
           <SectionHeading>Tools & workflow</SectionHeading>
           <div className="flex flex-col gap-[var(--base-6)]">
             {tools.map((group) => (
@@ -407,7 +409,7 @@ export default function CvPage() {
           </div>
         </section>
 
-        <section className="flex w-full max-w-[var(--container-max)] flex-col gap-[var(--base-6)]">
+        <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
           <SectionHeading>Languages</SectionHeading>
           <div className="flex flex-col gap-[var(--base-6)]">
             {languages.map((item) => (
