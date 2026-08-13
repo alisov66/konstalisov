@@ -1,5 +1,5 @@
 import ButtonPrimary from "@/components/ui/ButtonPrimary";
-import { tokens } from "@/styles/tokens";
+import { typography } from "@/styles";
 import Image from "next/image";
 
 const profilePhotoSrc = "/about/profile-photo.jpg";
@@ -24,7 +24,7 @@ export default function AboutSection() {
     >
       <h1
         className="w-full text-[var(--text-accent)]"
-        style={typeStyle(tokens.typography.heading.h1)}
+        style={typeStyle(typography.heading.h1)}
       >
         About
       </h1>
@@ -44,13 +44,13 @@ export default function AboutSection() {
           <div className="flex w-full flex-col gap-[var(--base-1)]">
             <p
               className="text-[var(--text-accent)]"
-              style={typeStyle(tokens.typography.heading.h5)}
+              style={typeStyle(typography.heading.h5)}
             >
               Currently based
             </p>
             <p
               className="text-[var(--text-primary)]"
-              style={typeStyle(tokens.typography.body.m)}
+              style={typeStyle(typography.body.m)}
             >
               Bilbao, Spain
             </p>
@@ -59,17 +59,17 @@ export default function AboutSection() {
 
         <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-15)] min-[332px]:min-w-[300px] min-[482px]:min-w-[min(400px,100%)]">
           <div className="flex w-full max-w-[820px] flex-col gap-[var(--base-3)] text-[var(--text-primary)]">
-            <h3 style={typeStyle(tokens.typography.heading.h3)}>
+            <h3 style={typeStyle(typography.heading.h3)}>
               I enjoy figuring out how complicated things work
             </h3>
-            <p style={typeStyle(tokens.typography.body.m)}>
+            <p style={typeStyle(typography.body.m)}>
               I&apos;m naturally drawn to understanding how complicated things
               work. Whether it&apos;s scientific research, financial systems,
               or product architecture, I enjoy asking questions, uncovering
               patterns, and turning complexity into products people can use with
               confidence.
             </p>
-            <p style={typeStyle(tokens.typography.body.m)}>
+            <p style={typeStyle(typography.body.m)}>
               The products I work on are different, but the motivation is
               usually the same: helping people feel confident in complex
               environments.
@@ -80,13 +80,13 @@ export default function AboutSection() {
             <div className="flex w-full min-w-[292px] max-w-[820px] flex-col gap-[var(--base-1)]">
               <h4
                 className="text-[var(--text-accent)]"
-                style={typeStyle(tokens.typography.heading.h5)}
+                style={typeStyle(typography.heading.h5)}
               >
                 Exploring
               </h4>
               <ul
                 className="list-disc pl-[30px]"
-                style={typeStyle(tokens.typography.body.m)}
+                style={typeStyle(typography.body.m)}
               >
                 <li className="mb-[var(--base-2)]">
                   Exploring AI-assisted development
@@ -101,11 +101,11 @@ export default function AboutSection() {
             <div className="flex w-full min-w-[292px] max-w-[820px] flex-col gap-[var(--base-1)]">
               <h4
                 className="text-[var(--text-accent)]"
-                style={typeStyle(tokens.typography.heading.h5)}
+                style={typeStyle(typography.heading.h5)}
               >
                 Building
               </h4>
-              <p style={typeStyle(tokens.typography.body.m)}>
+              <p style={typeStyle(typography.body.m)}>
                 <strong className="font-[var(--font-weight-semibold)]">
                   I designed this portfolio and built it using AI-assisted
                   development with Next.js, Tailwind CSS, GitHub, and Vercel.
@@ -119,11 +119,11 @@ export default function AboutSection() {
             <div className="flex w-full min-w-[292px] max-w-[820px] flex-col gap-[var(--base-1)]">
               <h4
                 className="text-[var(--text-accent)]"
-                style={typeStyle(tokens.typography.heading.h5)}
+                style={typeStyle(typography.heading.h5)}
               >
                 Working style
               </h4>
-              <p style={typeStyle(tokens.typography.body.m)}>
+              <p style={typeStyle(typography.body.m)}>
                 I enjoy partnering closely with product managers and engineers,
                 bringing structure to ambiguous problems through systems
                 thinking before polishing interfaces.

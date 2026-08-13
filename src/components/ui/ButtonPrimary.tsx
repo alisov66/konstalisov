@@ -9,7 +9,7 @@ import type {
 } from "react";
 import { useEffect, useRef, useState } from "react";
 
-import { tokens } from "@/styles/tokens";
+import { colors, radius, spacing, typography } from "@/styles";
 
 type ButtonPrimaryStyle = CSSProperties &
   Record<`--hero-button-${string}`, string | number> &
@@ -122,7 +122,7 @@ export default function ButtonPrimary({
   const [blobVariantIndex, setBlobVariantIndex] = useState(0);
   const blobVariant = blobVariants[blobVariantIndex];
   const drainTimeoutRef = useRef<number | null>(null);
-  const typography = tokens.typography.button.m;
+  const buttonTypography = typography.button.m;
 
   const clearDrainTimeout = () => {
     if (drainTimeoutRef.current === null) {
@@ -182,19 +182,19 @@ export default function ButtonPrimary({
   };
 
   const heroButtonStyle = {
-    "--hero-button-bg": tokens.colors.button.fillAccentMuted,
-    "--hero-button-hover-bg": tokens.colors.button.fillAccent,
-    "--hero-button-text": tokens.colors.button.text,
-    "--hero-button-radius": tokens.radius.pill,
-    "--hero-button-padding-x": tokens.spacing.base[6],
-    "--hero-button-padding-y": tokens.spacing.base[4],
-    "--hero-button-font-size": typography.fontSize,
-    "--hero-button-line-height": typography.lineHeight,
-    "--hero-button-font-weight": typography.fontWeight,
-    "--hero-button-focus-ring": `inset 0 0 0 ${tokens.colors.border.width.medium} ${tokens.colors.border.focus}`,
+    "--hero-button-bg": colors.button.fillAccentMuted,
+    "--hero-button-hover-bg": colors.button.fillAccent,
+    "--hero-button-text": colors.button.text,
+    "--hero-button-radius": radius.pill,
+    "--hero-button-padding-x": spacing.base[6],
+    "--hero-button-padding-y": spacing.base[4],
+    "--hero-button-font-size": buttonTypography.fontSize,
+    "--hero-button-line-height": buttonTypography.lineHeight,
+    "--hero-button-font-weight": buttonTypography.fontWeight,
+    "--hero-button-focus-ring": `inset 0 0 0 ${colors.border.width.medium} ${colors.border.focus}`,
     "--hero-button-transition":
       "background-color 300ms ease-in, border-color 150ms ease-in, color 150ms ease-in, box-shadow 300ms ease-in, transform 300ms ease-in",
-    "--navi-blob-color": tokens.colors.button.fillAccent,
+    "--navi-blob-color": colors.button.fillAccent,
     "--navi-hover-x": hoverOrigin.x,
     "--navi-hover-y": hoverOrigin.y,
     "--navi-blob-radius-a": blobVariant.radiusA,

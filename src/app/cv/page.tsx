@@ -2,7 +2,7 @@ import Footer from "@/components/ui/Footer";
 import ButtonPrimary from "@/components/ui/ButtonPrimary";
 import NavigationHeader from "@/components/ui/NavigationHeader";
 import { pageMetadata } from "@/app/seo";
-import { tokens } from "@/styles/tokens";
+import { typography } from "@/styles";
 
 const cvPdfHref = "/Konstantin-Alisov-CV.pdf";
 
@@ -167,7 +167,7 @@ function SectionHeading({ children }: { children: string }) {
   return (
     <h2
       className="text-[var(--text-accent)]"
-      style={typeStyle(tokens.typography.heading.h3)}
+      style={typeStyle(typography.heading.h3)}
     >
       {children}
     </h2>
@@ -181,7 +181,7 @@ function SkillTags({ tags }: { tags: string[] }) {
         <span
           className="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-[var(--pill)] bg-[var(--bg-beige-soft)] px-[var(--base-3)] py-[var(--base-1)] text-[var(--text-primary)] [word-break:break-word]"
           key={tag}
-          style={typeStyle(tokens.typography.body.m)}
+          style={typeStyle(typography.body.m)}
         >
           {tag}
         </span>
@@ -199,7 +199,7 @@ function AccentSummary({ children }: { children: string }) {
       />
       <p
         className="max-w-[820px] text-[var(--text-primary)]"
-        style={typeStyle(tokens.typography.body.m)}
+        style={typeStyle(typography.body.m)}
       >
         {children}
       </p>
@@ -211,7 +211,7 @@ function ParagraphList({ items }: { items: string[] }) {
   return (
     <div
       className="flex max-w-[820px] flex-col gap-[var(--base-4)] text-[var(--text-primary)]"
-      style={typeStyle(tokens.typography.body.m)}
+      style={typeStyle(typography.body.m)}
     >
       {items.map((item) => (
         <p key={item}>{item}</p>
@@ -236,13 +236,13 @@ function ExperienceRole({
       <div className="flex flex-wrap gap-x-[var(--base-6)] gap-y-[var(--base-1)]">
         <h4
           className="text-[var(--text-primary)]"
-          style={typeStyle(tokens.typography.heading.h5)}
+          style={typeStyle(typography.heading.h5)}
         >
           {title}
         </h4>
         <p
           className="text-[var(--text-secondary)]"
-          style={typeStyle(tokens.typography.body.m)}
+          style={typeStyle(typography.body.m)}
         >
           {dates}
         </p>
@@ -265,13 +265,13 @@ function CompactEntry({
     <div className="flex flex-col gap-[var(--base-2)]">
       <h3
         className="text-[var(--text-primary)]"
-        style={typeStyle(tokens.typography.heading.h5)}
+        style={typeStyle(typography.heading.h5)}
       >
         {title}
       </h3>
       <p
         className="whitespace-pre-line text-[var(--text-primary)]"
-        style={typeStyle(tokens.typography.body.m)}
+        style={typeStyle(typography.body.m)}
       >
         {meta}
       </p>
@@ -288,7 +288,7 @@ export default function CvPage() {
           <div className="flex w-full max-w-[680px] flex-col gap-[var(--base-6)]">
             <h1
               className="text-[var(--text-accent)]"
-              style={typeStyle(tokens.typography.heading.h1)}
+              style={typeStyle(typography.heading.h1)}
             >
               Konstantin Alisov
             </h1>
@@ -297,15 +297,15 @@ export default function CvPage() {
               <p
                 className="text-[var(--text-primary)]"
                 style={{
-                  ...typeStyle(tokens.typography.body.m),
-                  fontWeight: tokens.typography.fontWeight.semibold,
+                  ...typeStyle(typography.body.m),
+                  fontWeight: typography.fontWeight.semibold,
                 }}
               >
                 Product Designer
               </p>
               <div
                 className="flex flex-col gap-[var(--base-1)] text-[var(--text-secondary)]"
-                style={typeStyle(tokens.typography.body.m)}
+                style={typeStyle(typography.body.m)}
               >
                 <p>Bilbao, Spain</p>
                 <p>Updated: Aug 2026</p>
@@ -315,7 +315,7 @@ export default function CvPage() {
 
           <p
             className="max-w-[820px] whitespace-pre-line text-[var(--text-primary)]"
-            style={typeStyle(tokens.typography.body.m)}
+            style={typeStyle(typography.body.m)}
           >
             Product designer with 9+ years of experience designing enterprise
             software, complex workflows, and information-rich interfaces.
@@ -349,7 +349,7 @@ export default function CvPage() {
               <section className="flex w-full flex-col gap-[var(--base-4)]" key={company.company}>
                 <h3
                   className="text-[var(--text-secondary)]"
-                  style={typeStyle(tokens.typography.heading.h4)}
+                  style={typeStyle(typography.heading.h4)}
                 >
                   {company.company}
                 </h3>
@@ -396,7 +396,7 @@ export default function CvPage() {
               <div className="flex flex-col gap-[var(--base-3)]" key={group.title}>
                 <h3
                   className="text-[var(--text-primary)]"
-                  style={typeStyle(tokens.typography.heading.h5)}
+                  style={typeStyle(typography.heading.h5)}
                 >
                   {group.title}
                 </h3>

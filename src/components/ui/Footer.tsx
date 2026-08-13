@@ -1,4 +1,4 @@
-import { tokens } from "@/styles/tokens";
+import { typography } from "@/styles";
 
 function typeStyle(token: {
   fontSize: string | number;
@@ -20,13 +20,13 @@ export default function Footer() {
       >
         <p
           className="text-[var(--text-secondary)]"
-          style={typeStyle(tokens.typography.body.xs)}
+          style={typeStyle(typography.body.xs)}
         >
           © Konstantin Alisov
         </p>
         <p
           className="text-[var(--text-tertiary)]"
-          style={typeStyle(tokens.typography.body.xs)}
+          style={typeStyle(typography.body.xs)}
         >
           2026
         </p>

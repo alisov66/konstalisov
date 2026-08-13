@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, CSSProperties } from "react";
 
-import { tokens } from "@/styles/tokens";
+import { colors, radius, spacing, typography } from "@/styles";
 
 type TabButtonStyle = CSSProperties &
   Record<`--tab-button-${string}`, string | number>;
@@ -11,23 +11,23 @@ export interface TabButtonProps
 }
 
 export function getTabButtonStyle(selected = false): TabButtonStyle {
-  const textColor = tokens.colors.button.text;
+  const textColor = colors.button.text;
 
   return {
     "--tab-button-bg": selected
-      ? tokens.colors.button.fillAccent
+      ? colors.button.fillAccent
       : "transparent",
     "--tab-button-hover-bg": selected
-      ? tokens.colors.button.fillAccent
-      : tokens.colors.button.fillAccentMuted,
+      ? colors.button.fillAccent
+      : colors.button.fillAccentMuted,
     "--tab-button-text": textColor,
-    "--tab-button-radius": tokens.radius.pill,
-    "--tab-button-padding-x": tokens.spacing.base[4],
-    "--tab-button-padding-y": tokens.spacing.base[2],
-    "--tab-button-font-size": tokens.typography.button.m.fontSize,
-    "--tab-button-line-height": tokens.typography.button.m.lineHeight,
-    "--tab-button-font-weight": tokens.typography.button.m.fontWeight,
-    "--tab-button-focus-ring": `inset 0 0 0 ${tokens.colors.border.width.medium} ${tokens.colors.border.focus}`,
+    "--tab-button-radius": radius.pill,
+    "--tab-button-padding-x": spacing.base[4],
+    "--tab-button-padding-y": spacing.base[2],
+    "--tab-button-font-size": typography.button.m.fontSize,
+    "--tab-button-line-height": typography.button.m.lineHeight,
+    "--tab-button-font-weight": typography.button.m.fontWeight,
+    "--tab-button-focus-ring": `inset 0 0 0 ${colors.border.width.medium} ${colors.border.focus}`,
     "--tab-button-hover-shadow": "none",
     "--tab-button-active-shadow": "none",
     color: textColor,

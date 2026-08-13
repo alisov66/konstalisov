@@ -10,7 +10,7 @@ import {
   getCapabilityById,
   type CapabilityId,
 } from "@/data/capabilities";
-import { tokens } from "@/styles/tokens";
+import { colors, spacing, typography } from "@/styles";
 
 const images = {
   msaFig1: "/capabilities/msa-fig-1.png",
@@ -82,8 +82,8 @@ function Paragraph({ children }: { children: ReactNode }) {
     <p
       className="max-w-full"
       style={{
-        ...typeStyle(tokens.typography.article.body),
-        marginBottom: tokens.spacing.base[3],
+        ...typeStyle(typography.article.body),
+        marginBottom: spacing.base[3],
       }}
     >
       {children}
@@ -100,8 +100,8 @@ function List({ children }: { children: ReactNode }) {
     <ul
       className="list-disc"
       style={{
-        ...typeStyle(tokens.typography.article.body),
-        marginBottom: tokens.spacing.base[3],
+        ...typeStyle(typography.article.body),
+        marginBottom: spacing.base[3],
         paddingLeft: "30px",
       }}
     >
@@ -139,7 +139,7 @@ function ArticleImage({
 
 function H1({ children }: { children: ReactNode }) {
   return (
-    <h3 style={typeStyle(tokens.typography.article.h1)}>
+    <h3 style={typeStyle(typography.article.h1)}>
       {children}
     </h3>
   );
@@ -147,7 +147,7 @@ function H1({ children }: { children: ReactNode }) {
 
 function H2({ children }: { children: ReactNode }) {
   return (
-    <h4 style={typeStyle(tokens.typography.article.h2)}>
+    <h4 style={typeStyle(typography.article.h2)}>
       {children}
     </h4>
   );
@@ -155,7 +155,7 @@ function H2({ children }: { children: ReactNode }) {
 
 function H3({ children }: { children: ReactNode }) {
   return (
-    <h5 style={typeStyle(tokens.typography.article.h3)}>
+    <h5 style={typeStyle(typography.article.h3)}>
       {children}
     </h5>
   );
@@ -171,7 +171,7 @@ function Section({
   return (
     <section>
       <H2>{title}</H2>
-      <Gap size={tokens.spacing.article.h2Gap} />
+      <Gap size={spacing.article.h2Gap} />
       {children}
     </section>
   );
@@ -187,7 +187,7 @@ function Subsection({
   return (
     <section>
       <H3>{title}</H3>
-      <Gap size={tokens.spacing.article.h3Gap} />
+      <Gap size={spacing.article.h3Gap} />
       {children}
     </section>
   );
@@ -197,7 +197,7 @@ function ArticleShell({ children }: { children: ReactNode }) {
   return (
     <article
       className="w-full"
-      style={{ maxWidth: tokens.spacing.article.maxWidth }}
+      style={{ maxWidth: spacing.article.maxWidth }}
     >
       {children}
     </article>
@@ -206,15 +206,15 @@ function ArticleShell({ children }: { children: ReactNode }) {
 
 function ComplexWorkflowArticle() {
   const labelStyle = {
-    ...typeStyle(tokens.typography.article.body),
-    fontWeight: tokens.typography.fontWeight.semibold,
+    ...typeStyle(typography.article.body),
+    fontWeight: typography.fontWeight.semibold,
   };
 
   return (
     <div className="flex flex-col">
       <ArticleShell>
         <H1>MSA workspace</H1>
-        <Gap size={tokens.spacing.article.h1Gap} />
+        <Gap size={spacing.article.h1Gap} />
 
         <Section title="Context">
           <CopyBlock>
@@ -228,7 +228,7 @@ function ComplexWorkflowArticle() {
               while frequently switching focus throughout the analysis process.
             </Paragraph>
           </CopyBlock>
-          <Gap size={tokens.spacing.article.mediaGap} />
+          <Gap size={spacing.article.mediaGap} />
           <ArticleImage
             alt="MSA workspace overview"
             className="aspect-[2428/1558]"
@@ -236,7 +236,7 @@ function ComplexWorkflowArticle() {
           />
         </Section>
 
-        <Gap size={tokens.spacing.article.sectionGap} />
+        <Gap size={spacing.article.sectionGap} />
 
         <Section title="Insights">
           <CopyBlock>
@@ -254,7 +254,7 @@ function ComplexWorkflowArticle() {
           </CopyBlock>
         </Section>
 
-        <Gap size={tokens.spacing.article.sectionGap} />
+        <Gap size={spacing.article.sectionGap} />
 
         <Section title="Challenge">
           <CopyBlock>
@@ -275,7 +275,7 @@ function ComplexWorkflowArticle() {
           </CopyBlock>
         </Section>
 
-        <Gap size={tokens.spacing.article.sectionGap} />
+        <Gap size={spacing.article.sectionGap} />
 
         <Section title="Design principles">
           <CopyBlock>
@@ -286,28 +286,28 @@ function ComplexWorkflowArticle() {
             </Paragraph>
             <Paragraph>The design was guided by four principles:</Paragraph>
           </CopyBlock>
-          <Gap size={tokens.spacing.article.subsectionGap} />
+          <Gap size={spacing.article.subsectionGap} />
           <Subsection title="Adaptability">
             <Paragraph>
               The workspace should support different analytical goals without
               requiring separate interfaces.
             </Paragraph>
           </Subsection>
-          <Gap size={tokens.spacing.article.subsectionGap} />
+          <Gap size={spacing.article.subsectionGap} />
           <Subsection title="Progressive detail">
             <Paragraph>
               Users should be able to switch between overview and detailed
               inspection modes.
             </Paragraph>
           </Subsection>
-          <Gap size={tokens.spacing.article.subsectionGap} />
+          <Gap size={spacing.article.subsectionGap} />
           <Subsection title="Context preservation">
             <Paragraph>
               Important metadata should remain accessible while navigating large
               datasets.
             </Paragraph>
           </Subsection>
-          <Gap size={tokens.spacing.article.subsectionGap} />
+          <Gap size={spacing.article.subsectionGap} />
           <Subsection title="User control">
             <Paragraph>
               Researchers should be able to customize the workspace according to
@@ -316,7 +316,7 @@ function ComplexWorkflowArticle() {
           </Subsection>
         </Section>
 
-        <Gap size={tokens.spacing.article.sectionGap} />
+        <Gap size={spacing.article.sectionGap} />
 
         <Section title="Key improvements">
           <Subsection title="One workspace, multiple analytical tasks">
@@ -340,14 +340,14 @@ function ComplexWorkflowArticle() {
               </Paragraph>
             </CopyBlock>
           </Subsection>
-          <Gap size={tokens.spacing.article.mediaGap} />
+          <Gap size={spacing.article.mediaGap} />
           <ArticleImage
             alt="MSA workspace analytical layers"
             className="aspect-[2428/1558]"
             src={images.msaFig2}
           />
-          <Gap size={tokens.spacing.article.mediaGap} />
-          <Gap size={tokens.spacing.article.subsectionGap} />
+          <Gap size={spacing.article.mediaGap} />
+          <Gap size={spacing.article.subsectionGap} />
 
           <Subsection title="Progressive detail through density controls">
             <CopyBlock>
@@ -369,47 +369,47 @@ function ComplexWorkflowArticle() {
               </List>
             </CopyBlock>
           </Subsection>
-          <Gap size={tokens.spacing.article.mediaGap} />
+          <Gap size={spacing.article.mediaGap} />
           <p style={labelStyle}>Heatmap</p>
-          <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+          <Gap size={spacing.article.mediaToCaptionGap} />
           <ArticleImage
             alt="Expanded heatmap mode"
             className="aspect-[2428/1558]"
             src={images.msaFig3}
           />
-          <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+          <Gap size={spacing.article.mediaToCaptionGap} />
           <List>
             <li>Expanded mode reveals labels and detailed values.</li>
           </List>
-          <Gap size={tokens.spacing.article.mediaGap} />
+          <Gap size={spacing.article.mediaGap} />
           <ArticleImage
             alt="Collapsed heatmap mode"
             className="aspect-[2428/1558]"
             src={images.msaFig4}
           />
-          <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+          <Gap size={spacing.article.mediaToCaptionGap} />
           <List>
             <li>Collapsed mode compresses cells into a fixed-width overview.</li>
           </List>
-          <Gap size={tokens.spacing.article.mediaGap} />
+          <Gap size={spacing.article.mediaGap} />
           <p style={labelStyle}>Alignment grid</p>
-          <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+          <Gap size={spacing.article.mediaToCaptionGap} />
           <ArticleImage
             alt="Expanded alignment grid mode"
             className="aspect-[2428/1558]"
             src={images.msaFig5}
           />
-          <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+          <Gap size={spacing.article.mediaToCaptionGap} />
           <List>
             <li>Expanded mode supports detailed sequence inspection.</li>
           </List>
-          <Gap size={tokens.spacing.article.mediaGap} />
+          <Gap size={spacing.article.mediaGap} />
           <ArticleImage
             alt="Collapsed alignment grid mode"
             className="aspect-[2424/1554]"
             src={images.msaFig6}
           />
-          <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+          <Gap size={spacing.article.mediaToCaptionGap} />
           <List>
             <li>
               Collapsed mode removes sequence characters and displays alignment
@@ -418,7 +418,7 @@ function ComplexWorkflowArticle() {
           </List>
         </Section>
 
-        <Gap size={tokens.spacing.article.sectionGap} />
+        <Gap size={spacing.article.sectionGap} />
 
         <Section title="My role">
           <Paragraph>
@@ -429,7 +429,7 @@ function ComplexWorkflowArticle() {
           </Paragraph>
         </Section>
 
-        <Gap size={tokens.spacing.article.sectionGap} />
+        <Gap size={spacing.article.sectionGap} />
 
         <Section title="Outcome">
           <Paragraph>
@@ -442,11 +442,11 @@ function ComplexWorkflowArticle() {
         </Section>
       </ArticleShell>
 
-      <Gap size={tokens.spacing.article.chapterGap} />
+      <Gap size={spacing.article.chapterGap} />
 
       <ArticleShell>
         <H1>Data mapping</H1>
-        <Gap size={tokens.spacing.article.h1Gap} />
+        <Gap size={spacing.article.h1Gap} />
 
         <Section title="Context">
           <Paragraph>
@@ -454,7 +454,7 @@ function ComplexWorkflowArticle() {
             how it is represented. Users connect metadata to chart variables
             before analysis can begin.
           </Paragraph>
-          <Gap size={tokens.spacing.article.mediaGap} />
+          <Gap size={spacing.article.mediaGap} />
           <ArticleImage
             alt="Data mapping interface"
             className="aspect-[1368/1648] w-[450px] max-w-full"
@@ -462,7 +462,7 @@ function ComplexWorkflowArticle() {
           />
         </Section>
 
-        <Gap size={tokens.spacing.article.sectionGap} />
+        <Gap size={spacing.article.sectionGap} />
 
         <Section title="Insights">
           <CopyBlock>
@@ -479,7 +479,7 @@ function ComplexWorkflowArticle() {
           </CopyBlock>
         </Section>
 
-        <Gap size={tokens.spacing.article.sectionGap} />
+        <Gap size={spacing.article.sectionGap} />
 
         <Section title="Challenge">
           <CopyBlock>
@@ -497,7 +497,7 @@ function ComplexWorkflowArticle() {
           </CopyBlock>
         </Section>
 
-        <Gap size={tokens.spacing.article.sectionGap} />
+        <Gap size={spacing.article.sectionGap} />
 
         <Section title="Key improvements">
           <Subsection title="Faster discovery">
@@ -515,14 +515,14 @@ function ComplexWorkflowArticle() {
               </List>
             </CopyBlock>
           </Subsection>
-          <Gap size={tokens.spacing.article.mediaGap} />
+          <Gap size={spacing.article.mediaGap} />
           <ArticleImage
             alt="Data mapping variables grouped by biological meaning"
             className="aspect-[1472/1624] w-[450px] max-w-full"
             src={images.dataMappingFig2}
           />
-          <Gap size={tokens.spacing.article.mediaGap} />
-          <Gap size={tokens.spacing.article.subsectionGap} />
+          <Gap size={spacing.article.mediaGap} />
+          <Gap size={spacing.article.subsectionGap} />
 
           <Subsection title="Intelligent compatibility guidance">
             <Paragraph>
@@ -530,31 +530,31 @@ function ComplexWorkflowArticle() {
               visualization targets.
             </Paragraph>
           </Subsection>
-          <Gap size={tokens.spacing.article.mediaGap} />
+          <Gap size={spacing.article.mediaGap} />
           <ArticleImage
             alt="Compatible targets highlighted from a variable"
             className="aspect-[450/432.426] w-[450px] max-w-full"
             src={images.dataMappingFig3}
           />
-          <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+          <Gap size={spacing.article.mediaToCaptionGap} />
           <List>
             <li>Hover a variable → compatible targets are highlighted.</li>
           </List>
-          <Gap size={tokens.spacing.article.mediaGap} />
+          <Gap size={spacing.article.mediaGap} />
           <ArticleImage
             alt="Compatible variables highlighted from a target"
             className="aspect-[450/732.781] w-[450px] max-w-full"
             src={images.dataMappingFig4}
           />
-          <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+          <Gap size={spacing.article.mediaToCaptionGap} />
           <List>
             <li>
               Select a target → compatible variables are highlighted as
               Recommended, Supported, or Forbidden.
             </li>
           </List>
-          <Gap size={tokens.spacing.article.mediaGap} />
-          <Gap size={tokens.spacing.article.subsectionGap} />
+          <Gap size={spacing.article.mediaGap} />
+          <Gap size={spacing.article.subsectionGap} />
 
           <Subsection title="Suggested Variables">
             <Paragraph>
@@ -562,28 +562,28 @@ function ComplexWorkflowArticle() {
               faster.
             </Paragraph>
           </Subsection>
-          <Gap size={tokens.spacing.article.mediaGap} />
+          <Gap size={spacing.article.mediaGap} />
           <ArticleImage
             alt="Suggested variables"
             className="aspect-[450/473.547] w-[450px] max-w-full"
             src={images.dataMappingFig5}
           />
-          <Gap size={tokens.spacing.article.mediaGap} />
-          <Gap size={tokens.spacing.article.subsectionGap} />
+          <Gap size={spacing.article.mediaGap} />
+          <Gap size={spacing.article.subsectionGap} />
 
           <Subsection title="More Explicit Actions">
             <Paragraph>
               Changed ambiguous drag-and-drop instructions into clearer guidance.
             </Paragraph>
           </Subsection>
-          <Gap size={tokens.spacing.article.mediaGap} />
+          <Gap size={spacing.article.mediaGap} />
           <ArticleImage
             alt="More explicit data mapping actions"
             className="aspect-[450/83.721] w-[450px] max-w-full"
             src={images.dataMappingFig6}
           />
-          <Gap size={tokens.spacing.article.mediaGap} />
-          <Gap size={tokens.spacing.article.subsectionGap} />
+          <Gap size={spacing.article.mediaGap} />
+          <Gap size={spacing.article.subsectionGap} />
 
           <Subsection title="Clear mental model">
             <CopyBlock>
@@ -602,7 +602,7 @@ function ComplexWorkflowArticle() {
               </List>
             </CopyBlock>
           </Subsection>
-          <Gap size={tokens.spacing.article.mediaGap} />
+          <Gap size={spacing.article.mediaGap} />
           <ArticleImage
             alt="Renamed data mapping labels"
             className="aspect-[450/183.482] w-[450px] max-w-full"
@@ -610,7 +610,7 @@ function ComplexWorkflowArticle() {
           />
         </Section>
 
-        <Gap size={tokens.spacing.article.sectionGap} />
+        <Gap size={spacing.article.sectionGap} />
 
         <Section title="My role">
           <Paragraph>
@@ -620,7 +620,7 @@ function ComplexWorkflowArticle() {
           </Paragraph>
         </Section>
 
-        <Gap size={tokens.spacing.article.sectionGap} />
+        <Gap size={spacing.article.sectionGap} />
 
         <Section title="Outcome">
           <Paragraph>
@@ -637,14 +637,14 @@ function ComplexWorkflowArticle() {
 
 function DesignSystemsArticle() {
   const labelStyle = {
-    ...typeStyle(tokens.typography.article.body),
-    fontWeight: tokens.typography.fontWeight.semibold,
+    ...typeStyle(typography.article.body),
+    fontWeight: typography.fontWeight.semibold,
   };
 
   return (
     <ArticleShell>
       <H1>Scalable header architecture</H1>
-      <Gap size={tokens.spacing.article.h1Gap} />
+      <Gap size={spacing.article.h1Gap} />
 
       <Section title="Context">
         <CopyBlock>
@@ -662,7 +662,7 @@ function DesignSystemsArticle() {
             introduced requirements that existing patterns could not support.
           </Paragraph>
         </CopyBlock>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Scalable header architecture"
           className="aspect-[1776/1760] w-[450px] max-w-full"
@@ -670,7 +670,7 @@ function DesignSystemsArticle() {
         />
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Challenge">
         <Paragraph>
@@ -680,7 +680,7 @@ function DesignSystemsArticle() {
         </Paragraph>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Design principles">
         <CopyBlock>
@@ -707,7 +707,7 @@ function DesignSystemsArticle() {
         </CopyBlock>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Key improvements">
         <Subsection title="Header architecture instead of a single component">
@@ -717,45 +717,45 @@ function DesignSystemsArticle() {
             contexts.
           </Paragraph>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <p style={labelStyle}>Dialog header</p>
-        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+        <Gap size={spacing.article.mediaToCaptionGap} />
         <ArticleImage
           alt="Dialog header pattern"
           className="aspect-[2984/1904]"
           src={images.dialogHeader}
         />
-        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+        <Gap size={spacing.article.mediaToCaptionGap} />
         <List>
           <li>
             Optimized for focused, short-lived workflows with a clear primary
             task and close action.
           </li>
         </List>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <p style={labelStyle}>Sheet header</p>
-        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+        <Gap size={spacing.article.mediaToCaptionGap} />
         <ArticleImage
           alt="Sheet header pattern"
           className="aspect-[2984/1904]"
           src={images.sheetHeader}
         />
-        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+        <Gap size={spacing.article.mediaToCaptionGap} />
         <List>
           <li>
             Supports contextual editing while preserving visibility of the
             underlying workspace.
           </li>
         </List>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <p style={labelStyle}>Workspace header</p>
-        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+        <Gap size={spacing.article.mediaToCaptionGap} />
         <ArticleImage
           alt="Workspace header pattern"
           className="aspect-[2984/1904]"
           src={images.workspaceHeader}
         />
-        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+        <Gap size={spacing.article.mediaToCaptionGap} />
         <List>
           <li>
             Accommodates navigation, actions, controls, and workspace-specific
@@ -763,8 +763,8 @@ function DesignSystemsArticle() {
           </li>
         </List>
 
-        <Gap size={tokens.spacing.article.mediaGap} />
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.subsectionGap} />
 
         <Subsection title="Consistent hierarchy across the platform">
           <CopyBlock>
@@ -788,15 +788,15 @@ function DesignSystemsArticle() {
             </List>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Header hierarchy model"
           className="aspect-[2790/902]"
           src={images.hierarchy}
         />
 
-        <Gap size={tokens.spacing.article.mediaGap} />
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.subsectionGap} />
 
         <Subsection title="Predictable action placement">
           <CopyBlock>
@@ -819,15 +819,15 @@ function DesignSystemsArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Predictable header action placement"
           className="aspect-[2560/460]"
           src={images.msaHeader}
         />
 
-        <Gap size={tokens.spacing.article.mediaGap} />
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.subsectionGap} />
 
         <Subsection title="Extensible architecture for future workflows">
           <CopyBlock>
@@ -841,13 +841,13 @@ function DesignSystemsArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Extensible header architecture"
           className="aspect-[2560/460]"
           src={images.unifyingHeadersFig7}
         />
-        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+        <Gap size={spacing.article.mediaToCaptionGap} />
         <List>
           <li>
             A common header foundation scales from simple dialogs to complex
@@ -856,7 +856,7 @@ function DesignSystemsArticle() {
         </List>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Implementation">
         <List>
@@ -869,7 +869,7 @@ function DesignSystemsArticle() {
         </List>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="My role">
         <List>
@@ -882,7 +882,7 @@ function DesignSystemsArticle() {
         </List>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Outcome">
         <List>
@@ -903,7 +903,7 @@ function DocumentationCollaborationArticle() {
   return (
     <ArticleShell>
       <H1>Making complex product decisions understandable</H1>
-      <Gap size={tokens.spacing.article.h1Gap} />
+      <Gap size={spacing.article.h1Gap} />
 
       <Section title="Context">
         <CopyBlock>
@@ -938,7 +938,7 @@ function DocumentationCollaborationArticle() {
         </CopyBlock>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Challenge">
         <CopyBlock>
@@ -958,7 +958,7 @@ function DocumentationCollaborationArticle() {
         </CopyBlock>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Documentation principles">
         <Subsection title="Document decisions, not screens">
@@ -979,13 +979,13 @@ function DocumentationCollaborationArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Documentation pages explaining product decisions"
           src={images.complexDecisions1}
         />
-        <Gap size={tokens.spacing.article.mediaGap} />
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.subsectionGap} />
 
         <Subsection title="Separate user value from implementation logic">
           <CopyBlock>
@@ -1001,14 +1001,14 @@ function DocumentationCollaborationArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="System logic documentation"
           className="aspect-[2514/1832]"
           src={images.complexDecisions2}
         />
-        <Gap size={tokens.spacing.article.mediaGap} />
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.subsectionGap} />
 
         <Subsection title="Explain complex behavior through progressive disclosure">
           <CopyBlock>
@@ -1027,14 +1027,14 @@ function DocumentationCollaborationArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Progressive disclosure documentation map"
           className="aspect-[1496/960]"
           src={images.complexDecisions3}
         />
-        <Gap size={tokens.spacing.article.mediaGap} />
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.subsectionGap} />
 
         <Subsection title="Turn feature decisions into platform knowledge">
           <Paragraph>
@@ -1044,7 +1044,7 @@ function DocumentationCollaborationArticle() {
             application.
           </Paragraph>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Reusable platform knowledge examples"
           className="aspect-[2440/1024]"
@@ -1052,7 +1052,7 @@ function DocumentationCollaborationArticle() {
         />
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Why it mattered">
         <List>
@@ -1063,7 +1063,7 @@ function DocumentationCollaborationArticle() {
         </List>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="My role">
         <List>
@@ -1086,7 +1086,7 @@ function DocumentationCollaborationArticle() {
         </List>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Outcome">
         <Paragraph>
@@ -1105,7 +1105,7 @@ function ProductDesignScaleArticle() {
   return (
     <ArticleShell>
       <H1>Scaling Platforma from startup website to enterprise product platform</H1>
-      <Gap size={tokens.spacing.article.h1Gap} />
+      <Gap size={spacing.article.h1Gap} />
       <Paragraph>
         Platforma had grown from a startup product into a complex ecosystem of
         scientific workflows, deployment options, and developer tools. The
@@ -1113,7 +1113,7 @@ function ProductDesignScaleArticle() {
         understand how its components fit together.
       </Paragraph>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Context">
         <CopyBlock>
@@ -1142,7 +1142,7 @@ function ProductDesignScaleArticle() {
         </CopyBlock>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Challenge">
         <CopyBlock>
@@ -1161,7 +1161,7 @@ function ProductDesignScaleArticle() {
         </CopyBlock>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Design principles">
         <Subsection title="Design the product ecosystem, not individual pages">
@@ -1183,14 +1183,14 @@ function ProductDesignScaleArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Platforma product ecosystem navigation model"
           className="aspect-[2916/672]"
           src={images.scalingPlatforma1}
         />
-        <Gap size={tokens.spacing.article.mediaGap} />
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.subsectionGap} />
 
         <Subsection title="Make complex technology understandable">
           <CopyBlock>
@@ -1214,13 +1214,13 @@ function ProductDesignScaleArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Platform overview explanation"
           className="aspect-[2760/1350]"
           src={images.scalingPlatforma2}
         />
-        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+        <Gap size={spacing.article.mediaToCaptionGap} />
         <List>
           <li>
             The Platform Overview page transformed a complex technical
@@ -1228,8 +1228,8 @@ function ProductDesignScaleArticle() {
             user experience, and extensibility.
           </li>
         </List>
-        <Gap size={tokens.spacing.article.mediaGap} />
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.subsectionGap} />
 
         <Subsection title="Organize content around user goals">
           <CopyBlock>
@@ -1248,14 +1248,14 @@ function ProductDesignScaleArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Platforma visitor intent map"
           className="aspect-[1560/816]"
           src={images.scalingPlatforma3}
         />
-        <Gap size={tokens.spacing.article.mediaGap} />
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.subsectionGap} />
 
         <Subsection title="Build trust through transparency">
           <CopyBlock>
@@ -1282,13 +1282,13 @@ function ProductDesignScaleArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Platforma deployment and trust pages"
           className="aspect-[2762/1792]"
           src={images.scalingPlatforma4}
         />
-        <Gap size={tokens.spacing.article.mediaToCaptionGap} />
+        <Gap size={spacing.article.mediaToCaptionGap} />
         <List>
           <li>
             Dedicated platform and deployment pages made infrastructure,
@@ -1298,7 +1298,7 @@ function ProductDesignScaleArticle() {
         </List>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Why it mattered">
         <List>
@@ -1318,7 +1318,7 @@ function ProductDesignScaleArticle() {
         </List>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="My role">
         <List>
@@ -1345,7 +1345,7 @@ function ProductDesignScaleArticle() {
         </List>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Outcome">
         <CopyBlock>
@@ -1387,7 +1387,7 @@ function MobileExperiencesArticle() {
   return (
     <ArticleShell>
       <H1>Simplifying Financial Operations for Active TRON Users</H1>
-      <Gap size={tokens.spacing.article.h1Gap} />
+      <Gap size={spacing.article.h1Gap} />
 
       <Section title="Context">
         <CopyBlock>
@@ -1418,7 +1418,7 @@ function MobileExperiencesArticle() {
             and actionable.
           </Paragraph>
         </CopyBlock>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="TR.ENERGY wallet overview"
           className="aspect-[3344/1784]"
@@ -1426,7 +1426,7 @@ function MobileExperiencesArticle() {
         />
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Challenge">
         <CopyBlock>
@@ -1456,7 +1456,7 @@ function MobileExperiencesArticle() {
         </CopyBlock>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Key insights">
         <ArticleImage
@@ -1466,7 +1466,7 @@ function MobileExperiencesArticle() {
         />
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Design principles">
         <Subsection title="Make invisible information visible">
@@ -1475,20 +1475,20 @@ function MobileExperiencesArticle() {
             happen.
           </Paragraph>
         </Subsection>
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Support proactive risk management">
           <Paragraph>
             Help users identify and isolate risk before it affects primary
             assets.
           </Paragraph>
         </Subsection>
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Keep operational workflows connected">
           <Paragraph>
             Reduce dependence on external services and fragmented experiences.
           </Paragraph>
         </Subsection>
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Preserve context during frequent actions">
           <Paragraph>
             Allow users to complete common actions without losing sight of their
@@ -1497,7 +1497,7 @@ function MobileExperiencesArticle() {
         </Subsection>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Surface transaction costs before they become a problem">
         <Subsection title="Problem">
@@ -1517,14 +1517,14 @@ function MobileExperiencesArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Energy availability in wallet"
           className="aspect-[450/474.468] w-[450px] max-w-full"
           src={images.financialOps3}
         />
-        <Gap size={tokens.spacing.article.mediaGap} />
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Solution">
           <CopyBlock>
             <Paragraph>
@@ -1549,7 +1549,7 @@ function MobileExperiencesArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Outcome">
           <Paragraph>
             The wallet transforms a complex blockchain mechanism into an
@@ -1559,7 +1559,7 @@ function MobileExperiencesArticle() {
         </Subsection>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Turn compliance data into actionable decisions">
         <Subsection title="Problem">
@@ -1578,20 +1578,20 @@ function MobileExperiencesArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Solution">
           <Paragraph>
             The wallet introduces a proactive risk-management workflow.
           </Paragraph>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Risk-management workflow"
           className="aspect-[3344/1784]"
           src={images.financialOps4}
         />
-        <Gap size={tokens.spacing.article.mediaGap} />
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="AML verification">
           <CopyBlock>
             <Paragraph>Users can perform compliance checks on:</Paragraph>
@@ -1606,7 +1606,7 @@ function MobileExperiencesArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Risk visibility">
           <CopyBlock>
             <Paragraph>
@@ -1619,14 +1619,14 @@ function MobileExperiencesArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Risk visibility in asset cards"
           className="aspect-[2518/1784]"
           src={images.financialOps5}
         />
-        <Gap size={tokens.spacing.article.mediaGap} />
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Transfer wallets">
           <CopyBlock>
             <Paragraph>
@@ -1643,7 +1643,7 @@ function MobileExperiencesArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Outcome">
           <Paragraph>
             By combining AML verification with dedicated transfer wallets, the
@@ -1654,7 +1654,7 @@ function MobileExperiencesArticle() {
         </Subsection>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Increase capital efficiency within the ecosystem">
         <ArticleImage
@@ -1662,8 +1662,8 @@ function MobileExperiencesArticle() {
           className="aspect-[450/287.664] w-[450px] max-w-full"
           src={images.financialOps6}
         />
-        <Gap size={tokens.spacing.article.mediaGap} />
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Problem">
           <CopyBlock>
             <Paragraph>
@@ -1686,7 +1686,7 @@ function MobileExperiencesArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Solution">
           <CopyBlock>
             <Paragraph>
@@ -1708,7 +1708,7 @@ function MobileExperiencesArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Outcome">
           <Paragraph>
             The wallet evolves beyond transaction management and becomes a
@@ -1718,21 +1718,21 @@ function MobileExperiencesArticle() {
         </Subsection>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Creating a consistent interaction model">
         <Paragraph>
           As the number of operational workflows increased, a unified
           interaction pattern became necessary.
         </Paragraph>
-        <Gap size={tokens.spacing.article.mediaGap} />
+        <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Bottom sheet interaction model"
           className="aspect-[2518/1784]"
           src={images.financialOps7}
         />
-        <Gap size={tokens.spacing.article.mediaGap} />
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Problem">
           <CopyBlock>
             <Paragraph>
@@ -1745,7 +1745,7 @@ function MobileExperiencesArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Solution">
           <CopyBlock>
             <Paragraph>
@@ -1766,7 +1766,7 @@ function MobileExperiencesArticle() {
             </Paragraph>
           </CopyBlock>
         </Subsection>
-        <Gap size={tokens.spacing.article.subsectionGap} />
+        <Gap size={spacing.article.subsectionGap} />
         <Subsection title="Outcome">
           <Paragraph>
             The Bottom Sheet system became a consistent interaction foundation
@@ -1776,7 +1776,7 @@ function MobileExperiencesArticle() {
         </Subsection>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="My role">
         <CopyBlock>
@@ -1796,7 +1796,7 @@ function MobileExperiencesArticle() {
         </CopyBlock>
       </Section>
 
-      <Gap size={tokens.spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
       <Section title="Outcome">
         <CopyBlock>
@@ -1830,11 +1830,11 @@ function EmptyArticle({ label }: { label: string }) {
       <div className="flex min-h-[520px] items-center justify-center text-center">
         <div>
           <H1>{label}</H1>
-          <Gap size={tokens.spacing.article.h2Gap} />
+          <Gap size={spacing.article.h2Gap} />
           <p
             style={{
-              ...typeStyle(tokens.typography.article.body),
-              color: tokens.colors.text.secondary,
+              ...typeStyle(typography.article.body),
+              color: colors.text.secondary,
             }}
           >
             Article content is coming soon.
@@ -1882,13 +1882,13 @@ export function CapabilitiesIntroduction() {
       <div className="flex w-full max-w-[820px] flex-col items-start gap-[var(--base-6)]">
         <h1
           className="w-full text-[var(--text-accent)]"
-          style={typeStyle(tokens.typography.heading.h1)}
+          style={typeStyle(typography.heading.h1)}
         >
           Capabilities
         </h1>
         <p
           className="w-full text-[var(--text-primary)]"
-          style={typeStyle(tokens.typography.body.m)}
+          style={typeStyle(typography.body.m)}
         >
           Explore the core areas of my product design practice. Each capability
           brings together one or more case studies that demonstrate how I
@@ -1998,7 +1998,7 @@ export default function CapabilitiesSection({
         <div className="sticky top-[72px] z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] py-[var(--base-5)] lg:top-[88px] lg:z-auto lg:w-[var(--capabilities-menu-width)] lg:pb-0 lg:pt-[var(--base-10)]">
           <h2
             className="text-center text-[var(--text-accent)]"
-            style={typeStyle(tokens.typography.heading.h4)}
+            style={typeStyle(typography.heading.h4)}
           >
             Explore
           </h2>

@@ -1,7 +1,7 @@
 import type { HTMLAttributes } from "react";
 import Link from "next/link";
 
-import { tokens } from "@/styles/tokens";
+import { spacing } from "@/styles";
 
 import TabButton, {
   getTabButtonClassName,
@@ -38,7 +38,7 @@ export default function TabGroup({
         .filter(Boolean)
         .join(" ")}
       role="tablist"
-      style={{ gap: tokens.spacing.base[2], ...style }}
+      style={{ gap: spacing.base[2], ...style }}
     >
       {tabs.map((tab) => {
         const selected = tab.id === value;

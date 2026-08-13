@@ -2,7 +2,7 @@ import NavigationHeader from "@/components/ui/NavigationHeader";
 import Footer from "@/components/ui/Footer";
 import ContactButton from "@/components/ui/ContactButton";
 import { pageMetadata } from "@/app/seo";
-import { tokens } from "@/styles/tokens";
+import { typography } from "@/styles";
 
 export const metadata = pageMetadata({
   title: "Contact | Konstantin Alisov",
@@ -32,13 +32,13 @@ export default function ContactPage() {
         <div className="flex w-full flex-col gap-[var(--base-6)] min-[768px]:max-w-[820px]">
           <h1
             className="w-full text-[var(--text-accent)]"
-            style={typeStyle(tokens.typography.heading.h1)}
+            style={typeStyle(typography.heading.h1)}
           >
             Contact
           </h1>
           <p
             className="w-full text-[var(--text-primary)]"
-            style={typeStyle(tokens.typography.body.m)}
+            style={typeStyle(typography.body.m)}
           >
             Every great product starts with a conversation.
             <br />

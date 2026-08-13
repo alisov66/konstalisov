@@ -1,6 +1,6 @@
 import HeroNavigation from "@/components/ui/HeroNavigation";
 import { pageMetadata } from "@/app/seo";
-import { tokens } from "@/styles/tokens";
+import { typography } from "@/styles";
 import Image from "next/image";
 
 const imgPic = "/konstantin-avatar.png";
@@ -54,13 +54,13 @@ export default function Home() {
           <div className="flex w-full flex-col items-center gap-[var(--base-1)] text-center">
             <h1
               className="text-[var(--text-primary)]"
-              style={typeStyle(tokens.typography.heading.h4)}
+              style={typeStyle(typography.heading.h4)}
             >
               Konstantin Alisov
             </h1>
             <p
               className="text-[var(--text-secondary)]"
-              style={typeStyle(tokens.typography.body.m)}
+              style={typeStyle(typography.body.m)}
             >
               Product designer
             </p>
@@ -70,7 +70,7 @@ export default function Home() {
         <div className="flex w-full flex-col items-center gap-[var(--base-6)] text-center">
           <h2
             className="w-full text-[var(--text-accent)]"
-            style={typeStyle(tokens.typography.heading.h1)}
+            style={typeStyle(typography.heading.h1)}
           >
             Designing clarity
             <br />
@@ -79,7 +79,7 @@ export default function Home() {
 
           <p
             className="max-w-[640px] text-[var(--text-primary)]"
-            style={typeStyle(tokens.typography.body.m)}
+            style={typeStyle(typography.body.m)}
           >
             The industries changed, but the challenge stayed the same:
             <br />

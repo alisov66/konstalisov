@@ -8,7 +8,7 @@ import type {
 } from "react";
 import { useEffect, useRef, useState } from "react";
 
-import { tokens } from "@/styles/tokens";
+import { typography } from "@/styles";
 
 const blobVariants = [
   {
@@ -271,9 +271,9 @@ export default function ButtonSecondary({
         "--navi-blob-rotate-b": blobVariant.rotateB,
         "--navi-blob-rotate-c": blobVariant.rotateC,
         "--navi-blob-rotate-d": blobVariant.rotateD,
-        fontSize: tokens.typography.button.m.fontSize,
-        lineHeight: tokens.typography.button.m.lineHeight,
-        fontWeight: tokens.typography.button.m.fontWeight,
+        fontSize: typography.button.m.fontSize,
+        lineHeight: typography.button.m.lineHeight,
+        fontWeight: typography.button.m.fontWeight,
         ...props.style,
       } as CSSProperties}
     >

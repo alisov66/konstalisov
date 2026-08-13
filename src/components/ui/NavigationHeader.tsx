@@ -7,7 +7,7 @@ import Image from "next/image";
 
 import ButtonSecondary from "@/components/ui/ButtonSecondary";
 import MenuButton from "@/components/ui/MenuButton";
-import { tokens } from "@/styles/tokens";
+import { typography } from "@/styles";
 
 const avatarSrc = "/konstantin-avatar.png";
 
@@ -242,13 +242,13 @@ export default function NavigationHeader({
             <span className="flex w-[172px] flex-col gap-0">
               <span
                 style={{
-                  ...typeStyle(tokens.typography.body.s),
-                  fontWeight: tokens.typography.fontWeight.semibold,
+                  ...typeStyle(typography.body.s),
+                  fontWeight: typography.fontWeight.semibold,
                 }}
               >
                 Konstantin Alisov
               </span>
-              <span style={typeStyle(tokens.typography.body.s)}>
+              <span style={typeStyle(typography.body.s)}>
                 Product designer
               </span>
             </span>
@@ -302,15 +302,15 @@ export default function NavigationHeader({
               <span
                 className="truncate text-[var(--text-primary)]"
                 style={{
-                  ...typeStyle(tokens.typography.body.s),
-                  fontWeight: tokens.typography.fontWeight.semibold,
+                  ...typeStyle(typography.body.s),
+                  fontWeight: typography.fontWeight.semibold,
                 }}
               >
                 Konstantin Alisov
               </span>
               <span
                 className="truncate text-[var(--text-primary)]"
-                style={typeStyle(tokens.typography.body.s)}
+                style={typeStyle(typography.body.s)}
               >
                 Product designer
               </span>

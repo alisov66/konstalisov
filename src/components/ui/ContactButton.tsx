@@ -9,7 +9,7 @@ import type {
 } from "react";
 import { useCallback, useState } from "react";
 
-import { tokens } from "@/styles/tokens";
+import { typography } from "@/styles";
 
 const maxRotateX = 8;
 const maxRotateY = 10;
@@ -109,7 +109,7 @@ export default function ContactButton({
           "--contact-button-transform": transform,
           transform: "var(--contact-button-transform)",
           transformStyle: "preserve-3d",
-          ...typeStyle(tokens.typography.button.mStrong),
+          ...typeStyle(typography.button.mStrong),
           ...style,
         } as ContactButtonStyle
       }
