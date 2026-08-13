@@ -181,7 +181,7 @@ function SkillTags({ tags }: { tags: string[] }) {
         <span
           className="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-[var(--pill)] bg-[var(--bg-beige-soft)] px-[var(--base-3)] py-[var(--base-1)] text-[var(--text-primary)] [word-break:break-word]"
           key={tag}
-          style={typeStyle(tokens.typography.body.medium)}
+          style={typeStyle(tokens.typography.body.m)}
         >
           {tag}
         </span>
@@ -199,7 +199,7 @@ function AccentSummary({ children }: { children: string }) {
       />
       <p
         className="max-w-[820px] text-[var(--text-primary)]"
-        style={typeStyle(tokens.typography.body.medium)}
+        style={typeStyle(tokens.typography.body.m)}
       >
         {children}
       </p>
@@ -211,7 +211,7 @@ function ParagraphList({ items }: { items: string[] }) {
   return (
     <div
       className="flex max-w-[820px] flex-col gap-[var(--base-4)] text-[var(--text-primary)]"
-      style={typeStyle(tokens.typography.body.medium)}
+      style={typeStyle(tokens.typography.body.m)}
     >
       {items.map((item) => (
         <p key={item}>{item}</p>
@@ -242,7 +242,7 @@ function ExperienceRole({
         </h4>
         <p
           className="text-[var(--text-secondary)]"
-          style={typeStyle(tokens.typography.body.medium)}
+          style={typeStyle(tokens.typography.body.m)}
         >
           {dates}
         </p>
@@ -271,7 +271,7 @@ function CompactEntry({
       </h3>
       <p
         className="whitespace-pre-line text-[var(--text-primary)]"
-        style={typeStyle(tokens.typography.body.medium)}
+        style={typeStyle(tokens.typography.body.m)}
       >
         {meta}
       </p>
@@ -296,13 +296,13 @@ export default function CvPage() {
             <div className="flex flex-col gap-[var(--base-2)]">
               <p
                 className="text-[var(--text-primary)]"
-                style={typeStyle(tokens.typography.body.mediumBold)}
+                style={typeStyle(tokens.typography.body.mStrong)}
               >
                 Product Designer
               </p>
               <div
                 className="flex flex-col gap-[var(--base-1)] text-[var(--text-secondary)]"
-                style={typeStyle(tokens.typography.body.medium)}
+                style={typeStyle(tokens.typography.body.m)}
               >
                 <p>Bilbao, Spain</p>
                 <p>Updated: Aug 2026</p>
@@ -312,7 +312,7 @@ export default function CvPage() {
 
           <p
             className="max-w-[820px] whitespace-pre-line text-[var(--text-primary)]"
-            style={typeStyle(tokens.typography.body.medium)}
+            style={typeStyle(tokens.typography.body.m)}
           >
             Product designer with 9+ years of experience designing enterprise
             software, complex workflows, and information-rich interfaces.

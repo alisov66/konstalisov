@@ -65,17 +65,7 @@ const rawTypography = {
       lineHeight: "var(--body-medium-line)",
     },
 
-    medium: {
-      fontSize: "var(--body-medium-size)",
-      lineHeight: "var(--body-medium-line)",
-    },
-
     s: {
-      fontSize: "var(--body-small-size)",
-      lineHeight: "var(--body-small-line)",
-    },
-
-    small: {
       fontSize: "var(--body-small-size)",
       lineHeight: "var(--body-small-line)",
     },
@@ -84,52 +74,17 @@ const rawTypography = {
       fontSize: "var(--body-xsmall-size)",
       lineHeight: "var(--body-xsmall-line)",
     },
-
-    xsmall: {
-      fontSize: "var(--body-xsmall-size)",
-      lineHeight: "var(--body-xsmall-line)",
-    },
   },
 
   button: {
-    mMedium: {
+    m: {
       fontSize: "var(--button-medium-size)",
       lineHeight: "var(--button-medium-line)",
     },
 
-    medium: {
+    mStrong: {
       fontSize: "var(--button-medium-size)",
       lineHeight: "var(--button-medium-line)",
-    },
-
-    mSemibold: {
-      fontSize: "var(--button-medium-size)",
-      lineHeight: "var(--button-medium-line)",
-    },
-
-    mediumSemibold: {
-      fontSize: "var(--button-medium-size)",
-      lineHeight: "var(--button-medium-line)",
-    },
-
-    sSemibold: {
-      fontSize: "var(--button-small-size)",
-      lineHeight: "var(--button-small-line)",
-    },
-
-    smallSemibold: {
-      fontSize: "var(--button-small-size)",
-      lineHeight: "var(--button-small-line)",
-    },
-
-    lSemibold: {
-      fontSize: "var(--button-large-size)",
-      lineHeight: "var(--button-large-line)",
-    },
-
-    large: {
-      fontSize: "var(--button-large-size)",
-      lineHeight: "var(--button-large-line)",
     },
   },
 } as const;
@@ -137,7 +92,6 @@ const rawTypography = {
 export const fontWeight = rawTypography.fontWeight;
 
 export const typography = {
-  raw: rawTypography,
   font: rawTypography.font,
   fontWeight,
 
@@ -188,12 +142,12 @@ export const typography = {
       paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
     },
 
-    paragraph: {
+    body: {
       ...rawTypography.article.paragraph,
       fontWeight: fontWeight.regular,
     },
 
-    paragraphSemibold: {
+    bodyStrong: {
       ...rawTypography.article.paragraph,
       fontWeight: fontWeight.semibold,
     },
@@ -206,16 +160,10 @@ export const typography = {
       paragraphSpacing: 8,
     },
 
-    mediumBold: {
-      ...rawTypography.body.medium,
+    mStrong: {
+      ...rawTypography.body.m,
       fontWeight: fontWeight.semibold,
       paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
-    },
-
-    medium: {
-      ...rawTypography.body.medium,
-      fontWeight: fontWeight.regular,
-      paragraphSpacing: 8,
     },
 
     s: {
@@ -224,20 +172,8 @@ export const typography = {
       paragraphSpacing: 4,
     },
 
-    sSemibold: {
+    sStrong: {
       ...rawTypography.body.s,
-      fontWeight: fontWeight.semibold,
-      paragraphSpacing: 4,
-    },
-
-    small: {
-      ...rawTypography.body.small,
-      fontWeight: fontWeight.regular,
-      paragraphSpacing: 4,
-    },
-
-    smallSemibold: {
-      ...rawTypography.body.small,
       fontWeight: fontWeight.semibold,
       paragraphSpacing: 4,
     },
@@ -247,59 +183,17 @@ export const typography = {
       fontWeight: fontWeight.regular,
       paragraphSpacing: 4,
     },
-
-    xsmall: {
-      ...rawTypography.body.xsmall,
-      fontWeight: fontWeight.regular,
-      paragraphSpacing: 4,
-    },
   },
 
   button: {
-    mMedium: {
-      ...rawTypography.button.mMedium,
+    m: {
+      ...rawTypography.button.m,
       fontWeight: fontWeight.medium,
       paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
     },
 
-    medium: {
-      ...rawTypography.button.medium,
-      fontWeight: fontWeight.medium,
-      paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
-    },
-
-    mSemibold: {
-      ...rawTypography.button.mSemibold,
-      fontWeight: fontWeight.semibold,
-      paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
-    },
-
-    mediumSemibold: {
-      ...rawTypography.button.mediumSemibold,
-      fontWeight: fontWeight.semibold,
-      paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
-    },
-
-    sSemibold: {
-      ...rawTypography.button.sSemibold,
-      fontWeight: fontWeight.semibold,
-      paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
-    },
-
-    smallSemibold: {
-      ...rawTypography.button.smallSemibold,
-      fontWeight: fontWeight.semibold,
-      paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
-    },
-
-    lSemibold: {
-      ...rawTypography.button.lSemibold,
-      fontWeight: fontWeight.semibold,
-      paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
-    },
-
-    large: {
-      ...rawTypography.button.large,
+    mStrong: {
+      ...rawTypography.button.mStrong,
       fontWeight: fontWeight.semibold,
       paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
     },

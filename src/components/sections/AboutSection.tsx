@@ -50,7 +50,7 @@ export default function AboutSection() {
             </p>
             <p
               className="text-[var(--text-primary)]"
-              style={typeStyle(tokens.typography.body.medium)}
+              style={typeStyle(tokens.typography.body.m)}
             >
               Bilbao, Spain
             </p>
@@ -62,14 +62,14 @@ export default function AboutSection() {
             <h3 style={typeStyle(tokens.typography.heading.h3)}>
               I enjoy figuring out how complicated things work
             </h3>
-            <p style={typeStyle(tokens.typography.body.medium)}>
+            <p style={typeStyle(tokens.typography.body.m)}>
               I&apos;m naturally drawn to understanding how complicated things
               work. Whether it&apos;s scientific research, financial systems,
               or product architecture, I enjoy asking questions, uncovering
               patterns, and turning complexity into products people can use with
               confidence.
             </p>
-            <p style={typeStyle(tokens.typography.body.medium)}>
+            <p style={typeStyle(tokens.typography.body.m)}>
               The products I work on are different, but the motivation is
               usually the same: helping people feel confident in complex
               environments.
@@ -86,7 +86,7 @@ export default function AboutSection() {
               </h4>
               <ul
                 className="list-disc pl-[30px]"
-                style={typeStyle(tokens.typography.body.medium)}
+                style={typeStyle(tokens.typography.body.m)}
               >
                 <li className="mb-[var(--base-2)]">
                   Exploring AI-assisted development
@@ -105,7 +105,7 @@ export default function AboutSection() {
               >
                 Building
               </h4>
-              <p style={typeStyle(tokens.typography.body.medium)}>
+              <p style={typeStyle(tokens.typography.body.m)}>
                 <strong className="font-[var(--font-weight-semibold)]">
                   I designed this portfolio and built it using AI-assisted
                   development with Next.js, Tailwind CSS, GitHub, and Vercel.
@@ -123,7 +123,7 @@ export default function AboutSection() {
               >
                 Working style
               </h4>
-              <p style={typeStyle(tokens.typography.body.medium)}>
+              <p style={typeStyle(tokens.typography.body.m)}>
                 I enjoy partnering closely with product managers and engineers,
                 bringing structure to ambiguous problems through systems
                 thinking before polishing interfaces.

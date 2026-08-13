@@ -271,9 +271,9 @@ export default function ButtonSecondary({
         "--navi-blob-rotate-b": blobVariant.rotateB,
         "--navi-blob-rotate-c": blobVariant.rotateC,
         "--navi-blob-rotate-d": blobVariant.rotateD,
-        fontSize: tokens.typography.button.mMedium.fontSize,
-        lineHeight: tokens.typography.button.mMedium.lineHeight,
-        fontWeight: tokens.typography.button.mMedium.fontWeight,
+        fontSize: tokens.typography.button.m.fontSize,
+        lineHeight: tokens.typography.button.m.lineHeight,
+        fontWeight: tokens.typography.button.m.fontWeight,
         ...props.style,
       } as CSSProperties}
     >

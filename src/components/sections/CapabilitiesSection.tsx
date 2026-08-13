@@ -82,7 +82,7 @@ function Paragraph({ children }: { children: ReactNode }) {
     <p
       className="max-w-full"
       style={{
-        ...typeStyle(tokens.typography.article.paragraph),
+        ...typeStyle(tokens.typography.article.body),
         marginBottom: tokens.spacing.base[3],
       }}
     >
@@ -100,7 +100,7 @@ function List({ children }: { children: ReactNode }) {
     <ul
       className="list-disc"
       style={{
-        ...typeStyle(tokens.typography.article.paragraph),
+        ...typeStyle(tokens.typography.article.body),
         marginBottom: tokens.spacing.base[3],
         paddingLeft: "30px",
       }}
@@ -206,7 +206,7 @@ function ArticleShell({ children }: { children: ReactNode }) {
 
 function ComplexWorkflowArticle() {
   const labelStyle = {
-    ...typeStyle(tokens.typography.article.paragraph),
+    ...typeStyle(tokens.typography.article.body),
     fontWeight: tokens.typography.fontWeight.semibold,
   };
 
@@ -637,7 +637,7 @@ function ComplexWorkflowArticle() {
 
 function DesignSystemsArticle() {
   const labelStyle = {
-    ...typeStyle(tokens.typography.article.paragraph),
+    ...typeStyle(tokens.typography.article.body),
     fontWeight: tokens.typography.fontWeight.semibold,
   };
 
@@ -1833,7 +1833,7 @@ function EmptyArticle({ label }: { label: string }) {
           <Gap size={tokens.spacing.article.h2Gap} />
           <p
             style={{
-              ...typeStyle(tokens.typography.article.paragraph),
+              ...typeStyle(tokens.typography.article.body),
               color: tokens.colors.text.secondary,
             }}
           >
@@ -1888,7 +1888,7 @@ export function CapabilitiesIntroduction() {
         </h1>
         <p
           className="w-full text-[var(--text-primary)]"
-          style={typeStyle(tokens.typography.body.medium)}
+          style={typeStyle(tokens.typography.body.m)}
         >
           Explore the core areas of my product design practice. Each capability
           brings together one or more case studies that demonstrate how I

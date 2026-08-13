@@ -122,7 +122,7 @@ export default function ButtonPrimary({
   const [blobVariantIndex, setBlobVariantIndex] = useState(0);
   const blobVariant = blobVariants[blobVariantIndex];
   const drainTimeoutRef = useRef<number | null>(null);
-  const typography = tokens.typography.button.mMedium;
+  const typography = tokens.typography.button.m;
 
   const clearDrainTimeout = () => {
     if (drainTimeoutRef.current === null) {

@@ -60,7 +60,7 @@ export default function Home() {
             </h1>
             <p
               className="text-[var(--text-secondary)]"
-              style={typeStyle(tokens.typography.body.medium)}
+              style={typeStyle(tokens.typography.body.m)}
             >
               Product designer
             </p>
@@ -79,7 +79,7 @@ export default function Home() {
 
           <p
             className="max-w-[640px] text-[var(--text-primary)]"
-            style={typeStyle(tokens.typography.body.medium)}
+            style={typeStyle(tokens.typography.body.m)}
           >
             The industries changed, but the challenge stayed the same:
             <br />

@@ -38,7 +38,7 @@ export default function ContactPage() {
           </h1>
           <p
             className="w-full text-[var(--text-primary)]"
-            style={typeStyle(tokens.typography.body.medium)}
+            style={typeStyle(tokens.typography.body.m)}
           >
             Every great product starts with a conversation.
             <br />
