@@ -191,8 +191,9 @@ export default function ButtonPrimary({
     "--hero-button-font-size": typography.fontSize,
     "--hero-button-line-height": typography.lineHeight,
     "--hero-button-font-weight": typography.fontWeight,
+    "--hero-button-focus-ring": `inset 0 0 0 ${tokens.colors.border.width.medium} ${tokens.colors.border.focus}`,
     "--hero-button-transition":
-      "background-color 300ms ease-in, color 150ms ease-in, box-shadow 300ms ease-in, transform 300ms ease-in",
+      "background-color 300ms ease-in, border-color 150ms ease-in, color 150ms ease-in, box-shadow 300ms ease-in, transform 300ms ease-in",
     "--navi-blob-color": tokens.colors.button.fillAccent,
     "--navi-hover-x": hoverOrigin.x,
     "--navi-hover-y": hoverOrigin.y,
@@ -218,7 +219,7 @@ export default function ButtonPrimary({
         "hero-button inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap",
         "rounded-[var(--hero-button-radius)] bg-[var(--hero-button-bg)] px-[var(--hero-button-padding-x)] py-[var(--hero-button-padding-y)]",
         "text-[length:var(--hero-button-font-size)] font-[var(--hero-button-font-weight)] leading-[var(--hero-button-line-height)] text-[var(--hero-button-text)]",
-        "[transition:var(--hero-button-transition)] no-underline",
+        "[transition:var(--hero-button-transition)] no-underline focus-visible:shadow-[var(--hero-button-focus-ring)] focus-visible:outline-none",
         className,
       ]
         .filter(Boolean)

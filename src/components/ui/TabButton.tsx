@@ -27,6 +27,7 @@ export function getTabButtonStyle(selected = false): TabButtonStyle {
     "--tab-button-font-size": tokens.typography.button.medium.fontSize,
     "--tab-button-line-height": tokens.typography.button.medium.lineHeight,
     "--tab-button-font-weight": tokens.typography.button.medium.fontWeight,
+    "--tab-button-focus-ring": `inset 0 0 0 ${tokens.colors.border.width.medium} ${tokens.colors.border.focus}`,
     "--tab-button-hover-shadow": "none",
     "--tab-button-active-shadow": "none",
     color: textColor,
@@ -38,7 +39,7 @@ export function getTabButtonClassName(className?: string) {
     "inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap",
     "rounded-[var(--tab-button-radius)] bg-[var(--tab-button-bg)] px-[var(--tab-button-padding-x)] py-[var(--tab-button-padding-y)]",
     "text-[length:var(--tab-button-font-size)] font-[var(--tab-button-font-weight)] leading-[var(--tab-button-line-height)] text-[var(--tab-button-text)]",
-    "transition-[background-color,color,box-shadow] duration-[160ms] ease-out hover:bg-[var(--tab-button-hover-bg)] hover:shadow-[var(--tab-button-hover-shadow)] active:shadow-[var(--tab-button-active-shadow)]",
+    "transition-[background-color,color,box-shadow] duration-[160ms] ease-out hover:bg-[var(--tab-button-hover-bg)] hover:shadow-[var(--tab-button-hover-shadow)] active:shadow-[var(--tab-button-active-shadow)] focus-visible:shadow-[var(--tab-button-focus-ring)] focus-visible:outline-none",
     "disabled:cursor-not-allowed disabled:opacity-50",
     className,
   ]

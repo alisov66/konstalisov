@@ -28,6 +28,7 @@ export const tokens = {
 
     border: {
       primary: "var(--border-primary)",
+      focus: "var(--border-focus)",
       width: {
         thin: "var(--border-width-thin)",
         medium: "var(--border-width-medium)",

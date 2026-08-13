@@ -46,7 +46,7 @@ export default function MenuButton({
       aria-expanded={isOpen}
       aria-label={ariaLabel || (isOpen ? "Close menu" : "Open menu")}
       className={[
-        "menu-button flex shrink-0 cursor-pointer flex-col items-start justify-center rounded-[var(--lg)] p-[var(--base-3)] text-[var(--text-primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--text-primary)]",
+        "menu-button flex shrink-0 cursor-pointer flex-col items-start justify-center rounded-[var(--lg)] p-[var(--base-3)] text-[var(--text-primary)] focus-visible:shadow-[inset_0_0_0_var(--border-width-medium)_var(--border-focus)] focus-visible:outline-none",
         phase === "idle"
           ? "bg-[var(--bg-beige-light)]"
           : "bg-[var(--button-fill-accent-muted)]",

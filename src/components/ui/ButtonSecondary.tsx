@@ -212,7 +212,7 @@ export default function ButtonSecondary({
           ? "text-[var(--button-text)]"
           : "text-[var(--text-primary)]",
         "hover:text-[var(--button-text)] focus-visible:text-[var(--button-text)]",
-        "transition-colors duration-[150ms] ease-in focus-visible:outline-none",
+        "transition-[border-color,box-shadow,color] duration-[150ms] ease-in focus-visible:shadow-[inset_0_0_0_var(--border-width-medium)_var(--border-focus)] focus-visible:outline-none",
         className,
       ]
         .filter(Boolean)
