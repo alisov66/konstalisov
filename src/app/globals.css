@@ -95,10 +95,6 @@
   --button-medium-weight: 500;
   --button-medium-semibold-weight: 600;
 
-  --button-small-size: 12px;
-  --button-small-line: 16px;
-  --button-small-weight: 600;
-
   --button-large-size: 20px;
   --button-large-line: 24px;
   --button-large-weight: 600;
@@ -154,14 +150,52 @@
 
   /* Figma variables: Breakpoints / Mode 1 */
   --bp-mobile: 390px;
-  --bp-tablet: 768px;
-  --bp-laptop: 1280px;
+  --bp-tablet: 834px;
   --bp-desktop: 1440px;
   --bp-desktop-xl: 1728px;
 
   /* Motion */
   --motion-gentle-duration: 900ms;
   --motion-gentle-easing: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  :root {
+    /* Figma variables: Typography / Tablet mode */
+    --h1-size: 72px;
+    --h1-line: 80px;
+    --h2-size: 46px;
+    --h2-line: 54px;
+    --h3-size: 32px;
+    --h3-line: 40px;
+    --h4-size: 26px;
+    --h4-line: 34px;
+
+    --article-h1-size: 48px;
+    --article-h1-line: 56px;
+    --article-h2-size: 32px;
+    --article-h2-line: 40px;
+    --article-h3-size: 26px;
+    --article-h3-line: 34px;
+    --article-paragraph-size: 18px;
+    --article-paragraph-line: 30px;
+    --article-list-to-paragraph-gap: 20px;
+    --article-paragraph-to-list-gap: 12px;
+
+    --body-medium-size: 18px;
+    --body-medium-line: 26px;
+
+    /* Figma variables: Spacing / Tablet mode */
+    --article-paragraph-gap: 20px;
+    --article-h1-gap: 24px;
+    --article-h2-gap: 20px;
+    --article-h3-gap: 12px;
+    --article-subsection-gap: 24px;
+    --article-media-gap: 32px;
+    --article-section-gap: 48px;
+    --article-chapter-gap: 64px;
+    --padding-side: 40px;
+  }
 }
 
 @media (max-width: 767px) {

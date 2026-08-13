@@ -17,8 +17,7 @@ export const tokens = {
 
   breakpoints: {
     mobile: 390,
-    tablet: 768,
-    laptop: 1280,
+    tablet: 834,
     desktop: 1440,
     desktopXL: 1728,
   },
