@@ -1011,8 +1011,14 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center !important;
-  gap: var(--base-10);
+  gap: var(--base-15);
   min-height: 100svh;
   padding-top: var(--base-10);
   padding-bottom: var(--base-10);
+}
+
+@media (max-width: 1439px) {
+  .hero-section {
+    gap: var(--base-10);
+  }
 }

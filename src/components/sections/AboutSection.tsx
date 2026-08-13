@@ -19,7 +19,7 @@ function typeStyle(token: {
 export default function AboutSection() {
   return (
     <section
-      className="mb-[var(--base-20)] flex w-full flex-col items-start gap-[var(--base-20)] bg-[var(--bg-beige)] px-[var(--padding-side)] py-[var(--base-30)]"
+      className="flex w-full flex-col items-start gap-[var(--base-10)] bg-[var(--bg-beige)] px-[var(--padding-side)] pb-[var(--base-10)] pt-[112px] min-[768px]:pb-[var(--base-20)] min-[768px]:pt-[var(--base-32)]"
       id="about"
     >
       <h1
@@ -29,7 +29,7 @@ export default function AboutSection() {
         About
       </h1>
 
-      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-wrap items-start gap-[var(--base-10)] min-[1600px]:gap-[var(--base-20)]">
+      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-wrap items-start gap-[var(--base-10)] min-[1440px]:gap-[var(--base-15)] min-[1600px]:gap-[var(--base-20)]">
         <div className="flex w-full max-w-[600px] shrink-0 flex-col gap-[var(--base-5)] min-[482px]:w-[450px] min-[1130px]:sticky min-[1130px]:top-[108px]">
           <div className="relative aspect-[3/4] max-h-[600px] w-full max-w-[450px] shrink-0 overflow-hidden min-[482px]:h-[600px] min-[482px]:aspect-auto">
             <Image
@@ -57,7 +57,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-15)] min-[332px]:min-w-[300px] min-[482px]:min-w-[min(400px,100%)]">
+        <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-10)] min-[332px]:min-w-[300px] min-[482px]:min-w-[min(400px,100%)] min-[1440px]:gap-[var(--base-15)]">
           <div className="flex w-full max-w-[820px] flex-col gap-[var(--base-3)] text-[var(--text-primary)]">
             <h3 style={typeStyle(typography.heading.h3)}>
               I enjoy figuring out how complicated things work

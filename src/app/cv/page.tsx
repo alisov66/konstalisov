@@ -285,7 +285,7 @@ export default function CvPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-beige)] text-[var(--text-primary)]">
       <NavigationHeader alwaysVisible />
-      <section className="flex w-full flex-col items-center gap-[var(--base-20)] px-[var(--padding-side)] pb-[var(--base-20)] pt-[var(--base-30)]">
+      <section className="flex w-full flex-col items-start gap-[var(--base-10)] px-[var(--padding-side)] pb-[var(--base-20)] pt-[112px] min-[768px]:items-center min-[768px]:pt-[var(--base-32)]">
         <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
           <div className="flex w-full flex-col gap-[var(--base-6)]">
             <h1

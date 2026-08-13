@@ -37,7 +37,6 @@ export default function Home() {
     <main className="min-h-screen bg-[var(--bg-beige)] text-[var(--text-primary)]">
       <section
         className="hero-section mx-auto flex min-h-screen w-full max-w-[1024px] flex-col items-center px-[var(--padding-side)]"
-        id="hero"
       >
         <div className="flex w-full flex-col items-center gap-[var(--base-3)]">
           <div className="relative size-[80px] shrink-0 overflow-hidden">
