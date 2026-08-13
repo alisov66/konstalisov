@@ -57,7 +57,6 @@ const tabs: TabGroupTab[] = capabilities.map((capability) => ({
 }));
 
 const headerClearance = 136;
-const mobileTabsScrollStorageKey = "capabilities-mobile-tabs-scroll-left";
 
 type StyleVars = CSSProperties & Record<`--${string}`, string | number>;
 
@@ -1955,13 +1954,26 @@ export default function CapabilitiesSection({
     }
 
     const frame = requestAnimationFrame(() => {
-      const storedScrollLeft = Number(
-        window.sessionStorage.getItem(mobileTabsScrollStorageKey),
+      if (tabsScroller.scrollWidth <= tabsScroller.clientWidth) {
+        return;
+      }
+
+      const activeTab = tabsScroller.querySelector<HTMLElement>(
+        `[data-tab-id="${CSS.escape(currentValue)}"]`,
       );
 
-      if (Number.isFinite(storedScrollLeft)) {
-        tabsScroller.scrollLeft = storedScrollLeft;
+      if (!activeTab) {
+        return;
       }
+
+      const activeTabCenter = activeTab.offsetLeft + activeTab.offsetWidth / 2;
+      const targetScrollLeft = activeTabCenter - tabsScroller.clientWidth / 2;
+      const maxScrollLeft = tabsScroller.scrollWidth - tabsScroller.clientWidth;
+
+      tabsScroller.scrollTo({
+        left: Math.max(0, Math.min(targetScrollLeft, maxScrollLeft)),
+        behavior: "auto",
+      });
     });
 
     return () => {
@@ -1969,21 +1981,7 @@ export default function CapabilitiesSection({
     };
   }, [currentValue]);
 
-  function saveTabsScrollPosition() {
-    const tabsScroller = tabsScrollerRef.current;
-
-    if (!tabsScroller) {
-      return;
-    }
-
-    window.sessionStorage.setItem(
-      mobileTabsScrollStorageKey,
-      String(tabsScroller.scrollLeft),
-    );
-  }
-
   function handleValueChange() {
-    saveTabsScrollPosition();
     scrollArticleToStart();
   }
 
@@ -2005,7 +2003,6 @@ export default function CapabilitiesSection({
           </h2>
           <div
             className="no-scrollbar -mx-[var(--padding-side)] w-[calc(100%+var(--padding-side)*2)] overflow-x-auto px-[var(--padding-side)] min-[1280px]:mx-0 min-[1280px]:w-full min-[1280px]:overflow-visible min-[1280px]:px-0"
-            onScroll={saveTabsScrollPosition}
             ref={tabsScrollerRef}
           >
             <TabGroup

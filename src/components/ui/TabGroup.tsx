@@ -49,6 +49,7 @@ export default function TabGroup({
               aria-current={selected ? "page" : undefined}
               className={getTabButtonClassName("no-underline")}
               data-selected={selected || undefined}
+              data-tab-id={tab.id}
               href={tab.href}
               key={tab.id}
               onClick={() => onValueChange(tab.id)}
@@ -63,6 +64,7 @@ export default function TabGroup({
 
         return (
           <TabButton
+            data-tab-id={tab.id}
             key={tab.id}
             selected={selected}
             onClick={() => onValueChange(tab.id)}
