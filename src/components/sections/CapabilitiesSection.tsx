@@ -57,7 +57,7 @@ const tabs: TabGroupTab[] = capabilities.map((capability) => ({
 }));
 
 const headerClearance = 136;
-const tabsScrollDuration = 300;
+const tabsScrollDuration = 500;
 
 type StyleVars = CSSProperties & Record<`--${string}`, string | number>;
 
@@ -1992,7 +1992,7 @@ export default function CapabilitiesSection({
 
       function animateScroll(now: number) {
         const progress = Math.min((now - startTime) / tabsScrollDuration, 1);
-        const easedProgress = 1 - Math.pow(1 - progress, 3);
+        const easedProgress = progress * progress * progress;
 
         scrollElement.scrollLeft =
           startScrollLeft + scrollDistance * easedProgress;
