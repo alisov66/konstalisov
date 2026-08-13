@@ -57,7 +57,7 @@ const tabs: TabGroupTab[] = capabilities.map((capability) => ({
 }));
 
 const headerClearance = 136;
-const tabsScrollDuration = 150;
+const tabsScrollDuration = 300;
 
 type StyleVars = CSSProperties & Record<`--${string}`, string | number>;
 
