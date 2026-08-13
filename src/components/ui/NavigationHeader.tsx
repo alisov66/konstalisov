@@ -240,7 +240,12 @@ export default function NavigationHeader({
           >
             <span className="relative size-[52px] shrink-0" />
             <span className="flex w-[172px] flex-col gap-0">
-              <span style={typeStyle(tokens.typography.body.sStrong)}>
+              <span
+                style={{
+                  ...typeStyle(tokens.typography.body.s),
+                  fontWeight: tokens.typography.fontWeight.semibold,
+                }}
+              >
                 Konstantin Alisov
               </span>
               <span style={typeStyle(tokens.typography.body.s)}>
@@ -296,7 +301,10 @@ export default function NavigationHeader({
             >
               <span
                 className="truncate text-[var(--text-primary)]"
-                style={typeStyle(tokens.typography.body.sStrong)}
+                style={{
+                  ...typeStyle(tokens.typography.body.s),
+                  fontWeight: tokens.typography.fontWeight.semibold,
+                }}
               >
                 Konstantin Alisov
               </span>

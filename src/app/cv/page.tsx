@@ -296,7 +296,10 @@ export default function CvPage() {
             <div className="flex flex-col gap-[var(--base-2)]">
               <p
                 className="text-[var(--text-primary)]"
-                style={typeStyle(tokens.typography.body.mStrong)}
+                style={{
+                  ...typeStyle(tokens.typography.body.m),
+                  fontWeight: tokens.typography.fontWeight.semibold,
+                }}
               >
                 Product Designer
               </p>

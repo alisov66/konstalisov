@@ -160,21 +160,9 @@ export const typography = {
       paragraphSpacing: 8,
     },
 
-    mStrong: {
-      ...rawTypography.body.m,
-      fontWeight: fontWeight.semibold,
-      paragraphSpacing: rawTypography.article.paragraph.paragraphSpacing,
-    },
-
     s: {
       ...rawTypography.body.s,
       fontWeight: fontWeight.regular,
-      paragraphSpacing: 4,
-    },
-
-    sStrong: {
-      ...rawTypography.body.s,
-      fontWeight: fontWeight.semibold,
       paragraphSpacing: 4,
     },
 
