@@ -1976,9 +1976,9 @@ export default function CapabilitiesSection({
       let targetScrollLeft = visibleLeft;
 
       if (activeTabLeft < visibleLeft) {
-        targetScrollLeft = activeTabLeft;
-      } else if (activeTabRight > visibleRight) {
         targetScrollLeft = activeTabRight - tabsScroller.clientWidth;
+      } else if (activeTabRight > visibleRight) {
+        targetScrollLeft = activeTabLeft;
       }
 
       const clampedScrollLeft = Math.max(
