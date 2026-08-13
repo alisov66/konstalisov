@@ -1907,6 +1907,7 @@ export default function CapabilitiesSection({
 }: CapabilitiesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const articleRef = useRef<HTMLDivElement>(null);
+  const exploreMenuRef = useRef<HTMLDivElement>(null);
   const tabsScrollerRef = useRef<HTMLDivElement>(null);
   const currentValue = getCapabilityById(value)?.id || defaultCapabilityId;
 
@@ -1924,8 +1925,14 @@ export default function CapabilitiesSection({
     }
 
     const html = document.documentElement;
+    const exploreMenu = exploreMenuRef.current;
+    const stackedMenuClearance =
+      exploreMenu && window.innerWidth < 1280 ? exploreMenu.offsetHeight : 0;
     const top =
-      article.getBoundingClientRect().top + window.scrollY - headerClearance;
+      article.getBoundingClientRect().top +
+      window.scrollY -
+      headerClearance -
+      stackedMenuClearance;
 
     html.classList.add("no-smooth-scroll");
     window.scrollTo({ top, left: 0, behavior: "auto" });
@@ -2003,7 +2010,10 @@ export default function CapabilitiesSection({
         ref={sectionRef}
         style={sectionStyle}
       >
-        <div className="sticky top-[72px] z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pb-[var(--base-5)] pt-[var(--base-10)] min-[1280px]:top-[128px] min-[1280px]:z-auto min-[1280px]:w-[var(--capabilities-menu-width)] min-[1280px]:pb-0">
+        <div
+          className="sticky top-[72px] z-40 flex w-full shrink-0 flex-col items-start gap-[var(--base-5)] bg-[var(--bg-beige)] pb-[var(--base-5)] pt-[var(--base-10)] min-[1280px]:top-[128px] min-[1280px]:z-auto min-[1280px]:w-[var(--capabilities-menu-width)] min-[1280px]:pb-0"
+          ref={exploreMenuRef}
+        >
           <h2
             className="text-center text-[var(--text-accent)]"
             style={typeStyle(typography.heading.h4)}
