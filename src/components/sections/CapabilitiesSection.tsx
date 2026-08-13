@@ -57,7 +57,6 @@ const tabs: TabGroupTab[] = capabilities.map((capability) => ({
 }));
 
 const headerClearance = 136;
-const tabsScrollDuration = 500;
 
 type StyleVars = CSSProperties & Record<`--${string}`, string | number>;
 
@@ -1909,7 +1908,6 @@ export default function CapabilitiesSection({
   const sectionRef = useRef<HTMLElement>(null);
   const articleRef = useRef<HTMLDivElement>(null);
   const tabsScrollerRef = useRef<HTMLDivElement>(null);
-  const tabsScrollFrameRef = useRef<number | null>(null);
   const currentValue = getCapabilityById(value)?.id || defaultCapabilityId;
 
   const sectionStyle: StyleVars = {
@@ -1979,42 +1977,16 @@ export default function CapabilitiesSection({
       const startScrollLeft = scrollElement.scrollLeft;
       const scrollDistance = clampedScrollLeft - startScrollLeft;
 
-      if (tabsScrollFrameRef.current !== null) {
-        cancelAnimationFrame(tabsScrollFrameRef.current);
-      }
-
       if (Math.abs(scrollDistance) < 1) {
         scrollElement.scrollLeft = clampedScrollLeft;
         return;
       }
 
-      const startTime = performance.now();
-
-      function animateScroll(now: number) {
-        const progress = Math.min((now - startTime) / tabsScrollDuration, 1);
-        const easedProgress = progress * progress * progress;
-
-        scrollElement.scrollLeft =
-          startScrollLeft + scrollDistance * easedProgress;
-
-        if (progress < 1) {
-          tabsScrollFrameRef.current = requestAnimationFrame(animateScroll);
-          return;
-        }
-
-        scrollElement.scrollLeft = clampedScrollLeft;
-        tabsScrollFrameRef.current = null;
-      }
-
-      tabsScrollFrameRef.current = requestAnimationFrame(animateScroll);
+      scrollElement.scrollLeft = clampedScrollLeft;
     });
 
     return () => {
       cancelAnimationFrame(frame);
-      if (tabsScrollFrameRef.current !== null) {
-        cancelAnimationFrame(tabsScrollFrameRef.current);
-        tabsScrollFrameRef.current = null;
-      }
     };
   }, [currentValue]);
 
