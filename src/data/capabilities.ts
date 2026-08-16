@@ -29,6 +29,12 @@ export const capabilities = [
     summary:
       "Designing intuitive mobile experiences for financial products with complex user flows and high-frequency interactions",
   },
+  {
+    id: "design-to-production",
+    label: "Design to production",
+    summary:
+      "Designing, building, and shipping a production portfolio through a shared design system and AI-assisted development workflow",
+  },
 ] as const;
 
 export type CapabilityId = (typeof capabilities)[number]["id"];
