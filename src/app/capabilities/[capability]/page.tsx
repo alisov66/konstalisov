@@ -30,7 +30,7 @@ export async function generateMetadata({
 
   const title =
     selectedCapability.id === "design-to-production"
-      ? "Design to Production | Konstantin Alisov"
+      ? "Design to production | Konstantin Alisov"
       : `${selectedCapability.label} | Konstantin Alisov`;
   const description =
     selectedCapability.id === "design-to-production"
