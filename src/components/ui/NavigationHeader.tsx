@@ -198,7 +198,10 @@ export default function NavigationHeader({
   return (
     <header
       className={[
-        "fixed left-0 top-0 z-50 flex w-full flex-col items-center justify-center px-[var(--padding-side)] py-5",
+        "fixed left-0 top-0 z-50 flex w-full flex-col items-center justify-center",
+        isMobileLayout
+          ? "bg-[var(--bg-beige)] px-0 pb-0 pt-[var(--base-5)]"
+          : "px-[var(--padding-side)] py-5",
         animationState === "visible"
           ? ""
           : animationState === "entering"
