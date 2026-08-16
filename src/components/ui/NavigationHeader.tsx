@@ -20,6 +20,7 @@ const navigationItems = [
 ];
 
 const headerClearance = 136;
+const navigationHeaderMobileMaxWidth = 727;
 
 function typeStyle(token: {
   fontSize: string | number;
@@ -48,9 +49,6 @@ export default function NavigationHeader({
   const [isMobileLayout, setIsMobileLayout] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const isMobileLayoutRef = useRef(false);
-  const navRef = useRef<HTMLElement>(null);
-  const measuringActionsRef = useRef<HTMLDivElement>(null);
-  const measuringLogoRef = useRef<HTMLAnchorElement>(null);
   const isVisibleRef = useRef(alwaysVisible);
   const exitTimeoutRef = useRef<number | null>(null);
 
@@ -131,23 +129,12 @@ export default function NavigationHeader({
   }, [alwaysVisible, heroId]);
 
   useEffect(() => {
+    const query = window.matchMedia(
+      `(max-width: ${navigationHeaderMobileMaxWidth}px)`,
+    );
+
     const updateLayoutMode = () => {
-      const nav = navRef.current;
-      const logo = measuringLogoRef.current;
-      const actions = measuringActionsRef.current;
-
-      if (!nav || !logo || !actions) {
-        return;
-      }
-
-      const navStyles = window.getComputedStyle(nav);
-      const contentWidth =
-        nav.clientWidth -
-        parseFloat(navStyles.paddingLeft) -
-        parseFloat(navStyles.paddingRight);
-      const availableGap =
-        contentWidth - logo.offsetWidth - actions.scrollWidth;
-      const nextIsMobileLayout = availableGap < 20;
+      const nextIsMobileLayout = query.matches;
 
       if (nextIsMobileLayout === isMobileLayoutRef.current) {
         return;
@@ -163,17 +150,10 @@ export default function NavigationHeader({
 
     updateLayoutMode();
 
-    const observer = new ResizeObserver(updateLayoutMode);
-
-    if (navRef.current) {
-      observer.observe(navRef.current);
-    }
-
-    window.addEventListener("resize", updateLayoutMode);
+    query.addEventListener("change", updateLayoutMode);
 
     return () => {
-      observer.disconnect();
-      window.removeEventListener("resize", updateLayoutMode);
+      query.removeEventListener("change", updateLayoutMode);
     };
   }, []);
 
@@ -229,45 +209,7 @@ export default function NavigationHeader({
             : "flex-row justify-between rounded-[var(--lg)] px-[var(--base-3)] py-[var(--base-2)]",
           menuOpen ? "gap-[var(--base-2)]" : "",
         ].join(" ")}
-        ref={navRef}
       >
-        <div
-          aria-hidden
-          className="pointer-events-none invisible absolute left-0 top-0 flex h-0 items-center overflow-hidden"
-        >
-          <Link
-            className="flex shrink-0 items-center gap-[var(--base-2)]"
-            href="/"
-            ref={measuringLogoRef}
-            tabIndex={-1}
-          >
-            <span className="relative size-[52px] shrink-0" />
-            <span className="flex w-[172px] flex-col gap-0">
-              <span
-                style={{
-                  ...typeStyle(typography.body.s),
-                  fontWeight: typography.fontWeight.semibold,
-                }}
-              >
-                Konstantin Alisov
-              </span>
-              <span style={typeStyle(typography.body.s)}>
-                Product designer
-              </span>
-            </span>
-          </Link>
-          <div
-            className="flex shrink-0 items-center"
-            ref={measuringActionsRef}
-          >
-            {navigationItems.map((item) => (
-              <ButtonSecondary href={item.href} key={item.label} tabIndex={-1}>
-                {item.label}
-              </ButtonSecondary>
-            ))}
-          </div>
-        </div>
-
         <div
           className={[
             "flex items-center justify-between",
