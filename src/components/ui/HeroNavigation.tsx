@@ -162,7 +162,7 @@ export default function HeroNavigation({
     : undefined;
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 1439px)");
+    const mediaQuery = window.matchMedia("(max-width: 833px)");
     const updateTabletLayout = () => {
       setIsTabletLayout(mediaQuery.matches);
     };
