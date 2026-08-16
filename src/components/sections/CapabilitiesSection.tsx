@@ -2134,7 +2134,7 @@ function DesignToProductionArticle() {
         <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           alt="Production previews and deployment workflow"
-          className="aspect-[4096/1781]"
+          className="aspect-[4096/1789]"
           src={images.portfolioFig8}
         />
       </Section>
