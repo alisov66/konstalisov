@@ -200,7 +200,7 @@ export default function NavigationHeader({
       className={[
         "fixed left-0 top-0 z-50 flex w-full flex-col items-center justify-center",
         isMobileLayout
-          ? "bg-[var(--bg-beige)] px-0 pb-0 pt-[var(--base-5)]"
+          ? "bg-[var(--bg-beige)] p-0"
           : "px-[var(--padding-side)] py-5",
         animationState === "visible"
           ? ""
@@ -223,10 +223,10 @@ export default function NavigationHeader({
       <nav
         aria-label="Primary"
         className={[
-          "relative z-10 flex w-full max-w-[var(--container-max)] items-center rounded-[var(--lg)] bg-[var(--bg-beige-light)]",
+          "relative z-10 flex w-full max-w-[var(--container-max)] items-center bg-[var(--bg-beige-light)]",
           isMobileLayout
-            ? "flex-col items-start justify-center px-[var(--base-2)] py-[var(--base-1)]"
-            : "flex-row justify-between px-[var(--base-3)] py-[var(--base-2)]",
+            ? "flex-col items-start justify-center rounded-b-[var(--lg)] px-[var(--base-2)] py-[var(--base-1)]"
+            : "flex-row justify-between rounded-[var(--lg)] px-[var(--base-3)] py-[var(--base-2)]",
           menuOpen ? "gap-[var(--base-2)]" : "",
         ].join(" ")}
         ref={navRef}
