@@ -4,9 +4,9 @@ import NavigationHeader from "@/components/ui/NavigationHeader";
 import { pageMetadata } from "@/app/seo";
 
 export const metadata = pageMetadata({
-  title: "Capabilities | Konstantin Alisov",
+  title: "Product Design Capabilities | Konstantin Alisov",
   description:
-    "Product design capabilities across complex workflows, design systems, documentation, product scale, and mobile experiences.",
+    "Case studies across complex workflow design, design systems, documentation, product design at scale, mobile experiences, and design-to-production workflows.",
   path: "/capabilities",
   image: "/og/capabilities.png",
 });

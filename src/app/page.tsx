@@ -6,9 +6,9 @@ import Image from "next/image";
 const imgPic = "/konstantin-avatar.png";
 
 export const metadata = pageMetadata({
-  title: "Konstantin Alisov",
+  title: "Konstantin Alisov | Product Designer",
   description:
-    "Product designer creating clarity in complex systems.",
+    "Product designer specializing in complex workflows, design systems, enterprise software, and AI-assisted product development. Based in Bilbao, Spain.",
   path: "/",
   image: "/og/home.png",
 });

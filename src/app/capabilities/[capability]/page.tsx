@@ -28,9 +28,18 @@ export async function generateMetadata({
     return {};
   }
 
+  const title =
+    selectedCapability.id === "design-to-production"
+      ? "Design to Production | Konstantin Alisov"
+      : `${selectedCapability.label} | Konstantin Alisov`;
+  const description =
+    selectedCapability.id === "design-to-production"
+      ? "Designing, building, and shipping a production portfolio through a shared design system and AI-assisted development workflow."
+      : selectedCapability.summary;
+
   return pageMetadata({
-    title: `${selectedCapability.label} | Konstantin Alisov`,
-    description: selectedCapability.summary,
+    title,
+    description,
     path: `/capabilities/${selectedCapability.id}`,
     image: `/og/capabilities/${selectedCapability.id}.png`,
   });

@@ -12,8 +12,9 @@ const workSans = Work_Sans({
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
-  title: "Konstantin Alisov",
-  description: "Product Designer Portfolio",
+  title: "Konstantin Alisov | Product Designer",
+  description:
+    "Product designer specializing in complex workflows, design systems, enterprise software, and AI-assisted product development.",
 };
 
 export default function RootLayout({
