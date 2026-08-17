@@ -11,3 +11,11 @@
 | **GPT-5.5 / Instant / Medium-style use** | Quick questions, small copy changes, translation, simple explanations | Fast everyday help | **10–20%** | Use when the answer doesn’t require deep context or careful reasoning |
 | **GPT-5.4 / Mini-style models** | Very lightweight tasks only | Quick utility | **0–5%** | I’d mostly avoid these for portfolio/coding decisions. Fine for tiny questions, not for nuanced work |
 
+| Situation | Choose |
+|---|---|
+| Long design/product thinking chat | **GPT-5.5 High** or **GPT-5.6 Sol High** |
+| Important portfolio/career/UX decision | **GPT-5.6 Sol High** |
+| Very hard architecture / repo strategy | **GPT-5.6 Sol Extra High** |
+| Codex agent making meaningful code changes | **GPT-5.6 Sol** |
+| Codex agent doing smaller clear tasks | **GPT-5.6 Terra** |
+| Quick low-risk dev lookup/fix | **GPT-5.6 Luna** |
