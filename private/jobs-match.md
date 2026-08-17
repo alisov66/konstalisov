@@ -651,7 +651,7 @@ ___
 - **Compared with Bending Spoons:** Lower prestige/compensation upside, but probably an even more direct match with my current proven experience.
 
 ___
-4. # JetBrains — Senior Product Designer (Air)
+# 4. JetBrains — Senior Product Designer (Air)
 
 - **Overall match:** 9/10
 - **Role/experience match:** 9.5/10
