@@ -1323,3 +1323,1157 @@ ___
 - **Cultural fit:** Potentially excellent given my preference for ambitious, fast-paced environments.
 - **Strategic career fit:** **Exceptional**
 - **Current ranking:** This belongs among my **very strongest opportunities** alongside JetBrains Air, Spendesk, and Bending Spoons.
+
+___
+
+# 6. N26 — Product Designer, Grow & Engage
+
+- **Overall match:** 8–8.5/10
+- **Priority:** High / Tier A
+- **Recommendation:** Apply
+- **Role type:** Product Designer — Consumer Fintech / Growth & Engagement
+- **Location:** Barcelona
+- This is a strong opportunity, but it represents a **different direction from Revolut Platform or JetBrains Air**.
+- N26 is looking primarily for someone who can design:
+  - consumer mobile experiences
+  - acquisition and signup
+  - daily engagement
+  - subscriptions / premium tiers
+  - discovery
+  - recommendations
+  - AI-powered insights
+  - cross-product patterns
+- My background matches the product-thinking and systems aspects very well, but my strongest recent portfolio evidence is **complex enterprise UX rather than large-scale consumer mobile UX**.
+
+## Where I match strongly
+
+- **Systems thinking — excellent match**
+  - N26 explicitly lists systems thinking as a core trait.
+  - They want someone who sees connections between adjacent parts of the product rather than treating features as isolated screens.
+  - This is one of my strongest capabilities.
+
+- **Problem-first mindset — excellent match**
+  - They explicitly expect designers to define:
+    - user needs
+    - success criteria
+    - constraints
+    - trade-offs
+  - before committing to solutions.
+  - This is highly aligned with my current positioning around turning ambiguity into structured product solutions.
+
+- **Complex feature ownership — very strong**
+  - They want designers to take features from:
+    - problem framing
+    - research
+    - exploration
+    - design
+    - shipping
+    - post-launch iteration
+  - My Product Designer experience already covers end-to-end ownership.
+
+- **Product + Engineering collaboration — excellent match**
+  - N26 designers work tightly with:
+    - Product
+    - Engineering
+    - Research
+    - Data
+  - My recent experience already involves close Product/Engineering collaboration rather than isolated design handoff.
+
+- **Design systems — strong match**
+  - They expect designers to:
+    - use the design system
+    - contribute to it
+    - improve patterns
+    - know when existing patterns should be challenged
+  - I have direct experience building reusable components, interaction patterns, and scalable design foundations.
+
+- **AI-assisted workflow — excellent match**
+  - N26 explicitly expects designers to use AI for:
+    - exploration
+    - prototyping
+    - synthesis
+    - workflow acceleration
+  - My current workflow already includes:
+    - ChatGPT
+    - Codex
+    - VS Code
+    - AI-assisted prototyping
+    - AI-assisted implementation
+  - This is a genuine strength rather than something I would need to learn after joining.
+
+- **Bias for action — strong cultural match**
+  - Their philosophy:
+    > "We ship, and we ship often."
+  - They explicitly discourage polishing in isolation.
+  - This aligns well with my preference for fast-moving product environments.
+
+- **Fintech experience — relevant**
+  - My APD experience includes mobile financial workflows involving:
+    - AML verification
+    - blockchain transactions
+    - staking
+    - multi-account management
+  - This is useful supporting evidence even though it is not conventional banking.
+
+- **Mobile design experience — relevant**
+  - I have real mobile product experience from APD.
+  - TR.ENERGY is especially relevant because it demonstrates designing sophisticated financial concepts for mobile users.
+
+- **Cross-product thinking — strong**
+  - N26's Grow & Engage domain spans:
+    - home
+    - discovery
+    - recommendations
+    - subscriptions
+    - AI insights
+  - My systems-thinking background helps because the role requires understanding how changes in one area affect adjacent areas.
+
+- **Visual/UI foundations — strong**
+  - N26 places a high bar on:
+    - UI craft
+    - interactions
+    - detail
+    - copy
+    - edge cases
+  - My earlier UX/UI background plus recent product work gives me a strong visual-design foundation.
+
+## Where I'm weaker
+
+- **Consumer product experience at scale — biggest gap**
+  - This is the most important weakness.
+  - N26 explicitly asks for:
+    > "a strong portfolio showing end-to-end product design work on consumer products—ideally mobile."
+  - I have consumer/mobile experience, but my strongest and most recent work is:
+    - enterprise software
+    - professional users
+    - complex analytical workflows
+  - I have not yet designed a consumer product used by millions of people.
+
+- **Growth / engagement domain experience — significant gap**
+  - Grow & Engage includes:
+    - acquisition
+    - signup
+    - retention
+    - habit formation
+    - paid memberships
+    - recommendations
+    - conversion
+  - These are not the main themes of my recent product experience.
+  - Candidates from:
+    - Revolut
+    - Wise
+    - Booking
+    - Spotify
+    - Glovo
+    - subscription apps
+  - may have stronger direct experience here.
+
+- **Quantitative product development — moderate gap**
+  - N26 explicitly expects designers to proactively seek data and combine:
+    - qualitative research
+    - quantitative research
+  - My portfolio currently demonstrates stronger evidence around:
+    - systems
+    - workflow simplification
+    - architecture
+    - delivery
+  - It contains less evidence around:
+    - conversion
+    - retention
+    - funnel performance
+    - behavioural analytics
+    - experimentation
+
+- **Post-launch optimisation — moderate gap**
+  - They emphasize learning from what is live and continuing to develop a feature after launch.
+  - I have iterative product-design experience, but my portfolio does not yet strongly demonstrate repeated:
+    > launch → measure → learn → optimise
+  - cycles.
+
+- **Direct user research depth — moderate gap**
+  - N26 expects Product Designers to be actively involved in planning and running research.
+  - I have discovery and validation experience, but formal research is not one of the strongest parts of my current portfolio.
+
+- **Subscription / monetisation experience — limited**
+  - Their Smart, Go, and Metal tiers are a major part of the domain.
+  - I do not have strong direct subscription-product experience.
+
+## Important watch-outs
+
+- **The consumer/mobile requirement matters**
+  - This is not just generic wording.
+  - N26 is explicitly hiring into the consumer-facing heart of its banking app.
+  - I should not treat my complex enterprise background as automatically equivalent.
+  - My application needs to demonstrate that I can transfer systems thinking and complexity reduction into an emotionally polished consumer experience.
+
+- **TR.ENERGY becomes important**
+  - For Revolut Platform, Platforma should clearly lead.
+  - For N26 Grow & Engage, I would probably make **TR.ENERGY much more visible** in the application.
+  - It demonstrates:
+    - mobile UX
+    - financial workflows
+    - customer-facing design
+    - interaction design
+  - Platforma then supports my depth in systems thinking.
+
+- **Portfolio balance could be a screening issue**
+  - My portfolio currently communicates:
+    > "complex systems Product Designer"
+  - exceptionally well.
+  - N26 may be looking for more visible evidence of:
+    > "consumer mobile Product Designer."
+  - This doesn't mean changing my overall positioning.
+  - It means choosing the right entry point for this specific application.
+
+- **High craft bar**
+  - N26 explicitly says:
+    > "UI and interaction design that delights customers and converts."
+  - Visual refinement will matter significantly more here than in something like Revolut Platform.
+  - The portfolio must feel polished, not merely intellectually strong.
+
+- **Large mature design organisation**
+  - 40+ UX professionals means:
+    - strong peer comparison
+    - mature research
+    - design ops
+    - established standards
+    - strong critique culture
+  - This would be excellent for development, but it also means the craft bar will be high.
+
+- **Barcelona — excellent practical fit**
+  - Barcelona is one of my preferred locations.
+  - Relocation support is available.
+  - No practical location concern.
+
+## Why my background is still valuable
+
+- Most candidates with consumer mobile portfolios may be stronger in:
+  - growth loops
+  - acquisition
+  - subscriptions
+  - conversion
+
+- I may be stronger in:
+  - systems thinking
+  - product architecture
+  - complex states
+  - information hierarchy
+  - design systems
+  - technical collaboration
+
+- N26 explicitly values systems thinking, so the goal is not to hide my enterprise background.
+- The strongest narrative is:
+  > I bring systems-level product thinking from complex professional software and combine it with previous consumer/mobile financial-product experience.
+
+## Portfolio relevance
+
+- **Mobile Experiences / TR.ENERGY**
+  - **Extremely relevant**
+  - Should likely be the primary application entry point.
+  - Demonstrates mobile fintech-adjacent experience.
+
+- **Complex Workflow Design**
+  - **Highly relevant as secondary evidence**
+  - Demonstrates depth of product thinking, complexity reduction, and system architecture.
+
+- **Design Systems**
+  - **Highly relevant**
+  - Directly supports their expectation that designers contribute to shared patterns.
+
+- **Product Design at Scale**
+  - Relevant for demonstrating ecosystem and cross-product thinking.
+
+- **Documentation & Collaboration**
+  - Supporting evidence rather than the main story for this role.
+
+- **AI-assisted development**
+  - Strong differentiator because N26 explicitly expects AI fluency.
+
+## Comparison with Revolut Platform
+
+- **Revolut Platform**
+  - complex internal systems
+  - operational tooling
+  - dense workflows
+  - backend-driven product logic
+  - platform architecture
+  - extremely close to Platforma
+
+- **N26 Grow & Engage**
+  - consumer mobile
+  - engagement
+  - subscriptions
+  - conversion
+  - recommendations
+  - daily banking behaviours
+
+- **Pure experience fit:** Revolut clearly stronger
+- **Systems-thinking fit:** approximately equal
+- **Consumer/mobile fit:** N26 requires more stretching
+- **Career diversification:** N26 stronger
+- **Career differentiation based on existing strengths:** Revolut stronger
+
+- If both offered similar conditions, **Revolut Platform is the more natural continuation of my strongest experience**.
+
+## Comparison with Spendesk
+
+- **Spendesk**
+  - B2B financial operations
+  - complex workflows
+  - design systems
+  - enterprise UX
+
+- **N26**
+  - consumer banking
+  - mobile-first
+  - engagement
+  - growth
+  - subscription UX
+
+- **Direct skill match:** Spendesk stronger
+- **Consumer-product career development:** N26 stronger
+- **Visual/craft challenge:** N26 stronger
+- **Systems/enterprise experience leverage:** Spendesk stronger
+
+## Strategic upside
+
+- N26 would broaden my profile significantly.
+- Today my strongest positioning is:
+  > Product Designer for complex systems and workflows.
+
+- After 2–3 successful years at N26, I could potentially add:
+  > large-scale consumer mobile fintech
+  > growth and engagement
+  > subscriptions
+  > quantitative product development
+
+- That would make my profile considerably broader and potentially open opportunities at:
+  - Revolut consumer teams
+  - Wise
+  - Stripe
+  - Spotify
+  - Booking
+  - other major consumer technology companies
+
+- So although the **initial match is weaker than Revolut Platform**, the **career-development value could be very high**.
+
+## Assessment
+
+| Area | Match |
+|---|---:|
+| Systems thinking | **9.5/10** |
+| Problem framing | **9/10** |
+| End-to-end ownership | **9/10** |
+| Product + engineering collaboration | **9/10** |
+| Design systems | **9/10** |
+| AI-assisted workflow | **9.5/10** |
+| Product thinking | **9/10** |
+| UI / visual craft | **8.5/10** |
+| Interaction design | **8.5/10** |
+| Fintech relevance | **8/10** |
+| Mobile product experience | **8/10** |
+| Consumer product experience | **7.5/10** |
+| Consumer experience at large scale | **5.5–6/10** |
+| Growth / engagement experience | **6.5/10** |
+| Subscription / monetisation | **6/10** |
+| User research | **7–7.5/10** |
+| Quantitative product development | **6.5–7/10** |
+| English | **8/10** |
+| Fast-paced environment | **9/10** |
+| Location / practical fit | **10/10** |
+| Career-development upside | **9.5/10** |
+| **Overall** | **~8–8.5/10** |
+
+## Decision
+
+- **Apply:** Yes
+- **Application priority:** **Tier A / High**
+- **Overall fit:** **~8–8.5/10**
+- **Worth tailoring CV:** Yes
+- **Worth tailoring portfolio presentation:** Definitely
+- **Primary portfolio story:** TR.ENERGY / Mobile Experiences
+- **Secondary portfolio story:** Complex Workflow Design
+- **Supporting story:** Design Systems
+- **Main selling point:** Systems-oriented Product Designer with strong complex-product experience plus previous mobile financial-product work.
+- **Main differentiator:** Ability to bring deep systems thinking into consumer product design.
+- **Main weakness:** Lack of recent large-scale consumer/mobile growth experience.
+- **Main interview preparation area:** Growth metrics, engagement, research, subscriptions, experimentation, and post-launch optimisation.
+- **Location fit:** Excellent
+- **Strategic career value:** **Very high**
+- **Compared with Revolut Platform:** Lower immediate match, but potentially broader career-development opportunity.
+- **Current ranking:** Strong Tier A opportunity, but **not as direct a fit as Revolut Platform, JetBrains Air, Spendesk, or Dwelly**.
+
+___
+
+# 7. Capitole — Senior Product Designer
+
+- **Overall match:** 7.5–8/10
+- **Skill match:** 8.5/10
+- **Strategic career fit:** 6.5–7/10
+- **Priority:** Medium / Tier B
+- **Recommendation:** Apply, but prioritise direct product companies first
+- **Role type:** Senior Product Designer working through a consultancy for an international client
+- **Location:** Barcelona, hybrid — 1–2 days/week in office
+- From a pure skills perspective, I match this role well.
+- The main reason I rank it below Revolut, JetBrains, Spendesk, Dwelly, etc. is **not capability** — it is the employment/product-ownership model.
+- Capitole appears to be placing me on a client project rather than hiring me to own Capitole's own product ecosystem.
+- Since I specifically want **deep ownership of one product/ecosystem**, this is an important disadvantage.
+
+## Where I match strongly
+
+- **End-to-end Product Design — very strong**
+  - They want someone leading work from discovery through delivery.
+  - My recent Product Designer experience already includes:
+    - discovery
+    - problem definition
+    - information architecture
+    - interaction design
+    - prototyping
+    - documentation
+    - engineering collaboration
+    - delivery
+
+- **Complex product UX — strong**
+  - They explicitly require strong UX methodologies, interaction design, and information architecture.
+  - These are central strengths in my current positioning.
+
+- **Web + mobile — very strong**
+  - They specifically require experience across both.
+  - My background provides:
+    - Platforma → complex desktop/web product experience
+    - APD → extensive web and mobile product work
+    - TR.ENERGY → sophisticated mobile financial workflows
+
+- **Information architecture — excellent match**
+  - IA is one of my explicit core expertise areas.
+  - My recent work contains substantial examples of structuring complex products and workflows.
+
+- **Interaction design — very strong**
+  - My experience includes:
+    - complex workflows
+    - interaction states
+    - reusable patterns
+    - data-heavy interfaces
+    - sophisticated business logic
+
+- **Visual/UI craft — strong**
+  - I have many years of UX/UI experience preceding my deeper Product Designer roles.
+  - High-fidelity design, typography, layout, grids, consistency, and visual systems should not be concerns.
+
+- **Design systems — very strong**
+  - Required:
+    > Familiarity with design systems and component-based approaches.
+  - Nice-to-have:
+    > Contributing to design system evolution and documentation.
+  - This is directly supported by my MiLaboratories experience with:
+    - reusable components
+    - patterns
+    - documentation
+    - scalable foundations
+    - design-to-engineering alignment
+
+- **Cross-functional collaboration — very strong**
+  - They expect collaboration with:
+    - Product
+    - Engineering
+    - UX Research
+    - Brand
+  - My experience already spans Product, Engineering, Marketing, and other stakeholders.
+
+- **Documentation — strong**
+  - Design-system documentation is explicitly a nice-to-have.
+  - My portfolio has an entire capability area around Documentation & Collaboration.
+
+- **Design process / file organisation — strong**
+  - They mention:
+    - design-process optimisation
+    - file management
+    - version control
+  - My work with structured Figma systems, documentation, GitHub, and AI-assisted development gives me a credible story here.
+
+- **Autonomy — strong**
+  - Being the sole Product Designer at MiLaboratories is good evidence that I can operate without a large design organisation around me.
+
+## English
+
+- They explicitly require:
+  > **Fluent Business English (B2–C1)**
+
+- This is probably within my current functional range.
+- My CV currently states **Professional working proficiency**.
+- I already:
+  - work with professional product terminology in English
+  - write product documentation in English
+  - discuss technical UX in English
+  - present reasoning in English
+
+- Spoken fluency under interview pressure still deserves preparation, but I would **not treat English as a blocker for applying**.
+
+- **Spanish is not listed as a requirement**, which is a positive signal.
+
+## Where I'm weaker
+
+- **Formal UX Research — moderate gap**
+  - They explicitly mention collaboration with UX Research.
+  - That is actually better for me than roles where the Product Designer must personally own extensive research.
+  - However, research/testing validation is also listed as a nice-to-have.
+  - My research evidence is currently weaker than my systems/UX/design-system evidence.
+
+- **Quantitative / data-informed design — moderate gap**
+  - Listed as nice-to-have rather than required.
+  - I use available evidence to make design decisions, but my portfolio has fewer examples of:
+    - analytics
+    - experiments
+    - KPI measurement
+    - post-launch quantitative optimisation
+
+- **Accessibility — moderate evidence gap**
+  - They explicitly mention accessibility and inclusive design.
+  - I understand the principles, but accessibility is not currently a major demonstrated theme in my portfolio.
+  - I should be prepared to discuss:
+    - semantic structure
+    - contrast
+    - keyboard interactions
+    - responsive behaviour
+    - accessible component states
+  - without overstating formal accessibility expertise.
+
+- **"Proven Senior Product Designer" title — small positioning gap**
+  - They explicitly call for a Senior Product Designer.
+  - My current title is Product Designer rather than Senior Product Designer.
+  - However, my **9+ years of design experience and level of ownership** make the seniority requirement reasonable.
+  - I would not change my title artificially.
+
+## Biggest strategic drawback: consultancy model
+
+- This is the most important consideration for me.
+
+- Capitole says:
+  > "We are collaborating with an international client based in Barcelona for a cutting-edge technical project."
+
+- That strongly suggests I would effectively work as a designer embedded with **Capitole's client**.
+
+- This resembles my APD experience more than my MiLaboratories experience.
+
+- Potential implications:
+  - the product belongs to the client
+  - project assignment could eventually change
+  - long-term roadmap influence may be limited
+  - relationship with the product can depend on the commercial contract
+  - I may not accumulate product/domain knowledge for several years in the same way as at a direct product company
+
+- This is directly contrary to one of my current career preferences:
+  > **I want to deeply own one product/ecosystem rather than move between unrelated projects.**
+
+- This does **not** make the job bad.
+- It makes it less strategically attractive **for me specifically**.
+
+## Important watch-outs
+
+- **The actual client is unknown**
+  - This is a major missing piece.
+  - The quality of this opportunity depends heavily on:
+    - who the client is
+    - what product I would work on
+    - what industry it is
+    - how long the engagement is expected to last
+    - whether I would be embedded as a true product-team member
+
+- **No product/domain information**
+  - We cannot currently assess whether the actual work is:
+    - complex B2B
+    - consumer mobile
+    - fintech
+    - internal tooling
+    - ecommerce
+    - something else entirely
+  - That makes this assessment inherently less precise than Revolut or JetBrains.
+
+- **No salary range**
+  - Another significant unknown.
+  - For a Senior Product Designer role in Barcelona, I would want to understand compensation very early.
+  - A consultancy margin may also mean compensation is less aggressive than strong direct product companies.
+
+- **Possible project reassignment**
+  - I should ask what happens when the current client engagement ends.
+  - This is especially important given my preference for long-term product ownership.
+
+- **"Senior" expectations are generic**
+  - The description doesn't reveal much about:
+    - product strategy
+    - ownership scope
+    - business metrics
+    - organisational influence
+  - It may be a straightforward experienced IC role rather than a particularly high-leverage Senior Product Designer position.
+
+## Questions I should ask early
+
+- **Who is the client and what product/domain would I work on?**
+- **Would I be embedded in one product team long-term?**
+- **How long is the current client engagement expected to last?**
+- **What happens if the engagement ends?**
+- **Would Capitole reassign me to another client?**
+- **Who owns product/design decisions: Capitole or the client?**
+- **What is the salary range?**
+- **How mature is the client's Product Design organisation?**
+- **What level of ownership would I actually have?**
+
+## Portfolio relevance
+
+- **Complex Workflow Design**
+  - Highly relevant if the client's product is technical or workflow-heavy.
+
+- **Mobile Experiences**
+  - Relevant because they explicitly require both web and mobile experience.
+
+- **Design Systems**
+  - Highly relevant because design-system evolution and documentation are specifically mentioned.
+
+- **Product Design at Scale**
+  - Useful for demonstrating IA and end-to-end systems thinking.
+
+- **Documentation & Collaboration**
+  - Highly relevant given the cross-functional and documentation requirements.
+
+- Overall, my portfolio provides **broad coverage of almost every capability explicitly requested**.
+
+## Comparison with direct product roles
+
+- **Revolut Platform**
+  - much clearer product ownership
+  - much stronger alignment with my complex-system specialization
+  - stronger career signal
+  - direct product company
+  - **Revolut clearly preferable**
+
+- **JetBrains Air**
+  - deeper technical challenge
+  - direct ownership
+  - highly differentiated product
+  - strong AI component
+  - **JetBrains clearly preferable**
+
+- **Spendesk**
+  - direct ownership of a financial product ecosystem
+  - complex workflows
+  - strong design-system component
+  - **Spendesk preferable**
+
+- **Dwelly**
+  - small product team
+  - significant ownership
+  - chance to establish foundations
+  - **Dwelly preferable if compensation is reasonable**
+
+- Capitole becomes attractive mainly if:
+  - the client is exceptional
+  - the project is long-term
+  - ownership is genuine
+  - compensation is strong
+
+## Assessment
+
+| Area | Match |
+|---|---:|
+| End-to-end Product Design | **9/10** |
+| Complex UX | **9/10** |
+| Information architecture | **9.5/10** |
+| Interaction design | **9/10** |
+| Web product experience | **9/10** |
+| Mobile product experience | **8.5/10** |
+| UI / visual craft | **9/10** |
+| Design systems | **9/10** |
+| Documentation | **9/10** |
+| Product + Engineering collaboration | **9/10** |
+| Autonomy | **9/10** |
+| UX Research | **7–7.5/10** |
+| Quantitative / data-informed design | **7/10** |
+| Accessibility demonstrated in portfolio | **7/10** |
+| English B2–C1 | **8/10** |
+| Senior-level capability | **8.5–9/10** |
+| Location / practical fit | **10/10** |
+| Product ownership | **6/10** |
+| Career-direction fit | **6.5–7/10** |
+| **Pure skill match** | **~8.5/10** |
+| **Overall strategic match** | **~7.5–8/10** |
+
+## Decision
+
+- **Apply:** Yes
+- **Application priority:** **Tier B / Medium**
+- **Pure skill fit:** Strong
+- **Strategic fit:** Moderate
+- **Location fit:** Excellent
+- **Worth tailoring CV:** Probably not much
+- **Worth tailoring portfolio:** Minimal
+- **Main selling point:** Broad Senior Product Design capability across complex web/mobile products, IA, interaction design, design systems, and cross-functional delivery.
+- **Main weakness:** Research/data evidence is somewhat weaker than systems/design evidence.
+- **Main concern:** **Consultancy/client-project model rather than direct long-term product ownership.**
+- **Most important missing information:** Client identity, product domain, salary, and expected duration of the engagement.
+- **Strategic conclusion:** Good backup opportunity, but I would prioritise strong direct product companies first.
+
+___
+
+# 8. Murphy AI — Founding Product Designer
+
+- **Overall match:** 8.8–9.2/10
+- **Skill match:** 9/10
+- **Seniority/scope match:** 8–8.5/10
+- **Priority:** Very High / Tier A
+- **Recommendation:** Definitely apply
+- **Role type:** Founding Product Designer / 0→1 B2B AI platform
+- **Location:** Barcelona, hybrid — 3 days/week in Poblenou
+- This is a **very strong thematic match** with my experience and preferred working style.
+- The role combines many of my strongest areas:
+  - complex B2B workflows
+  - internal / operational tools
+  - desktop web
+  - design systems
+  - high autonomy
+  - AI-assisted building
+  - turning fragmented tools into one coherent product
+  - close work with Engineering
+  - early-stage ambiguity
+- The main question is not whether my skills are relevant. They are.
+- The bigger question is whether Murphy considers my previous ownership experience sufficient for a genuinely **Founding Designer-level scope**.
+
+## Why this role stands out
+
+- Murphy's current situation sounds structurally very similar to the kinds of problems I am strongest at:
+  > several powerful tools exist, but the overall product needs structure, coherence, usability, and scalable foundations.
+
+- They need someone to merge:
+  - back office
+  - front office
+  - agent configuration
+  - monitoring
+  - workflows
+  - self-service setup
+
+  into **one understandable product ecosystem**.
+
+- This is not primarily a marketing/growth design position.
+- It is essentially:
+  > **complex systems design + platform architecture + design foundations + AI**
+
+- That is extremely close to the direction of my current portfolio.
+
+## Where I match strongly
+
+- **Complex workflow design — excellent match**
+  - Murphy needs UX for:
+    - configuring AI agents
+    - monitoring thousands of calls
+    - managing workflows
+    - operational tooling
+    - self-service setup
+  - My strongest recent work involved highly technical, multi-step analytical workflows and dense interfaces.
+  - Platforma is strong evidence that I can understand complex systems and translate them into usable product logic. fileciteturn2file0
+
+- **Turning multiple tools into one coherent product — excellent match**
+  - One of the main tasks is:
+    > "Turn a stack of tools into one product."
+  - My recent work already demonstrates ecosystem thinking across:
+    - desktop applications
+    - web services
+    - shared patterns
+    - information architecture
+    - design systems
+  - This is much closer to my strength than designing isolated feature screens.
+
+- **Systems thinking — excellent match**
+  - This role fundamentally requires understanding relationships between:
+    - configuration
+    - agents
+    - live calls
+    - states
+    - workflows
+    - users
+    - operational processes
+  - Systems thinking is already one of my explicit core expertise areas. fileciteturn2file0
+
+- **Information architecture — excellent match**
+  - Converting several internal tools into one coherent platform will require substantial IA.
+  - This is one of my strongest demonstrated capabilities.
+
+- **Desktop web / B2B experience — excellent match**
+  - They specifically want someone experienced with desktop web and complex B2B software.
+  - My strongest recent experience is exactly in professional software rather than simple consumer interfaces.
+
+- **Design-system building — excellent match**
+  - They want the designer to:
+    > "Build and own the design system."
+  - At MiLaboratories I built reusable components, interaction patterns, implementation documentation, and scalable foundations across Platforma. fileciteturn2file0
+  - This is direct evidence, not merely experience using someone else's system.
+
+- **Building design foundations in an immature product — very strong match**
+  - Murphy currently has functional tools that need to become a coherent product.
+  - That requires:
+    - establishing patterns
+    - reducing one-off solutions
+    - setting a visual/interaction standard
+    - defining reusable structures
+  - This is highly compatible with the type of work I have already done.
+
+- **Ambiguity → clarity — excellent match**
+  - They want someone who can:
+    > turn a fuzzy problem into a crisp, shipped interface.
+  - My current CV explicitly positions me around transforming ambiguous requirements into scalable products. fileciteturn2file0
+
+- **AI-assisted workflow — excellent match**
+  - This is one of the clearest AI matches among the roles reviewed.
+  - They explicitly expect:
+    > AI-native design and building.
+  - My current workflow already includes:
+    - ChatGPT
+    - Codex
+    - VS Code
+    - AI-assisted implementation
+    - Next.js
+    - Tailwind
+    - GitHub
+    - Vercel
+  - My portfolio itself is tangible evidence of this workflow. fileciteturn2file0
+
+- **Designer who builds — strong match**
+  - Their ideal candidate doesn't stop at mockups.
+  - My current positioning increasingly demonstrates that I use AI-assisted development to move beyond Figma and understand implementation.
+  - My MiLaboratories CEO also specifically highlighted that I shipped real working pages rather than stopping at mockups.
+
+- **Product + Engineering collaboration — excellent match**
+  - A tiny early-stage team means there will be little room for formal handoffs.
+  - My experience working directly with Engineering and producing implementation documentation is very relevant.
+
+- **Ownership — very strong match**
+  - Being the sole Product Designer at MiLaboratories gives me credible evidence of working with broad responsibility and limited design support. fileciteturn2file0
+
+- **Fintech / financial-product relevance — useful**
+  - They explicitly say collections/fintech experience is **not required**.
+  - Still, my APD experience with:
+    - AML
+    - transactions
+    - staking
+    - account management
+  - gives me some useful financial-product context. fileciteturn2file0
+
+- **Fast-paced environment — excellent personal fit**
+  - Murphy clearly signals:
+    - small team
+    - aggressive growth
+    - high autonomy
+    - large expectations
+    - speed
+  - This matches my preference for ambitious, high-momentum environments.
+
+- **Product ownership — excellent strategic fit**
+  - This is probably one of the strongest roles for my preference to deeply own **one product ecosystem**.
+  - As Founding Product Designer, I would potentially influence:
+    - product UX
+    - system architecture
+    - design language
+    - workflows
+    - design process
+    - future product direction
+
+## The biggest stretch: Founding Designer scope
+
+- This is where I should be careful not to overestimate the match.
+
+- They are not merely hiring:
+  > a strong Product Designer.
+
+- They are hiring someone to effectively **define what Product Design is at Murphy**.
+
+- Expectations include:
+  - owning the entire product experience
+  - setting the design quality bar
+  - creating the design system
+  - shaping product strategy
+  - building prototypes
+  - influencing how the company works
+  - working directly with founders
+  - potentially becoming the design authority for the company
+
+- I have evidence of many pieces of this.
+- What I do **not** yet have is a previous formal role as:
+  - Founding Designer
+  - Design Lead
+  - Staff Designer
+  - Head of Design
+
+- Therefore this is a **credible stretch**, not a perfect one-to-one match.
+
+## Where I'm weaker
+
+- **Formal 0→1 product leadership — moderate gap**
+  - They explicitly want someone who has:
+    > "taken product design 0→1."
+  - I have designed new product areas, workflows, systems, and foundations.
+  - However, I have not yet owned the complete creation of a major SaaS product from company inception through market launch as its founding designer.
+  - I should frame genuine 0→1 examples without exaggerating them.
+
+- **Real coding depth — moderate gap**
+  - Their phrase:
+    > "Prototype with AI, not mock-ups. Build real, working prototypes wired to live data, ship them..."
+  - goes further than merely using Codex to assist implementation.
+  - My implementation fluency is growing quickly, but I am not yet a professional frontend developer.
+  - This may be one of the biggest practical interview questions.
+
+- **Shipping AI-native end-user products — moderate gap**
+  - I use AI extensively to build products.
+  - I have not yet designed and shipped a major AI-agent product where:
+    - model behaviour
+    - confidence
+    - transparency
+    - automation
+    - human control
+    - failure states
+  - are themselves core UX problems.
+  - Murphy would expand my experience substantially here.
+
+- **Design strategy at company level — some gap**
+  - I have strong product/design ownership.
+  - I have less evidence of setting design strategy across an entire startup and influencing company-level roadmap decisions.
+
+- **Quantitative product impact — moderate gap**
+  - Murphy is extremely outcome-oriented:
+    - recovery rate
+    - efficiency
+    - automation
+    - operating cost
+  - My portfolio currently communicates product reasoning and systems work better than hard measurable business impact.
+
+- **Direct research with enterprise operators — moderate gap**
+  - I have experience learning complex professional-user domains.
+  - But I have less evidence of structured research with:
+    - bank operations teams
+    - collections agents
+    - compliance stakeholders
+    - enterprise buyers
+
+## One concern that is actually reduced by the description
+
+- **Domain expertise**
+  - They explicitly say:
+    > "You don't need a collections or fintech background."
+  - Even more importantly:
+    > "We'd rather teach the domain to a killer than hire a lifer who can't ship."
+
+- This is particularly relevant to me.
+- My MiLaboratories experience already proves that I can enter an unfamiliar, highly technical domain and become productive.
+- Bioinformatics was arguably a much steeper knowledge barrier than debt-collection operations.
+- I should use that story positively:
+  > I have already demonstrated that I can enter a highly specialised domain, learn its workflows, and translate technical complexity into usable products.
+
+## Important watch-outs
+
+- **Very high expectations**
+  - Phrases such as:
+    - "ruthless on quality"
+    - "never settle"
+    - "grind the last 10%"
+    - "using AI to design and build faster than a team of 12"
+  - indicate an unusually intense performance culture.
+  - This should not be interpreted as generic startup copy.
+
+- **Potential workload**
+  - Founding design + tiny team + aggressive growth can easily become:
+    > one person doing Product Design, UX Research, Design Systems, prototyping, UI QA, and some frontend.
+  - I should verify expectations around workload and working hours.
+
+- **Founders will be directly involved**
+  - This can be excellent for impact and learning.
+  - It can also mean:
+    - rapid changes
+    - strong opinions
+    - little process insulation
+    - high personal accountability
+
+- **Product maturity is low**
+  - They explicitly describe today's product as a stack of internal tools.
+  - Expect significant:
+    - UX debt
+    - inconsistent patterns
+    - missing edge cases
+    - technical constraints
+    - unfinished workflows
+    - requirements changing quickly
+
+- **Salary is opaque**
+  - They say:
+    > "Salary at the top of the benchmark."
+  - But provide no actual range.
+  - For a Founding Product Designer role with this responsibility level, I would want compensation clarified early.
+  - Equity also matters substantially for this particular role.
+
+- **Equity upside is potentially meaningful but speculative**
+  - Early-stage startup equity could become very valuable.
+  - It could also become worth nothing.
+  - It should be considered upside rather than salary replacement.
+
+## Barcelona / practical fit
+
+- **Excellent**
+  - Office is in Poblenou.
+  - 3 days office + 2 remote.
+  - Barcelona is one of my preferred relocation locations.
+  - This gives the role a **10/10 location fit**.
+
+## Why this could be a particularly valuable career move
+
+- If successful, the career story after 2–3 years could be extremely strong:
+
+  > Founding Product Designer who transformed an AI fintech platform from fragmented internal tools into a scalable enterprise product used by major banks.
+
+- That could provide evidence in areas I currently have less of:
+  - AI-native product design
+  - fintech
+  - 0→1 product leadership
+  - company-level design ownership
+  - enterprise scale
+  - business impact
+  - design system ownership
+  - coded prototyping
+
+- It could therefore accelerate my path toward:
+  - Staff Product Designer
+  - Lead Product Designer
+  - Founding Designer roles
+  - senior positions in AI / fintech / developer-tool companies
+
+## Portfolio relevance
+
+- **Complex Workflow Design**
+  - **Extremely relevant**
+  - Primary portfolio entry point.
+  - Shows exactly the type of complexity they need simplified.
+
+- **Design Systems**
+  - **Extremely relevant**
+  - They explicitly need someone to build the system from the ground up.
+
+- **Documentation & Collaboration**
+  - Highly relevant because I would need to create structures engineers can actually implement and reuse.
+
+- **Product Design at Scale**
+  - Strong evidence of ecosystem-level thinking.
+
+- **Mobile Experiences / TR.ENERGY**
+  - Useful supporting evidence for financial-product experience.
+  - But Platforma should still lead because Murphy is fundamentally complex B2B desktop software.
+
+- **AI-assisted portfolio workflow**
+  - **Especially important for this application.**
+  - The portfolio itself is evidence that I already experiment with the designer-who-builds model they want.
+
+## Comparison with Revolut Platform
+
+- Both strongly match:
+  - complex operational systems
+  - financial workflows
+  - technical UX
+  - data-heavy interfaces
+  - systems thinking
+
+- **Revolut**
+  - much larger organisation
+  - mature product/design infrastructure
+  - clearer established career ladder
+  - huge scale
+  - stronger brand
+  - less individual influence over the entire product
+
+- **Murphy**
+  - much earlier stage
+  - dramatically more ownership
+  - direct founder access
+  - design-system ownership
+  - 0→1 opportunity
+  - AI-native product
+  - higher startup risk
+
+- **Immediate skill fit:** approximately equal
+- **Career stability:** Revolut stronger
+- **Ownership:** Murphy much stronger
+- **0→1 growth opportunity:** Murphy much stronger
+- **Global career signal:** Revolut stronger today
+- **Potential future story if successful:** Murphy could be exceptional
+
+## Comparison with Dwelly
+
+- These are structurally similar opportunities:
+  - early-stage
+  - Barcelona
+  - complex operational tools
+  - design-system foundations
+  - large ownership
+  - AI
+  - small teams
+
+- **Dwelly**
+  - broader property-management ecosystem
+  - mix of consumer + operational products
+  - less technically AI-native
+
+- **Murphy**
+  - narrower, deeper product
+  - stronger AI component
+  - financial enterprise customers
+  - more explicit Founding Designer responsibility
+  - more demanding build/code expectation
+
+- **Skill fit:** approximately equal
+- **AI career positioning:** Murphy stronger
+- **Leadership stretch:** Murphy stronger
+- **Consumer breadth:** Dwelly stronger
+- **Career upside:** Murphy potentially stronger
+
+## Assessment
+
+| Area | Match |
+|---|---:|
+| Complex workflow design | **10/10** |
+| B2B / operational product UX | **9.5/10** |
+| Systems thinking | **9.5/10** |
+| Information architecture | **9.5/10** |
+| Desktop web | **9.5/10** |
+| Design systems | **9.5/10** |
+| Building foundations from scratch | **9/10** |
+| Product + Engineering collaboration | **9/10** |
+| End-to-end ownership | **9/10** |
+| AI-assisted workflow | **9.5/10** |
+| AI-native product experience | **7/10** |
+| Designer-who-builds capability | **8/10** |
+| Production coding depth | **6.5–7/10** |
+| Formal 0→1 leadership | **7.5–8/10** |
+| Company-level design ownership | **7.5/10** |
+| Fintech relevance | **8/10** |
+| User research | **7–7.5/10** |
+| Quantitative / measurable impact | **7/10** |
+| Fast-paced startup fit | **9.5/10** |
+| Product ownership fit | **10/10** |
+| Location / practical fit | **10/10** |
+| Career-development upside | **10/10** |
+| **Overall** | **~8.8–9.2/10** |
+
+## Decision
+
+- **Apply:** Definitely
+- **Application priority:** **Tier A / Very High**
+- **Overall fit:** **~9/10**
+- **Stretch level:** Meaningful but credible
+- **Worth tailoring CV:** Yes
+- **Worth tailoring portfolio presentation:** Definitely
+- **Primary portfolio story:** Complex Workflow Design
+- **Secondary portfolio story:** Design Systems
+- **Supporting evidence:** AI-assisted portfolio development + TR.ENERGY
+- **Main selling point:** Systems-oriented Product Designer experienced in transforming highly technical, fragmented workflows into coherent, scalable products.
+- **Strongest differentiator:** Complex B2B UX + design systems + AI-assisted building + ability to learn difficult domains.
+- **Main weakness:** I have not previously held a formal Founding Designer role or demonstrated deep production-coding capability.
+- **Main interview preparation area:** 0→1 thinking, AI-agent UX, coded prototyping, design-system strategy, and measurable product outcomes.
+- **Main compensation question:** Actual salary range + equity structure.
+- **Main culture question:** What level of working-hours/intensity is expected from the Founding Product Designer?
+- **Location fit:** Excellent
+- **Product-ownership fit:** Exceptional
+- **Strategic career fit:** **Exceptional if I want to move toward AI + complex systems + higher-leverage Product Design roles**
+- **Current ranking:** One of the **highest-upside opportunities** reviewed so far, although more of a seniority stretch than Revolut Platform, Spendesk, or JetBrains Air.
