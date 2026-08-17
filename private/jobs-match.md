@@ -967,23 +967,18 @@ ___
 | Research / validation | **8/10** |
 | English | **8/10** |
 | Fast-paced environment | **9/10** |
-| Location / practical fit | **5.5/10** |
+| Location / practical fit | **10/10** |
 | Career-direction fit | **9.5/10** |
-| **Overall** | **~9/10** |
+| **Overall** | **~9.3/10** |
 
-## Decision
+## Updated decision
 
-- **Apply:** Definitely, if the Madrid requirement is workable
+- **Apply:** Definitely
 - **Application priority:** **Tier A / Very High**
-- **Role fit without location issue:** **~9.5/10**
-- **Practical overall fit with Barcelona plans:** **~9/10**
-- **Worth tailoring CV:** Yes, lightly
-- **Worth tailoring portfolio presentation:** Definitely
-- **Primary portfolio story:** Complex Workflow Design / Platforma desktop
+- **Location fit:** **Excellent — Madrid is one of my preferred relocation options**
+- **Overall fit:** **~9–9.5/10**
 - **Main selling point:** Product Designer experienced in making sophisticated technical workflows clear, scalable, and usable for expert users.
-- **Secondary selling point:** Strong systems/design-system background plus rapidly growing AI-assisted development and implementation fluency.
+- **Secondary selling point:** Strong systems/design-system background plus growing AI-assisted development and implementation fluency.
 - **Main skill gap:** Direct developer-tool experience and deeper programming expertise.
-- **Main practical concern:** Madrid hybrid requirement.
-- **Main question to clarify early:** Whether the Air team allows remote work from elsewhere in Spain / Barcelona.
 - **Strategic career fit:** **Excellent**
-- **If location were Barcelona or remote:** This would probably be one of my **top 2–3 opportunities** reviewed so far.
+- **Current ranking:** This should be considered one of my **top opportunities** reviewed so far.
