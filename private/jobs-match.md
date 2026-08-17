@@ -2477,3 +2477,861 @@ ___
 - **Product-ownership fit:** Exceptional
 - **Strategic career fit:** **Exceptional if I want to move toward AI + complex systems + higher-leverage Product Design roles**
 - **Current ranking:** One of the **highest-upside opportunities** reviewed so far, although more of a seniority stretch than Revolut Platform, Spendesk, or JetBrains Air.
+
+___
+
+# 9. Factorial — Senior Product Designer, Platform Domain
+
+- **Overall match:** 9.2–9.5/10
+- **Skill match:** 9.5/10
+- **Seniority/scope match:** 8.5–9/10
+- **Priority:** Very High / Tier A+
+- **Recommendation:** Definitely apply
+- **Role type:** Senior Product Designer — Platform / Integrations / Agentic AI
+- **Location:** Barcelona, on-site
+- **Salary shown on LinkedIn:** €65k–81k/year
+- This is one of the **strongest direct matches to my current positioning** among all vacancies reviewed so far.
+- The role combines almost everything my portfolio is currently built around:
+  - complex systems
+  - technical workflows
+  - information architecture
+  - interconnected product logic
+  - design systems
+  - ambiguity
+  - engineering collaboration
+  - AI
+  - platform-level thinking
+- Compared with Factorial's earlier Founding Product Designer role, this one may actually be an **even cleaner match to my strongest proven experience**.
+
+## Why this role stands out
+
+- Factorial explicitly wants someone who gets excited by:
+  > flows, dependencies, and architecture
+
+- That's unusually close to how I already position myself:
+  > **Product Designer focused on complex workflows, systems thinking, enterprise software, and information architecture.**
+
+- The central challenge is not merely designing integrations screens.
+- It is designing a **system of relationships** between:
+  - Factorial
+  - third-party tools
+  - integrations
+  - configuration
+  - marketplaces
+  - AI agents
+  - triggers
+  - skills
+  - user control
+  - external communication channels
+
+- That is exactly the kind of systems-level Product Design I want to specialize in.
+
+## Where I match strongly
+
+- **Complex systems design — exceptional match**
+  - Factorial explicitly wants a portfolio showing the ability to:
+    > make complex systems feel simple.
+  - This is arguably the central theme of my current portfolio.
+  - My Platforma experience involved technically sophisticated workflows, dense information, dependencies, multiple states, and expert users. fileciteturn2file0
+
+- **Systems thinking — exceptional match**
+  - They explicitly describe the ideal candidate as:
+    > "A systems thinker who gets energized by flows, dependencies, and architecture."
+  - Systems thinking is already one of my core expertise areas. fileciteturn2file0
+  - This is one of the most direct wording matches we've seen so far.
+
+- **Information architecture — excellent match**
+  - Integrations, marketplaces, agent configuration, triggers, and third-party relationships require substantial IA.
+  - Designing interconnected product structures is already one of my strongest capabilities.
+
+- **Technical / platform Product Design — excellent match**
+  - They ideally want experience in:
+    > technical or platform domains.
+  - Platforma is a highly technical software ecosystem for scientific users.
+  - Although the domain is different, the structural complexity is highly transferable.
+
+- **Ambiguity → clarity — exceptional match**
+  - Factorial says:
+    > "Comfortable in ambiguity and good at turning it into clarity other people can build on."
+  - My CV currently says I:
+    > transform ambiguous requirements into scalable products through systems thinking, strong UX foundations, and close collaboration with product and engineering. fileciteturn2file0
+  - This is almost a direct match.
+
+- **Product + Engineering collaboration — excellent match**
+  - Their wording:
+    > "No more handoffs."
+  - Designers work directly with Development using shared prototyping tools.
+  - My recent experience already involves close collaboration with Engineering, technical documentation, and implementation-aware design. fileciteturn2file0
+
+- **AI-assisted development — excellent match**
+  - This is not merely an AI-curious organisation.
+  - Factorial is actively using:
+    - internal code prototyping tools
+    - agentic AI
+    - AI-generated integrations
+  - My current workflow already includes:
+    - ChatGPT
+    - Codex
+    - VS Code
+    - AI-assisted prototyping
+    - AI-assisted implementation
+    - Next.js / Tailwind
+  - My portfolio itself is tangible evidence that I am moving toward a designer-who-builds workflow. fileciteturn2file0
+
+- **Design systems — excellent match**
+  - They explicitly expect the designer to:
+    > "Push our design system forward as the product scales."
+  - My MiLaboratories work includes:
+    - reusable components
+    - interaction patterns
+    - scalable foundations
+    - implementation documentation
+    - consistency across desktop and web products. fileciteturn2file0
+
+- **Complex flows and edge cases — excellent match**
+  - Integration products inherently involve:
+    - authentication
+    - configuration
+    - errors
+    - dependencies
+    - unavailable states
+    - permissions
+    - setup
+    - synchronisation
+  - This kind of state-heavy workflow thinking is much closer to my Platforma experience than conventional consumer-growth design.
+
+- **Enterprise / professional-user UX — excellent match**
+  - Factorial serves business users rather than purely consumer audiences.
+  - My strongest recent experience is designing for expert/professional users operating sophisticated software.
+
+- **Platform ecosystem thinking — excellent match**
+  - This role owns one of Factorial's most cross-cutting product areas.
+  - That aligns strongly with my preference to understand and shape an entire product ecosystem rather than execute isolated screens.
+
+- **Fast-moving culture — excellent personal fit**
+  - Their values include:
+    - ownership
+    - fast growth
+    - learning
+    - making decisions
+  - This sounds highly compatible with the type of ambitious, high-momentum environment I prefer.
+
+## Agentic AI: strong potential, but still a gap
+
+- Factorial is explicitly working on:
+  - AI Agent behaviours
+  - skills
+  - triggers
+  - integrations
+  - autonomous action
+  - user control
+
+- I am genuinely interested in this direction and already use AI extensively in my own workflow.
+
+- However, there is an important distinction:
+
+  > **Using AI to design/build products ≠ having shipped an agentic AI product.**
+
+- I have not yet designed production UX around:
+  - autonomous agent behaviour
+  - confidence
+  - permissions
+  - reversibility
+  - transparency
+  - handoff to humans
+  - agent errors
+  - trust
+  - approval thresholds
+
+- So this is a **strong interest + transferable systems skill**, not existing deep domain expertise.
+
+- Fortunately, Factorial explicitly says:
+  > "Don't meet every requirement? Apply anyway. We care about how you think."
+
+## Where I'm weaker
+
+- **APIs / webhooks / integration-platform experience — biggest domain gap**
+  - Their bonus section specifically mentions:
+    - APIs
+    - webhooks
+    - developer platforms
+    - marketplaces
+  - I do not currently have strong professional design experience specifically around API/integration tooling.
+  - This is likely the clearest gap relative to someone coming from:
+    - Zapier
+    - Make
+    - Workato
+    - Stripe
+    - developer-platform companies
+
+- **Marketplace / integrations product experience — moderate gap**
+  - I have strong ecosystem and workflow experience.
+  - I have not specifically owned a marketplace for discovering, activating, and configuring third-party integrations.
+
+- **Agentic AI UX — moderate gap**
+  - I understand and actively use AI tools.
+  - I have not yet shipped agent-oriented end-user UX at scale.
+
+- **Coded prototyping depth — moderate gap**
+  - Factorial mentions internal code prototyping tools and a shared design/development language.
+  - My AI-assisted implementation experience is genuinely relevant.
+  - But I should not position myself as a professional frontend engineer.
+  - Best framing:
+    > Product Designer with growing implementation fluency who increasingly uses AI and code for prototyping and production understanding.
+
+- **Formal quantitative impact — moderate gap**
+  - My portfolio is much stronger around:
+    - complexity reduction
+    - architecture
+    - systems
+    - clarity
+    - reusable patterns
+  - It is weaker around quantified:
+    - adoption
+    - conversion
+    - productivity
+    - time savings
+    - operational efficiency
+
+- **5+ years explicitly titled Product Designer — possible screening ambiguity**
+  - I have 9+ years of design experience overall. fileciteturn2file0
+  - My explicit Product Designer title begins later in my career, following several years as UX/UI Designer.
+  - In practice, much of that UX/UI work involved real digital products, flows, interaction design, and engineering collaboration.
+  - I should not artificially rewrite old titles, but my CV should make the continuity of product-design responsibilities clear.
+
+## One unusual interview requirement to watch
+
+- Factorial's process includes:
+
+  > **Challenge Interview — "A briefing to assess how you evaluate talent and guide designers."**
+
+- This is interesting because the role is advertised as Senior Product Designer, not Design Manager.
+
+- It suggests they may expect senior designers to:
+  - mentor others
+  - critique work
+  - evaluate design quality
+  - help develop designers
+  - raise team standards
+
+- This is an area where my evidence is weaker.
+
+- I have:
+  - worked autonomously
+  - collaborated cross-functionally
+  - established systems and patterns
+
+- But I have not formally managed or extensively mentored a team of Product Designers.
+
+- I would prepare specifically for:
+  - giving constructive critique
+  - evaluating another designer's work
+  - identifying strengths/gaps
+  - helping someone improve their reasoning
+  - separating personal taste from product/design quality
+
+## Important watch-outs
+
+- **Compensation is comparatively modest**
+  - LinkedIn shows:
+    > **€65k–81k/year**
+  - For Barcelona this is a solid Product Design salary.
+  - But compared with:
+    - Bending Spoons
+    - some international remote roles
+    - potential top-tier US companies
+  - it is considerably lower.
+
+- **Top of range matters**
+  - Given the scope and my experience, I would want to be evaluated toward the **upper part of the range**, assuming the €65–81k figure is accurate for this specific opening.
+  - €65k would feel relatively weak for a genuinely Senior / platform-level role with this responsibility.
+
+- **On-site**
+  - LinkedIn marks the role as on-site.
+  - Barcelona itself is a 10/10 location fit.
+  - But I would clarify what "on-site" actually means in Factorial's current working model.
+
+- **Role could become very technically demanding**
+  - Integrations + APIs + agentic AI + external tools means significant technical depth.
+  - This is attractive to me, but I would need to actively learn:
+    - API concepts
+    - authentication
+    - webhook behaviour
+    - third-party integration models
+    - agent architecture
+    - automation concepts
+
+- **Factorial is now a substantial company**
+  - €100M+ ARR
+  - 16,000+ customers
+  - 1,500+ employees
+  - This is no longer a tiny startup.
+  - The pace may still be startup-like, but organisational complexity will be much higher than at MiLaboratories or Murphy AI.
+
+## Why my Platforma background is particularly relevant
+
+- Platforma and Factorial integrations are completely different domains, but the transferable design problem is very similar:
+
+  > technically complicated systems contain many dependencies, states, rules, and edge cases; the designer must create a mental model that users can understand without removing the underlying power.
+
+- My strongest narrative for this role is:
+
+  > **I design clarity into technically complex systems—mapping dependencies, states, workflows, and constraints into scalable experiences that expert users can understand and trust.**
+
+- That speaks directly to:
+  - integrations
+  - AI agents
+  - platform architecture
+  - configuration
+  - external systems
+
+## Portfolio relevance
+
+- **Complex Workflow Design**
+  - **Extremely relevant**
+  - Primary portfolio story.
+  - Probably the strongest application entry point.
+
+- **Product Design at Scale**
+  - **Extremely relevant**
+  - Shows ecosystem thinking and product architecture.
+
+- **Design Systems**
+  - **Highly relevant**
+  - Directly supports their requirement to push the system forward.
+
+- **Documentation & Collaboration**
+  - **Highly relevant**
+  - Demonstrates ability to convert complexity into specifications Engineering can use.
+
+- **AI-assisted portfolio workflow**
+  - **Very relevant**
+  - Factorial specifically values the convergence of Design and code prototyping.
+
+- **TR.ENERGY**
+  - Useful secondary evidence of financial/product complexity.
+  - Not the primary story.
+
+## Comparison with Revolut Platform
+
+- These are two of the strongest direct matches in the entire list.
+
+- Both involve:
+  - platform thinking
+  - complex systems
+  - technical workflows
+  - scalability
+  - internal/business-critical tooling
+  - Engineering collaboration
+  - AI
+
+- **Revolut Platform**
+  - more operational/internal tooling
+  - significantly larger organisational scale
+  - stronger global brand
+  - potentially higher compensation
+  - stronger data-heavy/back-office emphasis
+
+- **Factorial Platform**
+  - more integrations/platform architecture
+  - stronger agentic-AI focus
+  - explicit design-system responsibility
+  - potentially more influence over emerging interaction paradigms
+  - Barcelona
+
+- **Pure experience fit:** approximately equal
+- **AI future-facing opportunity:** Factorial stronger
+- **Existing Platforma-transferability:** Revolut slightly stronger
+- **Brand/career signal:** Revolut stronger
+- **Opportunity to define new UX patterns:** Factorial stronger
+
+## Comparison with JetBrains Air
+
+- Both sit at the intersection of:
+  - technical product design
+  - AI
+  - complex workflows
+  - systems thinking
+  - engineering-heavy teams
+
+- **JetBrains Air**
+  - developer tools
+  - desktop software
+  - AI agents for coding
+  - stronger connection to my desktop-software experience
+
+- **Factorial**
+  - SaaS platform
+  - integrations
+  - enterprise workflows
+  - AI agents for HR/finance/IT operations
+  - stronger business-platform connection
+
+- These are both extremely strong opportunities for my desired specialization in **complex technical systems**.
+
+## Comparison with Murphy AI
+
+- Both are highly AI-focused.
+
+- **Murphy**
+  - earlier stage
+  - founding-design role
+  - broader ownership
+  - substantially more startup risk
+  - stronger designer-who-builds expectations
+
+- **Factorial**
+  - mature company
+  - established Product Design team
+  - narrower ownership area
+  - much lower organisational risk
+  - still cutting-edge agentic AI work
+
+- **Ownership:** Murphy stronger
+- **Stability:** Factorial much stronger
+- **Seniority stretch:** Factorial safer
+- **AI opportunity:** both strong
+- **Career risk/reward:** Murphy higher
+- **Probability of fitting immediately:** Factorial higher
+
+## Assessment
+
+| Area | Match |
+|---|---:|
+| Complex systems design | **10/10** |
+| Systems thinking | **10/10** |
+| Information architecture | **9.5/10** |
+| Complex workflow design | **9.5/10** |
+| Technical / platform UX | **9.5/10** |
+| Ambiguity → clarity | **10/10** |
+| Product + Engineering collaboration | **9.5/10** |
+| Design systems | **9/10** |
+| End-to-end ownership | **9/10** |
+| Enterprise / professional-user UX | **9.5/10** |
+| AI-assisted workflow | **9.5/10** |
+| Agentic AI product experience | **7/10** |
+| APIs / webhooks / integrations domain | **6.5–7/10** |
+| Marketplace product experience | **7/10** |
+| Coded prototyping | **7.5–8/10** |
+| Product thinking | **9/10** |
+| Quantitative / measurable impact | **7/10** |
+| Mentoring / evaluating designers | **6.5–7/10** |
+| English | **8/10** |
+| Fast-paced environment | **9.5/10** |
+| Product ownership fit | **9.5/10** |
+| Location / practical fit | **10/10** |
+| Career-direction fit | **10/10** |
+| **Overall** | **~9.2–9.5/10** |
+
+## Decision
+
+- **Apply:** Definitely
+- **Application priority:** **Tier A+ / One of the highest-priority applications**
+- **Overall fit:** **~9.3/10**
+- **Worth tailoring CV:** Yes
+- **Worth tailoring portfolio presentation:** Definitely
+- **Primary portfolio story:** Complex Workflow Design
+- **Secondary portfolio story:** Product Design at Scale
+- **Supporting story:** Design Systems + AI-assisted portfolio development
+- **Main selling point:** Systems-oriented Product Designer who specialises in translating technically complex workflows, dependencies, and constraints into clear, scalable product experiences.
+- **Strongest differentiator:** Complex technical UX + systems thinking + design systems + engineering collaboration + genuine AI-assisted workflow.
+- **Main domain gap:** APIs, webhooks, integration marketplaces, and direct agentic-AI product experience.
+- **Main seniority gap to prepare for:** Mentoring/evaluating other designers.
+- **Main interview preparation area:** Agentic UX, integrations, APIs/webhooks, design critique, and measurable product impact.
+- **Compensation concern:** Strong role, but €65–81k is materially below some other Tier A opportunities.
+- **Location fit:** Excellent
+- **Product-ownership fit:** Excellent
+- **Strategic career fit:** **Exceptional**
+- **Current ranking:** One of my **very strongest direct-fit opportunities**, alongside Revolut Platform and JetBrains Air.
+
+___
+
+# 10. Fever — Senior Product Designer
+
+- **Overall match:** 8.7–9/10
+- **Skill match:** 9/10
+- **Strategic career fit:** 8.5–9/10
+- **Priority:** High / Tier A
+- **Recommendation:** Definitely apply
+- **Role type:** Senior Product Designer — Consumer / Marketplace / Experience Platform
+- **Location:** Spain, remote
+- This is a **strong match**, especially around:
+  - complex flows
+  - systems thinking
+  - ambiguity
+  - design systems
+  - end-to-end ownership
+  - Product + Engineering collaboration
+  - AI-assisted design workflows
+  - speed and execution
+- It is not as unusually tailored to my strongest enterprise/platform background as **Revolut Platform or Factorial Platform**, but there are very few obvious reasons not to apply.
+
+## Why this role stands out
+
+- Fever is explicitly looking for designers who do more than produce UI.
+- The role repeatedly emphasizes:
+  - problem framing
+  - discovery
+  - validation
+  - measurable outcomes
+  - scalable patterns
+  - reducing UX debt
+  - Engineering collaboration
+  - AI-assisted workflows
+
+- Their ideal designer moves:
+
+  > unclear problem → structured problem → testable solution → shipped product → measured outcome
+
+- That is very close to the Product Designer positioning I am building.
+
+- Fever is also a direct product company with a large ecosystem rather than a consultancy, which aligns with my preference for accumulating product/domain knowledge over time.
+
+## Where I match strongly
+
+- **Complex flows — excellent match**
+  - They explicitly want:
+    > "Proven ability to ship complex flows under time pressure."
+  - Complex workflows are one of the strongest parts of my recent experience.
+  - Platforma provides substantial evidence around:
+    - multi-step workflows
+    - technical constraints
+    - complex states
+    - information density
+    - expert-user interactions
+
+- **Systems thinking — exceptional match**
+  - This is explicitly required.
+  - Fever wants designers to think in:
+    - reusable components
+    - scalable patterns
+    - consistency across squads
+    - long-term product quality
+  - Systems thinking is already central to my Product Designer positioning.
+
+- **Ambiguity → structure — excellent match**
+  - Fever repeatedly emphasizes:
+    - unclear problems
+    - structured flows
+    - better problem statements
+    - avoiding premature UI
+  - This aligns extremely well with my experience turning ambiguous requirements into understandable product structures.
+
+- **Problem-first Product Design — excellent match**
+  - They explicitly say:
+    > "Clarify problem statements before jumping to UI."
+  - This is consistent with how I want to position myself:
+    - understand the problem
+    - understand constraints
+    - structure the system
+    - then design the interface
+
+- **End-to-end ownership — very strong**
+  - They expect ownership from discovery through delivery.
+  - My recent work demonstrates broad responsibility rather than isolated feature production.
+
+- **Product + Engineering collaboration — excellent match**
+  - Fever explicitly expects designers to balance:
+    - speed
+    - scalability
+    - technical feasibility
+  - My MiLaboratories experience involved close Engineering collaboration and implementation-aware design.
+
+- **Design systems — excellent match**
+  - Fever wants designers to:
+    - contribute components
+    - reduce inconsistencies
+    - reduce UX debt
+    - improve documentation
+    - improve usage standards
+  - This maps directly to my design-system experience.
+
+- **Design quality / craft — strong**
+  - They explicitly expect Senior Designers to raise the quality bar.
+  - My background combines:
+    - long UX/UI experience
+    - interaction design
+    - visual craft
+    - systems
+    - recent deeper Product Design responsibilities
+
+- **AI-assisted workflow — excellent match**
+  - Fever explicitly asks candidates to demonstrate:
+    > "how your design workflow is evolving with AI tooling adoption."
+  - This is one of my clearest differentiators.
+  - My actual workflow already uses:
+    - ChatGPT
+    - Codex
+    - VS Code
+    - AI-assisted ideation
+    - AI-assisted implementation
+    - structured prompting
+  - My portfolio itself is evidence of an AI-assisted design-to-production workflow.
+
+- **Critical use of AI — strong match**
+  - Fever specifically says designers should:
+    > critically assess AI-generated outputs rather than accepting them at face value.
+  - This aligns much better with how I use AI than simply describing myself as someone who "uses ChatGPT."
+
+- **Fast-paced environment — excellent personal fit**
+  - Fever describes:
+    - high growth
+    - responsibility from day one
+    - bar-raisers
+    - hands-on mindset
+    - shipping under time pressure
+  - This is aligned with my preference for ambitious, high-momentum environments.
+
+- **Autonomy — very strong**
+  - They want independent operation in ambiguous environments.
+  - Being the sole Product Designer at MiLaboratories is relevant evidence that I can work without constant design supervision.
+
+## Where I'm weaker
+
+- **Measurable product outcomes — biggest gap**
+  - Fever repeatedly emphasizes:
+    - measurable outcomes
+    - clear success metrics
+    - validation
+    - data-informed decisions
+  - My portfolio is currently stronger in:
+    - complexity reduction
+    - architecture
+    - design systems
+    - workflows
+    - implementation
+  - than in hard product metrics.
+
+- **Consumer product at massive scale — moderate gap**
+  - Fever operates a huge global consumer platform.
+  - I have consumer/mobile product experience, but I have not yet owned a product used at Fever's scale.
+  - Candidates from large marketplaces, ecommerce, travel, or consumer apps may have more direct scale experience.
+
+- **Growth / marketplace experience — moderate gap**
+  - Fever's business inherently involves:
+    - discovery
+    - conversion
+    - ticket purchasing
+    - recommendations
+    - marketplace dynamics
+    - repeat engagement
+  - My strongest recent experience is enterprise/technical software rather than marketplace growth.
+
+- **Quantitative experimentation — moderate gap**
+  - They want stronger discovery and validation practices.
+  - My evidence around experimentation, A/B testing, conversion, and behavioural analytics is less mature than my systems-design evidence.
+
+- **Formal UX Research — moderate gap**
+  - I have discovery and validation experience.
+  - However, direct systematic user research is not one of the strongest demonstrated areas of my current portfolio.
+
+- **Large design-organisation influence — some gap**
+  - They want a Senior Designer to:
+    - elevate critique
+    - raise standards
+    - improve the Product Design team
+  - I have strong independent ownership, but less formal experience influencing a large organisation of designers.
+
+## Important watch-outs
+
+- **The actual product area isn't specified**
+  - Fever has a broad ecosystem.
+  - This description does not clearly say whether I would work on:
+    - customer discovery
+    - checkout
+    - event creator tools
+    - internal platforms
+    - recommendations
+    - marketplace operations
+    - another area
+  - The quality of the match could vary substantially depending on the squad.
+
+- **Consumer vs B2B assignment matters**
+  - If the role is focused on complex event-creator or operational tooling, my fit could be closer to **9.5/10**.
+  - If it is strongly focused on consumer growth/conversion, my direct experience fit would be somewhat lower.
+
+- **No salary range**
+  - They only describe:
+    - attractive base salary
+    - performance bonus
+    - stock options
+  - I would want the range clarified early.
+  - Fever is large enough that I would expect meaningful Senior Product Designer compensation, but the description itself does not support a specific estimate.
+
+- **Performance culture**
+  - "Bar raisers," measurable outcomes, top-performance bonuses, speed, and ownership all suggest a performance-oriented environment.
+  - This may suit me well, but it is worth understanding how intense the culture is in practice.
+
+- **100+ applicants**
+  - Competition is high.
+  - However, the requirement for strong systems thinking + complex flows + AI-evolved workflow is more specific than a generic Senior Product Designer vacancy.
+
+## Why my AI-assisted portfolio workflow matters particularly here
+
+- Fever explicitly asks candidates to demonstrate:
+  > **how their design workflow is evolving with AI tooling adoption**
+
+- That makes my portfolio workflow case especially valuable.
+
+- I can demonstrate an actual sequence such as:
+
+  > product/design discussion → structured reasoning with AI → Figma → design tokens/system → Codex/VS Code → working implementation → QA → production
+
+- This is much stronger than simply listing:
+  > "ChatGPT — proficient"
+
+- Fever appears to care about **how AI changes the way a designer works**, which is exactly the story I can now tell.
+
+## Portfolio relevance
+
+- **Complex Workflow Design**
+  - **Highly relevant**
+  - Strongest evidence of problem framing, complexity reduction, and end-to-end reasoning.
+
+- **Mobile Experiences / TR.ENERGY**
+  - **Highly relevant**
+  - Important for showing consumer-facing and mobile Product Design capability.
+
+- **Design Systems**
+  - **Highly relevant**
+  - Directly supports Fever's scalable-pattern and UX-debt requirements.
+
+- **Product Design at Scale**
+  - **Highly relevant**
+  - Demonstrates ecosystem-level thinking.
+
+- **AI-assisted Design to Production workflow**
+  - **Extremely relevant**
+  - Probably more relevant to Fever than to most conventional Senior Product Designer vacancies.
+
+- **Documentation & Collaboration**
+  - Useful supporting evidence around requirements, Engineering collaboration, and reducing rework.
+
+## Best application positioning
+
+- I should **not present myself only as an enterprise/B2B designer**.
+
+- For Fever, the stronger positioning is:
+
+  > **Senior-level Product Designer combining systems thinking and complex-product experience with consumer/mobile work, strong visual craft, and an increasingly AI-native design workflow.**
+
+- The portfolio should demonstrate both:
+  - **depth:** Platforma / complex workflows
+  - **breadth:** TR.ENERGY / mobile and consumer products
+
+## Comparison with N26 Grow & Engage
+
+- Both have significant consumer-product components.
+
+- **N26**
+  - much more explicitly focused on:
+    - mobile
+    - engagement
+    - subscriptions
+    - retention
+    - consumer banking
+
+- **Fever**
+  - broader job definition
+  - heavier emphasis on:
+    - systems
+    - ambiguity
+    - design systems
+    - process improvement
+    - complex flows
+    - AI-assisted workflow
+
+- **Direct skill fit:** Fever stronger
+- **Consumer-growth fit:** N26 more demanding
+- **Systems-thinking fit:** Fever stronger
+- **AI-workflow fit:** Fever exceptionally strong
+- **Career diversification into consumer product:** both strong
+
+## Comparison with Factorial Platform
+
+- **Factorial Platform**
+  - technical platform UX
+  - integrations
+  - agentic AI
+  - enterprise workflows
+  - architecture
+  - extremely close to my strongest recent experience
+
+- **Fever**
+  - broader Product Design
+  - likely more consumer exposure
+  - larger emphasis on measurable outcomes and overall design quality
+
+- **Pure skill fit:** Factorial stronger
+- **Consumer-product exposure:** Fever stronger
+- **Technical systems specialization:** Factorial stronger
+- **Career breadth:** Fever stronger
+
+## Comparison with Revolut Platform
+
+- **Revolut Platform**
+  - internal systems
+  - operational tools
+  - dense workflows
+  - technically demanding
+  - probably the cleanest continuation of Platforma
+
+- **Fever**
+  - more generalist Senior Product Design
+  - likely stronger consumer-facing component
+  - more opportunity to broaden my profile
+
+- **Immediate fit:** Revolut stronger
+- **Career diversification:** Fever stronger
+- **Use of current enterprise strengths:** Revolut stronger
+- **Use of visual/mobile background:** Fever stronger
+
+## Assessment
+
+| Area | Match |
+|---|---:|
+| Complex flow design | **9.5/10** |
+| Systems thinking | **10/10** |
+| Problem framing | **9.5/10** |
+| Ambiguity → clarity | **9.5/10** |
+| End-to-end ownership | **9/10** |
+| Product + Engineering collaboration | **9/10** |
+| Design systems | **9.5/10** |
+| Interaction design | **9/10** |
+| Visual / UI craft | **9/10** |
+| AI-assisted workflow | **10/10** |
+| Autonomy | **9/10** |
+| Consumer product experience | **8/10** |
+| Mobile product experience | **8/10** |
+| Consumer scale experience | **6.5/10** |
+| Growth / marketplace experience | **7/10** |
+| User research / validation | **7.5/10** |
+| Quantitative / measurable impact | **7/10** |
+| Design-team influence / critique | **7.5–8/10** |
+| Fast-paced environment | **9.5/10** |
+| English | **8/10** |
+| Location / practical fit | **10/10** |
+| Career-development upside | **9/10** |
+| **Overall** | **~8.7–9/10** |
+
+## Decision
+
+- **Apply:** Definitely
+- **Application priority:** **Tier A / High**
+- **Overall fit:** **~8.8/10**
+- **Worth tailoring CV:** Yes, lightly
+- **Worth tailoring portfolio presentation:** Yes
+- **Primary portfolio story:** Complex Workflow Design
+- **Secondary portfolio story:** Mobile Experiences / TR.ENERGY
+- **Supporting stories:** Design Systems + AI-assisted Design to Production
+- **Main selling point:** Product Designer with strong systems thinking who can turn ambiguous, complex problems into scalable product experiences and increasingly uses AI throughout the full design workflow.
+- **Strongest differentiator:** Complex-product/system experience + visual craft + genuinely AI-assisted working process.
+- **Main weakness:** Limited evidence of large-scale consumer growth, experimentation, and measurable post-launch outcomes.
+- **Main interview preparation area:** Success metrics, validation, measurable outcomes, consumer behaviour, and how AI improves my design process without lowering quality.
+- **Main question to clarify:** Which product area / squad is this position actually for?
+- **Compensation question:** Ask for base salary range and expected bonus structure early.
+- **Location fit:** Excellent
+- **Cultural fit:** Likely strong
+- **Product-ownership fit:** Strong
+- **Strategic career fit:** **Very strong**
+- **Current ranking:** Strong Tier A opportunity, though **Factorial Platform, Revolut Platform, and JetBrains Air remain more direct matches to my strongest recent experience**.
