@@ -982,3 +982,344 @@ ___
 - **Main skill gap:** Direct developer-tool experience and deeper programming expertise.
 - **Strategic career fit:** **Excellent**
 - **Current ranking:** This should be considered one of my **top opportunities** reviewed so far.
+
+___
+
+# 5. Revolut — Product Designer (Platform)
+
+- **Overall match:** 9–9.5/10
+- **Priority:** Very High / Tier A+
+- **Recommendation:** Definitely apply
+- **Role type:** Product Designer — Platform / Internal Tools
+- **Location:** Spain, remote
+- This may be the **closest match to my core professional positioning** among the vacancies reviewed so far.
+- The role is specifically about:
+  - complex internal platforms
+  - fragmented workflows
+  - data-heavy interfaces
+  - tables and complex states
+  - information architecture
+  - backend-driven workflows
+  - scalable UI patterns
+  - AI tooling
+  - financial infrastructure
+  - operational/back-office systems
+- These overlap extremely closely with my strongest recent experience.
+
+## Why this role stands out
+
+- Revolut is not looking for a generic consumer-fintech designer here.
+- This is a **platform / internal systems role**.
+- The central problem is:
+  > Turn fragmented, technically complex operational workflows into coherent, scalable systems.
+- That is almost exactly the type of work I have been doing at MiLaboratories.
+- It also fits my preferred career direction:
+  > owning a complex product ecosystem rather than moving between unrelated client projects.
+
+## Where I match strongly
+
+- **Complex internal platforms — excellent match**
+  - Revolut explicitly needs someone designing internal tools for:
+    - operations
+    - support
+    - compliance
+    - AI workflows
+    - financial infrastructure
+  - My Platforma experience is centered on sophisticated professional software rather than simple consumer flows.
+
+- **Complex workflows — excellent match**
+  - They explicitly mention:
+    - multi-step processes
+    - edge cases
+    - states
+    - end-to-end behaviours
+  - This is one of the strongest themes in my portfolio.
+
+- **Data-heavy interfaces — excellent match**
+  - They specifically require comfort with:
+    - dense workflows
+    - tables
+    - complex states
+  - Platforma involved:
+    - dense biological datasets
+    - analytical tables
+    - metadata
+    - visualisations
+    - state-heavy workflows
+  - This is an unusually direct match.
+
+- **Systems thinking — excellent match**
+  - They are looking for someone who can architect large-scale systems rather than design isolated screens.
+  - Systems thinking is already central to my CV and portfolio positioning.
+
+- **Turning ambiguity into product logic — excellent match**
+  - One responsibility is:
+    > turning ambiguous, fragmented, or highly technical requirements into clear product logic and usable interfaces
+  - This is almost exactly how my current CV describes my work.
+
+- **Information architecture — excellent match**
+  - Although they don't explicitly use the term repeatedly, architecting large-scale workflows, states, behaviours, and product logic is fundamentally IA/system architecture work.
+  - This is one of my strongest expertise areas.
+
+- **Backend-driven / technical workflows — strong match**
+  - They explicitly expect designers to understand technical implications, including backend-driven workflows.
+  - My Platforma experience required designing around technical and scientific constraints rather than treating implementation as a black box.
+
+- **Product + engineering collaboration — excellent match**
+  - The role partners with:
+    - Product Owners
+    - Engineers
+    - Data Scientists
+    - Operations Managers
+  - My recent experience already involves close cross-functional collaboration and technical documentation.
+
+- **Design systems / scalable UI patterns — very strong match**
+  - Cross-platform design-system expertise is listed as nice-to-have.
+  - I have direct experience building reusable components, interaction patterns, and implementation documentation.
+
+- **Ownership — very strong**
+  - They need someone capable of taking ownership of the design process.
+  - Being the sole Product Designer at MiLaboratories is particularly relevant evidence.
+
+- **AI workflows — strong contextual match**
+  - AI tooling is one of the actual product areas this role may work on.
+  - Separately, my own workflow already heavily incorporates:
+    - ChatGPT
+    - Codex
+    - VS Code
+    - AI-assisted prototyping and implementation
+  - I don't yet have deep experience designing AI products for users, but I already understand AI-assisted product-building workflows.
+
+- **Fast-paced environment — excellent cultural fit**
+  - Revolut is explicitly fast-moving and operationally demanding.
+  - This is much more aligned with my preference for high-paced, ambitious environments than slow routine product maintenance.
+
+- **Fintech relevance — strong**
+  - My APD experience includes:
+    - AML verification
+    - financial workflows
+    - blockchain transactions
+    - staking
+    - multi-account management
+  - More importantly, this particular Revolut role is more about **platform complexity** than consumer banking UX, which makes Platforma especially relevant.
+
+- **Visual fundamentals — strong**
+  - They explicitly mention typography and grids.
+  - My background includes many years of UI/visual design before moving deeper into Product Design, so this is not a concern.
+
+## Where I'm weaker
+
+- **3+ years of in-house product experience — biggest screening risk**
+  - Their requirement specifically says:
+    > "3+ years of experience designing world-class products in-house"
+  - I have 9+ years of total design experience, but my clearest in-house product-company experience is MiLaboratories.
+  - APD was a product-development environment, but it involved multiple client products rather than long-term ownership inside one company.
+  - Therefore, I should **not pretend I have 3+ years of conventional in-house product-company experience**.
+  - This could be a recruiter-screening risk even though my actual skill match is very strong.
+
+- **Large-scale operational product experience — partial gap**
+  - Platforma is complex, but Revolut operates at enormous organisational and operational scale.
+  - I have not yet designed internal platforms used across an organisation with 13,000+ employees and 75M+ customers.
+  - The problem-solving skills transfer, but the scale is new.
+
+- **Programming — moderate gap / nice-to-have**
+  - They list programming and simple coded prototypes as a bonus.
+  - My AI-assisted development experience is relevant, but I am not a professional frontend engineer.
+  - Correct positioning:
+    > Product Designer with growing implementation fluency and practical AI-assisted coding experience.
+
+- **Formal product strategy at very large scale — moderate gap**
+  - They expect high-level product thinking and strong articulation of design decisions.
+  - I have this capability, but I have not yet demonstrated product strategy inside a company of Revolut's scale.
+
+- **Operational-user research — moderate gap**
+  - They specifically care about understanding how operational users behave.
+  - My Platforma experience with expert users is transferable, but I have less experience with large internal operations teams such as support/compliance staff.
+
+- **Measured business impact — moderate gap**
+  - My portfolio is stronger in:
+    - workflow clarity
+    - architecture
+    - systems
+    - consistency
+    - implementation
+  - It is weaker in hard quantitative evidence showing:
+    - time saved
+    - operational throughput
+    - error reduction
+    - support efficiency
+    - financial impact
+
+## Important watch-outs
+
+- **The "in-house 3+ years" requirement should not be ignored**
+  - Unlike softer requirements in some other vacancies, this is fairly explicit.
+  - It does not mean I shouldn't apply.
+  - It means I need my portfolio and CV to demonstrate that the **depth and ownership** of my recent work compensates for having fewer years in a conventional in-house setup.
+
+- **Revolut's pace is likely genuinely intense**
+  - This is probably a high-pressure environment with:
+    - aggressive priorities
+    - strong accountability
+    - fast iteration
+    - significant performance expectations
+  - This aligns with what I say I want, but the reality may be more demanding than a typical startup.
+
+- **Internal tools can be less visually glamorous**
+  - Much of the work may involve:
+    - back-office workflows
+    - operational tables
+    - compliance states
+    - support tooling
+    - infrastructure
+  - For me this is probably an advantage rather than a disadvantage because this is close to my strongest type of UX work.
+
+- **Remote in Spain — excellent practical fit**
+  - Bilbao, Barcelona, and Madrid all remain viable.
+  - Location does not constrain my relocation decision.
+
+- **Competition**
+  - 100+ people clicked apply.
+  - However, the requirement is unusually specific.
+  - The relevant candidate pool is much smaller than the LinkedIn number suggests:
+    - complex platform UX
+    - data-heavy tools
+    - internal systems
+    - backend awareness
+    - design systems
+    - strong craft
+
+## Why my Platforma experience is unusually relevant
+
+- Structural similarities between Platforma and this Revolut role include:
+  - professional / operational users
+  - dense interfaces
+  - complex states
+  - technical constraints
+  - multi-step workflows
+  - data tables
+  - expert-user efficiency
+  - reusable interaction patterns
+  - interconnected product logic
+  - high cost of UX ambiguity
+
+- The strongest narrative for this application is:
+  > I specialize in transforming technically complex and fragmented workflows into structured, scalable product systems for expert users.
+
+- That is almost a direct response to Revolut's job description.
+
+## Portfolio relevance
+
+- **Complex Workflow Design**
+  - **Extremely relevant**
+  - Should be the primary entry point.
+
+- **Design Systems**
+  - **Highly relevant**
+  - Directly supports scalable UI pattern and cross-platform system requirements.
+
+- **Documentation & Collaboration**
+  - **Highly relevant**
+  - Demonstrates that I can communicate complex product logic to Engineering and other stakeholders.
+
+- **Product Design at Scale**
+  - **Highly relevant**
+  - Shows architecture and ecosystem thinking.
+
+- **Mobile Experiences / TR.ENERGY**
+  - **Relevant as supporting evidence**
+  - Especially useful for demonstrating financial-product experience.
+  - However, I would still lead with Platforma rather than TR.ENERGY for this role.
+
+- **AI-assisted development**
+  - Useful supporting differentiator, particularly because AI tooling is one of the platform areas Revolut mentions.
+
+## Comparison with JetBrains Air
+
+- **JetBrains Air**
+  - More technical / developer-focused
+  - Native desktop experience
+  - AI agents
+  - stronger developer-tool specialization
+
+- **Revolut Platform**
+  - More operational
+  - stronger financial/business context
+  - more data-heavy internal tooling
+  - very strong platform/system architecture component
+  - directly remote from Spain
+
+- **Complex-system fit:** approximately equal
+- **Platforma-transferability:** Revolut may be slightly stronger
+- **AI/product-technology excitement:** JetBrains stronger
+- **Fintech relevance:** Revolut stronger
+- **Location flexibility:** Revolut stronger
+- **Career brand value:** both extremely strong
+
+## Comparison with Spendesk
+
+- Both are highly relevant because both involve:
+  - financial workflows
+  - systems thinking
+  - complex operational UX
+  - scalable patterns
+  - Product/Engineering collaboration
+
+- **Spendesk**
+  - Stronger design-system governance component
+  - likely more conventional Product Design organisation
+  - potentially somewhat calmer
+
+- **Revolut**
+  - Larger scale
+  - more technically complex internal platform work
+  - probably faster and more demanding
+  - stronger global career signal
+
+- Given my preference for high pace and ambitious environments, **Revolut may be the stronger personal fit**.
+
+## Assessment
+
+| Area | Match |
+|---|---:|
+| Complex workflow design | **10/10** |
+| Data-heavy interfaces | **9.5/10** |
+| Internal / platform tools | **9.5/10** |
+| Systems thinking | **9.5/10** |
+| Information architecture | **9.5/10** |
+| Technical / backend-aware UX | **9/10** |
+| Product + engineering collaboration | **9/10** |
+| Design systems / scalable patterns | **9/10** |
+| End-to-end ownership | **9/10** |
+| Product thinking | **9/10** |
+| Enterprise / professional-user UX | **9.5/10** |
+| Fintech relevance | **8/10** |
+| AI-assisted workflow | **9/10** |
+| Programming / coded prototypes | **7.5/10** |
+| Operational-user research | **7.5/10** |
+| Quantitative / measurable impact | **7/10** |
+| 3+ years conventional in-house experience | **6.5/10** |
+| Visual craft / grids / typography | **9/10** |
+| Fast-paced environment | **9.5/10** |
+| Location / practical fit | **10/10** |
+| Career-direction fit | **10/10** |
+| **Overall** | **~9.3/10** |
+
+## Decision
+
+- **Apply:** Definitely
+- **Application priority:** **Tier A+ / One of the highest-priority applications**
+- **Overall fit:** **~9–9.5/10**
+- **Worth tailoring CV:** Yes
+- **Worth tailoring portfolio presentation:** Definitely
+- **Primary portfolio story:** Complex Workflow Design / Platforma desktop
+- **Secondary portfolio story:** Design Systems
+- **Supporting fintech evidence:** TR.ENERGY
+- **Main selling point:** Experience turning highly technical, data-heavy and fragmented workflows into scalable systems for expert users.
+- **Strongest differentiator:** Combination of complex platform UX + systems thinking + design systems + technical collaboration.
+- **Main weakness:** Explicit requirement for 3+ years of in-house product-company experience.
+- **Main interview preparation area:** Product strategy, operational-user behaviour, technical constraints, and measurable impact.
+- **Practical/location fit:** Excellent
+- **Cultural fit:** Potentially excellent given my preference for ambitious, fast-paced environments.
+- **Strategic career fit:** **Exceptional**
+- **Current ranking:** This belongs among my **very strongest opportunities** alongside JetBrains Air, Spendesk, and Bending Spoons.
