@@ -2,7 +2,7 @@ import ButtonPrimary from "@/components/ui/ButtonPrimary";
 import { typography } from "@/styles";
 import Image from "next/image";
 
-const profilePhotoSrc = "/about/profile-photo.jpg";
+const profilePhotoSrc = "/about/profile-photo.png";
 
 function typeStyle(token: {
   fontSize: string | number;
@@ -30,8 +30,8 @@ export default function AboutSection() {
       </h1>
 
       <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-wrap items-start gap-[var(--base-10)] min-[1440px]:gap-[var(--base-15)] min-[1600px]:gap-[var(--base-20)]">
-        <div className="flex w-full max-w-[600px] shrink-0 flex-col gap-[var(--base-5)] min-[482px]:w-[450px] min-[1130px]:sticky min-[1130px]:top-[108px]">
-          <div className="relative aspect-[3/4] max-h-[600px] w-full max-w-[450px] shrink-0 overflow-hidden min-[482px]:h-[600px] min-[482px]:aspect-auto">
+        <div className="flex w-full max-w-[450px] shrink-0 flex-col gap-[var(--base-5)] min-[482px]:w-[450px] min-[1130px]:sticky min-[1130px]:top-[108px]">
+          <div className="relative aspect-square w-full max-w-[450px] shrink-0 overflow-hidden">
             <Image
               alt="Konstantin Alisov"
               className="size-full object-cover"
