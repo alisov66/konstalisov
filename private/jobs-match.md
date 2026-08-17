@@ -3335,3 +3335,388 @@ ___
 - **Product-ownership fit:** Strong
 - **Strategic career fit:** **Very strong**
 - **Current ranking:** Strong Tier A opportunity, though **Factorial Platform, Revolut Platform, and JetBrains Air remain more direct matches to my strongest recent experience**.
+
+___
+
+# 11. AirHelp — Senior Product Designer
+
+- **Overall match:** 7.5–8/10
+- **Skill match:** 8.5/10
+- **Direct domain match:** 6.5–7/10
+- **Strategic career fit:** 8/10
+- **Priority:** Medium–High / Tier B+
+- **Recommendation:** Apply, but prioritise the stronger platform/system roles first
+- **Role type:** Senior Product Designer — Mobile / Subscription / Growth & Engagement
+- **Location:** Barcelona, hybrid
+- **Salary:** €70k–80k/year
+- This is a good role, but it is **less directly matched to my proven experience** than:
+  - Revolut Platform
+  - Factorial Platform
+  - JetBrains Air
+  - Spendesk
+  - Murphy AI
+- The main reason is very specific:
+  > AirHelp is explicitly looking for someone with **deep B2C subscription, monetisation, retention, and LTV experience**.
+- I have relevant mobile and financial-product experience, but I do **not** currently have a strong track record in subscription/growth product design.
+
+## Why this role is interesting
+
+- AirHelp is building a mobile travel product that is moving from:
+  > disruption utility
+  
+  toward:
+  > proactive intelligent travel assistant
+
+- The role owns a meaningful product area rather than isolated features:
+  - subscription tiers
+  - pricing / packaging
+  - upsell
+  - loyalty
+  - engagement
+  - re-engagement
+  - habit formation
+
+- This would broaden my profile substantially into:
+  - B2C
+  - mobile
+  - subscription products
+  - growth
+  - retention
+  - monetisation
+
+- That could be strategically valuable even though it is not the cleanest continuation of my current strongest experience.
+
+## Where I match strongly
+
+- **End-to-end Product Design — very strong**
+  - They want ownership from:
+    - problem definition
+    - hypotheses
+    - prototyping
+    - validation
+    - production
+    - iteration
+  - My recent Product Designer experience already covers broad end-to-end ownership.
+
+- **Problem framing — excellent match**
+  - They explicitly want:
+    > hypothesis-driven problem solving
+  - and someone who creates clarity rather than waiting for perfect requirements.
+  - This aligns strongly with my systems-oriented, ambiguity-to-clarity approach.
+
+- **Systems thinking — excellent match**
+  - They explicitly expect systems thinking and scalable design.
+  - This is one of my strongest capabilities.
+
+- **Mobile product experience — strong**
+  - My APD background provides real mobile Product Design experience.
+  - TR.ENERGY is particularly relevant because it involved sophisticated financial workflows in a mobile context.
+
+- **Product + Engineering collaboration — strong**
+  - They expect close collaboration with distributed/external Engineering teams.
+  - I have substantial experience working directly with Engineering and translating design into implementation-ready solutions.
+
+- **Design systems — strong**
+  - They want someone who understands how mobile quality scales through a strong design system.
+  - My design-system experience is highly transferable.
+
+- **AI-assisted workflow — excellent match**
+  - They explicitly mention:
+    - Figma
+    - Claude
+    - AI-assisted prototyping
+    - accelerating exploration and validation
+  - My current workflow already uses AI throughout design and implementation.
+  - This is a genuine strength.
+
+- **Fast-moving / ambiguous environment — excellent match**
+  - They expect designers to:
+    - move quickly
+    - create clarity
+    - prototype early
+    - test
+    - refine later
+  - This aligns well with the type of high-paced environment I prefer.
+
+- **Quality + pragmatism — strong**
+  - They want someone who knows:
+    > when to refine and when to ship.
+  - This maps well to my experience balancing craft with technical and delivery constraints.
+
+- **Product ownership — strong**
+  - The role owns the entire subscription product rather than simply executing isolated tickets.
+  - This is aligned with my preference for deeper ownership of one product ecosystem.
+
+## Where I'm weaker
+
+- **Deep B2C subscription experience — biggest gap**
+  - This is the clearest concern.
+  - They explicitly say:
+    > "You have deep experience designing B2C subscription products."
+  - That is much stronger wording than a generic nice-to-have.
+
+- I do **not** currently have a demonstrated track record of:
+  - subscription tier design
+  - pricing / packaging
+  - subscription upsell
+  - churn reduction
+  - retention optimisation
+  - LTV improvement
+
+- This may be a real screening criterion rather than something they are willing to teach.
+
+- **Growth / monetisation design — significant gap**
+  - The first-year outcomes include:
+    - increasing subscription growth
+    - finding upsell moments
+    - improving engagement
+    - improving re-engagement
+  - My strongest product work has focused much more on:
+    - workflow clarity
+    - complex systems
+    - information architecture
+    - design systems
+  - rather than growth loops.
+
+- **Retention / LTV evidence — significant gap**
+  - They explicitly care about:
+    - retention
+    - LTV
+    - repeat engagement
+  - I do not currently have strong portfolio evidence showing improvements in these metrics.
+
+- **Large-scale B2C mobile experience — moderate gap**
+  - I have mobile experience.
+  - I have not yet owned a consumer mobile product with nearly one million downloads and rapid growth.
+
+- **Loyalty-program experience — clear gap**
+  - One major deliverable is evolving their loyalty program.
+  - I do not have strong direct loyalty/rewards experience.
+
+- **Subscription packaging / pricing — clear gap**
+  - This is a specialised Product Design skill area.
+  - I should not present adjacent fintech experience as equivalent.
+
+- **Quantitative product development — moderate gap**
+  - AirHelp is highly explicit about:
+    - real user behaviour
+    - metrics
+    - hypotheses
+    - testing
+    - continuous adjustment
+  - This is still one of the weaker areas of my current portfolio.
+
+- **Design leadership / mentoring — moderate gap**
+  - They expect the Senior Designer to:
+    - raise the design bar
+    - share knowledge
+    - mentor others
+  - I have strong autonomy and collaboration, but less formal mentoring/leadership evidence.
+
+## The key screening risk
+
+- This sentence matters most:
+
+  > **"You have deep experience designing B2C subscription products, with a track record of shipping pricing, packaging, and upsell flows that move retention and LTV, not just conversion."**
+
+- I would treat this as a **real mismatch**, not dilute it into generic Product Design language.
+
+- A candidate coming from:
+  - Spotify
+  - N26 premium
+  - Revolut subscriptions
+  - Blinkist
+  - Freeletics
+  - dating apps
+  - subscription travel apps
+  
+  could have much stronger direct evidence.
+
+- Therefore, even though I match many of the general Senior Product Designer capabilities, I would not call myself a "perfect fit" for this particular role.
+
+## Why I would still apply
+
+- The rest of the role matches well:
+  - systems thinking
+  - ownership
+  - mobile
+  - AI
+  - Engineering collaboration
+  - ambiguity
+  - design systems
+  - high craft
+
+- They may value broader Product Design quality enough to consider someone without perfect subscription experience.
+
+- My financial/mobile experience provides at least some relevant adjacent context.
+
+- The cost of applying is low, and the role would be a strong career-expansion opportunity.
+
+## Portfolio relevance
+
+- **Mobile Experiences / TR.ENERGY**
+  - **Primary portfolio story**
+  - Much more important here than Platforma.
+  - Demonstrates:
+    - mobile UX
+    - financial concepts
+    - customer-facing product
+    - complex mobile flows
+
+- **Design Systems**
+  - Highly relevant as evidence that I can maintain quality and consistency as the mobile product scales.
+
+- **Complex Workflow Design**
+  - Useful secondary evidence of problem framing and systems thinking.
+  - Should not be the first thing they see.
+
+- **Product Design at Scale**
+  - Useful for showing cross-product/system thinking.
+
+- **AI-assisted Design to Production**
+  - Highly relevant because AirHelp explicitly expects AI-assisted prototyping and rapid iteration.
+
+## Best application positioning
+
+- I should **not** try to fake subscription expertise.
+
+- Better positioning:
+
+  > **Product Designer with strong systems thinking, mobile financial-product experience, end-to-end ownership, and an AI-assisted workflow, looking to bring that depth into a high-scale consumer subscription product.**
+
+- That makes the gap explicit but frames it as a logical next step.
+
+## Compensation
+
+- **Barcelona:** €70k–80k/year
+- This is reasonable for a Senior Product Designer in Barcelona.
+- Given the seniority and scope, I would want to be near the **upper end of the range**.
+- It is:
+  - better than many local Spanish Product Design roles
+  - similar to Factorial's upper range
+  - far below Bending Spoons
+  - probably below strong international remote opportunities
+
+- Compensation alone would not move this role above the stronger Tier A opportunities.
+
+## Comparison with N26 Grow & Engage
+
+- These roles are actually fairly similar in career direction.
+
+- Both emphasise:
+  - consumer mobile
+  - engagement
+  - retention
+  - product quality
+  - AI
+  - data-informed decisions
+
+- **AirHelp**
+  - much more explicit requirement for deep subscription / pricing / LTV expertise
+  - smaller product scale
+  - travel domain
+
+- **N26**
+  - broader consumer-fintech scope
+  - subscriptions are one area among several
+  - stronger global product/design brand
+
+- **Direct fit:** N26 slightly stronger
+- **Subscription-specific fit:** both are a stretch, but AirHelp is more demanding
+- **Career upside:** N26 stronger
+- **Likelihood that missing subscription background matters:** AirHelp higher
+
+## Comparison with Fever
+
+- **Fever**
+  - broader Product Design role
+  - systems + complexity + consumer
+  - AI workflow
+  - less explicit subscription expertise required
+
+- **AirHelp**
+  - much narrower product ownership
+  - deeper subscription/growth specialisation
+  - clearer success metrics
+
+- **Direct experience fit:** Fever stronger
+- **Deep ownership of one product area:** AirHelp stronger
+- **Growth specialisation opportunity:** AirHelp stronger
+
+## Comparison with Revolut / Factorial / JetBrains
+
+- These remain substantially closer to my strongest existing profile.
+
+- **Revolut Platform**
+  - complex systems
+  - operational tools
+  - dense workflows
+  - direct Platforma transfer
+
+- **Factorial Platform**
+  - systems architecture
+  - integrations
+  - agentic AI
+  - enterprise workflows
+
+- **JetBrains Air**
+  - complex desktop software
+  - technical workflows
+  - AI agents
+
+- **AirHelp**
+  - consumer mobile
+  - subscription growth
+  - retention
+  - monetisation
+
+- Therefore AirHelp is primarily a **career-expansion role**, while the others are **career-compounding roles**.
+
+## Assessment
+
+| Area | Match |
+|---|---:|
+| End-to-end ownership | **9/10** |
+| Problem framing | **9/10** |
+| Systems thinking | **9.5/10** |
+| Mobile product experience | **8/10** |
+| Product + Engineering collaboration | **9/10** |
+| Design systems | **9/10** |
+| AI-assisted workflow | **9.5/10** |
+| Interaction / UI craft | **8.5–9/10** |
+| Ambiguity / autonomy | **9/10** |
+| Fast-paced environment | **9/10** |
+| B2C product experience | **7.5/10** |
+| Consumer scale experience | **6.5/10** |
+| Subscription-product experience | **5.5–6/10** |
+| Pricing / packaging / upsell | **5.5/10** |
+| Retention / LTV optimisation | **5.5–6/10** |
+| Loyalty / engagement loops | **6/10** |
+| Quantitative experimentation | **6.5–7/10** |
+| User research / validation | **7–7.5/10** |
+| Mentoring / design leadership | **7/10** |
+| English | **8/10** |
+| Location / practical fit | **10/10** |
+| Product-ownership fit | **9/10** |
+| Career-development upside | **8.5–9/10** |
+| **Overall** | **~7.5–8/10** |
+
+## Decision
+
+- **Apply:** Yes
+- **Application priority:** **Tier B+ / Medium–High**
+- **Overall fit:** **~7.7/10**
+- **Worth tailoring CV:** Yes
+- **Worth tailoring portfolio:** Definitely
+- **Primary portfolio story:** Mobile Experiences / TR.ENERGY
+- **Secondary story:** Design Systems
+- **Supporting stories:** Complex Workflow Design + AI-assisted Design to Production
+- **Main selling point:** Strong systems-oriented Product Designer with real mobile financial-product experience, high ownership, and an increasingly AI-native workflow.
+- **Strongest differentiator:** Bringing complex-system thinking and technical depth into consumer mobile Product Design.
+- **Main weakness:** Lack of deep B2C subscription, pricing, packaging, retention, and LTV experience.
+- **Main screening risk:** Their subscription/growth requirement may be treated as a genuine prerequisite.
+- **Main interview preparation area:** Subscription economics, retention, LTV, pricing/packaging, loyalty, upsell, and hypothesis-driven growth experimentation.
+- **Compensation:** Solid but not exceptional relative to other opportunities.
+- **Location fit:** Excellent
+- **Strategic career fit:** Good if I intentionally want to broaden into consumer mobile/growth.
+- **Current ranking:** Worth applying to, but **below Revolut Platform, Factorial Platform, JetBrains Air, Spendesk, Murphy AI, Dwelly, and Fever in immediate experience fit**.
