@@ -2,6 +2,7 @@
 
 import type { CSSProperties, ReactNode } from "react";
 import { useCallback, useEffect, useRef } from "react";
+import { track } from "@vercel/analytics";
 
 import ExploreMenu from "@/components/ui/ExploreMenu";
 import type { TabGroupTab } from "@/components/ui/TabGroup";
@@ -2364,7 +2365,13 @@ export default function CapabilitiesSection({
     };
   }, [currentValue]);
 
-  function handleValueChange() {
+  function handleValueChange(nextValue: string) {
+    const selectedCapability = getCapabilityById(nextValue);
+
+    if (selectedCapability && selectedCapability.id !== currentValue) {
+      track("case_study_view", { project: selectedCapability.label });
+    }
+
     scrollArticleToStart();
   }
 

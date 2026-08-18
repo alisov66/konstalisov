@@ -1,5 +1,5 @@
 import Footer from "@/components/ui/Footer";
-import ButtonPrimary from "@/components/ui/ButtonPrimary";
+import CvDownloadButton from "@/components/ui/CvDownloadButton";
 import NavigationHeader from "@/components/ui/NavigationHeader";
 import { pageMetadata } from "@/app/seo";
 import { typography } from "@/styles";
@@ -328,14 +328,7 @@ export default function CvPage() {
             and collaborate more effectively with engineers.
           </p>
 
-          <ButtonPrimary
-            className="w-fit"
-            href={cvPdfHref}
-            rel="noreferrer"
-            target="_blank"
-          >
-            Download PDF
-          </ButtonPrimary>
+          <CvDownloadButton href={cvPdfHref} />
         </section>
 
         <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">

@@ -8,6 +8,7 @@ import type {
   ReactNode,
 } from "react";
 import { useCallback, useState } from "react";
+import { track } from "@vercel/analytics";
 
 import { typography } from "@/styles";
 
@@ -39,6 +40,7 @@ export default function ContactButton({
   children,
   className,
   onBlur,
+  onClick,
   onFocus,
   onMouseLeave,
   onMouseMove,
@@ -90,6 +92,14 @@ export default function ContactButton({
     onBlur?.(event);
   };
 
+  const handleClick: MouseEventHandler<HTMLAnchorElement> = (event) => {
+    if (props.href?.startsWith("mailto:")) {
+      track("contact_click");
+    }
+
+    onClick?.(event);
+  };
+
   return (
     <a
       {...props}
@@ -101,6 +111,7 @@ export default function ContactButton({
         .filter(Boolean)
         .join(" ")}
       onBlur={handleBlur}
+      onClick={handleClick}
       onFocus={handleFocus}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}

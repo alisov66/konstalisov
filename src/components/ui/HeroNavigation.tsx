@@ -3,6 +3,7 @@
 import type { CSSProperties, HTMLAttributes } from "react";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { track } from "@vercel/analytics";
 
 import HeroActionGroup from "@/components/ui/HeroActionGroup";
 import ButtonPrimary from "@/components/ui/ButtonPrimary";
@@ -191,6 +192,10 @@ export default function HeroNavigation({
           setHoveredState(itemState);
         }}
         onClick={() => {
+          if (item.id === "contact") {
+            track("contact_click");
+          }
+
           router.push(item.href);
         }}
         selected={itemState !== null && itemState === hoveredState}
