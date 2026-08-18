@@ -33,7 +33,7 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
         {process.env.NEXT_PUBLIC_GA_ID ? (
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+          <GoogleAnalytics debugMode={true} gaId={process.env.NEXT_PUBLIC_GA_ID} />
         ) : null}
       </body>
     </html>
