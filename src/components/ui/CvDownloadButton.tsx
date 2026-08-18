@@ -1,6 +1,6 @@
 "use client";
 
-import { track } from "@vercel/analytics";
+import { sendGAEvent } from "@next/third-parties/google";
 
 import ButtonPrimary from "@/components/ui/ButtonPrimary";
 
@@ -13,7 +13,7 @@ export default function CvDownloadButton({ href }: CvDownloadButtonProps) {
     <ButtonPrimary
       className="w-fit"
       href={href}
-      onClick={() => track("cv_download")}
+      onClick={() => sendGAEvent("event", "cv_download")}
       rel="noreferrer"
       target="_blank"
     >
