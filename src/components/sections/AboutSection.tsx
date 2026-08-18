@@ -17,26 +17,6 @@ function typeStyle(token: {
 }
 
 export default function AboutSection() {
-  const introCopy = (
-    <div className="flex w-full max-w-[820px] flex-col gap-[var(--base-3)] text-[var(--text-primary)]">
-      <h3 style={typeStyle(typography.heading.h3)}>
-        I enjoy figuring out how complicated things work
-      </h3>
-      <p style={typeStyle(typography.body.m)}>
-        I&apos;m naturally drawn to understanding how complicated things
-        work. Whether it&apos;s scientific research, financial systems,
-        or product architecture, I enjoy asking questions, uncovering
-        patterns, and turning complexity into products people can use with
-        confidence.
-      </p>
-      <p style={typeStyle(typography.body.m)}>
-        The products I work on are different, but the motivation is
-        usually the same: helping people feel confident in complex
-        environments.
-      </p>
-    </div>
-  );
-
   return (
     <section
       className="flex w-full flex-col items-start gap-[var(--base-10)] bg-[var(--bg-beige)] px-[var(--padding-side)] pb-[var(--base-10)] pt-[72px] min-[768px]:pb-[var(--base-20)] min-[768px]:pt-[var(--base-32)]"
@@ -49,9 +29,9 @@ export default function AboutSection() {
         About
       </h1>
 
-      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-col flex-wrap items-start gap-[var(--base-10)] min-[768px]:flex-row min-[1400px]:gap-[var(--base-15)] min-[1600px]:gap-[var(--base-20)]">
-        <div className="flex w-full max-w-[600px] shrink-0 flex-col gap-[var(--base-5)] min-[768px]:sticky min-[768px]:top-[108px] min-[768px]:w-[320px] min-[1400px]:w-[450px]">
-          <div className="relative aspect-square w-full shrink-0 overflow-hidden rounded-t-[240px]">
+      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-col items-start gap-[var(--base-10)] min-[1400px]:flex-row min-[1440px]:gap-[var(--base-15)] min-[1600px]:gap-[var(--base-20)]">
+        <div className="flex w-full max-w-[450px] shrink-0 flex-col gap-[var(--base-5)] min-[768px]:max-w-[320px] min-[1400px]:sticky min-[1400px]:top-[108px] min-[1400px]:max-w-[450px]">
+          <div className="relative aspect-square w-full max-w-[450px] shrink-0 overflow-hidden rounded-t-[240px]">
             <Image
               alt="Konstantin Alisov"
               className="size-full object-cover"
@@ -77,13 +57,23 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="hidden min-w-0 flex-1 min-[768px]:max-[1399px]:flex">
-          {introCopy}
-        </div>
-
-        <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-10)] min-[332px]:min-w-[300px] min-[482px]:min-w-[min(400px,100%)] min-[768px]:max-[1399px]:w-full min-[768px]:max-[1399px]:flex-none min-[1400px]:gap-[var(--base-15)]">
-          <div className="min-[768px]:max-[1399px]:hidden">
-            {introCopy}
+        <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-10)] min-[332px]:min-w-[300px] min-[482px]:min-w-[min(400px,100%)] min-[1400px]:gap-[var(--base-15)]">
+          <div className="flex w-full max-w-[820px] flex-col gap-[var(--base-3)] text-[var(--text-primary)]">
+            <h3 style={typeStyle(typography.heading.h3)}>
+              I enjoy figuring out how complicated things work
+            </h3>
+            <p style={typeStyle(typography.body.m)}>
+              I&apos;m naturally drawn to understanding how complicated things
+              work. Whether it&apos;s scientific research, financial systems,
+              or product architecture, I enjoy asking questions, uncovering
+              patterns, and turning complexity into products people can use with
+              confidence.
+            </p>
+            <p style={typeStyle(typography.body.m)}>
+              The products I work on are different, but the motivation is
+              usually the same: helping people feel confident in complex
+              environments.
+            </p>
           </div>
 
           <div className="flex w-full flex-col items-start gap-[var(--base-10)] text-[var(--text-primary)]">
