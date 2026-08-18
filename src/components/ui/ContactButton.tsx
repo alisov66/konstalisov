@@ -8,7 +8,7 @@ import type {
   ReactNode,
 } from "react";
 import { useCallback, useState } from "react";
-import { track } from "@vercel/analytics";
+import { sendGAEvent } from "@next/third-parties/google";
 
 import { typography } from "@/styles";
 
@@ -94,7 +94,7 @@ export default function ContactButton({
 
   const handleClick: MouseEventHandler<HTMLAnchorElement> = (event) => {
     if (props.href?.startsWith("mailto:")) {
-      track("contact_click");
+      sendGAEvent("event", "contact_click");
     }
 
     onClick?.(event);
