@@ -15,7 +15,7 @@ export default function CapabilitiesIndexPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-beige)] text-[var(--text-primary)]">
       <NavigationHeader alwaysVisible />
-      <CapabilitiesSection />
+      <CapabilitiesSection trackCapabilitiesView />
       <Footer />
     </main>
   );

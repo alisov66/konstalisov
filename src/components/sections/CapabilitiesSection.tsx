@@ -2,6 +2,7 @@
 
 import type { CSSProperties, ReactNode } from "react";
 import { useCallback, useEffect, useRef } from "react";
+import { sendGAEvent } from "@next/third-parties/google";
 import { track } from "@vercel/analytics";
 
 import ExploreMenu from "@/components/ui/ExploreMenu";
@@ -2240,6 +2241,7 @@ function ActiveArticle({ value }: { value: string }) {
 export interface CapabilitiesSectionProps {
   scrollToArticleOnMount?: boolean;
   showIntroduction?: boolean;
+  trackCapabilitiesView?: boolean;
   value?: CapabilityId;
 }
 
@@ -2271,6 +2273,7 @@ export function CapabilitiesIntroduction() {
 export default function CapabilitiesSection({
   scrollToArticleOnMount = false,
   showIntroduction = true,
+  trackCapabilitiesView = false,
   value = defaultCapabilityId,
 }: CapabilitiesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -2322,6 +2325,12 @@ export default function CapabilitiesSection({
   }, [scrollArticleToStart, scrollToArticleOnMount]);
 
   useEffect(() => {
+    if (trackCapabilitiesView) {
+      sendGAEvent("event", "capabilities_view");
+    }
+  }, [trackCapabilitiesView]);
+
+  useEffect(() => {
     const tabsScroller = tabsScrollerRef.current;
 
     if (!tabsScroller) {
@@ -2367,6 +2376,12 @@ export default function CapabilitiesSection({
 
   function handleValueChange(nextValue: string) {
     const selectedCapability = getCapabilityById(nextValue);
+
+    if (selectedCapability) {
+      sendGAEvent("event", "capability_click", {
+        capability_name: selectedCapability.id.replaceAll("-", "_"),
+      });
+    }
 
     if (selectedCapability && selectedCapability.id !== currentValue) {
       track("case_study_view", { project: selectedCapability.label });
