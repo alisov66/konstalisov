@@ -19,7 +19,7 @@ function typeStyle(token: {
 export default function AboutSection() {
   return (
     <section
-      className="flex w-full flex-col items-start gap-[var(--base-10)] bg-[var(--bg-beige)] px-[var(--padding-side)] pb-[var(--base-10)] pt-[112px] min-[768px]:pb-[var(--base-20)] min-[768px]:pt-[var(--base-32)]"
+      className="flex w-full flex-col items-start gap-[var(--base-10)] bg-[var(--bg-beige)] px-[var(--padding-side)] pb-[var(--base-10)] pt-[72px] min-[768px]:pb-[var(--base-20)] min-[768px]:pt-[var(--base-32)]"
       id="about"
     >
       <h1
@@ -29,14 +29,14 @@ export default function AboutSection() {
         About
       </h1>
 
-      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-wrap items-start gap-[var(--base-10)] min-[1440px]:gap-[var(--base-15)] min-[1600px]:gap-[var(--base-20)]">
-        <div className="flex w-full max-w-[450px] shrink-0 flex-col gap-[var(--base-5)] min-[482px]:w-[450px] min-[1130px]:sticky min-[1130px]:top-[108px]">
-          <div className="relative aspect-square w-full max-w-[450px] shrink-0 overflow-hidden">
+      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-col flex-wrap items-start gap-[var(--base-10)] min-[768px]:flex-row min-[1440px]:gap-[var(--base-15)] min-[1600px]:gap-[var(--base-20)]">
+        <div className="flex w-full max-w-[450px] shrink-0 flex-col gap-[var(--base-5)] min-[768px]:sticky min-[768px]:top-[108px] min-[768px]:max-w-[320px] min-[1400px]:max-w-[450px]">
+          <div className="relative aspect-square w-full max-w-[450px] shrink-0 overflow-hidden rounded-t-[240px]">
             <Image
               alt="Konstantin Alisov"
               className="size-full object-cover"
               fill
-              sizes="(max-width: 481px) calc(100vw - 32px), 450px"
+              sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1399px) 320px, 450px"
               src={profilePhotoSrc}
             />
           </div>
@@ -57,7 +57,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-10)] min-[332px]:min-w-[300px] min-[482px]:min-w-[min(400px,100%)] min-[1440px]:gap-[var(--base-15)]">
+        <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-10)] min-[332px]:min-w-[300px] min-[482px]:min-w-[min(400px,100%)] min-[768px]:min-w-[320px] min-[1400px]:gap-[var(--base-15)]">
           <div className="flex w-full max-w-[820px] flex-col gap-[var(--base-3)] text-[var(--text-primary)]">
             <h3 style={typeStyle(typography.heading.h3)}>
               I enjoy figuring out how complicated things work
@@ -131,7 +131,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <ButtonPrimary href="/cv">
+          <ButtonPrimary className="w-full min-[768px]:w-auto" href="/cv">
             View CV
           </ButtonPrimary>
         </div>
