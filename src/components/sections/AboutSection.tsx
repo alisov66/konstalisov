@@ -49,14 +49,14 @@ export default function AboutSection() {
         About
       </h1>
 
-      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-col flex-wrap items-start gap-[var(--base-10)] min-[768px]:flex-row min-[1440px]:gap-[var(--base-15)] min-[1600px]:gap-[var(--base-20)]">
-        <div className="flex w-full max-w-[600px] shrink-0 flex-col gap-[var(--base-5)] min-[768px]:sticky min-[768px]:top-[108px] min-[768px]:w-[320px] min-[1130px]:w-[450px]">
+      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-col flex-wrap items-start gap-[var(--base-10)] min-[768px]:flex-row min-[1400px]:gap-[var(--base-15)] min-[1600px]:gap-[var(--base-20)]">
+        <div className="flex w-full max-w-[600px] shrink-0 flex-col gap-[var(--base-5)] min-[768px]:sticky min-[768px]:top-[108px] min-[768px]:w-[320px] min-[1400px]:w-[450px]">
           <div className="relative aspect-square w-full shrink-0 overflow-hidden rounded-t-[240px]">
             <Image
               alt="Konstantin Alisov"
               className="size-full object-cover"
               fill
-              sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1129px) 320px, 450px"
+              sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1399px) 320px, 450px"
               src={profilePhotoSrc}
             />
           </div>
@@ -77,12 +77,12 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="hidden min-w-0 flex-1 min-[768px]:max-[1129px]:flex">
+        <div className="hidden min-w-0 flex-1 min-[768px]:max-[1399px]:flex">
           {introCopy}
         </div>
 
-        <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-10)] min-[332px]:min-w-[300px] min-[482px]:min-w-[min(400px,100%)] min-[1130px]:gap-[var(--base-15)]">
-          <div className="min-[768px]:max-[1129px]:hidden">
+        <div className="flex min-w-0 flex-1 flex-col items-start gap-[var(--base-10)] min-[332px]:min-w-[300px] min-[482px]:min-w-[min(400px,100%)] min-[768px]:max-[1399px]:w-full min-[768px]:max-[1399px]:flex-none min-[1400px]:gap-[var(--base-15)]">
+          <div className="min-[768px]:max-[1399px]:hidden">
             {introCopy}
           </div>
 
