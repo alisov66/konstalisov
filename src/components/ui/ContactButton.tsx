@@ -97,6 +97,10 @@ export default function ContactButton({
       sendGAEvent("event", "contact_click");
     }
 
+    if (props.href?.startsWith("https://www.linkedin.com/")) {
+      sendGAEvent("event", "linkedin_click");
+    }
+
     onClick?.(event);
   };
 
