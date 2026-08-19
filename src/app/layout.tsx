@@ -3,6 +3,7 @@ import { Work_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import JsonLd from "@/components/seo/JsonLd";
 import { siteUrl } from "./seo";
 import "./globals.css";
 
@@ -18,6 +19,27 @@ export const metadata: Metadata = {
     "Product designer specializing in complex workflows, design systems, enterprise software, and AI-assisted product development.",
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      name: "Konstantin Alisov",
+      jobTitle: "Product Designer",
+      url: siteUrl.origin,
+      sameAs: [
+        "https://www.linkedin.com/in/konstantin-alisov/",
+        "https://github.com/alisov66",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      name: "Konstantin Alisov",
+      url: siteUrl.origin,
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,6 +51,7 @@ export default function RootLayout({
       className={`${workSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <JsonLd data={structuredData} />
         {children}
         <Analytics />
         <SpeedInsights />
