@@ -10,7 +10,9 @@ import type { TabGroupTab } from "@/components/ui/TabGroup";
 import {
   capabilities,
   defaultCapabilityId,
+  getArticleById,
   getCapabilityById,
+  type ArticleId,
   type CapabilityId,
 } from "@/data/capabilities";
 import { colors, spacing, typography } from "@/styles";
@@ -62,7 +64,7 @@ const images = {
 };
 
 const tabs: TabGroupTab[] = capabilities.map((capability) => ({
-  href: `/capabilities/${capability.id}`,
+  href: `/capabilities/${capability.id}/${capability.defaultArticle}`,
   id: capability.id,
   label: capability.label,
 }));
@@ -214,17 +216,16 @@ function ArticleShell({ children }: { children: ReactNode }) {
   );
 }
 
-function ComplexWorkflowArticle() {
+function MsaWorkspaceArticle() {
   const labelStyle = {
     ...typeStyle(typography.article.body),
     fontWeight: typography.fontWeight.semibold,
   };
 
   return (
-    <div className="flex flex-col">
-      <ArticleShell>
-        <H1>MSA workspace</H1>
-        <Gap size={spacing.article.h1Gap} />
+    <ArticleShell>
+      <H1>Designing a workspace for complex sequence analysis</H1>
+      <Gap size={spacing.article.h1Gap} />
 
         <Section title="Context">
           <CopyBlock>
@@ -450,13 +451,15 @@ function ComplexWorkflowArticle() {
             between separate tools or interfaces.
           </Paragraph>
         </Section>
-      </ArticleShell>
+    </ArticleShell>
+  );
+}
 
-      <Gap size={spacing.article.chapterGap} />
-
-      <ArticleShell>
-        <H1>Data mapping</H1>
-        <Gap size={spacing.article.h1Gap} />
+function DataMappingArticle() {
+  return (
+    <ArticleShell>
+      <H1>Transforming complex data mapping into a guided workflow</H1>
+      <Gap size={spacing.article.h1Gap} />
 
         <Section title="Context">
           <Paragraph>
@@ -640,8 +643,7 @@ function ComplexWorkflowArticle() {
             efficiently.
           </Paragraph>
         </Section>
-      </ArticleShell>
-    </div>
+    </ArticleShell>
   );
 }
 
@@ -653,7 +655,7 @@ function DesignSystemsArticle() {
 
   return (
     <ArticleShell>
-      <H1>Scalable header architecture</H1>
+      <H1>Designing a scalable application shell for complex workflows</H1>
       <Gap size={spacing.article.h1Gap} />
 
       <Section title="Context">
@@ -1396,7 +1398,7 @@ function ProductDesignScaleArticle() {
 function MobileExperiencesArticle() {
   return (
     <ArticleShell>
-      <H1>Simplifying Financial Operations for Active TRON Users</H1>
+      <H1>Simplifying complex financial operations for blockchain users</H1>
       <Gap size={spacing.article.h1Gap} />
 
       <Section title="Context">
@@ -1837,10 +1839,7 @@ function MobileExperiencesArticle() {
 function DesignToProductionArticle() {
   return (
     <ArticleShell>
-      <H1>
-        Designing, building, and shipping my portfolio with a shared design
-        system and AI-assisted development
-      </H1>
+      <H1>From design system to production with AI-assisted development</H1>
       <Gap size={spacing.article.h1Gap} />
 
       <Section title="Context">
@@ -2209,36 +2208,40 @@ function EmptyArticle({ label }: { label: string }) {
   );
 }
 
-function ActiveArticle({ value }: { value: string }) {
-  if (value === "complex-workflow-design") {
-    return <ComplexWorkflowArticle />;
+function ActiveArticle({ articleId }: { articleId: ArticleId }) {
+  if (articleId === "msa-workspace") {
+    return <MsaWorkspaceArticle />;
   }
 
-  if (value === "design-systems") {
+  if (articleId === "data-mapping") {
+    return <DataMappingArticle />;
+  }
+
+  if (articleId === "scalable-header-architecture") {
     return <DesignSystemsArticle />;
   }
 
-  if (value === "documentation-collaboration") {
+  if (articleId === "complex-product-decisions") {
     return <DocumentationCollaborationArticle />;
   }
 
-  if (value === "product-design-at-scale") {
+  if (articleId === "platforma-product-platform") {
     return <ProductDesignScaleArticle />;
   }
 
-  if (value === "mobile-experiences") {
+  if (articleId === "tron-financial-operations") {
     return <MobileExperiencesArticle />;
   }
 
-  if (value === "design-to-production") {
+  if (articleId === "portfolio-design-to-production") {
     return <DesignToProductionArticle />;
   }
 
-  const label = tabs.find((tab) => tab.id === value)?.label || "Article";
-  return <EmptyArticle label={label} />;
+  return <EmptyArticle label="Article" />;
 }
 
 export interface CapabilitiesSectionProps {
+  articleId?: ArticleId;
   scrollToArticleOnMount?: boolean;
   showIntroduction?: boolean;
   trackCapabilitiesView?: boolean;
@@ -2271,6 +2274,7 @@ export function CapabilitiesIntroduction() {
 }
 
 export default function CapabilitiesSection({
+  articleId,
   scrollToArticleOnMount = false,
   showIntroduction = true,
   trackCapabilitiesView = false,
@@ -2280,7 +2284,12 @@ export default function CapabilitiesSection({
   const articleRef = useRef<HTMLDivElement>(null);
   const exploreMenuRef = useRef<HTMLDivElement>(null);
   const tabsScrollerRef = useRef<HTMLDivElement>(null);
-  const currentValue = getCapabilityById(value)?.id || defaultCapabilityId;
+  const selectedCapability =
+    getCapabilityById(value) || getCapabilityById(defaultCapabilityId)!;
+  const currentValue = selectedCapability.id;
+  const currentArticle =
+    (articleId && getArticleById(selectedCapability, articleId)) ||
+    getArticleById(selectedCapability, selectedCapability.defaultArticle)!;
 
   const sectionStyle: StyleVars = {
     "--capabilities-column-gap": "100px",
@@ -2411,7 +2420,7 @@ export default function CapabilitiesSection({
           ref={articleRef}
           className="flex min-w-0 flex-1 scroll-mt-[var(--base-10)] flex-col items-start pt-[var(--base-5)] min-[1280px]:min-w-[var(--capabilities-article-min-width)] min-[1280px]:pt-[var(--base-10)]"
         >
-          <ActiveArticle value={currentValue} />
+          <ActiveArticle articleId={currentArticle.id} />
         </div>
       </section>
     </>

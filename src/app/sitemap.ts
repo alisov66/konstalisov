@@ -8,7 +8,11 @@ const staticPaths = ["/", "/capabilities", "/about", "/contact", "/cv"];
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPaths,
-    ...capabilities.map(({ id }) => `/capabilities/${id}`),
+    ...capabilities.flatMap((capability) =>
+      capability.articles.map(
+        (article) => `/capabilities/${capability.id}/${article.id}`,
+      ),
+    ),
   ].map((path) => ({
     url: new URL(path, siteUrl).toString(),
   }));
