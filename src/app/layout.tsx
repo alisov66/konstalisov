@@ -12,11 +12,38 @@ const workSans = Work_Sans({
   variable: "--font-work-sans",
 });
 
+const isPreviewDeployment = process.env.VERCEL_ENV === "preview";
+
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: "Konstantin Alisov | Product Designer",
   description:
     "Product designer specializing in complex workflows, design systems, enterprise software, and AI-assisted product development.",
+  icons: {
+    icon: isPreviewDeployment
+      ? [
+          {
+            url: "/favicons/preview-icon.png",
+            type: "image/png",
+            sizes: "512x512",
+          },
+        ]
+      : [
+          { url: "/favicons/favicon.ico", type: "image/x-icon" },
+          {
+            url: "/favicons/icon.png",
+            type: "image/png",
+            sizes: "512x512",
+          },
+        ],
+    apple: [
+      {
+        url: "/favicons/apple-icon.png",
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
+  },
 };
 
 const structuredData = {
