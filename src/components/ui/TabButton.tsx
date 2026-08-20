@@ -7,19 +7,29 @@ type TabButtonStyle = CSSProperties &
 
 export interface TabButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
+  level?: TabButtonLevel;
   selected?: boolean;
 }
 
-export function getTabButtonStyle(selected = false): TabButtonStyle {
+export type TabButtonLevel = "capability" | "article";
+
+export function getTabButtonStyle(
+  selected = false,
+  level: TabButtonLevel = "capability",
+): TabButtonStyle {
   const textColor = colors.button.text;
+  const selectedBackground =
+    level === "article"
+      ? colors.button.fillAccent
+      : colors.button.fillAccentMuted;
 
   return {
     "--tab-button-bg": selected
-      ? colors.button.fillAccent
+      ? selectedBackground
       : "transparent",
     "--tab-button-hover-bg": selected
-      ? colors.button.fillAccent
-      : colors.button.fillAccentMuted,
+      ? selectedBackground
+      : colors.button.fillLight,
     "--tab-button-text": textColor,
     "--tab-button-radius": radius.pill,
     "--tab-button-padding-x": spacing.base[4],
@@ -50,17 +60,19 @@ export function getTabButtonClassName(className?: string) {
 export default function TabButton({
   children,
   className,
+  level = "capability",
   selected = false,
   type = "button",
   ...props
 }: TabButtonProps) {
-  const style = getTabButtonStyle(selected);
+  const style = getTabButtonStyle(selected, level);
 
   return (
     <button
       {...props}
       aria-selected={selected}
       className={getTabButtonClassName(className)}
+      data-level={level}
       data-selected={selected || undefined}
       role="tab"
       style={{ ...style, ...props.style }}

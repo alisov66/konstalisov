@@ -5,8 +5,9 @@ import { useCallback, useEffect, useRef } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
 import { track } from "@vercel/analytics";
 
-import ExploreMenu from "@/components/ui/ExploreMenu";
-import type { TabGroupTab } from "@/components/ui/TabGroup";
+import ExploreMenu, {
+  type ExploreMenuCapability,
+} from "@/components/ui/ExploreMenu";
 import {
   capabilities,
   defaultCapabilityId,
@@ -63,11 +64,18 @@ const images = {
   portfolioFig8: "/capabilities/portfolio-fig-8.png",
 };
 
-const tabs: TabGroupTab[] = capabilities.map((capability) => ({
-  href: `/capabilities/${capability.id}/${capability.defaultArticle}`,
-  id: capability.id,
-  label: capability.label,
-}));
+const menuCapabilities: ExploreMenuCapability[] = capabilities.map(
+  (capability) => ({
+    articles: capability.articles.map((article) => ({
+      href: `/capabilities/${capability.id}/${article.id}`,
+      id: article.id,
+      label: article.label,
+    })),
+    href: `/capabilities/${capability.id}/${capability.defaultArticle}`,
+    id: capability.id,
+    label: capability.label,
+  }),
+);
 
 const headerClearance = 136;
 
@@ -2283,7 +2291,6 @@ export default function CapabilitiesSection({
   const sectionRef = useRef<HTMLElement>(null);
   const articleRef = useRef<HTMLDivElement>(null);
   const exploreMenuRef = useRef<HTMLDivElement>(null);
-  const tabsScrollerRef = useRef<HTMLDivElement>(null);
   const selectedCapability =
     getCapabilityById(value) || getCapabilityById(defaultCapabilityId)!;
   const currentValue = selectedCapability.id;
@@ -2331,7 +2338,12 @@ export default function CapabilitiesSection({
     return () => {
       cancelAnimationFrame(frame);
     };
-  }, [scrollArticleToStart, scrollToArticleOnMount]);
+  }, [
+    currentArticle.id,
+    currentValue,
+    scrollArticleToStart,
+    scrollToArticleOnMount,
+  ]);
 
   useEffect(() => {
     if (trackCapabilitiesView) {
@@ -2339,51 +2351,7 @@ export default function CapabilitiesSection({
     }
   }, [trackCapabilitiesView]);
 
-  useEffect(() => {
-    const tabsScroller = tabsScrollerRef.current;
-
-    if (!tabsScroller) {
-      return;
-    }
-
-    const frame = requestAnimationFrame(() => {
-      if (tabsScroller.scrollWidth <= tabsScroller.clientWidth) {
-        return;
-      }
-
-      const activeTab = tabsScroller.querySelector<HTMLElement>(
-        `[data-tab-id="${CSS.escape(currentValue)}"]`,
-      );
-
-      if (!activeTab) {
-        return;
-      }
-
-      const activeTabCenter = activeTab.offsetLeft + activeTab.offsetWidth / 2;
-      const targetScrollLeft = activeTabCenter - tabsScroller.clientWidth / 2;
-      const maxScrollLeft = tabsScroller.scrollWidth - tabsScroller.clientWidth;
-      const clampedScrollLeft = Math.max(
-        0,
-        Math.min(targetScrollLeft, maxScrollLeft),
-      );
-      const scrollElement = tabsScroller;
-      const startScrollLeft = scrollElement.scrollLeft;
-      const scrollDistance = clampedScrollLeft - startScrollLeft;
-
-      if (Math.abs(scrollDistance) < 1) {
-        scrollElement.scrollLeft = clampedScrollLeft;
-        return;
-      }
-
-      scrollElement.scrollLeft = clampedScrollLeft;
-    });
-
-    return () => {
-      cancelAnimationFrame(frame);
-    };
-  }, [currentValue]);
-
-  function handleValueChange(nextValue: string) {
+  function handleCapabilityValueChange(nextValue: string) {
     const selectedCapability = getCapabilityById(nextValue);
 
     if (selectedCapability) {
@@ -2399,6 +2367,14 @@ export default function CapabilitiesSection({
     scrollArticleToStart();
   }
 
+  function handleArticleValueChange(nextValue: string) {
+    if (nextValue !== currentArticle.id) {
+      track("case_study_view", { project: nextValue });
+    }
+
+    scrollArticleToStart();
+  }
+
   return (
     <>
       {showIntroduction ? <CapabilitiesIntroduction /> : null}
@@ -2409,11 +2385,12 @@ export default function CapabilitiesSection({
         style={sectionStyle}
       >
         <ExploreMenu
-          onValueChange={handleValueChange}
+          articleValue={currentArticle.id}
+          capabilities={menuCapabilities}
+          capabilityValue={currentValue}
+          onArticleValueChange={handleArticleValueChange}
+          onCapabilityValueChange={handleCapabilityValueChange}
           ref={exploreMenuRef}
-          scrollerRef={tabsScrollerRef}
-          tabs={tabs}
-          value={currentValue}
         />
 
         <div

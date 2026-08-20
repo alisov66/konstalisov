@@ -6,6 +6,7 @@ import { spacing } from "@/styles";
 import TabButton, {
   getTabButtonClassName,
   getTabButtonStyle,
+  type TabButtonLevel,
 } from "./TabButton";
 
 export interface TabGroupTab {
@@ -15,12 +16,14 @@ export interface TabGroupTab {
 }
 
 export interface TabGroupProps extends HTMLAttributes<HTMLDivElement> {
+  level?: TabButtonLevel;
   tabs: TabGroupTab[];
   value: string;
   onValueChange: (value: string) => void;
 }
 
 export default function TabGroup({
+  level = "capability",
   tabs,
   value,
   onValueChange,
@@ -38,7 +41,7 @@ export default function TabGroup({
         .filter(Boolean)
         .join(" ")}
       role="tablist"
-      style={{ gap: spacing.base[2], ...style }}
+      style={{ gap: spacing.base[1], ...style }}
     >
       {tabs.map((tab) => {
         const selected = tab.id === value;
@@ -47,7 +50,9 @@ export default function TabGroup({
           return (
             <Link
               aria-current={selected ? "page" : undefined}
+              aria-selected={selected}
               className={getTabButtonClassName("no-underline")}
+              data-level={level}
               data-selected={selected || undefined}
               data-tab-id={tab.id}
               href={tab.href}
@@ -55,7 +60,7 @@ export default function TabGroup({
               onClick={() => onValueChange(tab.id)}
               role="tab"
               scroll={false}
-              style={getTabButtonStyle(selected)}
+              style={getTabButtonStyle(selected, level)}
             >
               {tab.label}
             </Link>
@@ -66,6 +71,7 @@ export default function TabGroup({
           <TabButton
             data-tab-id={tab.id}
             key={tab.id}
+            level={level}
             selected={selected}
             onClick={() => onValueChange(tab.id)}
           >

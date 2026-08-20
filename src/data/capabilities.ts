@@ -6,12 +6,14 @@ export const capabilities = [
     articles: [
       {
         id: "msa-workspace",
+        label: "MSA workspace",
         title: "Designing a workspace for complex sequence analysis",
         description:
           "Designing a flexible analysis workspace that helps researchers navigate dense biological data through adaptive layouts, visual controls, and contextual workflows.",
       },
       {
         id: "data-mapping",
+        label: "Data mapping",
         title: "Transforming complex data mapping into a guided workflow",
         description:
           "Redesigning data mapping as a guided experience that helps researchers connect biological variables, understand compatibility, and configure workflows with confidence.",
@@ -25,6 +27,7 @@ export const capabilities = [
     articles: [
       {
         id: "scalable-header-architecture",
+        label: "Application shell",
         title: "Designing a scalable application shell for complex workflows",
         description:
           "Creating a reusable header system that supports multiple product contexts, interactions, and workflows across Platforma applications.",
@@ -38,6 +41,7 @@ export const capabilities = [
     articles: [
       {
         id: "complex-product-decisions",
+        label: "Product decisions",
         title: "Making complex product decisions understandable",
         description:
           "Turning product decisions, interaction logic, and technical requirements into clear documentation that aligns design, product, and engineering teams.",
@@ -51,6 +55,7 @@ export const capabilities = [
     articles: [
       {
         id: "platforma-product-platform",
+        label: "Platform evolution",
         title:
           "Scaling Platforma from startup website to enterprise product platform",
         description:
@@ -65,6 +70,7 @@ export const capabilities = [
     articles: [
       {
         id: "tron-financial-operations",
+        label: "Financial workflows",
         title: "Simplifying complex financial operations for blockchain users",
         description:
           "Designing mobile financial experiences that help blockchain users manage transactions, accounts, and complex financial workflows with confidence.",
@@ -78,6 +84,7 @@ export const capabilities = [
     articles: [
       {
         id: "portfolio-design-to-production",
+        label: "Portfolio workflow",
         title: "From design system to production with AI-assisted development",
         description:
           "Designing and building a production portfolio by connecting Figma systems, code components, AI-assisted development, and modern frontend workflows.",
