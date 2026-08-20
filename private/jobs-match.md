@@ -651,6 +651,7 @@ ___
 - **Compared with Bending Spoons:** Lower prestige/compensation upside, but probably an even more direct match with my current proven experience.
 
 ___
+
 # 4. JetBrains — Senior Product Designer (Air)
 
 - **Overall match:** 9/10
@@ -3720,3 +3721,374 @@ ___
 - **Location fit:** Excellent
 - **Strategic career fit:** Good if I intentionally want to broaden into consumer mobile/growth.
 - **Current ranking:** Worth applying to, but **below Revolut Platform, Factorial Platform, JetBrains Air, Spendesk, Murphy AI, Dwelly, and Fever in immediate experience fit**.
+
+___
+
+# 12. Super — Senior Product Designer, Social
+
+- **Overall match:** 7.8–8.2/10
+- **Skill match:** 8.5/10
+- **Direct domain match:** 7/10
+- **Strategic career fit:** 8/10
+- **Priority:** Medium–High / Tier B+
+- **Recommendation:** Apply, but after the stronger platform/system roles
+- **Role type:** Senior Product Designer — Consumer / Social / Sports & Entertainment
+- **Location:** Madrid, hybrid
+- LinkedIn marks the match as **high**, and I agree that the general Product Design fit is strong.
+- However, this is **not as direct a match to my strongest recent experience** as:
+  - Revolut Platform
+  - Factorial Platform
+  - JetBrains Air
+  - Spendesk
+  - Murphy AI
+- The main reason is that this role is centered on:
+  - social engagement
+  - consumer behaviour
+  - sports/fan experiences
+  - research
+  - data-informed iteration
+- My strongest recent evidence is still:
+  - complex systems
+  - professional/enterprise workflows
+  - information architecture
+  - design systems
+  - technically complex products
+
+## Why this role is still interesting
+
+- This is not a lightweight visual/social-media role.
+- They want a Senior Product Designer who can:
+  - own discovery
+  - conduct research
+  - run usability testing
+  - build user flows and journeys
+  - work with information architecture
+  - contribute to a design system
+  - monitor released features
+  - use data to iterate
+  - mentor others
+- That makes the role much more aligned with my broader Product Design experience than the title **Social** might initially suggest.
+
+- It would also broaden my profile into:
+  - high-scale B2C
+  - social behaviour
+  - engagement
+  - sports / entertainment
+  - consumer metrics
+
+## Where I match strongly
+
+- **End-to-end Product Design — very strong**
+  - They want designers involved across:
+    - discovery
+    - research
+    - flows
+    - validation
+    - delivery
+    - post-launch iteration
+  - My Product Designer experience already covers broad ownership from discovery through delivery. fileciteturn6file1
+
+- **Complex problem solving — excellent match**
+  - They explicitly value enthusiasm for:
+    > complex design problems and ambiguous challenges
+  - This is one of my strongest areas.
+  - My current CV positions me around transforming ambiguous requirements into scalable products through systems thinking and strong UX foundations. fileciteturn6file1
+
+- **Information architecture — excellent match**
+  - They specifically mention:
+    - user flows
+    - journeys
+    - information architectures
+  - IA is one of my explicit core expertise areas. fileciteturn6file1
+
+- **Design systems — very strong**
+  - They expect designers to work with and contribute to the design system.
+  - My MiLaboratories work includes:
+    - reusable components
+    - interaction patterns
+    - implementation documentation
+    - scalable foundations across products. fileciteturn6file1
+
+- **Cross-platform design — strong**
+  - They want strong skills across:
+    - iOS
+    - Android
+    - web
+  - My APD background includes extensive web and mobile product work across multiple industries. fileciteturn6file1
+
+- **UI / visual craft — strong**
+  - They explicitly want strong UI skills and a clean visual sense.
+  - My background before deeper Product Design work includes several years of UX/UI design, so this is a genuine strength rather than a stretch. fileciteturn6file1
+
+- **Systems thinking — strong**
+  - Even though this is a social/consumer role, they still need coherence across product areas and their design system.
+  - My systems-oriented approach is useful here.
+
+- **Technical awareness — strong**
+  - They expect designers to understand technical implications.
+  - My current workflow increasingly bridges design and implementation through AI-assisted development, prototyping, and close Engineering collaboration. fileciteturn6file1
+
+- **Cross-functional collaboration — very strong**
+  - The role sits inside a cross-functional product team.
+  - My recent experience includes close collaboration with:
+    - Product
+    - Engineering
+    - founders
+    - other stakeholders. fileciteturn6file1
+
+- **Fast-moving environment — good cultural fit**
+  - Super describes itself as:
+    - high-performing
+    - ambitious
+    - global
+    - product-driven
+  - That fits my preference better than a slow, maintenance-heavy environment.
+
+- **Madrid — excellent location fit**
+  - Madrid is one of my preferred relocation options.
+  - So location is not a drawback.
+
+## Where I'm weaker
+
+- **Social-product experience — biggest domain gap**
+  - This role is specifically about:
+    - connection
+    - engagement
+    - sharing
+    - fan behaviour
+  - I do not have strong direct experience designing social mechanics such as:
+    - feeds
+    - comments
+    - follows
+    - friend/fan graphs
+    - social sharing
+    - community loops
+  - This is the clearest domain gap.
+
+- **Sports / betting experience — moderate gap**
+  - They list this as nice-to-have rather than required.
+  - I do not have direct experience designing sports or betting apps.
+  - This should not block the application, but candidates from gaming/betting companies may have stronger domain relevance.
+
+- **Research depth — moderate gap**
+  - They explicitly expect the Senior Designer to:
+    - conduct research
+    - run usability testing
+    - generate findings
+  - My experience includes discovery and validation, but formal UX research is still weaker than my:
+    - systems work
+    - IA
+    - workflows
+    - design systems
+
+- **Data-supported recommendations — moderate gap**
+  - They want designers to:
+    > make data-supported recommendations
+  - My portfolio demonstrates strong design reasoning, but less evidence of:
+    - behavioural analytics
+    - quantitative experimentation
+    - KPI ownership
+    - feature-performance monitoring
+
+- **Post-launch measurement — moderate gap**
+  - They explicitly expect designers to:
+    - monitor release performance
+    - identify learnings
+    - recommend enhancements
+  - My portfolio is stronger on design/build than on detailed post-launch metric loops.
+
+- **Human behaviour / engagement psychology — some gap**
+  - This role puts unusual emphasis on:
+    - social behaviour
+    - engagement
+    - user motivation
+  - I understand UX behaviour generally, but I do not yet have a strong portfolio story specifically around social motivation or fan engagement.
+
+- **Mentorship — moderate gap**
+  - They expect senior designers to support others through:
+    - feedback
+    - mentorship
+  - I have strong autonomy and collaboration experience, but limited formal mentoring evidence.
+
+## Nice-to-have areas
+
+- **Motion design**
+  - I have Rive and Spline in my toolkit. fileciteturn6file1
+  - That gives me at least some credible connection to motion and interactive polish.
+  - I would not oversell myself as a Motion Designer.
+
+- **Icons / illustration**
+  - My Adobe Illustrator background is useful. fileciteturn6file1
+  - Again, supporting evidence rather than a primary selling point.
+
+- **Design systems**
+  - Strong match.
+
+- **Complex / ambiguous problems**
+  - Strong match.
+
+## Biggest screening risk
+
+- The role itself is broadly compatible with my experience.
+- The biggest question is whether they want:
+
+  > a strong general Senior Product Designer who can learn the social/sports domain
+
+  or:
+
+  > someone already deeply experienced in social engagement / betting / fan-product mechanics.
+
+- The JD suggests the former is possible because sports/betting experience is only a **nice-to-have**.
+- So I would not self-reject.
+
+## Best portfolio positioning
+
+- Unlike Revolut or Factorial, I would **not lead entirely with Platforma**.
+
+- For Super, I would create a more balanced presentation:
+
+  1. **TR.ENERGY**
+     - mobile
+     - customer-facing
+     - financial product
+     - interaction complexity
+
+  2. **MSA Workspace or Data Mapping**
+     - shows depth of systems thinking
+     - complex flows
+     - information architecture
+
+  3. **Design System**
+     - direct match to their platform consistency requirements
+
+  4. **AI-assisted / implementation workflow**
+     - useful supporting differentiation
+
+- This lets them see:
+  - consumer/mobile breadth
+  - senior systems depth
+
+## Best application positioning
+
+- I would position myself as:
+
+  > **Senior-level Product Designer with strong systems thinking, cross-platform product experience, and a background simplifying complex workflows into clear, scalable experiences across web and mobile.**
+
+- I would **not** position myself as:
+  > social-product specialist
+
+- Instead:
+  > strong Product Designer moving into a new domain where my systems, interaction, and consumer/mobile experience are transferable.
+
+## Comparison with N26 Grow & Engage
+
+- These are fairly close in career direction.
+
+- **N26**
+  - mobile banking
+  - engagement
+  - subscriptions
+  - retention
+  - consumer fintech
+
+- **Super**
+  - social
+  - sports / fan engagement
+  - entertainment
+  - broader cross-platform work
+
+- **Direct existing-domain fit:** N26 slightly stronger because of my fintech/mobile background
+- **Systems/IA fit:** approximately equal
+- **Social-domain gap:** Super larger
+- **Consumer career diversification:** both strong
+
+## Comparison with AirHelp
+
+- **AirHelp**
+  - subscription
+  - pricing
+  - packaging
+  - retention
+  - LTV
+  - mobile travel
+
+- **Super**
+  - social engagement
+  - sports
+  - fan experience
+  - research / data
+
+- Both are outside my strongest enterprise specialization.
+- But Super is slightly less rigid because it does **not** demand deep subscription expertise.
+- Therefore I would rate **Super slightly above AirHelp** in immediate fit.
+
+## Comparison with Fever
+
+- These are also reasonably similar.
+
+- **Fever**
+  - consumer marketplace
+  - entertainment
+  - systems
+  - AI workflow
+  - measurable outcomes
+
+- **Super**
+  - sports/social/fan experience
+  - research
+  - cross-platform UX
+  - engagement
+
+- **Systems fit:** Fever stronger
+- **Consumer/social fit:** Super more specialised
+- **Overall fit for me:** Fever slightly stronger
+
+## Assessment
+
+| Area | Match |
+|---|---:|
+| End-to-end Product Design | **9/10** |
+| Complex problem solving | **9/10** |
+| Information architecture | **9.5/10** |
+| Interaction design | **9/10** |
+| Design systems | **9/10** |
+| Web product design | **9/10** |
+| Mobile product design | **8/10** |
+| UI / visual craft | **9/10** |
+| Systems thinking | **9/10** |
+| Technical awareness | **8.5/10** |
+| Product + Engineering collaboration | **9/10** |
+| Product strategy | **8/10** |
+| Research | **7/10** |
+| Usability testing | **7/10** |
+| Data-informed design | **7/10** |
+| Post-launch measurement | **6.5–7/10** |
+| Consumer product experience | **7.5–8/10** |
+| Social-product experience | **5.5–6/10** |
+| Sports / betting experience | **5/10** |
+| Motion / interaction polish | **7.5/10** |
+| Mentorship | **7/10** |
+| English | **8/10** |
+| Fast-paced environment | **9/10** |
+| Location / practical fit | **10/10** |
+| Career-development upside | **8.5/10** |
+| **Overall** | **~7.8–8.2/10** |
+
+## Decision
+
+- **Apply:** Yes
+- **Application priority:** **Tier B+ / Medium–High**
+- **Overall fit:** **~8/10**
+- **Worth tailoring CV:** Lightly
+- **Worth tailoring portfolio:** Yes
+- **Primary portfolio story:** TR.ENERGY / Mobile Experiences
+- **Secondary story:** Complex Workflow Design
+- **Supporting story:** Design Systems
+- **Main selling point:** Strong generalist Product Designer with systems thinking, cross-platform experience, and the ability to turn ambiguous, complex problems into clear product experiences.
+- **Strongest differentiator:** Combination of deep complex-system UX and solid mobile/web interaction craft.
+- **Main weakness:** No direct social-product or sports/betting experience.
+- **Main screening risk:** They may prefer someone with stronger consumer engagement/social mechanics experience.
+- **Main interview preparation area:** Social engagement mechanics, behavioural motivation, usability research, product metrics, and post-launch analysis.
+- **Location fit:** Excellent
+- **Strategic career fit:** Good, particularly if I want to broaden further into large-scale consumer products.
+- **Current ranking:** Worth applying, but **below Revolut Platform, Factorial Platform, JetBrains Air, Spendesk, Murphy AI, Dwelly, and Fever in immediate fit**.
