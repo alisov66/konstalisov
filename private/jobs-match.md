@@ -4092,3 +4092,912 @@ ___
 - **Location fit:** Excellent
 - **Strategic career fit:** Good, particularly if I want to broaden further into large-scale consumer products.
 - **Current ranking:** Worth applying, but **below Revolut Platform, Factorial Platform, JetBrains Air, Spendesk, Murphy AI, Dwelly, and Fever in immediate fit**.
+
+---
+
+# 13. Factorial — Senior/Staff Product Designer
+
+- **Overall match:** 8.8–9.2/10
+- **Skill match:** 9.5/10
+- **Domain match:** 9/10
+- **Strategic career fit:** 9/10
+- **Priority:** Very High / Tier A
+- **Recommendation:** Apply
+- **Role type:** Senior/Staff Product Designer — Platform / AI / Enterprise SaaS
+- **Location:** Barcelona, on-site
+- **Salary:** €68K–€107K/year
+- **Important note:** This is a significantly stronger match than the previous Factorial Platform Domain role.
+
+## Executive summary
+
+- This is probably one of the strongest matches among all reviewed vacancies so far.
+- The role is almost a direct continuation of the work I was doing at MiLaboratories:
+  - complex systems
+  - enterprise workflows
+  - platform thinking
+  - AI-assisted workflows
+  - design systems
+  - technical collaboration
+  - turning ambiguity into structured products
+
+- The only concern is the **Senior/Staff level expectation**, especially around:
+  - strategic influence
+  - mentoring
+  - business impact ownership
+  - agentic AI experience
+
+- However, compared with many Staff-level roles, this one is actually very close to my trajectory.
+
+- I would rank this alongside:
+  - JetBrains Air
+  - Revolut Platform
+  - Murphy AI
+  - Factorial Platform Domain
+
+as one of the best-fit opportunities.
+
+## Why this role is extremely relevant
+
+The JD repeatedly describes exactly the type of designer I am positioning myself as:
+
+> "Designers at Factorial are expected to understand how customers' processes actually work end-to-end, frame problems in terms of business impact, and help decide what to build, not only how."
+
+This is almost identical to my desired positioning:
+
+- Product Designer, not UI executor
+- Systems thinker
+- Complex workflow specialist
+- Designer who works closely with Engineering
+- Someone who creates clarity from ambiguity
+
+## Where I match strongly
+
+## Complex systems & workflows — Excellent match (10/10)
+
+- This is probably the strongest overlap.
+
+They need someone who can:
+
+- understand complex processes
+- map dependencies
+- design systems instead of isolated screens
+- connect multiple product areas
+
+My experience:
+
+- Platforma:
+  - MSA Workspace
+  - Data Mapping
+  - large biological datasets
+  - complex analysis workflows
+  - multiple states and dependencies
+
+- Previous APD experience:
+  - enterprise platforms
+  - operational workflows
+  - dashboards
+  - data-heavy interfaces
+
+This is exactly the type of work Factorial describes.
+
+---
+
+## System ownership — Excellent match (9.5/10)
+
+They explicitly say:
+
+> "You own a large part of a product problem space."
+
+Strong match.
+
+My experience:
+
+- Owned Platforma product areas independently.
+- Designed complete workflows rather than isolated features.
+- Built reusable patterns and architecture.
+
+This is a stronger match than many Senior Designer roles because they are looking for ownership, not just execution.
+
+
+## Ambiguity → clarity — Excellent match (10/10)
+
+One of the biggest themes:
+
+> "You don't wait for perfect clarity, you create it."
+
+This is one of my strongest qualities.
+
+Examples:
+
+- MSA workspace:
+  - unclear scientific workflow
+  - complex user needs
+  - transformed into structured experience
+
+- Data Mapping:
+  - unclear biological relationships
+  - transformed into guided interaction model
+
+This should be one of the main stories in the portfolio.
+
+
+## Design systems — Excellent match (10/10)
+
+They expect:
+
+- system thinking
+- scalable patterns
+- consistency
+- governance
+
+Strong alignment.
+
+My experience:
+
+- PLBlockHeader architecture
+- reusable components
+- interaction patterns
+- documentation
+- Figma libraries
+- collaboration with developers
+
+This is one of the strongest selling points.
+
+
+## AI product thinking — Strong match (8.5/10)
+
+This role is heavily AI-oriented.
+
+They mention:
+
+- agentic AI
+- agents
+- tools
+- skills
+- context
+- evals
+- prototyping with Claude/Cursor
+- building own agents
+
+My strengths:
+
+- AI-assisted development workflow
+- Next.js + Tailwind + Vercel portfolio development
+- using AI tools in design/product workflow
+- understanding technical implementation
+
+Strong advantage:
+- I am not only designing AI products.
+- I am actively using AI to build.
+
+---
+
+## Technical collaboration — Excellent match (9/10)
+
+They want someone who:
+
+- understands technical implications
+- collaborates deeply with Engineering
+- prototypes
+- implements parts of solutions
+
+Strong match:
+
+- VS Code workflow
+- coding my portfolio
+- understanding frontend constraints
+- working directly with developers
+
+
+## Product thinking — Strong match (9/10)
+
+They explicitly reject:
+
+> "screens come last"
+
+Very aligned.
+
+My approach:
+
+- understand problem
+- define workflow
+- design interaction model
+- create UI
+
+Not:
+- receive requirements
+- draw screens
+
+
+## Enterprise SaaS experience — Excellent match (9/10)
+
+Factorial is:
+
+- HR platform
+- operational software
+- business workflows
+
+My experience:
+
+- scientific enterprise software
+- financial/crypto platform
+- operational tools
+
+Very transferable.
+
+
+## Information architecture — Excellent match (10/10)
+
+Probably one of my biggest advantages.
+
+Factorial needs:
+
+- complex journeys
+- dependencies
+- systems
+
+This is exactly where I outperform many UI-focused candidates.
+
+
+## Barcelona location — Excellent fit
+
+- Barcelona is one of the preferred relocation options.
+- Company size and international environment are attractive.
+- Salary range is closer to target than many Spanish roles.
+
+
+## Where I am weaker
+
+## Staff-level strategic influence — Main gap
+
+This is the biggest concern.
+
+They expect:
+
+- shaping product direction
+- influencing leadership
+- mentoring designers
+- driving strategic decisions
+
+My experience:
+
+Strong:
+- independent ownership
+- product decisions
+- stakeholder communication
+
+Less proven:
+- organisation-wide influence
+- mentoring multiple designers
+- strategic leadership at scale
+
+Risk:
+They may compare me with current Staff Designers from companies like:
+- Meta
+- Google
+- Stripe
+- Airbnb
+
+But the JD says Senior/Staff, not Staff only.
+
+
+## Business metrics ownership — Moderate gap
+
+They emphasize:
+
+> "Success is measured in revenue created and churn prevented."
+
+My experience is stronger in:
+
+- UX quality
+- workflow efficiency
+- user problems
+- product clarity
+
+Less strong evidence around:
+
+- revenue impact
+- retention metrics
+- conversion optimisation
+- business KPIs
+
+Need to improve portfolio storytelling:
+
+Instead of:
+> "Designed feature X"
+
+Use:
+
+> "Reduced complexity of workflow X, enabling users to complete Y task faster and supporting product adoption."
+
+
+## Formal UX research — Moderate gap
+
+They expect:
+
+- customer conversations
+- qualitative research
+- validation
+
+My experience:
+
+Good:
+- discovery
+- feedback loops
+- validation
+
+Less:
+- formal research programs
+- dedicated researcher collaboration
+
+Not a blocker.
+
+
+## Agentic AI product experience — Moderate gap
+
+This is the biggest technical gap.
+
+They want:
+
+- shipped agentic products
+- agents
+- tools
+- context
+- evaluations
+
+My advantage:
+- AI workflow experience
+- AI-assisted development
+- understanding concepts
+
+Gap:
+- no shipped autonomous agent product.
+
+Need to prepare strong explanation:
+
+"I have not shipped an autonomous agent yet, but I actively prototype with AI tools and understand the design challenges around trust, control, context, and human-in-the-loop workflows."
+
+
+## Mentorship — Moderate gap
+
+They expect:
+
+- raising team quality
+- mentoring designers
+
+I have:
+
+- collaboration experience
+- design reviews
+- documentation
+
+Less:
+
+- formal mentoring responsibility
+
+
+## Portfolio positioning
+
+This role requires the strongest version of my portfolio.
+
+I would present:
+
+## 1. MSA Workspace (main case)
+
+Why:
+
+- complex system
+- technical users
+- ambiguous problem
+- information architecture
+- workflow design
+
+This is almost a Factorial case study.
+
+
+## 2. Data Mapping
+
+Why:
+
+- AI/platform thinking
+- guided workflow
+- reducing complexity
+- business process transformation
+
+
+## 3. Design System
+
+Why:
+
+- directly matches:
+  - system ownership
+  - scalability
+  - governance
+
+
+## 4. TR.ENERGY
+
+Why:
+
+- demonstrates:
+  - customer-facing product
+  - mobile experience
+  - financial workflow
+
+
+## Comparison with other top roles
+
+| Role | Match |
+|-|-:|
+| Factorial Senior/Staff | 9/10 |
+| JetBrains Air | 9/10 |
+| Revolut Platform | 9/10 |
+| Murphy AI | 8.8/10 |
+| Factorial Platform Domain | 8.8/10 |
+| Spendesk | 8.7/10 |
+| N26 Grow & Engage | 8.5/10 |
+| Fever | 8.3/10 |
+| Super | 8/10 |
+| AirHelp | 7.5/10 |
+
+
+## Assessment
+
+| Area | Match |
+|---|---:|
+| Complex workflows | **10/10** |
+| Systems thinking | **10/10** |
+| Information architecture | **10/10** |
+| Design systems | **10/10** |
+| Enterprise software | **9/10** |
+| Platform thinking | **10/10** |
+| Technical collaboration | **9/10** |
+| Product ownership | **9/10** |
+| Ambiguity handling | **10/10** |
+| AI-assisted workflows | **8.5/10** |
+| Agentic AI experience | **7/10** |
+| Business impact mindset | **8/10** |
+| Research | **7/10** |
+| Data-driven design | **7.5/10** |
+| Mobile experience | **8/10** |
+| Consumer experience | **7.5/10** |
+| Leadership | **7.5–8/10** |
+| Mentoring | **7/10** |
+| English | **8/10** |
+| Location fit | **10/10** |
+| Salary potential | **9/10** |
+| Career growth | **10/10** |
+
+
+## Decision
+
+- **Apply:** YES — high priority
+- **Priority:** Tier A
+- **Application order:** Immediately after JetBrains and Revolut
+- **CV tailoring:** Yes
+- **Portfolio tailoring:** Definitely yes
+
+## Main message to Factorial
+
+> Product Designer specialising in complex systems, enterprise workflows, and design systems. I turn ambiguous technical problems into clear, scalable experiences by combining systems thinking, strong interaction design, and close collaboration with engineering.
+
+## Biggest selling points
+
+1. Complex workflow expertise
+2. Enterprise product experience
+3. Design system experience
+4. Technical mindset
+5. AI-assisted development workflow
+
+## Biggest risks
+
+1. Staff-level expectations
+2. Lack of shipped agentic AI products
+3. Limited evidence of business metrics ownership
+
+## Final verdict
+
+**One of the best vacancies found so far. Apply.**
+
+This role is probably closer to my actual profile than many "Senior Product Designer" roles because it values exactly the things that differentiate me:
+- complexity,
+- systems,
+- architecture,
+- technical depth,
+- turning chaos into clarity.
+
+---
+
+# Factorial comparison
+
+## Factorial #12 — Senior Product Designer — Platform Domain
+
+**Location:** Barcelona  
+**Work model:** On-site  
+**Salary:** €65K–€81K/year  
+**Level:** Senior Product Designer  
+**Focus:** Platform / Integrations / AI Agent / Technical workflows
+
+---
+
+## Factorial #13 — Senior/Staff Product Designer
+
+**Location:** Barcelona  
+**Work model:** On-site  
+**Salary:** €68K–€107K/year  
+**Level:** Senior / Staff Product Designer  
+**Focus:** Product strategy / AI-first product thinking / system ownership
+
+---
+
+# Quick comparison
+
+| Area | Platform Domain | Senior/Staff |
+|-|-|-|
+| Seniority | Senior | Senior → Staff |
+| Scope | Specific product area | Large product problem space |
+| Main focus | Integrations + AI Agent UX | Product direction + system ownership |
+| Users | HR, finance, IT teams using integrations | Broad Factorial ecosystem |
+| Main challenge | Designing new technical workflows | Defining how AI-first software works |
+| Design maturity expected | Strong individual contributor | Strategic designer / leader |
+| AI expectations | High | Very high |
+| Design system | Push forward | Own and influence |
+| Business ownership | Medium | High |
+| Mentoring | Nice | Expected |
+| Strategy | Contribute | Drive |
+
+---
+
+# Match with my profile
+
+## Complex workflows
+
+### Platform Domain
+★★★★★ 10/10
+
+Very strong match.
+
+Examples:
+- Integrations
+- Marketplace
+- Configuration flows
+- AI-powered workflows
+
+Directly comparable to:
+
+- Data Mapping
+- MSA Workspace
+- Platforma architecture
+
+---
+
+### Senior/Staff
+★★★★★ 10/10
+
+Also excellent.
+
+Focus:
+- entire product ecosystem
+- dependencies
+- systems thinking
+- ambiguous problems
+
+This is actually where my strongest skills are.
+
+Winner:
+**Tie**
+
+---
+
+# Design systems
+
+## Platform Domain
+
+Match:
+★★★★★ 10/10
+
+The role mentions:
+
+- pushing design system forward
+- component patterns
+- scalability
+
+Very aligned with:
+
+- PLBlockHeader
+- reusable architecture
+- Figma components
+- documentation
+
+---
+
+## Senior/Staff
+
+Match:
+★★★★★ 10/10
+
+Higher expectation:
+
+Not only contribute, but:
+
+- define patterns
+- influence teams
+- raise quality
+
+Winner:
+**Senior/Staff slightly**
+
+Reason:
+It values design system thinking at organisational level.
+
+---
+
+# AI experience
+
+## Platform Domain
+
+Match:
+★★★★☆ 8.5/10
+
+Needs:
+
+- AI Agent UX
+- integrations
+- technical workflows
+
+My advantage:
+
+- AI-assisted development
+- understanding AI workflows
+- technical background
+
+Gap:
+
+- no shipped AI agent product
+
+---
+
+## Senior/Staff
+
+Match:
+★★★★☆ 8/10
+
+Higher expectations:
+
+They explicitly want:
+
+- agentic AI fluency
+- agents
+- tools
+- context
+- evals
+- building own agents
+
+This is the bigger challenge.
+
+Winner:
+**Platform Domain**
+
+---
+
+# Product strategy
+
+## Platform Domain
+
+Match:
+★★★★☆ 8/10
+
+Expected:
+
+- solve problems
+- collaborate
+- make decisions
+
+---
+
+## Senior/Staff
+
+Match:
+★★★★☆ 7.5–8/10
+
+Expected:
+
+- define direction
+- influence leadership
+- make strategic calls
+
+This is where the gap appears.
+
+My experience:
+- strong product ownership
+- weaker organisational strategy
+
+Winner:
+**Platform Domain**
+
+---
+
+# Leadership expectations
+
+## Platform Domain
+
+Expected:
+
+- independent senior designer
+- strong collaboration
+
+Match:
+★★★★☆ 8.5/10
+
+---
+
+## Senior/Staff
+
+Expected:
+
+- mentor designers
+- influence without authority
+- lead initiatives
+
+Match:
+★★★☆☆ 7–8/10
+
+Winner:
+**Platform Domain**
+
+---
+
+# Portfolio fit
+
+## Platform Domain
+
+Best cases:
+
+### 1. MSA Workspace
+Perfect.
+
+Shows:
+- technical complexity
+- workflows
+- IA
+- scientific users
+
+### 2. Data Mapping
+Perfect.
+
+Shows:
+- configuration
+- systems
+- guided workflows
+
+### 3. Design System
+Perfect.
+
+---
+
+## Senior/Staff
+
+Best cases:
+
+Same projects, but story must change.
+
+Less:
+> "I designed this workflow"
+
+More:
+> "I identified a product/system problem and shaped the direction."
+
+Need stronger storytelling around:
+- decisions
+- trade-offs
+- business impact
+
+Winner:
+**Platform Domain**
+
+---
+
+# Risk assessment
+
+| Risk | Platform Domain | Senior/Staff |
+|-|-|-|
+| Too senior for role | Low | Medium |
+| Not enough AI experience | Medium | High |
+| Not enough leadership | Low | Medium |
+| Enterprise experience gap | Low | Low |
+| Portfolio mismatch | Low | Medium |
+| Competition | High | Very high |
+
+---
+
+# Salary comparison
+
+| Role | Range |
+|-|-:|
+| Platform Domain | €65K–€81K |
+| Senior/Staff | €68K–€107K |
+
+The Senior/Staff role has much better upside.
+
+However:
+
+- reaching €100K+ likely requires Staff-level performance
+- competition will probably include designers from larger companies
+
+---
+
+# Which one should I apply to?
+
+## Recommendation: Apply to BOTH
+
+They are different bets.
+
+---
+
+## If I choose only one:
+
+### My recommendation:
+🥇 **Factorial — Senior/Staff Product Designer**
+
+Why:
+
+- Better long-term career positioning
+- Salary ceiling is much higher
+- Matches my "complex systems + AI + enterprise" narrative
+- Could accelerate career growth
+
+BUT:
+
+I would approach it as a **strong Senior candidate**, not pretend to be a classic Staff designer.
+
+---
+
+## Safer option:
+
+🥈 **Factorial — Senior Product Designer — Platform Domain**
+
+Why:
+
+- Almost perfect skill match
+- Lower seniority risk
+- Easier portfolio alignment
+- Higher probability of passing interviews
+
+---
+
+# Final ranking
+
+## Probability of getting interview
+
+1. Factorial Platform Domain ⭐⭐⭐⭐⭐
+2. Factorial Senior/Staff ⭐⭐⭐⭐☆
+
+## Career upside
+
+1. Factorial Senior/Staff ⭐⭐⭐⭐⭐
+2. Factorial Platform Domain ⭐⭐⭐⭐☆
+
+## Portfolio match
+
+1. Factorial Platform Domain ⭐⭐⭐⭐⭐
+2. Factorial Senior/Staff ⭐⭐⭐⭐☆
+
+## Salary potential
+
+1. Factorial Senior/Staff ⭐⭐⭐⭐⭐
+2. Factorial Platform Domain ⭐⭐⭐⭐☆
+
+---
+
+# My decision
+
+I would apply:
+
+1. JetBrains Air
+2. Revolut Platform
+3. Factorial Senior/Staff
+4. Factorial Platform Domain
+
+Both Factorial roles belong in the top tier.
+
+The interesting thing is that **Platform Domain is probably the better "fit today", while Senior/Staff is probably the better "next career step".**
