@@ -53,7 +53,6 @@ export default function CapabilityGroup({
             className="flex-col"
             level="article"
             onValueChange={onArticleValueChange}
-            style={{ gap: 0 }}
             tabs={articles}
             value={articleValue}
           />
