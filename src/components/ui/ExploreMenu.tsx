@@ -120,7 +120,10 @@ const ExploreMenu = forwardRef<HTMLDivElement, ExploreMenuProps>(
             <CapabilityGroup
               articleValue={articleValue}
               articles={capability.articles}
-              capability={capability}
+              capability={{
+                ...capability,
+                count: capability.articles.length,
+              }}
               capabilityValue={capabilityValue}
               expanded={
                 capability.id === capabilityValue &&
@@ -146,7 +149,10 @@ const ExploreMenu = forwardRef<HTMLDivElement, ExploreMenuProps>(
               className="w-max flex-nowrap"
               level="capability"
               onValueChange={onCapabilityValueChange}
-              tabs={capabilities}
+              tabs={capabilities.map((capability) => ({
+                ...capability,
+                count: capability.articles.length,
+              }))}
               value={capabilityValue}
             />
           </div>

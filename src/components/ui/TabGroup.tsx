@@ -4,12 +4,14 @@ import Link from "next/link";
 import { spacing } from "@/styles";
 
 import TabButton, {
+  TabButtonContent,
   getTabButtonClassName,
   getTabButtonStyle,
   type TabButtonLevel,
 } from "./TabButton";
 
 export interface TabGroupTab {
+  count?: number;
   id: string;
   label: string;
   href?: string;
@@ -49,6 +51,11 @@ export default function TabGroup({
         if (tab.href) {
           return (
             <Link
+              aria-label={
+                tab.count !== undefined
+                  ? `${tab.label}, ${tab.count} ${tab.count === 1 ? "article" : "articles"}`
+                  : undefined
+              }
               aria-current={selected ? "page" : undefined}
               aria-selected={selected}
               className={getTabButtonClassName("no-underline")}
@@ -62,13 +69,16 @@ export default function TabGroup({
               scroll={false}
               style={getTabButtonStyle(selected, level)}
             >
-              {tab.label}
+              <TabButtonContent count={tab.count}>
+                {tab.label}
+              </TabButtonContent>
             </Link>
           );
         }
 
         return (
           <TabButton
+            count={tab.count}
             data-tab-id={tab.id}
             key={tab.id}
             level={level}

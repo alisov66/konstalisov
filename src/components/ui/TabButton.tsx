@@ -1,4 +1,8 @@
-import type { ButtonHTMLAttributes, CSSProperties } from "react";
+import type {
+  ButtonHTMLAttributes,
+  CSSProperties,
+  ReactNode,
+} from "react";
 
 import { colors, radius, spacing, typography } from "@/styles";
 
@@ -7,6 +11,7 @@ type TabButtonStyle = CSSProperties &
 
 export interface TabButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
+  count?: number;
   level?: TabButtonLevel;
   selected?: boolean;
 }
@@ -46,7 +51,7 @@ export function getTabButtonStyle(
 
 export function getTabButtonClassName(className?: string) {
   return [
-    "inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap",
+    "inline-flex shrink-0 cursor-pointer items-center justify-center gap-[var(--base-2)] whitespace-nowrap",
     "rounded-[var(--tab-button-radius)] bg-[var(--tab-button-bg)] px-[var(--tab-button-padding-x)] py-[var(--tab-button-padding-y)]",
     "text-[length:var(--tab-button-font-size)] font-[var(--tab-button-font-weight)] leading-[var(--tab-button-line-height)] text-[var(--tab-button-text)]",
     "transition-[background-color,color,box-shadow] duration-[160ms] ease-out hover:bg-[var(--tab-button-hover-bg)] hover:shadow-[var(--tab-button-hover-shadow)] active:shadow-[var(--tab-button-active-shadow)] focus-visible:shadow-[var(--tab-button-focus-ring)] focus-visible:outline-none",
@@ -57,19 +62,41 @@ export function getTabButtonClassName(className?: string) {
     .join(" ");
 }
 
+export function TabButtonContent({
+  children,
+  count,
+}: {
+  children: ReactNode;
+  count?: number;
+}) {
+  return (
+    <>
+      <span>{children}</span>
+      {count !== undefined ? <span aria-hidden="true">({count})</span> : null}
+    </>
+  );
+}
+
 export default function TabButton({
   children,
   className,
+  count,
   level = "capability",
   selected = false,
   type = "button",
   ...props
 }: TabButtonProps) {
   const style = getTabButtonStyle(selected, level);
+  const ariaLabel =
+    props["aria-label"] ??
+    (typeof children === "string" && count !== undefined
+      ? `${children}, ${count} ${count === 1 ? "article" : "articles"}`
+      : undefined);
 
   return (
     <button
       {...props}
+      aria-label={ariaLabel}
       aria-selected={selected}
       className={getTabButtonClassName(className)}
       data-level={level}
@@ -78,7 +105,7 @@ export default function TabButton({
       style={{ ...style, ...props.style }}
       type={type}
     >
-      {children}
+      <TabButtonContent count={count}>{children}</TabButtonContent>
     </button>
   );
 }
