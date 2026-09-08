@@ -310,7 +310,7 @@ export default function CvPage() {
                 style={typeStyle(typography.body.m)}
               >
                 <p>Bilbao, Spain</p>
-                <p>Updated: Aug 2026</p>
+                <p>Updated: Sep 2026</p>
               </div>
             </div>
           </div>
