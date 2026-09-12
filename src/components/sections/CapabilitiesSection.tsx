@@ -1875,8 +1875,8 @@ function MassPayoutArticle() {
         <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           src="/capabilities/mass-payout-1.png"
-          alt="Crypto Office mass payout overview"
-          className="aspect-[4096/1255]"
+          alt="Mass payout currency selection, saved recipient lists, and Google Spreadsheet import"
+          className="aspect-[2518/1784]"
         />
         <Gap size={spacing.article.mediaGap} />
         <Gap size={spacing.article.sectionGap} />
