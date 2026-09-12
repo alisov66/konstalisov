@@ -4606,391 +4606,6 @@ This role is probably closer to my actual profile than many "Senior Product Desi
 - technical depth,
 - turning chaos into clarity.
 
----
-
-# Factorial comparison
-
-## Factorial #12 — Senior Product Designer — Platform Domain
-
-**Location:** Barcelona  
-**Work model:** On-site  
-**Salary:** €65K–€81K/year  
-**Level:** Senior Product Designer  
-**Focus:** Platform / Integrations / AI Agent / Technical workflows
-
----
-
-## Factorial #13 — Senior/Staff Product Designer
-
-**Location:** Barcelona  
-**Work model:** On-site  
-**Salary:** €68K–€107K/year  
-**Level:** Senior / Staff Product Designer  
-**Focus:** Product strategy / AI-first product thinking / system ownership
-
----
-
-# Quick comparison
-
-| Area | Platform Domain | Senior/Staff |
-|-|-|-|
-| Seniority | Senior | Senior → Staff |
-| Scope | Specific product area | Large product problem space |
-| Main focus | Integrations + AI Agent UX | Product direction + system ownership |
-| Users | HR, finance, IT teams using integrations | Broad Factorial ecosystem |
-| Main challenge | Designing new technical workflows | Defining how AI-first software works |
-| Design maturity expected | Strong individual contributor | Strategic designer / leader |
-| AI expectations | High | Very high |
-| Design system | Push forward | Own and influence |
-| Business ownership | Medium | High |
-| Mentoring | Nice | Expected |
-| Strategy | Contribute | Drive |
-
----
-
-# Match with my profile
-
-## Complex workflows
-
-### Platform Domain
-★★★★★ 10/10
-
-Very strong match.
-
-Examples:
-- Integrations
-- Marketplace
-- Configuration flows
-- AI-powered workflows
-
-Directly comparable to:
-
-- Data Mapping
-- MSA Workspace
-- Platforma architecture
-
----
-
-### Senior/Staff
-★★★★★ 10/10
-
-Also excellent.
-
-Focus:
-- entire product ecosystem
-- dependencies
-- systems thinking
-- ambiguous problems
-
-This is actually where my strongest skills are.
-
-Winner:
-**Tie**
-
----
-
-# Design systems
-
-## Platform Domain
-
-Match:
-★★★★★ 10/10
-
-The role mentions:
-
-- pushing design system forward
-- component patterns
-- scalability
-
-Very aligned with:
-
-- PLBlockHeader
-- reusable architecture
-- Figma components
-- documentation
-
----
-
-## Senior/Staff
-
-Match:
-★★★★★ 10/10
-
-Higher expectation:
-
-Not only contribute, but:
-
-- define patterns
-- influence teams
-- raise quality
-
-Winner:
-**Senior/Staff slightly**
-
-Reason:
-It values design system thinking at organisational level.
-
----
-
-# AI experience
-
-## Platform Domain
-
-Match:
-★★★★☆ 8.5/10
-
-Needs:
-
-- AI Agent UX
-- integrations
-- technical workflows
-
-My advantage:
-
-- AI-assisted development
-- understanding AI workflows
-- technical background
-
-Gap:
-
-- no shipped AI agent product
-
----
-
-## Senior/Staff
-
-Match:
-★★★★☆ 8/10
-
-Higher expectations:
-
-They explicitly want:
-
-- agentic AI fluency
-- agents
-- tools
-- context
-- evals
-- building own agents
-
-This is the bigger challenge.
-
-Winner:
-**Platform Domain**
-
----
-
-# Product strategy
-
-## Platform Domain
-
-Match:
-★★★★☆ 8/10
-
-Expected:
-
-- solve problems
-- collaborate
-- make decisions
-
----
-
-## Senior/Staff
-
-Match:
-★★★★☆ 7.5–8/10
-
-Expected:
-
-- define direction
-- influence leadership
-- make strategic calls
-
-This is where the gap appears.
-
-My experience:
-- strong product ownership
-- weaker organisational strategy
-
-Winner:
-**Platform Domain**
-
----
-
-# Leadership expectations
-
-## Platform Domain
-
-Expected:
-
-- independent senior designer
-- strong collaboration
-
-Match:
-★★★★☆ 8.5/10
-
----
-
-## Senior/Staff
-
-Expected:
-
-- mentor designers
-- influence without authority
-- lead initiatives
-
-Match:
-★★★☆☆ 7–8/10
-
-Winner:
-**Platform Domain**
-
----
-
-# Portfolio fit
-
-## Platform Domain
-
-Best cases:
-
-### 1. MSA Workspace
-Perfect.
-
-Shows:
-- technical complexity
-- workflows
-- IA
-- scientific users
-
-### 2. Data Mapping
-Perfect.
-
-Shows:
-- configuration
-- systems
-- guided workflows
-
-### 3. Design System
-Perfect.
-
----
-
-## Senior/Staff
-
-Best cases:
-
-Same projects, but story must change.
-
-Less:
-> "I designed this workflow"
-
-More:
-> "I identified a product/system problem and shaped the direction."
-
-Need stronger storytelling around:
-- decisions
-- trade-offs
-- business impact
-
-Winner:
-**Platform Domain**
-
----
-
-# Risk assessment
-
-| Risk | Platform Domain | Senior/Staff |
-|-|-|-|
-| Too senior for role | Low | Medium |
-| Not enough AI experience | Medium | High |
-| Not enough leadership | Low | Medium |
-| Enterprise experience gap | Low | Low |
-| Portfolio mismatch | Low | Medium |
-| Competition | High | Very high |
-
----
-
-# Salary comparison
-
-| Role | Range |
-|-|-:|
-| Platform Domain | €65K–€81K |
-| Senior/Staff | €68K–€107K |
-
-The Senior/Staff role has much better upside.
-
-However:
-
-- reaching €100K+ likely requires Staff-level performance
-- competition will probably include designers from larger companies
-
----
-
-# Which one should I apply to?
-
-## Recommendation: Apply to BOTH
-
-They are different bets.
-
----
-
-## If I choose only one:
-
-### My recommendation:
-🥇 **Factorial — Senior/Staff Product Designer**
-
-Why:
-
-- Better long-term career positioning
-- Salary ceiling is much higher
-- Matches my "complex systems + AI + enterprise" narrative
-- Could accelerate career growth
-
-BUT:
-
-I would approach it as a **strong Senior candidate**, not pretend to be a classic Staff designer.
-
----
-
-## Safer option:
-
-🥈 **Factorial — Senior Product Designer — Platform Domain**
-
-Why:
-
-- Almost perfect skill match
-- Lower seniority risk
-- Easier portfolio alignment
-- Higher probability of passing interviews
-
----
-
-# Final ranking
-
-## Probability of getting interview
-
-1. Factorial Platform Domain ⭐⭐⭐⭐⭐
-2. Factorial Senior/Staff ⭐⭐⭐⭐☆
-
-## Career upside
-
-1. Factorial Senior/Staff ⭐⭐⭐⭐⭐
-2. Factorial Platform Domain ⭐⭐⭐⭐☆
-
-## Portfolio match
-
-1. Factorial Platform Domain ⭐⭐⭐⭐⭐
-2. Factorial Senior/Staff ⭐⭐⭐⭐☆
-
-## Salary potential
-
-1. Factorial Senior/Staff ⭐⭐⭐⭐⭐
-2. Factorial Platform Domain ⭐⭐⭐⭐☆
-
----
-
-# My decision
-
 I would apply:
 
 1. JetBrains Air
@@ -5001,3 +4616,391 @@ I would apply:
 Both Factorial roles belong in the top tier.
 
 The interesting thing is that **Platform Domain is probably the better "fit today", while Senior/Staff is probably the better "next career step".**
+
+---
+
+# 22. Lodgify — Product Designer
+
+- **Overall match:** **9.2/10**
+- **Skill match:** **9.5/10**
+- **Domain match:** **8.5/10**
+- **Strategic career fit:** **9.5/10**
+- **Location fit:** **10/10**
+- **Priority:** **Tier A+**
+- **Recommendation:** **Apply immediately**
+- **Role type:** Product Designer — B2B SaaS / Platform / Design System
+- **Location:** Barcelona
+- **Work model:** Hybrid-friendly / remote flexibility
+- **Salary:** Not disclosed
+- **English:** Required
+- **Spanish:** They provide classes (not required)
+
+---
+
+# Executive summary
+
+This is one of the strongest matches I’ve seen for your profile.
+
+Compared with many recent vacancies, Lodgify almost reads like a description of your current positioning:
+
+> "Designing clarity in complex systems."
+
+They need:
+
+- SaaS product experience ✅
+- complex user problems ✅
+- workflows ✅
+- design systems ✅
+- Figma expertise ✅
+- AI-assisted design workflows ✅
+- PM + Engineering collaboration ✅
+- end-to-end ownership ✅
+
+The only real gap is that your domain is not vacation rental SaaS, but that is irrelevant.
+
+This is exactly the type of company you should target.
+
+---
+
+# Location — perfect
+
+They are:
+
+> Headquartered in Barcelona
+
+and offer:
+
+> Remote Flexibility: work from home any day that works for you.
+
+For your situation:
+
+✅ Spain-based  
+✅ Barcelona option  
+✅ No relocation pressure  
+✅ International environment
+
+Excellent.
+
+---
+
+# Product/domain fit
+
+This is B2B SaaS.
+
+Your strongest area.
+
+Lodgify users:
+
+- property owners
+- managers
+- businesses
+
+Your users:
+
+- researchers
+- scientists
+- bioinformaticians
+
+Different domain, same design challenge:
+
+> helping professionals complete complex tasks through software.
+
+Very transferable.
+
+---
+
+# Direct match with your MiLabs experience
+
+## "Translate complex user requirements into simple interfaces"
+
+This is basically your MSA Workspace and Data Mapping stories.
+
+Example:
+
+Lodgify:
+
+> complex rental management workflows → simple experience
+
+Platforma:
+
+> complex biological analysis workflows → simple experience
+
+Very similar narrative.
+
+---
+
+# Requirements mapping
+
+## 1. SaaS product experience
+
+Requirement:
+
+> 3+ years designing SaaS digital products
+
+Your match:
+
+✅ Platforma
+
+It is:
+
+- professional SaaS
+- complex workflows
+- desktop application
+- enterprise users
+
+Strong.
+
+---
+
+## 2. Complex user problems
+
+Requirement:
+
+> translate complex user problems into simple solutions
+
+Your strongest competency.
+
+Examples:
+
+### Data Mapping
+
+Problem:
+
+Users struggled with:
+- what metadata to map
+- where to find variables
+- what targets accept what values
+
+Solution:
+
+- grouping
+- suggestions
+- bidirectional guidance
+- clearer mental model
+
+Perfect story.
+
+---
+
+## 3. Design systems
+
+Requirement:
+
+> evolve the Design System
+
+Very strong.
+
+You have:
+
+- Figma variables
+- tokens
+- component architecture
+- documentation
+- reusable patterns
+
+This vacancy probably values this more than most.
+
+---
+
+## 4. AI tools
+
+Requirement:
+
+> practical experience using AI-powered tools
+
+Another strong point.
+
+Your recent work:
+
+- Codex
+- AI-assisted development
+- Next.js portfolio
+- AI workflow experimentation
+
+This should absolutely appear in your application.
+
+---
+
+## 5. Research and analytics
+
+Requirement:
+
+> qualitative research, analytics, experimentation
+
+This is your weaker area.
+
+Not a blocker.
+
+Your framing:
+
+Don't say:
+
+"I haven't done formal research."
+
+Say:
+
+> "I regularly combine user feedback, stakeholder interviews, support insights, and product context to identify friction points and validate solutions."
+
+That is truthful.
+
+---
+
+# Portfolio fit
+
+This company is almost ideal for your portfolio.
+
+I would present:
+
+## 1. MSA Workspace ⭐⭐⭐⭐⭐
+
+This should be the flagship.
+
+Why:
+
+- complex SaaS workflow
+- data-heavy interface
+- advanced users
+- design system thinking
+
+Very relevant.
+
+---
+
+## 2. Data Mapping ⭐⭐⭐⭐⭐
+
+Probably your strongest case for Lodgify.
+
+Because it demonstrates:
+
+- user research
+- workflow redesign
+- reducing complexity
+- measurable user friction
+
+---
+
+## 3. Design System ⭐⭐⭐⭐⭐
+
+Definitely include.
+
+They explicitly mention:
+
+> scalable solutions
+
+and:
+
+> design system.
+
+---
+
+## 4. TR.ENERGY ⭐⭐⭐
+
+Useful but less important here.
+
+Keep it as proof of:
+- mobile
+- financial UX
+- different product context
+
+---
+
+# Compared with previous applications
+
+Current ranking:
+
+| Company | Match |
+|-|-:|
+| JetBrains AIR | 9.5 |
+| Revolut Platform | 9.5 |
+| Factorial Platform | 9.3 |
+| **Lodgify** | **9.2** |
+| Nexthink | 9.1 |
+| Joko | 8.8 |
+| Alan | 8.5 |
+| Rover | 8.4 |
+| Pennylane | 7.5 |
+
+Lodgify is probably closer to you than Joko because it is:
+
+- B2B
+- SaaS
+- workflows
+- systems
+- design systems
+
+---
+
+# Potential interview questions
+
+I would prepare:
+
+## "Why Lodgify?"
+
+Answer direction:
+
+> "My background is designing complex software where users need powerful capabilities without unnecessary complexity. Lodgify has a similar challenge: helping hosts manage complex operations through an intuitive platform."
+
+---
+
+## "Tell us about a complex workflow you simplified."
+
+Use:
+
+Data Mapping.
+
+This is almost tailor-made.
+
+---
+
+## "How do you work with engineers?"
+
+Use:
+
+- sole designer experience
+- Figma documentation
+- design tokens
+- implementation discussions
+
+---
+
+# Salary expectation
+
+No salary shown.
+
+Given Barcelona SaaS scale-up:
+
+Realistic range:
+
+- Product Designer: €55k–75k gross
+- Senior Product Designer: €70k–90k gross
+
+You should not undersell yourself.
+
+Given your target:
+
+- €70k+ would be reasonable
+- €80k would be a good outcome
+
+---
+
+# Final decision
+
+## Apply?
+✅ **Absolutely**
+
+## Priority?
+🔥 **Top priority**
+
+I would actually apply before Joko.
+
+Reason:
+
+Joko is an interesting stretch.
+
+Lodgify is a direct hit.
+
+Your application should emphasize:
+
+> Product Designer specializing in complex SaaS workflows, design systems, and AI-assisted product development.
+
+This vacancy is almost exactly the market positioning we have been building for you.
