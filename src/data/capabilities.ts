@@ -70,10 +70,17 @@ export const capabilities = [
     articles: [
       {
         id: "tron-financial-operations",
-        label: "Financial workflows",
+        label: "TRON operations",
         title: "Simplifying complex financial operations for blockchain users",
         description:
           "Designing mobile financial experiences that help blockchain users manage transactions, accounts, and complex financial workflows with confidence.",
+      },
+      {
+        id: "mass-payout",
+        label: "Mass payout",
+        title: "Designing reliable mass payouts for crypto operations",
+        description:
+          "Designing a mobile-first mass payout workflow with reusable recipient lists, multiple source wallets, actionable validation, and recovery without losing progress.",
       },
     ],
   },

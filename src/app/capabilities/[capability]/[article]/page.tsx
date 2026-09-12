@@ -42,7 +42,10 @@ export async function generateMetadata({
     title: `${selectedArticle.title} | Konstantin Alisov`,
     description: selectedArticle.description,
     path,
-    image: `/og${path}.png`,
+    image:
+      selectedArticle.id === "mass-payout"
+        ? "/og/capabilities/mobile-experiences.png"
+        : `/og${path}.png`,
   });
 }
 
