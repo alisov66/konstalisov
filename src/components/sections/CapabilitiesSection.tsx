@@ -1875,7 +1875,7 @@ function MassPayoutArticle() {
         <Gap size={spacing.article.mediaGap} />
         <ArticleImage
           src="/capabilities/mass-payout-1.png"
-          alt="Mass payout currency selection, saved recipient lists, and Google Spreadsheet import"
+          alt="Mass payout preparation, transfer confirmation, and completed payout in transfer history"
           className="aspect-[2518/1784]"
         />
         <Gap size={spacing.article.mediaGap} />
