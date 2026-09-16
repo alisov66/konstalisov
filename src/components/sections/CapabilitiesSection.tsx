@@ -2628,6 +2628,347 @@ function DesignToProductionArticle() {
   );
 }
 
+function PortfolioDesignSystemArticle() {
+  return (
+    <ArticleShell>
+      <H1>Building a scalable design system from scratch</H1>
+      <Gap size={spacing.article.h1Gap} />
+      <Section title="Context">
+        <CopyBlock>
+          <Paragraph>
+            When I started designing this portfolio, it was still relatively
+            small.
+          </Paragraph>
+          <Paragraph>
+            That made it tempting to design individual pages first and formalize
+            the system later.
+          </Paragraph>
+          <Paragraph>
+            Instead, I treated the website as a product from the beginning and
+            established shared foundations before the number of pages, articles,
+            and interaction patterns started growing.
+          </Paragraph>
+          <Paragraph>
+            The goal was not to create a large design system for its own sake.
+            It was to build the smallest system the product actually needed,
+            while making sure it could expand without becoming inconsistent or
+            requiring structural rework.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          src="/capabilities/portfolio-design-system-1.png"
+          alt="Portfolio design foundations, typography, color variables, and reusable components in Figma"
+          className="aspect-[4096/3010]"
+        />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.sectionGap} />
+      </Section>
+      <Section title="Challenge">
+        <CopyBlock>
+          <Paragraph>
+            A portfolio seems simple at first: a few pages, navigation, text,
+            images, and calls to action.
+          </Paragraph>
+          <Paragraph>But the product quickly grew to include:</Paragraph>
+          <List>
+            <li>multiple page and content types;</li>
+            <li>long-form case studies;</li>
+            <li>nested article navigation;</li>
+            <li>responsive layouts;</li>
+            <li>reusable media and interaction patterns;</li>
+            <li>and, later, multiple articles within the same capability.</li>
+          </List>
+          <Paragraph>
+            Without a shared system, every new page could introduce slightly
+            different spacing, typography, responsive behavior, or component
+            logic.
+          </Paragraph>
+          <Paragraph>
+            The challenge was to create enough structure to keep the product
+            coherent while avoiding a system that was more complicated than the
+            website itself.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.sectionGap} />
+      </Section>
+      <Section title="Design principles">
+        <Subsection title="Start with foundations, not pages">
+          <CopyBlock>
+            <Paragraph>
+              Before treating individual screens as finished designs, I defined
+              the foundations that would be reused throughout the product.
+            </Paragraph>
+            <Paragraph>These included:</Paragraph>
+            <List>
+              <li>typography hierarchy;</li>
+              <li>color roles;</li>
+              <li>spacing;</li>
+              <li>layout behavior;</li>
+              <li>responsive rules;</li>
+              <li>and reusable visual patterns.</li>
+            </List>
+            <Paragraph>
+              This meant that individual pages were built from shared decisions
+              rather than recreating those decisions locally.
+            </Paragraph>
+            <Paragraph>
+              As the portfolio expanded, the same foundations could support new
+              content without changing the visual language.
+            </Paragraph>
+          </CopyBlock>
+          <Gap size={spacing.article.subsectionGap} />
+        </Subsection>
+        <Subsection title="Turn repeated decisions into reusable components">
+          <CopyBlock>
+            <Paragraph>
+              Not every repeated object needed to become a component
+              immediately.
+            </Paragraph>
+            <Paragraph>
+              I created reusable components when a pattern had:
+            </Paragraph>
+            <List>
+              <li>a clear recurring purpose;</li>
+              <li>multiple instances;</li>
+              <li>meaningful states or variants;</li>
+              <li>
+                or behavior that needed to stay consistent across the product.
+              </li>
+            </List>
+            <Paragraph>
+              This included patterns such as navigation, buttons, capability
+              tabs, article structures, media containers, and shared content
+              elements.
+            </Paragraph>
+            <Paragraph>
+              The goal was not maximum componentization. It was to remove
+              unnecessary one-off decisions.
+            </Paragraph>
+          </CopyBlock>
+          <Gap size={spacing.article.mediaGap} />
+          <ArticleImage
+            src="/capabilities/portfolio-design-system-2.png"
+            alt="Reusable portfolio components and their instances across page layouts"
+            className="aspect-[3452/2864]"
+          />
+          <Gap size={spacing.article.mediaGap} />
+          <Gap size={spacing.article.subsectionGap} />
+        </Subsection>
+        <Subsection title="Keep the system lean">
+          <CopyBlock>
+            <Paragraph>
+              A scalable design system does not need to predict every future
+              requirement.
+            </Paragraph>
+            <Paragraph>I deliberately avoided creating:</Paragraph>
+            <List>
+              <li>variants with no current use;</li>
+              <li>components for unique content;</li>
+              <li>
+                abstract structures only because they might become useful later;
+              </li>
+              <li>
+                or additional layers of hierarchy that did not solve an existing
+                problem.
+              </li>
+            </List>
+            <Paragraph>
+              New patterns were added when the product demonstrated a real need
+              for them.
+            </Paragraph>
+            <Paragraph>
+              This kept the system understandable while leaving clear places for
+              future extension.
+            </Paragraph>
+          </CopyBlock>
+          <Gap size={spacing.article.h3Gap} />
+          <p style={typeStyle(typography.article.bodyStrong)}>
+            Scalable does not mean large. It means the system can grow without
+            becoming inconsistent or requiring structural rework.
+          </p>
+          <Gap size={spacing.article.subsectionGap} />
+        </Subsection>
+        <Subsection title="Design responsive behavior as part of the component">
+          <CopyBlock>
+            <Paragraph>
+              Responsive design was not treated as a separate mobile version of
+              the website.
+            </Paragraph>
+            <Paragraph>
+              Components and layouts were designed with rules for how they
+              should behave as available space changed.
+            </Paragraph>
+            <Paragraph>Depending on the pattern, this could mean:</Paragraph>
+            <List>
+              <li>changing layout direction;</li>
+              <li>reducing or rebalancing spacing;</li>
+              <li>adapting typography;</li>
+              <li>restructuring navigation;</li>
+              <li>or changing how content and media are arranged.</li>
+            </List>
+            <Paragraph>
+              This allowed the same underlying system to support different
+              screen sizes rather than maintaining parallel desktop and mobile
+              designs.
+            </Paragraph>
+          </CopyBlock>
+          <Gap size={spacing.article.mediaGap} />
+          <ArticleImage
+            src="/capabilities/portfolio-design-system-3.png"
+            alt="Responsive portfolio navigation and content layouts across screen sizes"
+            className="aspect-[2710/1617]"
+          />
+          <Gap size={spacing.article.mediaGap} />
+          <Gap size={spacing.article.subsectionGap} />
+        </Subsection>
+      </Section>
+      <Section title="Connect Figma and production">
+        <CopyBlock>
+          <Paragraph>
+            A design system only becomes useful when its logic survives
+            implementation.
+          </Paragraph>
+          <Paragraph>
+            Because I also built the portfolio through an AI-assisted
+            development workflow, I could carry the same concepts from Figma
+            into the production codebase.
+          </Paragraph>
+          <Paragraph>The system was reflected in:</Paragraph>
+          <List>
+            <li>reusable interface components;</li>
+            <li>shared styles and tokens;</li>
+            <li>consistent responsive behavior;</li>
+            <li>and common patterns used across pages and articles.</li>
+          </List>
+          <Paragraph>
+            I used ChatGPT and Codex as part of the implementation workflow
+            while remaining responsible for the system structure, design
+            decisions, and final design-to-code consistency.
+          </Paragraph>
+          <Paragraph>
+            The goal was not literal one-to-one duplication between Figma and
+            code. It was to maintain the same underlying rules across both.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          src="/capabilities/portfolio-design-system-4.png"
+          alt="Shared design-system rules connecting Figma components with production code"
+          className="aspect-[2872/2164]"
+        />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.sectionGap} />
+      </Section>
+      <Section title="Design for extension">
+        <CopyBlock>
+          <Paragraph>
+            The strongest test of the system came after the original website was
+            already built.
+          </Paragraph>
+          <Paragraph>The portfolio continued to grow:</Paragraph>
+          <List>
+            <li>capability content expanded;</li>
+            <li>individual articles received their own routes;</li>
+            <li>capabilities gained multiple articles;</li>
+            <li>article-level metadata was introduced;</li>
+            <li>the Explore navigation evolved to support nested content;</li>
+            <li>new case studies were added.</li>
+          </List>
+          <Paragraph>
+            These additions required new content and some new patterns, but they
+            did not require rebuilding the product foundations.
+          </Paragraph>
+          <Paragraph>
+            That was the practical test of scalability: the system could absorb
+            new requirements without losing consistency or forcing a redesign of
+            everything that already existed.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          src="/capabilities/portfolio-design-system-5.png"
+          alt="Explore navigation evolving from capability tabs to nested article navigation"
+          className="aspect-[2128/1644]"
+        />
+        <Gap size={spacing.article.mediaGap} />
+        <Gap size={spacing.article.sectionGap} />
+      </Section>
+      <Section title="What I chose not to systematize">
+        <CopyBlock>
+          <Paragraph>A useful design system also needs boundaries.</Paragraph>
+          <Paragraph>
+            Some elements were intentionally left local when:
+          </Paragraph>
+          <List>
+            <li>they appeared only once;</li>
+            <li>their behavior was tightly coupled to specific content;</li>
+            <li>abstraction would make them harder to work with;</li>
+            <li>or there was no evidence that they would be reused.</li>
+          </List>
+          <Paragraph>
+            This helped avoid turning the design system into an inventory of
+            every object on the website.
+          </Paragraph>
+          <Paragraph>
+            Instead, the system focused on decisions that benefited from
+            consistency.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.sectionGap} />
+      </Section>
+      <Section title="My role">
+        <CopyBlock>
+          <Paragraph>
+            I designed the portfolio and its design system from scratch.
+          </Paragraph>
+          <Paragraph>My ownership included:</Paragraph>
+          <List>
+            <li>defining visual and layout foundations;</li>
+            <li>establishing Figma variables and reusable patterns;</li>
+            <li>designing component architecture and variants;</li>
+            <li>defining responsive behavior;</li>
+            <li>evolving the system as new content requirements appeared;</li>
+            <li>carrying design-system logic into implementation;</li>
+            <li>reviewing design-to-code consistency;</li>
+            <li>and maintaining the system as the live product expanded.</li>
+          </List>
+        </CopyBlock>
+        <Gap size={spacing.article.sectionGap} />
+      </Section>
+      <Section title="Outcome">
+        <CopyBlock>
+          <Paragraph>
+            The resulting system is intentionally small, but complete for the
+            needs of the product today.
+          </Paragraph>
+          <Paragraph>It provides:</Paragraph>
+          <List>
+            <li>consistent foundations across the website;</li>
+            <li>reusable components instead of repeated one-off decisions;</li>
+            <li>shared responsive behavior;</li>
+            <li>a common structure across capability and article pages;</li>
+            <li>clear correspondence between design and implementation;</li>
+            <li>
+              and room for new content and patterns without rebuilding the
+              system.
+            </li>
+          </List>
+          <Paragraph>
+            Most importantly, the portfolio has already grown beyond its initial
+            scope while continuing to use the same underlying foundations.
+          </Paragraph>
+          <Paragraph>
+            The system demonstrates its value not through the number of
+            components it contains, but through its ability to keep the product
+            coherent as it evolves.
+          </Paragraph>
+        </CopyBlock>
+      </Section>
+    </ArticleShell>
+  );
+}
+
 function EmptyArticle({ label }: { label: string }) {
   return (
     <ArticleShell>
@@ -2650,6 +2991,10 @@ function EmptyArticle({ label }: { label: string }) {
 }
 
 function ActiveArticle({ articleId }: { articleId: ArticleId }) {
+  if (articleId === "portfolio-design-system") {
+    return <PortfolioDesignSystemArticle />;
+  }
+
   if (articleId === "mass-payout") {
     return <MassPayoutArticle />;
   }

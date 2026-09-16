@@ -32,6 +32,13 @@ export const capabilities = [
         description:
           "Creating a reusable header system that supports multiple product contexts, interactions, and workflows across Platforma applications.",
       },
+      {
+        id: "portfolio-design-system",
+        label: "Portfolio system",
+        title: "Building a scalable design system from scratch",
+        description:
+          "Designing a lean system of foundations, reusable components, responsive patterns, and shared implementation rules that keeps a growing portfolio consistent across Figma and production.",
+      },
     ],
   },
   {
