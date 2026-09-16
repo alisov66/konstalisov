@@ -27,10 +27,10 @@ export const capabilities = [
     articles: [
       {
         id: "scalable-header-architecture",
-        label: "Application shell",
-        title: "Designing a scalable application shell for complex workflows",
+        label: "Application architecture",
+        title: "Designing a scalable application architecture for complex workflows",
         description:
-          "Creating a reusable header system that supports multiple product contexts, interactions, and workflows across Platforma applications.",
+          "Creating a reusable application structure that supports multiple product contexts, navigation patterns, and complex workflows across Platforma applications.",
       },
       {
         id: "portfolio-design-system",

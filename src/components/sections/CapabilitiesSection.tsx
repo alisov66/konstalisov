@@ -663,7 +663,7 @@ function DesignSystemsArticle() {
 
   return (
     <ArticleShell>
-      <H1>Designing a scalable application shell for complex workflows</H1>
+      <H1>Designing a scalable application architecture for complex workflows</H1>
       <Gap size={spacing.article.h1Gap} />
 
       <Section title="Context">
