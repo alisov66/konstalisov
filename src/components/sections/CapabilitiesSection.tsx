@@ -1942,6 +1942,35 @@ function MassPayoutArticle() {
         </CopyBlock>
         <Gap size={spacing.article.sectionGap} />
       </Section>
+      <Section title="Operational scale">
+        <CopyBlock>
+          <Paragraph>The workflow supported:</Paragraph>
+          <List>
+            <li>
+              <strong style={typeStyle(typography.article.bodyStrong)}>4 ways to prepare recipient data</strong>
+              {" — manual entry, .XLSX, Google Spreadsheet, or a saved list;"}
+            </li>
+            <li>
+              <strong style={typeStyle(typography.article.bodyStrong)}>multiple source wallets</strong>
+              {" within the same payout;"}
+            </li>
+            <li>
+              <strong style={typeStyle(typography.article.bodyStrong)}>2 recovery paths</strong>
+              {" for insufficient balance — top up immediately or save the payout as a draft;"}
+            </li>
+            <li>
+              {"validation for "}
+              <strong style={typeStyle(typography.article.bodyStrong)}>4 recipient-data conditions</strong>
+              {" — invalid address, invalid amount, network mismatch, and empty rows;"}
+            </li>
+            <li>
+              <strong style={typeStyle(typography.article.bodyStrong)}>1 structured batch flow</strong>
+              {" for many recipients instead of repeatedly configuring individual transfers."}
+            </li>
+          </List>
+        </CopyBlock>
+        <Gap size={spacing.article.sectionGap} />
+      </Section>
       <Section title="Design principles">
         <Subsection title="Preserve context during complex configuration">
           <CopyBlock>
@@ -2068,9 +2097,11 @@ function MassPayoutArticle() {
               <li>reuse a previously saved recipient list.</li>
             </List>
             <Paragraph>
-              This allowed the same workflow to support both occasional payouts
-              and larger recurring operations without forcing every user into
-              the same preparation method.
+              {"That gave users "}
+              <strong style={typeStyle(typography.article.bodyStrong)}>
+                4 ways to prepare recipient data within the same payout workflow,
+              </strong>
+              {" supporting both occasional payouts and larger recurring operations without forcing every user into the same preparation method."}
             </Paragraph>
           </CopyBlock>
           <Gap size={spacing.article.mediaGap} />
@@ -2152,10 +2183,9 @@ function MassPayoutArticle() {
               </li>
             </List>
             <Paragraph>
-              This turned a blocking financial error into two clear recovery
-              paths: <br />{" "}
+              {"This turned a blocking financial error into "}
               <strong style={typeStyle(typography.article.bodyStrong)}>
-                resolve it now or continue later.
+                2 clear recovery paths: resolve it now or continue later.
               </strong>
             </Paragraph>
           </CopyBlock>
@@ -2234,27 +2264,37 @@ function MassPayoutArticle() {
       </Section>
       <Section title="Outcome">
         <CopyBlock>
-          <Paragraph>{`Mass payout became one of Crypto Office's core product features.`}</Paragraph>
-          <Paragraph>
-            The resulting workflow allowed crypto companies and teams to replace
-            many individual transfers with one structured operation while
-            retaining control over recipients, funding, validation, and
-            transaction status.
-          </Paragraph>
-          <Paragraph>The design:</Paragraph>
+          <Paragraph>Mass payout became one of Crypto Office’s core product features.</Paragraph>
+          <Paragraph>The resulting workflow combined:</Paragraph>
           <List>
             <li>
-              supported large recipient lists through manual entry and file
-              import;
+              <strong style={typeStyle(typography.article.bodyStrong)}>4 recipient-preparation methods</strong>;
             </li>
-            <li>reduced repeated setup through reusable payout presets;</li>
+            <li>
+              <strong style={typeStyle(typography.article.bodyStrong)}>multiple source wallets</strong>
+              {" within one payout;"}
+            </li>
+            <li>
+              <strong style={typeStyle(typography.article.bodyStrong)}>2 recovery paths</strong>
+              {" for insufficient balance — top up now or save as draft;"}
+            </li>
+            <li>
+              {"validation for "}
+              <strong style={typeStyle(typography.article.bodyStrong)}>4 recipient-data conditions</strong>;
+            </li>
+            <li>
+              a single structured payout flow for many recipients instead of repeated individual transfers.
+            </li>
+          </List>
+          <Paragraph>The design:</Paragraph>
+          <List>
+            <li>reduced repetitive setup through reusable payout presets;</li>
             <li>
               matched real operational behavior through multiple source-wallet
               support;
             </li>
             <li>
-              allowed users to correct invalid addresses, amounts, and network
-              mismatches without restarting;
+              allowed users to correct validation issues without restarting;
             </li>
             <li>
               let users top up and continue the existing payout, or save it as a
@@ -2264,12 +2304,13 @@ function MassPayoutArticle() {
               made blockchain processing delays explicit after confirmation.
             </li>
           </List>
-          <Paragraph>{`After release, qualitative feedback gathered through support, APD stakeholders, and the company's network of core users was strongly positive. Users who regularly worked with multiple wallets and recurring crypto payouts became active advocates of the feature.`}</Paragraph>
           <Paragraph>
-            I did not have access to reliable quantitative metrics for the
-            release, so the impact described here is based on shipped
-            functionality, observed usage patterns, and qualitative feedback
-            rather than unsupported numerical claims.
+            After release, qualitative feedback gathered through support, stakeholders,
+            and the company’s network of core users was strongly positive.
+          </Paragraph>
+          <Paragraph>
+            Users who regularly worked with multiple wallets and recurring crypto
+            payouts became active advocates of the feature.
           </Paragraph>
         </CopyBlock>
       </Section>
