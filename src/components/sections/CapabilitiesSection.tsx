@@ -466,7 +466,7 @@ function MsaWorkspaceArticle() {
 function DataMappingArticle() {
   return (
     <ArticleShell>
-      <H1>Transforming complex data mapping into a guided workflow</H1>
+      <H1>Data mapping</H1>
       <Gap size={spacing.article.h1Gap} />
 
         <Section title="Context">
@@ -515,6 +515,20 @@ function DataMappingArticle() {
               guided by four principles: discoverability, guidance, clarity, and
               flexibility.
             </Paragraph>
+            <Paragraph>
+              The original flow required users to make several interdependent
+              decisions across metadata selection, compatibility, grouping, and
+              visualization targeting.
+            </Paragraph>
+            <Paragraph>
+              The redesign brought those decisions into a more guided structure by:
+            </Paragraph>
+            <List>
+              <li>separating the workflow into clearer stages;</li>
+              <li>introducing contextual suggestions;</li>
+              <li>making compatibility visible before users committed to a choice;</li>
+              <li>clarifying the relationship between source variables and visualization targets.</li>
+            </List>
           </CopyBlock>
         </Section>
 
@@ -546,10 +560,22 @@ function DataMappingArticle() {
           <Gap size={spacing.article.subsectionGap} />
 
           <Subsection title="Intelligent compatibility guidance">
-            <Paragraph>
-              Introduced bidirectional guidance between metadata variables and
-              visualization targets.
-            </Paragraph>
+            <CopyBlock>
+              <Paragraph>
+                Introduced bidirectional guidance between metadata variables and
+                visualization targets.
+              </Paragraph>
+              <Paragraph>
+                The redesign consolidated several previously fragmented decisions
+                into one guided workflow, reducing the need to move back and forth
+                between disconnected configuration states.
+              </Paragraph>
+              <Paragraph>
+                The interface introduced contextual suggestions directly inside the
+                mapping flow, so users could evaluate likely groupings without
+                leaving the task or reconstructing relationships manually.
+              </Paragraph>
+            </CopyBlock>
           </Subsection>
           <Gap size={spacing.article.mediaGap} />
           <ArticleImage
@@ -645,10 +671,19 @@ function DataMappingArticle() {
 
         <Section title="Outcome">
           <Paragraph>
-            Transformed Data Mapping from a configuration-heavy interface into a
-            guided workflow that helps researchers discover relevant metadata,
-            understand compatibility rules, and build visualizations more
-            efficiently.
+            The redesign transformed Data Mapping from a fragmented configuration
+            task into a guided workflow.
+          </Paragraph>
+          <Paragraph>The new experience:</Paragraph>
+          <List>
+            <li>organized metadata around biologically meaningful groups;</li>
+            <li>introduced contextual suggestions and explicit compatibility guidance;</li>
+            <li>clarified the relationship between source variables and visualization targets;</li>
+            <li>reduced the need to navigate between disconnected configuration states.</li>
+          </List>
+          <Paragraph>
+            The result was a workflow that gave researchers more guidance without
+            removing the flexibility required for complex analytical work.
           </Paragraph>
         </Section>
     </ArticleShell>
