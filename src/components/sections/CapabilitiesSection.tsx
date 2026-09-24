@@ -1406,7 +1406,7 @@ function ProductDesignScaleArticle() {
 function MobileExperiencesArticle() {
   return (
     <ArticleShell>
-      <H1>Simplifying complex financial operations for blockchain users</H1>
+      <H1>Simplifying Financial Operations for Active TRON Users</H1>
       <Gap size={spacing.article.h1Gap} />
 
       <Section title="Context">
@@ -1473,6 +1473,24 @@ function MobileExperiencesArticle() {
             <li>risk management.</li>
             <li>capital efficiency.</li>
           </List>
+        </CopyBlock>
+      </Section>
+
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Operational scope">
+        <CopyBlock>
+          <Paragraph>
+            The product brought together 3 core operational areas within one mobile experience:
+          </Paragraph>
+          <List>
+            <li>transaction cost optimization through Energy management;</li>
+            <li>risk management through AML verification and account separation;</li>
+            <li>capital efficiency through staking.</li>
+          </List>
+          <Paragraph>
+            These workflows were supported by a shared interaction model rather than separate, disconnected tools.
+          </Paragraph>
         </CopyBlock>
       </Section>
 
@@ -1614,15 +1632,18 @@ function MobileExperiencesArticle() {
         <Gap size={spacing.article.subsectionGap} />
         <Subsection title="AML verification">
           <CopyBlock>
-            <Paragraph>Users can perform compliance checks on:</Paragraph>
+            <Paragraph>
+              {"Users could perform compliance checks across "}
+              <strong style={typeStyle(typography.article.bodyStrong)}>3 different targets</strong>:
+            </Paragraph>
             <List>
               <li>their own wallets;</li>
               <li>existing assets;</li>
               <li>external wallet addresses.</li>
             </List>
             <Paragraph>
-              This allows users to evaluate risk before accepting incoming
-              funds.
+              This made risk assessment useful both for monitoring current holdings
+              and evaluating funds before accepting or moving them.
             </Paragraph>
           </CopyBlock>
         </Subsection>
@@ -1713,18 +1734,20 @@ function MobileExperiencesArticle() {
               Staking capabilities were integrated directly into the wallet
               experience.
             </Paragraph>
-            <Paragraph>Users can:</Paragraph>
+            <Paragraph>
+              {"Users could manage "}
+              <strong style={typeStyle(typography.article.bodyStrong)}>5 core staking actions</strong>
+              {" without leaving the wallet:"}
+            </Paragraph>
             <List>
-              <li>create staking positions.</li>
-              <li>monitor active stakes.</li>
-              <li>review earnings.</li>
-              <li>unstake assets.</li>
+              <li>create staking positions;</li>
+              <li>monitor active stakes;</li>
+              <li>review earnings;</li>
+              <li>unstake assets;</li>
               <li>enable automatic reward reinvestment.</li>
             </List>
             <Paragraph>
-              Rather than forcing users to move funds across multiple platforms,
-              the wallet allows them to manage both operational activity and
-              capital utilization within a single ecosystem.
+              This kept both operational activity and capital utilization inside the same product ecosystem.
             </Paragraph>
           </CopyBlock>
         </Subsection>
@@ -1769,20 +1792,20 @@ function MobileExperiencesArticle() {
         <Subsection title="Solution">
           <CopyBlock>
             <Paragraph>
-              A reusable Bottom Sheet interaction model was introduced across
-              the application.
+              {"The reusable Bottom Sheet pattern supported at least "}
+              <strong style={typeStyle(typography.article.bodyStrong)}>5 recurring interaction types</strong>
+              {" across the product:"}
             </Paragraph>
-            <Paragraph>The pattern is used for:</Paragraph>
             <List>
-              <li>Energy purchases.</li>
-              <li>account management.</li>
-              <li>currency preferences.</li>
-              <li>contextual settings.</li>
+              <li>Energy purchases;</li>
+              <li>account management;</li>
+              <li>currency preferences;</li>
+              <li>contextual settings;</li>
               <li>lightweight operational workflows.</li>
             </List>
             <Paragraph>
-              This allows users to complete common actions without losing
-              visibility of their current portfolio state.
+              This reduced the need for repeated full-screen navigation and helped
+              preserve portfolio context during frequent actions.
             </Paragraph>
           </CopyBlock>
         </Subsection>
@@ -1824,13 +1847,33 @@ function MobileExperiencesArticle() {
             TR.ENERGY evolved beyond a traditional crypto wallet into a
             financial operations platform for active TRON users.
           </Paragraph>
-          <Paragraph>The product helps users:</Paragraph>
+          <Paragraph>The product combined:</Paragraph>
           <List>
-            <li>optimize transaction costs through Energy management.</li>
-            <li>assess and mitigate asset reputation risks.</li>
-            <li>separate trusted and untrusted transaction flows.</li>
-            <li>generate value from idle capital through staking.</li>
-            <li>manage complex workflows without leaving the mobile experience.</li>
+            <li>
+              <strong style={typeStyle(typography.article.bodyStrong)}>3 core operational areas</strong>
+              {" — transaction costs, risk management, and capital efficiency;"}
+            </li>
+            <li>
+              {"AML checks across "}
+              <strong style={typeStyle(typography.article.bodyStrong)}>3 target types</strong>;
+            </li>
+            <li>
+              <strong style={typeStyle(typography.article.bodyStrong)}>5 core staking actions</strong>
+              {" inside the wallet;"}
+            </li>
+            <li>
+              {"a reusable Bottom Sheet system supporting at least "}
+              <strong style={typeStyle(typography.article.bodyStrong)}>5 recurring interaction types</strong>;
+            </li>
+            <li>multi-account workflows that separated trusted and untrusted transaction flows.</li>
+          </List>
+          <Paragraph>The resulting experience helped users:</Paragraph>
+          <List>
+            <li>manage Energy and transaction costs without leaving the wallet;</li>
+            <li>evaluate asset reputation and incoming-fund risk;</li>
+            <li>isolate potentially risky transactions through dedicated accounts;</li>
+            <li>generate value from idle capital through staking;</li>
+            <li>complete complex financial operations within one mobile experience.</li>
           </List>
           <Paragraph>
             By focusing on costs, risks, and capital efficiency, the wallet
