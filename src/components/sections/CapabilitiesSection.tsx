@@ -7,6 +7,7 @@ import { track } from "@vercel/analytics";
 import msaImages from "@/data/msa-images.json";
 import dataMappingImages from "@/data/data-mapping-images.json";
 import amlImages from "@/data/aml-images.json";
+import massPayoutImages from "@/data/mass-payout-images.json";
 
 import ExploreMenu, {
   type ExploreMenuCapability,
@@ -226,7 +227,7 @@ function ArticleShell({ children }: { children: ReactNode }) {
 function ArticleSummary({
   rows,
 }: {
-  rows: readonly (readonly [string, string])[];
+  rows: readonly (readonly [string, ReactNode])[];
 }) {
   return (
     <dl style={typeStyle(typography.article.body)}>
@@ -1689,470 +1690,233 @@ function MobileExperiencesArticle() {
 function MassPayoutArticle() {
   return (
     <ArticleShell>
-      <H1>Designing reliable mass payouts for crypto operations</H1>
+      <H1>Designing mass payouts for mobile crypto teams</H1>
       <Gap size={spacing.article.h1Gap} />
-      <Section title="Context">
+      <CopyBlock>
+        <Paragraph>
+          Crypto Office users paid team members and external partners through
+          individual crypto transfers. I proposed and designed a mobile
+          batch-payment workflow covering recipient preparation, funding, review,
+          and recovery from errors. After launch, I proposed spreadsheet import
+          in response to user feedback; the update received positive responses
+          from users who had struggled to copy their payout lists.
+        </Paragraph>
+      </CopyBlock>
+      <Gap size={spacing.base[4]} />
+      <ArticleSummary
+        rows={[
+          ["Product", "Crypto Office · Telegram Mini App"],
+          ["My role", "Sole Product Designer · end-to-end design"],
+          ["Team", "PM, frontend and backend engineers, CTO"],
+          [
+            "Design",
+            <>
+              Initial release: approximately 1–2 weeks
+              <br />
+              Import update: approximately 1 week
+            </>,
+          ],
+          ["Status", "Shipped"],
+        ]}
+      />
+      <Gap size={spacing.article.mediaGap} />
+      <ArticleImage
+        {...massPayoutImages["1"]}
+        alt="Mass payout workflow from recipient preparation to review and completion"
+      />
+      <Gap size={spacing.article.mediaGap} />
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="From individual transfers to a batch workflow">
         <CopyBlock>
           <Paragraph>
-            Crypto Office is a Telegram Mini App designed for companies, crypto
-            teams, and exchanges that manage operational cryptocurrency
-            workflows.
+            Saved contacts made wallet addresses easier to reuse, but users still
+            had to configure each payment separately. Stakeholders discussed my
+            mass payout proposal with some of our largest users, and we agreed
+            to develop it.
           </Paragraph>
           <Paragraph>
-            One recurring need was sending funds to many recipients at once —
-            for example recurring company payouts or payroll-like distributions.
+            The design challenge was to make a large payout manageable on a small
+            screen: users needed to assemble recipients, choose funding sources,
+            correct problems, and inspect the financial details before sending.
+          </Paragraph>
+        </CopyBlock>
+      </Section>
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Preparing a batch without losing context">
+        <CopyBlock>
+          <Paragraph>
+            Payout preparation involved several supporting decisions, including
+            selecting wallets, choosing a currency, and reusing recipient lists.
+            I considered separate screens for these settings, but chose contextual
+            bottom sheets so users could make a selection and return directly to
+            the payout they were preparing.
           </Paragraph>
           <Paragraph>
-            Completing these transactions individually was slow and repetitive,
-            especially for teams managing multiple operational wallets,
-            currencies, and large recipient lists.
-          </Paragraph>
-          <Paragraph>
-            The goal was to create a mobile-first mass payout experience that
-            allowed users to prepare, validate, and send large payouts
-            efficiently without losing control over a high-impact financial
-            operation.
+            The first release supported typing or pasting addresses and amounts,
+            as well as saving recipient lists for reuse. Saved lists could be
+            edited and updated or saved as a new list, supporting recurring
+            payments without rebuilding the recipient data each time.
           </Paragraph>
         </CopyBlock>
         <Gap size={spacing.article.mediaGap} />
         <ArticleImage
-          src="/capabilities/mass-payout-1.png"
-          alt="Mass payout preparation, transfer confirmation, and completed payout in transfer history"
-          className="aspect-[2518/1784]"
+          {...massPayoutImages["2"]}
+          alt="Contextual bottom sheets for payout settings and source-wallet selection"
         />
         <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.sectionGap} />
-      </Section>
-      <Section title="Insights">
         <CopyBlock>
           <Paragraph>
-            The feature was designed before the product launched and shaped
-            through close collaboration with the PM and stakeholders, informed
-            by domain knowledge and access to users from the target audience.
-          </Paragraph>
-          <Paragraph>Several recurring patterns defined the problem:</Paragraph>
-          <List>
-            <li>
-              Professional users often manage funds across multiple wallets.
-            </li>
-            <li>
-              Payouts may contain many recipients rather than a single
-              destination.
-            </li>
-            <li>
-              Recurring distributions make rebuilding recipient lists
-              inefficient.
-            </li>
-            <li>
-              Imported data can contain invalid addresses, amounts, or network
-              mismatches.
-            </li>
-            <li>
-              Balance issues should not force users to rebuild an already
-              prepared payout.
-            </li>
-            <li>
-              Blockchain transactions may remain in progress after confirmation.
-            </li>
-            <li>
-              All of this complexity still needs to remain manageable on a
-              mobile screen.
-            </li>
-          </List>
-        </CopyBlock>
-        <Gap size={spacing.article.sectionGap} />
-      </Section>
-      <Section title="Challenge">
-        <CopyBlock>
-          <Paragraph>
-            A mass payout looks simple at the highest level: <br />{" "}
-            <strong style={typeStyle(typography.article.bodyStrong)}>
-              Choose recipients → send funds.
-            </strong>
+            Long wallet addresses competed with payment amounts for limited
+            horizontal space. I shortened addresses in the recipient list to a
+            beginning-and-ending format, such as{" "}
+            <strong style={{ fontWeight: typography.fontWeight.semibold }}>xxxxx…xxxxx</strong>
+            , so the address and amount could fit on one line. This kept the list
+            compact enough to scan on mobile. When the input field was active,
+            addresses expanded to show their full values.
           </Paragraph>
           <Paragraph>
-            In practice, every payout had to coordinate currency and network
-            selection, multiple source wallets, recipient data, validation,
-            available balances, fees, confirmation, and asynchronous blockchain
-            processing.
-          </Paragraph>
-          <Paragraph>
-            The challenge was to expose enough control for professional crypto
-            users while keeping the workflow understandable, recoverable, and
-            safe on mobile.
+            Teams could also fund a payout from multiple wallets. Engineering
+            defined the intermediate payout-wallet mechanism, which collected
+            funds before distribution. I designed how users selected source
+            wallets and reviewed their combined amount, making that funding
+            structure understandable in the interface.
           </Paragraph>
         </CopyBlock>
-        <Gap size={spacing.article.sectionGap} />
       </Section>
-      <Section title="Operational scale">
-        <CopyBlock>
-          <Paragraph>The workflow supported:</Paragraph>
-          <List>
-            <li>
-              <strong style={typeStyle(typography.article.bodyStrong)}>4 ways to prepare recipient data</strong>
-              {" — manual entry, .XLSX, Google Spreadsheet, or a saved list;"}
-            </li>
-            <li>
-              <strong style={typeStyle(typography.article.bodyStrong)}>multiple source wallets</strong>
-              {" within the same payout;"}
-            </li>
-            <li>
-              <strong style={typeStyle(typography.article.bodyStrong)}>2 recovery paths</strong>
-              {" for insufficient balance — top up immediately or save the payout as a draft;"}
-            </li>
-            <li>
-              {"validation for "}
-              <strong style={typeStyle(typography.article.bodyStrong)}>4 recipient-data conditions</strong>
-              {" — invalid address, invalid amount, network mismatch, and empty rows;"}
-            </li>
-            <li>
-              <strong style={typeStyle(typography.article.bodyStrong)}>1 structured batch flow</strong>
-              {" for many recipients instead of repeatedly configuring individual transfers."}
-            </li>
-          </List>
-        </CopyBlock>
-        <Gap size={spacing.article.sectionGap} />
-      </Section>
-      <Section title="Design principles">
-        <Subsection title="Preserve context during complex configuration">
-          <CopyBlock>
-            <Paragraph>
-              Mass payout required many supporting actions: selecting wallets,
-              choosing currencies, reviewing information, and correcting
-              configuration.
-            </Paragraph>
-            <Paragraph>
-              Instead of repeatedly navigating users away from their payout, I
-              used bottom sheets for contextual decisions.
-            </Paragraph>
-            <Paragraph>This allowed users to:</Paragraph>
-            <List>
-              <li>open supporting configuration;</li>
-              <li>make a selection;</li>
-              <li>close it;</li>
-              <li>
-                return immediately to the payout they were already preparing.
-              </li>
-            </List>
-            <Paragraph>
-              The payout remained the primary context while supporting actions
-              appeared temporarily around it.
-            </Paragraph>
-          </CopyBlock>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            src="/capabilities/mass-payout-2.png"
-            alt="Contextual bottom sheets for currency selection, saved lists, and spreadsheet import"
-            className="aspect-[2518/1784]"
-          />
-          <Gap size={spacing.article.mediaGap} />
-          <Gap size={spacing.article.subsectionGap} />
-        </Subsection>
-        <Subsection title="Make repetitive operations reusable">
-          <CopyBlock>
-            <Paragraph>
-              Recurring payouts should not require recurring setup.
-            </Paragraph>
-            <Paragraph>
-              Recipient lists could therefore be saved as presets and later:
-            </Paragraph>
-            <List>
-              <li>reopened;</li>
-              <li>edited;</li>
-              <li>saved as a new list;</li>
-              <li>or updated in place.</li>
-            </List>
-            <Paragraph>
-              This turned mass payout from a one-off transaction flow into a
-              reusable operational tool.
-            </Paragraph>
-          </CopyBlock>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            src="/capabilities/mass-payout-3.png"
-            alt="Saving and reusing recipient lists for recurring payouts"
-            className="aspect-[2518/1784]"
-          />
-          <Gap size={spacing.article.mediaGap} />
-          <Gap size={spacing.article.subsectionGap} />
-        </Subsection>
-        <Subsection title="Design recovery into the workflow">
-          <CopyBlock>
-            <Paragraph>
-              Errors are especially expensive in financial products.
-            </Paragraph>
-            <Paragraph>
-              The goal was not simply to prevent users from continuing when
-              something was wrong, but to help them understand what needed
-              attention and recover without losing their work.
-            </Paragraph>
-            <Paragraph>
-              Validation therefore happened inside the existing payout context
-              rather than sending users into separate corrective flows.
-            </Paragraph>
-          </CopyBlock>
-          <Gap size={spacing.article.subsectionGap} />
-        </Subsection>
-      </Section>
-      <Section title="Key improvements">
-        <Subsection title="Support multiple source wallets">
-          <CopyBlock>
-            <Paragraph>
-              Crypto teams often distribute operational funds across several
-              wallets.
-            </Paragraph>
-            <Paragraph>
-              Requiring users to consolidate those funds manually before every
-              payout would add unnecessary work.
-            </Paragraph>
-            <Paragraph>
-              The mass payout flow allowed users to select multiple source
-              wallets. Funds from the selected wallets were aggregated into the
-              mass payout wallet before distribution to recipients.
-            </Paragraph>
-            <Paragraph>
-              This matched the way professional users already organized their
-              assets rather than forcing them into a simpler but less realistic
-              wallet model.
-            </Paragraph>
-          </CopyBlock>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            src="/capabilities/mass-payout-4.png"
-            alt="Selecting multiple source wallets to fund a mass payout"
-            className="aspect-[1692/1784]"
-          />
-          <Gap size={spacing.article.mediaGap} />
-          <Gap size={spacing.article.subsectionGap} />
-        </Subsection>
-        <Subsection title="Support multiple ways to prepare recipient data">
-          <CopyBlock>
-            <Paragraph>
-              Recipient data could be prepared directly inside the payout or
-              brought in from existing sources.
-            </Paragraph>
-            <Paragraph>Users could:</Paragraph>
-            <List>
-              <li>enter wallet addresses and amounts manually;</li>
-              <li>upload an .XLSX file;</li>
-              <li>import data through a Google Spreadsheet link;</li>
-              <li>reuse a previously saved recipient list.</li>
-            </List>
-            <Paragraph>
-              {"That gave users "}
-              <strong style={typeStyle(typography.article.bodyStrong)}>
-                4 ways to prepare recipient data within the same payout workflow,
-              </strong>
-              {" supporting both occasional payouts and larger recurring operations without forcing every user into the same preparation method."}
-            </Paragraph>
-          </CopyBlock>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            src="/capabilities/mass-payout-5.png"
-            alt="Preparing recipients through manual entry, Excel, Google Sheets, and saved lists"
-            className="aspect-[3010/3162]"
-          />
-          <Gap size={spacing.article.mediaGap} />
-          <Gap size={spacing.article.subsectionGap} />
-        </Subsection>
-        <Subsection title="Make validation actionable">
-          <CopyBlock>
-            <p style={typeStyle(typography.article.bodyStrong)}>
-              Invalid address
-            </p>
-            <Paragraph>
-              The affected address was highlighted and could be corrected before
-              continuing.
-            </Paragraph>
-          </CopyBlock>
-          <Gap size={spacing.article.subsectionGap} />
-          <CopyBlock>
-            <p style={typeStyle(typography.article.bodyStrong)}>
-              Invalid amount
-            </p>
-            <Paragraph>
-              Incorrect or missing amounts were highlighted directly in the
-              recipient list so users could fix them before continuing.
-            </Paragraph>
-          </CopyBlock>
-          <Gap size={spacing.article.subsectionGap} />
-          <CopyBlock>
-            <p style={typeStyle(typography.article.bodyStrong)}>
-              Network mismatch
-            </p>
-            <Paragraph>
-              Addresses incompatible with the selected network were highlighted
-              before funds could be sent.
-            </Paragraph>
-          </CopyBlock>
-          <Gap size={spacing.article.subsectionGap} />
-          <CopyBlock>
-            <p style={typeStyle(typography.article.bodyStrong)}>Empty rows</p>
-            <Paragraph>
-              Unused rows were simply ignored rather than treated as errors.{" "}
-              <br /> This avoided unnecessary interruptions when working with
-              larger imported lists.
-            </Paragraph>
-          </CopyBlock>
-          <Gap size={spacing.article.subsectionGap} />
-        </Subsection>
-        <Subsection title="Resolve insufficient balance without losing progress">
-          <CopyBlock>
-            <Paragraph>
-              An insufficient balance could be detected after the user had
-              already spent significant time preparing a payout.
-            </Paragraph>
-            <Paragraph>
-              Restarting at that point would create unnecessary friction, so the
-              recovery flow was designed around preserving the user’s work.
-            </Paragraph>
-            <Paragraph>When the available balance was too low:</Paragraph>
-            <List>
-              <li>
-                the transfer amount and balance issue were clearly highlighted;
-              </li>
-              <li>
-                users could top up the balance immediately and continue the same
-                payout;
-              </li>
-              <li>
-                if they could not add funds at that moment, they could save the
-                payout as a draft and return to it later;
-              </li>
-              <li>
-                cancelling remained available if they wanted to abandon the
-                transaction.
-              </li>
-            </List>
-            <Paragraph>
-              {"This turned a blocking financial error into "}
-              <strong style={typeStyle(typography.article.bodyStrong)}>
-                2 clear recovery paths: resolve it now or continue later.
-              </strong>
-            </Paragraph>
-          </CopyBlock>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            src="/capabilities/mass-payout-6.png"
-            alt="Recovering from insufficient balance by topping up or saving a draft"
-            className="aspect-[1692/1784]"
-          />
-          <Gap size={spacing.article.mediaGap} />
-          <Gap size={spacing.article.subsectionGap} />
-        </Subsection>
-        <Subsection title="Make the final financial action inspectable">
-          <CopyBlock>
-            <Paragraph>
-              Before confirmation, users could review the complete payout in one
-              place:
-            </Paragraph>
-            <List>
-              <li>selected currency;</li>
-              <li>source wallets;</li>
-              <li>mass payout wallet;</li>
-              <li>recipient addresses and amounts;</li>
-              <li>total payout amount;</li>
-              <li>commission.</li>
-            </List>
-            <Paragraph>
-              The confirmation step made a high-impact financial operation easy
-              to inspect before commitment.
-            </Paragraph>
-            <Paragraph>
-              After confirmation, the workflow remained explicit: users saw that
-              the payout had been created, were told that blockchain processing
-              could take approximately 1–10 minutes, and could later see the
-              completed payout in their transfer history.
-            </Paragraph>
-            <Paragraph>
-              Making the waiting state explicit reduced the risk of users
-              interpreting processing time as a failure and attempting the
-              payout again.
-            </Paragraph>
-          </CopyBlock>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            src="/capabilities/mass-payout-7.png"
-            alt="Reviewing a payout, confirming it, and tracking blockchain processing"
-            className="aspect-[3646/3106]"
-          />
-          <Gap size={spacing.article.mediaGap} />
-          <Gap size={spacing.article.subsectionGap} />
-        </Subsection>
-      </Section>
-      <Section title="My role">
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Recovering without rebuilding the payout">
         <CopyBlock>
           <Paragraph>
-            I designed the mass payout feature end to end as the Product
-            Designer, working closely with the PM, APD stakeholders, and
-            engineers.
+            The recipient list kept validation within the preparation flow.
+            Invalid addresses, incorrect or missing amounts, and addresses
+            incompatible with the selected network were highlighted for
+            correction. Empty rows were ignored, so unused spreadsheet rows did
+            not create unnecessary errors.
           </Paragraph>
-          <Paragraph>My ownership included:</Paragraph>
+          <Paragraph>
+            Insufficient funds required a different response. A user could
+            discover the balance problem after already preparing a substantial
+            recipient list.
+          </Paragraph>
+          <Paragraph>
+            My initial design offered only a top-up action. After discussing
+            interrupted workflows with the PM, I added the option to save the
+            payout as a draft. The revised design supported two paths:
+          </Paragraph>
           <List>
-            <li>product definition and information architecture;</li>
-            <li>end-to-end flows, wireframes, UI, and prototypes;</li>
-            <li>reusable interaction patterns and recipient-list presets;</li>
-            <li>validation, error recovery, and transaction states;</li>
-            <li>behavioral documentation and engineering handoff;</li>
-            <li>implementation review and iteration with developers.</li>
+            <li>
+              <strong style={{ fontWeight: typography.fontWeight.semibold }}>Funds can be added now</strong>
+              : top up and continue the prepared payout.
+            </li>
+            <li>
+              <strong style={{ fontWeight: typography.fontWeight.semibold }}>Funds are unavailable for now</strong>
+              : save a draft and return to it later.
+            </li>
           </List>
           <Paragraph>
-            I remained involved throughout development, clarifying wallet
-            behavior, validation, transaction states, and interaction details as
-            technical constraints surfaced.
+            This change treated a funding problem as a possible pause in the
+            task, rather than assuming the user could resolve it immediately.
           </Paragraph>
         </CopyBlock>
-        <Gap size={spacing.article.sectionGap} />
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          {...massPayoutImages["3"]}
+          alt="Insufficient-funds recovery with options to top up or save the payout as a draft"
+        />
       </Section>
-      <Section title="Outcome">
+      <Gap size={spacing.article.mediaGap} />
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Reviewing the payout before sending">
         <CopyBlock>
-          <Paragraph>Mass payout became one of Crypto Office’s core product features.</Paragraph>
-          <Paragraph>The resulting workflow combined:</Paragraph>
-          <List>
-            <li>
-              <strong style={typeStyle(typography.article.bodyStrong)}>4 recipient-preparation methods</strong>;
-            </li>
-            <li>
-              <strong style={typeStyle(typography.article.bodyStrong)}>multiple source wallets</strong>
-              {" within one payout;"}
-            </li>
-            <li>
-              <strong style={typeStyle(typography.article.bodyStrong)}>2 recovery paths</strong>
-              {" for insufficient balance — top up now or save as draft;"}
-            </li>
-            <li>
-              {"validation for "}
-              <strong style={typeStyle(typography.article.bodyStrong)}>4 recipient-data conditions</strong>;
-            </li>
-            <li>
-              a single structured payout flow for many recipients instead of repeated individual transfers.
-            </li>
-          </List>
-          <Paragraph>The design:</Paragraph>
-          <List>
-            <li>reduced repetitive setup through reusable payout presets;</li>
-            <li>
-              matched real operational behavior through multiple source-wallet
-              support;
-            </li>
-            <li>
-              allowed users to correct validation issues without restarting;
-            </li>
-            <li>
-              let users top up and continue the existing payout, or save it as a
-              draft and return later when funds were unavailable;
-            </li>
-            <li>
-              made blockchain processing delays explicit after confirmation.
-            </li>
-          </List>
           <Paragraph>
-            After release, qualitative feedback gathered through support, stakeholders,
-            and the company’s network of core users was strongly positive.
+            Before confirmation, users could review the selected currency,
+            source wallets, intermediate payout wallet, recipient addresses and
+            amounts, total payout amount, and commission in one place. Tapping
+            “All” in the “Amounts and receiving addresses” section opened the list
+            of full addresses and their corresponding amounts.
           </Paragraph>
           <Paragraph>
-            Users who regularly worked with multiple wallets and recurring crypto
-            payouts became active advocates of the feature.
+            After confirmation, the interface showed that the payout had been
+            created and that blockchain processing was still underway. Transfer
+            history contained both confirmed and unsuccessful payouts, giving
+            users a place to inspect results after processing.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          {...massPayoutImages["4"]}
+          alt="Payout review, blockchain processing, and transfer-history results"
+        />
+      </Section>
+      <Gap size={spacing.article.mediaGap} />
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Testing and implementation">
+        <CopyBlock>
+          <Paragraph>
+            I reviewed the prototype with the PM and primary stakeholders using
+            actual payout lists. Our company, APD, paid salaries in crypto, so
+            these internal testers had direct experience with the task.
+          </Paragraph>
+          <Paragraph>
+            During implementation, I worked closely with frontend and backend
+            engineers, answered behavior questions, and checked implemented
+            error states. I also refined icons and components and added states
+            as implementation exposed details that needed clarification.
+          </Paragraph>
+        </CopyBlock>
+      </Section>
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Adapting recipient entry after launch">
+        <CopyBlock>
+          <Paragraph>
+            After the first release, the support team shared feedback from
+            approximately 15 frequent users working in teams of 50–100 members.
+            I also read their messages myself. They maintained payout lists of
+            roughly 50–100 addresses and amounts in spreadsheets, and found
+            copying that data into the payout input inconvenient.
+          </Paragraph>
+          <Paragraph>
+            Saved lists supported reuse within Crypto Office, but these users
+            were already maintaining their payment data elsewhere. I proposed
+            spreadsheet import so they could bring that existing data into the
+            payout workflow.
+          </Paragraph>
+          <Paragraph>
+            The follow-up release added XLSX upload and import through a Google
+            Sheets link. I spent approximately one week designing this update,
+            building on the existing recipient-entry flow.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          {...massPayoutImages["5"]}
+          alt="Spreadsheet import through XLSX upload or a Google Sheets link"
+        />
+      </Section>
+      <Gap size={spacing.article.mediaGap} />
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Delivery and feedback">
+        <CopyBlock>
+          <Paragraph>
+            Mass payout shipped to all users after internal testing. It replaced
+            the need to configure each payment individually, and the subsequent
+            import update supported users who maintained their payout data in
+            spreadsheets.
+          </Paragraph>
+          <Paragraph>
+            After the import update, I personally read positive messages from
+            users who had reported difficulty copying their payout lists, also
+            reflected in support-team summaries. This feedback was qualitative;
+            completion time and error rates were not measured. A next evaluation
+            would compare preparation time and successful list entry for
+            50–100-recipient payouts using manual entry and spreadsheet import.
           </Paragraph>
         </CopyBlock>
       </Section>

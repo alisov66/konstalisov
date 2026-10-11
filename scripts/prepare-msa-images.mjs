@@ -8,7 +8,7 @@ const sharp = require(require.resolve("sharp", {
 }));
 const assets = resolve(import.meta.dirname, "../public/capabilities");
 const article = process.argv[2] ?? "msa";
-if (!["msa", "data-mapping", "aml"].includes(article)) {
+if (!["msa", "data-mapping", "aml", "mass-payout"].includes(article)) {
   throw new Error(`Unknown article image set: ${article}`);
 }
 const prefix = article === "msa" ? "msa-fig" : article;

@@ -85,7 +85,7 @@ export const capabilities = [
       {
         id: "mass-payout",
         label: "Mass payout",
-        title: "Designing reliable mass payouts for crypto operations",
+        title: "Designing mass payouts for mobile crypto teams",
         description:
           "Designing a mobile-first mass payout workflow with reusable recipient lists, multiple source wallets, actionable validation, and recovery without losing progress.",
       },
