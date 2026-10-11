@@ -14,7 +14,7 @@ export const capabilities = [
       {
         id: "data-mapping",
         label: "Data mapping",
-        title: "Transforming complex data mapping into a guided workflow",
+        title: "Making scientific data mapping easier to configure",
         description:
           "Redesigning data mapping as a guided experience that helps researchers connect biological variables, understand compatibility, and configure workflows with confidence.",
       },

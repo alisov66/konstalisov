@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
 import { track } from "@vercel/analytics";
 import msaImages from "@/data/msa-images.json";
+import dataMappingImages from "@/data/data-mapping-images.json";
 
 import ExploreMenu, {
   type ExploreMenuCapability,
@@ -20,13 +21,6 @@ import {
 import { colors, spacing, typography } from "@/styles";
 
 const images = {
-  dataMappingFig1: "/capabilities/data-mapping-1.png",
-  dataMappingFig2: "/capabilities/data-mapping-2.png",
-  dataMappingFig3: "/capabilities/data-mapping-3.png",
-  dataMappingFig4: "/capabilities/data-mapping-4.png",
-  dataMappingFig5: "/capabilities/data-mapping-5.png",
-  dataMappingFig6: "/capabilities/data-mapping-6.png",
-  dataMappingFig7: "/capabilities/data-mapping-7.png",
   headerArchitecture: "/capabilities/header-architecture.png",
   dialogHeader: "/capabilities/dialog-header.png",
   sheetHeader: "/capabilities/sheet-header.png",
@@ -495,226 +489,196 @@ function MsaWorkspaceArticle() {
 function DataMappingArticle() {
   return (
     <ArticleShell>
-      <H1>Data mapping</H1>
+      <H1>Making scientific data mapping easier to configure</H1>
       <Gap size={spacing.article.h1Gap} />
+      <CopyBlock>
+        <Paragraph>
+          Researchers using Platforma struggled to find relevant metadata and
+          understand where they could use it in a visualization. After reviewing
+          recordings of user meetings, I proposed and designed a shared mapping
+          interface that grouped variables by biological meaning and showed
+          compatibility before dragging began.
+        </Paragraph>
+      </CopyBlock>
+      <Gap size={spacing.article.sectionGap} />
+      <ArticleSummary
+        rows={[
+          ["Product", "Platforma, MiLaboratories"],
+          ["My role", "Product Designer responsible for the interaction model, UI, and implementation review"],
+          ["Scope", "Shared data-mapping interface across visualization blocks"],
+          ["Design", "Approximately 2–3 weeks alongside other work."],
+          ["Delivery", "Metadata grouping and compatibility highlighting shipped in the next release"],
+        ]}
+      />
+      <Gap size={spacing.article.mediaGap} />
+      <Gap size={spacing.article.mediaGap} />
+      <Gap size={spacing.article.sectionGap} />
 
-        <Section title="Context">
+      <Section title="Helping researchers choose what a visualization shows">
+        <CopyBlock>
           <Paragraph>
-            Data Mapping controls what information appears on visualizations and
-            how it is represented. Users connect metadata to chart variables
-            before analysis can begin.
+            Platforma helps scientists analyze biological data through connected
+            analytical applications called blocks. Its data-mapping interface
+            lets them assign variables to visualization controls such as color,
+            size, highlighting, and grouping.
           </Paragraph>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            alt="Data mapping interface"
-            className="aspect-[1368/1648] w-[450px] max-w-full"
-            src={images.dataMappingFig1}
-          />
-        </Section>
-
-        <Gap size={spacing.article.sectionGap} />
-
-        <Section title="Insights">
-          <CopyBlock>
-            <Paragraph>
-              The redesign was informed by recurring feedback collected through
-              customer webinars, one-on-one discussions, and support requests.
-            </Paragraph>
-            <Paragraph>Key themes included:</Paragraph>
-            <List>
-              <li>Difficulty discovering relevant metadata.</li>
-              <li>Uncertainty about variable compatibility.</li>
-              <li>High effort required to configure visualizations.</li>
-            </List>
-          </CopyBlock>
-        </Section>
-
-        <Gap size={spacing.article.sectionGap} />
-
-        <Section title="Challenge">
-          <CopyBlock>
-            <Paragraph>
-              As the number of available metadata fields grew, finding the right
-              variables and understanding compatibility rules became increasingly
-              difficult.
-            </Paragraph>
-            <Paragraph>
-              Rather than simplifying the workflow by removing functionality, I
-              focused on making complexity easier to navigate. The redesign was
-              guided by four principles: discoverability, guidance, clarity, and
-              flexibility.
-            </Paragraph>
-            <Paragraph>
-              The original flow required users to make several interdependent
-              decisions across metadata selection, compatibility, grouping, and
-              visualization targeting.
-            </Paragraph>
-            <Paragraph>
-              The redesign brought those decisions into a more guided structure by:
-            </Paragraph>
-            <List>
-              <li>separating the workflow into clearer stages;</li>
-              <li>introducing contextual suggestions;</li>
-              <li>making compatibility visible before users committed to a choice;</li>
-              <li>clarifying the relationship between source variables and visualization targets.</li>
-            </List>
-          </CopyBlock>
-        </Section>
-
-        <Gap size={spacing.article.sectionGap} />
-
-        <Section title="Key improvements">
-          <Subsection title="Faster discovery">
-            <CopyBlock>
-              <Paragraph>
-                Organized variables by biological meaning rather than presenting
-                a flat list.
-              </Paragraph>
-              <Paragraph>Examples:</Paragraph>
-              <List>
-                <li>Sequence & Structure</li>
-                <li>V(D)J Annotation</li>
-                <li>SHM & Maturation</li>
-                <li>Clustering & Diversity</li>
-              </List>
-            </CopyBlock>
-          </Subsection>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            alt="Data mapping variables grouped by biological meaning"
-            className="aspect-[1472/1624] w-[450px] max-w-full"
-            src={images.dataMappingFig2}
-          />
-          <Gap size={spacing.article.mediaGap} />
-          <Gap size={spacing.article.subsectionGap} />
-
-          <Subsection title="Intelligent compatibility guidance">
-            <CopyBlock>
-              <Paragraph>
-                Introduced bidirectional guidance between metadata variables and
-                visualization targets.
-              </Paragraph>
-              <Paragraph>
-                The redesign consolidated several previously fragmented decisions
-                into one guided workflow, reducing the need to move back and forth
-                between disconnected configuration states.
-              </Paragraph>
-              <Paragraph>
-                The interface introduced contextual suggestions directly inside the
-                mapping flow, so users could evaluate likely groupings without
-                leaving the task or reconstructing relationships manually.
-              </Paragraph>
-            </CopyBlock>
-          </Subsection>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            alt="Compatible targets highlighted from a variable"
-            className="aspect-[450/432.426] w-[450px] max-w-full"
-            src={images.dataMappingFig3}
-          />
-          <Gap size={spacing.article.mediaToCaptionGap} />
-          <List>
-            <li>Hover a variable → compatible targets are highlighted.</li>
-          </List>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            alt="Compatible variables highlighted from a target"
-            className="aspect-[450/732.781] w-[450px] max-w-full"
-            src={images.dataMappingFig4}
-          />
-          <Gap size={spacing.article.mediaToCaptionGap} />
-          <List>
-            <li>
-              Select a target → compatible variables are highlighted as
-              Recommended, Supported, or Forbidden.
-            </li>
-          </List>
-          <Gap size={spacing.article.mediaGap} />
-          <Gap size={spacing.article.subsectionGap} />
-
-          <Subsection title="Suggested Variables">
-            <Paragraph>
-              Surfaced the most relevant variables to help users get started
-              faster.
-            </Paragraph>
-          </Subsection>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            alt="Suggested variables"
-            className="aspect-[450/473.547] w-[450px] max-w-full"
-            src={images.dataMappingFig5}
-          />
-          <Gap size={spacing.article.mediaGap} />
-          <Gap size={spacing.article.subsectionGap} />
-
-          <Subsection title="More Explicit Actions">
-            <Paragraph>
-              Changed ambiguous drag-and-drop instructions into clearer guidance.
-            </Paragraph>
-          </Subsection>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            alt="More explicit data mapping actions"
-            className="aspect-[450/83.721] w-[450px] max-w-full"
-            src={images.dataMappingFig6}
-          />
-          <Gap size={spacing.article.mediaGap} />
-          <Gap size={spacing.article.subsectionGap} />
-
-          <Subsection title="Clear mental model">
-            <CopyBlock>
-              <Paragraph>
-                Renamed technical labels to better reflect user goals.
-              </Paragraph>
-              <Paragraph>Before:</Paragraph>
-              <List>
-                <li>Data Mapping</li>
-                <li>Chart Variables</li>
-              </List>
-              <Paragraph>After:</Paragraph>
-              <List>
-                <li>Variables</li>
-                <li>Visual Mapping</li>
-              </List>
-            </CopyBlock>
-          </Subsection>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            alt="Renamed data mapping labels"
-            className="aspect-[450/183.482] w-[450px] max-w-full"
-            src={images.dataMappingFig7}
-          />
-        </Section>
-
-        <Gap size={spacing.article.sectionGap} />
-
-        <Section title="My role">
           <Paragraph>
-            Led the redesign end-to-end, from problem discovery and workflow
-            architecture to interaction design, information architecture, and
-            validation.
+            The same interface appeared across all visualization blocks, although
+            the available metadata and controls varied. Researchers needed to
+            find the information relevant to their question and understand where
+            it could be applied.
           </Paragraph>
-        </Section>
+        </CopyBlock>
+      </Section>
+      <Gap size={spacing.article.sectionGap} />
 
+      <Section title="Two problems in the existing experience">
+        <CopyBlock>
+          <Paragraph>
+            I reviewed recordings of user meetings and saw researchers struggle
+            with a large, unsorted metadata list. Finding the right variable
+            required scanning through options without a meaningful structure.
+          </Paragraph>
+        </CopyBlock>
         <Gap size={spacing.article.sectionGap} />
+        <ArticleImage
+          {...dataMappingImages["1"]}
+          alt="Original data-mapping interface with an unsorted metadata list and delayed compatibility feedback"
+        />
+        <Gap size={spacing.article.mediaGap} />
+        <CopyBlock>
+          <Paragraph>
+            Compatibility was also difficult to anticipate. Incompatible inputs
+            became disabled only after a user began dragging a variable. The
+            interface provided feedback, but users had to initiate an action to
+            discover its restrictions.
+          </Paragraph>
+          <Paragraph>
+            I raised these observations with the CEO and internal
+            bioinformaticians. We agreed to prioritize metadata discovery and
+            compatibility because both affected multiple visualization workflows.
+          </Paragraph>
+        </CopyBlock>
+      </Section>
+      <Gap size={spacing.article.sectionGap} />
 
-        <Section title="Outcome">
+      <Section title="Organizing variables by biological meaning">
+        <CopyBlock>
           <Paragraph>
-            The redesign transformed Data Mapping from a fragmented configuration
-            task into a guided workflow.
+            I designed a grouped metadata list to give researchers a more
+            structured way to browse. Categories included Sequence &amp; Structure,
+            V(D)J Annotation, SHM &amp; Maturation, and Clustering &amp; Diversity.
           </Paragraph>
-          <Paragraph>The new experience:</Paragraph>
-          <List>
-            <li>organized metadata around biologically meaningful groups;</li>
-            <li>introduced contextual suggestions and explicit compatibility guidance;</li>
-            <li>clarified the relationship between source variables and visualization targets;</li>
-            <li>reduced the need to navigate between disconnected configuration states.</li>
-          </List>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          {...dataMappingImages["2"]}
+          alt="Before and after: metadata organized into biologically meaningful groups"
+        />
+        <Gap size={spacing.article.mediaGap} />
+        <CopyBlock>
           <Paragraph>
-            The result was a workflow that gave researchers more guidance without
-            removing the flexibility required for complex analytical work.
+            I worked with the CTO on how biologically meaningful groups would be
+            formed through Platforma’s underlying algorithms. Engineers explained
+            the existing compatibility rules, and we reviewed the proposed
+            interface behavior together.
           </Paragraph>
-        </Section>
+        </CopyBlock>
+      </Section>
+      <Gap size={spacing.article.sectionGap} />
+
+      <section>
+        <H2>Showing compatibility before users commit to an action</H2>
+        <Gap size={spacing.base[4]} />
+        <CopyBlock>
+          <Paragraph>
+            I introduced guidance in both directions. Hovering over a variable
+            highlighted compatible visualization targets. Selecting a target
+            showed which variables were recommended, supported, or forbidden for it.
+          </Paragraph>
+          <Paragraph>
+            This supported two starting points: a researcher could begin with the
+            variable they wanted to explore, or with the visualization property
+            they wanted to configure.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          {...dataMappingImages["3"]}
+          alt="Variable and visualization-target compatibility guidance in both directions"
+        />
+      </section>
+      <Gap size={spacing.article.mediaGap} />
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Revising the model after scientist feedback">
+        <CopyBlock>
+          <Paragraph>
+            My initial proposal highlighted recommended mappings and disabled all
+            others. Feedback from internal scientists showed that this was too
+            restrictive: a mapping could be technically valid without being useful
+            for the current analytical goal. I revised the model to keep those
+            choices available and distinguish three states:
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.h2Gap} />
+        <ArticleSummary
+          rows={[
+            ["Recommended", "Highlighted as appropriate for the current analytical goal."],
+            ["Supported", "Technically valid and still selectable, although generally unhelpful for the current analytical goal."],
+            ["Forbidden", "Unavailable because the attachment was technically unsupported."],
+          ]}
+        />
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          {...dataMappingImages["4"]}
+          alt="Revised mapping model showing recommended, supported, and forbidden states"
+        />
+      </Section>
+      <Gap size={spacing.article.mediaGap} />
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="A proposed next step: contextual suggestions">
+        <CopyBlock>
+          <Paragraph>
+            I also proposed a Suggested metadata group that would surface relevant
+            variables based on the blocks in a project and their configuration.
+            This extension remained planned when I left and was not part of the
+            shipped redesign.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          {...dataMappingImages["5"]}
+          alt="Proposed Suggested metadata group, marked as not shipped"
+        />
+      </Section>
+      <Gap size={spacing.article.mediaGap} />
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Delivery and observed results">
+        <CopyBlock>
+          <Paragraph>
+            Metadata grouping and compatibility highlighting shipped in the next
+            release. I reviewed the implementation and worked with engineers on
+            interaction corrections.
+          </Paragraph>
+          <Paragraph>
+            In sessions presenting the redesign to users who had struggled with
+            the previous version, I observed less hesitation during configuration.
+            Customers described the experience as easier and faster, while
+            feedback from colleagues and support records indicated fewer
+            mapping-related complaints.
+          </Paragraph>
+          <Paragraph>
+            These were encouraging signals from guided sessions and support
+            feedback; task completion time was not measured. To evaluate the
+            improvement more rigorously, I would measure completion time and task
+            success for representative mapping tasks.
+          </Paragraph>
+        </CopyBlock>
+      </Section>
+      <Gap size={spacing.article.sectionGap} />
     </ArticleShell>
   );
 }

@@ -7,11 +7,16 @@ const sharp = require(require.resolve("sharp", {
   paths: [dirname(require.resolve("next/package.json"))],
 }));
 const assets = resolve(import.meta.dirname, "../public/capabilities");
+const article = process.argv[2] ?? "msa";
+if (!["msa", "data-mapping"].includes(article)) {
+  throw new Error(`Unknown article image set: ${article}`);
+}
+const prefix = article === "msa" ? "msa-fig" : article;
 const manifest = {};
 
 // Keep the 2x PNG exports as masters; encode all delivered sizes losslessly.
 for (let figure = 1; figure <= 5; figure++) {
-  const base = resolve(assets, `msa-fig-${figure}`);
+  const base = resolve(assets, `${prefix}-${figure}`);
   const source = `${base}.png`;
   const { width, height } = await sharp(source).metadata();
   const { channels } = await sharp(source).ensureAlpha().stats();
@@ -32,7 +37,7 @@ for (let figure = 1; figure <= 5; figure++) {
   if (!original.equals(decoded)) {
     throw new Error(`Figure ${figure}: lossless pixel verification failed`);
   }
-  const src = `/capabilities/msa-fig-${figure}.webp`;
+  const src = `/capabilities/${prefix}-${figure}.webp`;
   const variants = [];
   for (const size of [640, 960, 1640]) {
     const output = `${base}-${size}.webp`;
@@ -41,7 +46,7 @@ for (let figure = 1; figure <= 5; figure++) {
     // Resizing UI screenshots can increase entropy and make lossless files larger.
     if (buffer.length < result.size * 0.9) {
       await writeFile(output, buffer);
-      variants.push(`/capabilities/msa-fig-${figure}-${size}.webp ${size}w`);
+      variants.push(`/capabilities/${prefix}-${figure}-${size}.webp ${size}w`);
     } else {
       await rm(output, { force: true });
     }
@@ -50,4 +55,4 @@ for (let figure = 1; figure <= 5; figure++) {
   const pngBytes = (await stat(source)).size;
   console.log(`Figure ${figure}: ${width}x${height}, PNG ${pngBytes} bytes -> WebP ${result.size} bytes, pixels identical`);
 }
-await writeFile(resolve(assets, "../../src/data/msa-images.json"), `${JSON.stringify(manifest, null, 2)}\n`);
+await writeFile(resolve(assets, `../../src/data/${article}-images.json`), `${JSON.stringify(manifest, null, 2)}\n`);
