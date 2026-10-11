@@ -77,10 +77,10 @@ export const capabilities = [
     articles: [
       {
         id: "tron-financial-operations",
-        label: "TRON operations",
-        title: "Simplifying complex financial operations for blockchain users",
+        label: "AML",
+        title: "Bringing AML risk checks into the wallet overview",
         description:
-          "Designing mobile financial experiences that help blockchain users manage transactions, accounts, and complex financial workflows with confidence.",
+          "Bringing AML risk checks onto wallet asset cards with clear report states, contextual actions, and an optional summary shaped by user feedback.",
       },
       {
         id: "mass-payout",

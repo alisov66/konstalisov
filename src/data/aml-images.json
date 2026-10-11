@@ -1,0 +1,26 @@
+{
+  "1": {
+    "src": "/capabilities/aml-1.webp",
+    "width": 2290,
+    "height": 1784,
+    "srcSet": "/capabilities/aml-1-640.webp 640w, /capabilities/aml-1.webp 2290w"
+  },
+  "2": {
+    "src": "/capabilities/aml-2.webp",
+    "width": 2470,
+    "height": 1436,
+    "srcSet": "/capabilities/aml-2.webp 2470w"
+  },
+  "3": {
+    "src": "/capabilities/aml-3.webp",
+    "width": 2598,
+    "height": 2096,
+    "srcSet": "/capabilities/aml-3-640.webp 640w, /capabilities/aml-3.webp 2598w"
+  },
+  "4": {
+    "src": "/capabilities/aml-4.webp",
+    "width": 1682,
+    "height": 732,
+    "srcSet": "/capabilities/aml-4.webp 1682w"
+  }
+}

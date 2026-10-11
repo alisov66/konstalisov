@@ -6,6 +6,7 @@ import { sendGAEvent } from "@next/third-parties/google";
 import { track } from "@vercel/analytics";
 import msaImages from "@/data/msa-images.json";
 import dataMappingImages from "@/data/data-mapping-images.json";
+import amlImages from "@/data/aml-images.json";
 
 import ExploreMenu, {
   type ExploreMenuCapability,
@@ -36,13 +37,6 @@ const images = {
   scalingPlatforma2: "/capabilities/scaling-platforma-2.png",
   scalingPlatforma3: "/capabilities/scaling-platforma-3.png",
   scalingPlatforma4: "/capabilities/scaling-platforma-4.png",
-  financialOps1: "/capabilities/financial-ops-1.png",
-  financialOps2: "/capabilities/financial-ops-2.png",
-  financialOps3: "/capabilities/financial-ops-3.png",
-  financialOps4: "/capabilities/financial-ops-4.png",
-  financialOps5: "/capabilities/financial-ops-5.png",
-  financialOps6: "/capabilities/financial-ops-6.png",
-  financialOps7: "/capabilities/financial-ops-7.png",
   portfolioFig1: "/capabilities/portfolio-fig-1.png",
   portfolioFig2: "/capabilities/portfolio-fig-2.png",
   portfolioFig3: "/capabilities/portfolio-fig-3.png",
@@ -260,6 +254,68 @@ function ArticleSummary({
         </div>
       ))}
     </dl>
+  );
+}
+
+function ArticleComparisonTable({
+  label,
+  headers,
+  rows,
+}: {
+  label: string;
+  headers: readonly [string, string, string];
+  rows: readonly (readonly [string, string, string])[];
+}) {
+  const rowClassName =
+    "grid grid-cols-3 gap-[var(--base-5)] py-[var(--base-3)] md:grid-cols-[180px_minmax(0,1fr)_minmax(0,1fr)] md:gap-[var(--base-10)]";
+
+  return (
+    <table
+      aria-label={label}
+      role="table"
+      className="block w-full text-left"
+      style={typeStyle(typography.article.body)}
+    >
+      <thead role="rowgroup" className="block">
+        <tr
+          role="row"
+          className={rowClassName}
+          style={{ borderBottom: `${colors.border.width.thin} solid ${colors.border.primary}` }}
+        >
+          {headers.map((header) => (
+            <th
+              key={header}
+              role="columnheader"
+              scope="col"
+              className="min-w-0 text-left [overflow-wrap:anywhere]"
+              style={typeStyle(typography.article.bodyStrong)}
+            >
+              {header}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody role="rowgroup" className="block">
+        {rows.map((row, index) => (
+          <tr
+            key={row[0]}
+            role="row"
+            className={rowClassName}
+            style={{
+              borderBottom: index < rows.length - 1
+                ? `${colors.border.width.thin} solid ${colors.border.secondary}`
+                : undefined,
+            }}
+          >
+            {row.map((cell, column) => (
+              <td key={headers[column]} role="cell" className="min-w-0 [overflow-wrap:anywhere]">
+                {cell}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 }
 
@@ -1434,480 +1490,195 @@ function ProductDesignScaleArticle() {
 function MobileExperiencesArticle() {
   return (
     <ArticleShell>
-      <H1>Simplifying Financial Operations for Active TRON Users</H1>
+      <H1>Bringing AML risk checks into the wallet overview</H1>
       <Gap size={spacing.article.h1Gap} />
-
-      <Section title="Context">
-        <CopyBlock>
-          <Paragraph>
-            TR.ENERGY Wallet was designed for active participants of the TRON
-            ecosystem who manage high transaction volumes and substantial crypto
-            assets.
-          </Paragraph>
-          <Paragraph>
-            Unlike traditional wallets focused primarily on storing and
-            transferring funds, these users face additional operational
-            challenges:
-          </Paragraph>
-          <List>
-            <li>minimizing transaction costs.</li>
-            <li>evaluating transaction risk.</li>
-            <li>protecting wallet reputation.</li>
-            <li>managing idle capital.</li>
-          </List>
-          <Paragraph>
-            Most of these workflows are typically spread across multiple tools
-            and services. Users often rely on separate applications for resource
-            management, compliance checks, staking, and portfolio operations.
-          </Paragraph>
-          <Paragraph>
-            The goal was to bring these workflows into a single mobile
-            experience while keeping complex blockchain concepts understandable
-            and actionable.
-          </Paragraph>
-        </CopyBlock>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="TR.ENERGY wallet overview"
-          className="aspect-[3344/1784]"
-          src={images.financialOps1}
-        />
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Challenge">
-        <CopyBlock>
-          <Paragraph>
-            TRON provides powerful mechanisms for reducing transaction costs and
-            managing assets, but many of them require users to understand
-            technical concepts such as Energy, staking, and wallet reputation.
-          </Paragraph>
-          <Paragraph>
-            As the product evolved, the challenge shifted beyond building a
-            wallet.
-          </Paragraph>
-          <Paragraph>The challenge became:</Paragraph>
-          <Paragraph>
-            How might we help users manage costs, risks, and capital without
-            forcing them to become blockchain experts?
-          </Paragraph>
-          <Paragraph>
-            To answer this challenge, the product focused on three operational
-            areas:
-          </Paragraph>
-          <List>
-            <li>transaction cost optimization.</li>
-            <li>risk management.</li>
-            <li>capital efficiency.</li>
-          </List>
-        </CopyBlock>
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Operational scope">
-        <CopyBlock>
-          <Paragraph>
-            The product brought together 3 core operational areas within one mobile experience:
-          </Paragraph>
-          <List>
-            <li>transaction cost optimization through Energy management;</li>
-            <li>risk management through AML verification and account separation;</li>
-            <li>capital efficiency through staking.</li>
-          </List>
-          <Paragraph>
-            These workflows were supported by a shared interaction model rather than separate, disconnected tools.
-          </Paragraph>
-        </CopyBlock>
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Key insights">
-        <ArticleImage
-          alt="Key insights for active TRON users"
-          className="aspect-[2556/824]"
-          src={images.financialOps2}
-        />
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Design principles">
-        <Subsection title="Make invisible information visible">
-          <Paragraph>
-            Surface critical blockchain information directly where decisions
-            happen.
-          </Paragraph>
-        </Subsection>
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Support proactive risk management">
-          <Paragraph>
-            Help users identify and isolate risk before it affects primary
-            assets.
-          </Paragraph>
-        </Subsection>
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Keep operational workflows connected">
-          <Paragraph>
-            Reduce dependence on external services and fragmented experiences.
-          </Paragraph>
-        </Subsection>
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Preserve context during frequent actions">
-          <Paragraph>
-            Allow users to complete common actions without losing sight of their
-            current portfolio state.
-          </Paragraph>
-        </Subsection>
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Surface transaction costs before they become a problem">
-        <Subsection title="Problem">
-          <CopyBlock>
-            <Paragraph>
-              TRON transactions consume network resources known as Energy.
-            </Paragraph>
-            <Paragraph>
-              Without sufficient Energy, users must spend TRX to cover
-              transaction fees. For users making frequent USDT transfers,
-              inefficient resource management can significantly increase
-              operational costs.
-            </Paragraph>
-            <Paragraph>
-              At the same time, Energy is a blockchain-specific concept that
-              many users do not fully understand.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Energy availability in wallet"
-          className="aspect-[450/474.468] w-[450px] max-w-full"
-          src={images.financialOps3}
-        />
-        <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Solution">
-          <CopyBlock>
-            <Paragraph>
-              Energy availability was surfaced directly within the portfolio
-              experience alongside token balances.
-            </Paragraph>
-            <Paragraph>Users can immediately understand:</Paragraph>
-            <List>
-              <li>available Energy.</li>
-              <li>estimated transaction capacity.</li>
-              <li>resource consumption status.</li>
-            </List>
-            <Paragraph>
-              The wallet also provides an integrated Energy purchase workflow,
-              allowing users to acquire additional resources without leaving the
-              application.
-            </Paragraph>
-            <Paragraph>
-              Instead of navigating through external services or advanced
-              blockchain settings, users can resolve transaction resource issues
-              directly within the context of their assets.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Outcome">
-          <Paragraph>
-            The wallet transforms a complex blockchain mechanism into an
-            actionable operational tool, helping users reduce transaction costs
-            while maintaining a streamlined workflow.
-          </Paragraph>
-        </Subsection>
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Turn compliance data into actionable decisions">
-        <Subsection title="Problem">
-          <CopyBlock>
-            <Paragraph>
-              For active crypto users, asset value is only part of the equation.
-            </Paragraph>
-            <Paragraph>
-              The reputation of incoming funds can affect future transactions,
-              compliance requirements, and wallet credibility.
-            </Paragraph>
-            <Paragraph>
-              Users receiving transfers from unknown sources need a way to
-              evaluate risk before integrating assets into their primary
-              holdings.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Solution">
-          <Paragraph>
-            The wallet introduces a proactive risk-management workflow.
-          </Paragraph>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Risk-management workflow"
-          className="aspect-[3344/1784]"
-          src={images.financialOps4}
-        />
-        <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="AML verification">
-          <CopyBlock>
-            <Paragraph>
-              {"Users could perform compliance checks across "}
-              <strong style={typeStyle(typography.article.bodyStrong)}>3 different targets</strong>:
-            </Paragraph>
-            <List>
-              <li>their own wallets;</li>
-              <li>existing assets;</li>
-              <li>external wallet addresses.</li>
-            </List>
-            <Paragraph>
-              This made risk assessment useful both for monitoring current holdings
-              and evaluating funds before accepting or moving them.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Risk visibility">
-          <CopyBlock>
-            <Paragraph>
-              AML results are surfaced directly within asset cards using clear
-              visual indicators and risk scores.
-            </Paragraph>
-            <Paragraph>
-              Users can identify potential issues without opening detailed
-              reports.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Risk visibility in asset cards"
-          className="aspect-[2518/1784]"
-          src={images.financialOps5}
-        />
-        <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Transfer wallets">
-          <CopyBlock>
-            <Paragraph>
-              To further reduce risk exposure, the wallet supports multiple
-              accounts.
-            </Paragraph>
-            <Paragraph>
-              A dedicated transfer wallet can be used to receive and verify
-              incoming funds before moving them into primary holdings.
-            </Paragraph>
-            <Paragraph>
-              This allows users to isolate potentially risky transactions while
-              keeping trusted assets separated.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Outcome">
-          <Paragraph>
-            By combining AML verification with dedicated transfer wallets, the
-            product supports a complete risk-management workflow—from evaluating
-            external addresses before a transfer to safely integrating verified
-            assets into long-term holdings.
-          </Paragraph>
-        </Subsection>
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Increase capital efficiency within the ecosystem">
-        <ArticleImage
-          alt="Staking within TR.ENERGY wallet"
-          className="aspect-[450/287.664] w-[450px] max-w-full"
-          src={images.financialOps6}
-        />
-        <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Problem">
-          <CopyBlock>
-            <Paragraph>
-              Many users maintain significant TRX balances to support
-              transaction-heavy operations and reduce transaction costs through
-              Energy purchases.
-            </Paragraph>
-            <Paragraph>
-              As a result, substantial amounts of capital often remain idle
-              between transactions.
-            </Paragraph>
-            <Paragraph>
-              At the same time, users who want to generate yield are often
-              forced to move assets to external staking platforms, introducing
-              additional complexity and fragmenting their financial workflows.
-            </Paragraph>
-            <Paragraph>
-              The wallet needed a way to help users utilize idle capital without
-              leaving the TR.ENERGY ecosystem.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Solution">
-          <CopyBlock>
-            <Paragraph>
-              Staking capabilities were integrated directly into the wallet
-              experience.
-            </Paragraph>
-            <Paragraph>
-              {"Users could manage "}
-              <strong style={typeStyle(typography.article.bodyStrong)}>5 core staking actions</strong>
-              {" without leaving the wallet:"}
-            </Paragraph>
-            <List>
-              <li>create staking positions;</li>
-              <li>monitor active stakes;</li>
-              <li>review earnings;</li>
-              <li>unstake assets;</li>
-              <li>enable automatic reward reinvestment.</li>
-            </List>
-            <Paragraph>
-              This kept both operational activity and capital utilization inside the same product ecosystem.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Outcome">
-          <Paragraph>
-            The wallet evolves beyond transaction management and becomes a
-            broader asset-management platform, helping users generate additional
-            value from assets already held within the product.
-          </Paragraph>
-        </Subsection>
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Creating a consistent interaction model">
+      <CopyBlock>
         <Paragraph>
-          As the number of operational workflows increased, a unified
-          interaction pattern became necessary.
+          TR.ENERGY users had to open a separate AML tab to check address risk.
+          I brought the latest result onto asset cards, distinguishing unchecked,
+          current, and outdated reports. After release, stakeholders reported
+          increased use of paid checks. Feedback also revealed different needs:
+          frequent users welcomed the summary, while some less frequent users
+          found it added clutter. I designed a global visibility setting in response.
         </Paragraph>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Bottom sheet interaction model"
-          className="aspect-[2518/1784]"
-          src={images.financialOps7}
-        />
-        <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Problem">
-          <CopyBlock>
-            <Paragraph>
-              As the product expanded, users needed access to an increasing
-              number of contextual actions, settings, and supporting workflows.
-            </Paragraph>
-            <Paragraph>
-              Traditional navigation patterns would require frequent screen
-              transitions and increase interaction cost.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Solution">
-          <CopyBlock>
-            <Paragraph>
-              {"The reusable Bottom Sheet pattern supported at least "}
-              <strong style={typeStyle(typography.article.bodyStrong)}>5 recurring interaction types</strong>
-              {" across the product:"}
-            </Paragraph>
-            <List>
-              <li>Energy purchases;</li>
-              <li>account management;</li>
-              <li>currency preferences;</li>
-              <li>contextual settings;</li>
-              <li>lightweight operational workflows.</li>
-            </List>
-            <Paragraph>
-              This reduced the need for repeated full-screen navigation and helped
-              preserve portfolio context during frequent actions.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Outcome">
-          <Paragraph>
-            The Bottom Sheet system became a consistent interaction foundation
-            across the product, reducing navigation overhead while maintaining
-            workflow continuity.
-          </Paragraph>
-        </Subsection>
-      </Section>
-
+      </CopyBlock>
+      <Gap size={spacing.base[4]} />
+      <ArticleSummary
+        rows={[
+          ["Product", "TR.ENERGY Wallet · mobile app"],
+          ["My role", "Sole Product Designer · interaction design through implementation support"],
+          ["Team", "PM, stakeholders, frontend engineers"],
+          ["Design", "Approximately 3 weeks, alongside other tasks"],
+          ["Project duration", "Approximately 2 months, including delivery and the feedback-driven update"],
+          ["Status", "Shipped"],
+        ]}
+      />
+      <Gap size={spacing.article.mediaGap} />
+      <ArticleImage
+        {...amlImages["1"]}
+        alt="AML risk summary integrated into a TR.ENERGY wallet asset card"
+      />
+      <Gap size={spacing.article.mediaGap} />
       <Gap size={spacing.article.sectionGap} />
 
-      <Section title="My role">
+      <Section title="Bringing the latest result closer to the task">
         <CopyBlock>
           <Paragraph>
-            As the Product Designer, I was responsible for designing key wallet
-            experiences across the product, including Energy management, AML
-            verification workflows, staking functionality, multi-account
-            management, and the reusable interaction patterns used throughout
-            the application.
+            TR.ENERGY served a mix of users, including crypto professionals making
+            frequent transactions and managing substantial funds. The app already
+            offered anti-money-laundering (AML) address checks and detailed reports
+            through a dedicated tab. Users selected an address there to run a
+            check or inspect an earlier report.
           </Paragraph>
           <Paragraph>
-            My work focused on translating complex blockchain concepts into
-            understandable mobile workflows, helping users manage transaction
-            costs, evaluate risk, and utilize capital without requiring deep
-            technical knowledge of the TRON ecosystem.
+            Key users and stakeholders asked to see AML status on the wallet’s
+            main screen. I explored how to bring the latest result onto each asset
+            card while keeping the card compact. Each card represented one address
+            and displayed its own risk score.
+          </Paragraph>
+          <Paragraph>
+            The aim was to make the result easier to find and the next action
+            easier to understand. Because checks were paid, encouraging use of the
+            existing checking service was also a business consideration.
           </Paragraph>
         </CopyBlock>
       </Section>
-
       <Gap size={spacing.article.sectionGap} />
 
-      <Section title="Outcome">
+      <Section title="Separating risk from report freshness">
         <CopyBlock>
           <Paragraph>
-            TR.ENERGY evolved beyond a traditional crypto wallet into a
-            financial operations platform for active TRON users.
+            A score alone could not explain whether an address had never been
+            checked or whether its previous result needed updating. I combined a
+            percentage and risk bar with an action that changed according to the
+            report state.
           </Paragraph>
-          <Paragraph>The product combined:</Paragraph>
-          <List>
-            <li>
-              <strong style={typeStyle(typography.article.bodyStrong)}>3 core operational areas</strong>
-              {" — transaction costs, risk management, and capital efficiency;"}
-            </li>
-            <li>
-              {"AML checks across "}
-              <strong style={typeStyle(typography.article.bodyStrong)}>3 target types</strong>;
-            </li>
-            <li>
-              <strong style={typeStyle(typography.article.bodyStrong)}>5 core staking actions</strong>
-              {" inside the wallet;"}
-            </li>
-            <li>
-              {"a reusable Bottom Sheet system supporting at least "}
-              <strong style={typeStyle(typography.article.bodyStrong)}>5 recurring interaction types</strong>;
-            </li>
-            <li>multi-account workflows that separated trusted and untrusted transaction flows.</li>
-          </List>
-          <Paragraph>The resulting experience helped users:</Paragraph>
-          <List>
-            <li>manage Energy and transaction costs without leaving the wallet;</li>
-            <li>evaluate asset reputation and incoming-fund risk;</li>
-            <li>isolate potentially risky transactions through dedicated accounts;</li>
-            <li>generate value from idle capital through staking;</li>
-            <li>complete complex financial operations within one mobile experience.</li>
-          </List>
+        </CopyBlock>
+        <Gap size={spacing.base[4]} />
+        <ArticleComparisonTable
+          label="AML report states and asset-card actions"
+          headers={["Report state", "Asset-card display", "Action"]}
+          rows={[
+            ["Not checked", "No score and an empty bar", "Check starts the checking workflow."],
+            ["Current report", "Risk percentage and a colored bar", "View report opens the latest detailed report."],
+            ["Outdated result", "Previous percentage remains visible, with the score and bar shown in gray", "Check again starts a new check."],
+          ]}
+        />
+        <Gap size={spacing.article.h2Gap} />
+        <CopyBlock>
           <Paragraph>
-            By focusing on costs, risks, and capital efficiency, the wallet
-            supports the operational realities of high-volume TRON participants
-            while keeping advanced blockchain concepts accessible through a
-            mobile-first experience.
+            For current reports, green, yellow, and red bars represented low,
+            medium, and high risk. When a result became outdated, the interface
+            retained the previous score but removed its risk color and changed
+            the action to “Check again.”
+          </Paragraph>
+          <Paragraph>
+            Reports became outdated after a time interval or new transactions.
+            Stakeholders defined the time-based rule; I proposed treating new
+            transactions as a reason to refresh the result. The score itself was
+            not continuously recalculated: obtaining an updated result required
+            another check.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          {...amlImages["2"]}
+          alt="Unchecked, current, and outdated AML report states with their corresponding actions"
+        />
+        <Gap size={spacing.article.mediaGap} />
+        <CopyBlock>
+          <Paragraph>
+            The limited space shaped the design. I explored several layouts and
+            selected one with stakeholders that kept the summary within the asset
+            card. Changing the action label gave each report state a corresponding
+            next step without adding a separate set of controls.
+          </Paragraph>
+        </CopyBlock>
+      </Section>
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Connecting the summary to checks and reports">
+        <CopyBlock>
+          <Paragraph>
+            I adapted the checking flow I had designed earlier. Starting from an
+            asset card opened a sheet listing the available addresses, with that
+            card’s address already selected. The “Check for $1” button displayed
+            the cost before users committed to the check.
+          </Paragraph>
+          <Paragraph>
+            After confirmation, the sheet closed and users moved to the reports
+            page in the AML tab, where a new entry showed that the check was
+            processing. When it completed, the entry displayed the resulting risk
+            percentage and level. Tapping it opened the detailed report. Users who
+            had left that screen received an in-app or push notification,
+            depending on whether they were still using the app.
+          </Paragraph>
+          <Paragraph>
+            The detailed report provided explanations and risk breakdowns beyond
+            the compact card summary. Earlier reports remained available in the
+            AML tab, including reports whose scores were marked as outdated on the
+            asset card.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          {...amlImages["3"]}
+          alt="AML checking workflow from address selection and paid confirmation to report details"
+        />
+      </Section>
+      <Gap size={spacing.article.mediaGap} />
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Making the summary optional after launch">
+        <CopyBlock>
+          <Paragraph>
+            The first release showed the AML summary on asset cards by default.
+            Users who had requested it responded positively, but another group
+            reported that the additional information made the interface feel
+            heavier. These users made fewer transactions or did not need AML
+            information in their everyday wallet view.
+          </Paragraph>
+          <Paragraph>
+            I initially heard this feedback through the PM and support team, then
+            read the user messages shared in our project chat. I proposed a global
+            setting to control whether AML information appeared on asset cards.
+          </Paragraph>
+          <Paragraph>
+            The update kept AML visible by default and allowed users to hide the
+            section across all cards through Settings. This gave users a way to
+            adjust the wallet overview to their needs while keeping reports
+            accessible through the dedicated AML tab.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          {...amlImages["4"]}
+          alt="Global Settings toggle showing wallet asset cards with AML information hidden and visible"
+        />
+      </Section>
+      <Gap size={spacing.article.mediaGap} />
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Implementation and feedback">
+        <CopyBlock>
+          <Paragraph>
+            I worked with frontend engineers through implementation, refining
+            risk-bar animation, transitions, localized button labels, and
+            component states. I also designed error states for connection issues
+            and insufficient funds.
+          </Paragraph>
+          <Paragraph>
+            After the initial release, stakeholders reported more Check-button
+            taps and completed paid checks. I do not have analytics to quantify
+            the increase or isolate the design’s contribution. After the
+            visibility update, I personally read positive feedback shared by
+            support: users welcomed the option to hide AML information.
+            Comprehension and task completion were not measured.
+          </Paragraph>
+          <Paragraph>
+            The project highlighted a trade-off: information valuable to frequent
+            users can add clutter for others. Making the summary optional let users
+            adapt the wallet overview to their needs.
           </Paragraph>
         </CopyBlock>
       </Section>
