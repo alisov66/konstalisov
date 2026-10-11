@@ -1,0 +1,32 @@
+{
+  "1": {
+    "src": "/capabilities/msa-fig-1.webp",
+    "width": 2400,
+    "height": 1690,
+    "srcSet": "/capabilities/msa-fig-1.webp 2400w"
+  },
+  "2": {
+    "src": "/capabilities/msa-fig-2.webp",
+    "width": 2400,
+    "height": 1530,
+    "srcSet": "/capabilities/msa-fig-2.webp 2400w"
+  },
+  "3": {
+    "src": "/capabilities/msa-fig-3.webp",
+    "width": 3144,
+    "height": 792,
+    "srcSet": "/capabilities/msa-fig-3-640.webp 640w, /capabilities/msa-fig-3-960.webp 960w, /capabilities/msa-fig-3.webp 3144w"
+  },
+  "4": {
+    "src": "/capabilities/msa-fig-4.webp",
+    "width": 2400,
+    "height": 1690,
+    "srcSet": "/capabilities/msa-fig-4.webp 2400w"
+  },
+  "5": {
+    "src": "/capabilities/msa-fig-5.webp",
+    "width": 2400,
+    "height": 1690,
+    "srcSet": "/capabilities/msa-fig-5.webp 2400w"
+  }
+}

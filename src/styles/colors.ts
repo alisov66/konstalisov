@@ -23,6 +23,7 @@ export const colors = {
 
   border: {
     primary: "var(--border-primary)",
+    secondary: "var(--border-secondary)",
     focus: "var(--border-focus)",
     width: {
       thin: "var(--border-width-thin)",

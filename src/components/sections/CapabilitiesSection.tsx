@@ -4,6 +4,7 @@ import type { CSSProperties, ReactNode } from "react";
 import { useCallback, useEffect, useRef } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
 import { track } from "@vercel/analytics";
+import msaImages from "@/data/msa-images.json";
 
 import ExploreMenu, {
   type ExploreMenuCapability,
@@ -19,12 +20,6 @@ import {
 import { colors, spacing, typography } from "@/styles";
 
 const images = {
-  msaFig1: "/capabilities/msa-fig-1.png",
-  msaFig2: "/capabilities/msa-fig-2.png",
-  msaFig3: "/capabilities/msa-fig-3.png",
-  msaFig4: "/capabilities/msa-fig-4.png",
-  msaFig5: "/capabilities/msa-fig-5.png",
-  msaFig6: "/capabilities/msa-fig-6.png",
   dataMappingFig1: "/capabilities/data-mapping-1.png",
   dataMappingFig2: "/capabilities/data-mapping-2.png",
   dataMappingFig3: "/capabilities/data-mapping-3.png",
@@ -134,10 +129,16 @@ function ArticleImage({
   src,
   alt,
   className,
+  width,
+  height,
+  srcSet,
 }: {
   src: string;
   alt: string;
   className?: string;
+  width?: number;
+  height?: number;
+  srcSet?: string;
 }) {
   const hasExplicitWidth = /\bw-(?:\[|full\b)/.test(className || "");
 
@@ -153,6 +154,16 @@ function ArticleImage({
         .filter(Boolean)
         .join(" ")}
       src={src}
+      width={width}
+      height={height}
+      srcSet={srcSet}
+      sizes={
+        srcSet
+          ? "auto, (max-width: 767px) calc(100vw - 32px), (max-width: 899px) calc(100vw - 80px), 820px"
+          : undefined
+      }
+      loading={srcSet ? "lazy" : undefined}
+      decoding={srcSet ? "async" : undefined}
     />
   );
 }
@@ -224,241 +235,259 @@ function ArticleShell({ children }: { children: ReactNode }) {
   );
 }
 
-function MsaWorkspaceArticle() {
-  const labelStyle = {
-    ...typeStyle(typography.article.body),
-    fontWeight: typography.fontWeight.semibold,
-  };
+function ArticleSummary({
+  rows,
+}: {
+  rows: readonly (readonly [string, string])[];
+}) {
+  return (
+    <dl style={typeStyle(typography.article.body)}>
+      {rows.map(([label, value], index) => (
+        <div
+          key={label}
+          className="flex flex-col gap-[var(--base-1)] py-[var(--base-3)] md:flex-row md:flex-wrap md:gap-[var(--base-5)]"
+          style={{
+            borderBottom:
+              index < rows.length - 1
+                ? `${colors.border.width.thin} solid ${colors.border.secondary}`
+                : undefined,
+          }}
+        >
+          <dt
+            className="shrink-0 md:w-[180px]"
+            style={{
+              ...typeStyle(typography.article.bodyStrong),
+              color: colors.text.secondary,
+            }}
+          >
+            {label}
+          </dt>
+          <dd className="min-w-0 md:min-w-[240px] md:flex-1">{value}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
 
+function MsaWorkspaceArticle() {
   return (
     <ArticleShell>
-      <H1>Designing a workspace for complex sequence analysis</H1>
+      <H1>Designing a flexible workspace for sequence analysis</H1>
       <Gap size={spacing.article.h1Gap} />
+      <CopyBlock>
+        <Paragraph>
+          I designed Platforma’s multiple sequence alignment (MSA) workspace
+          from scratch. The challenge was to fit sequence detail and supporting
+          visualizations into limited screen space while accommodating different
+          scientific tasks. I created configurable layouts, then used feedback
+          to design compact alignment and heatmap views. The workspace was
+          implemented and released.
+        </Paragraph>
+      </CopyBlock>
+      <Gap size={spacing.base[4]} />
+      <ArticleSummary
+        rows={[
+          ["Product", "Platforma, MiLaboratories"],
+          [
+            "My role",
+            "Workspace and interaction design, components, documentation, and engineering collaboration",
+          ],
+          ["Scope", "New sequence-analysis workspace"],
+          ["Design", "Approximately four weeks of dedicated work"],
+          ["Delivery", "Workspace released to users"],
+        ]}
+      />
+      <Gap size={spacing.article.mediaGap} />
+      <ArticleImage
+        {...msaImages["1"]}
+        alt="MSA workspace with annotated sequence labels and sequence alignment"
+      />
+      <Gap size={spacing.article.sectionGap} />
+      <Gap size={spacing.article.sectionGap} />
 
-        <Section title="Context">
-          <CopyBlock>
-            <Paragraph>
-              MSA Workspace is an analytical environment for exploring sequence
-              alignments through multiple synchronized visualizations.
-            </Paragraph>
-            <Paragraph>
-              Researchers use it to inspect sequence patterns, metadata
-              relationships, diversity metrics, and evolutionary relationships
-              while frequently switching focus throughout the analysis process.
-            </Paragraph>
-          </CopyBlock>
-          <Gap size={spacing.article.mediaGap} />
+      <Section title="Bringing visual sequence comparison into Platforma">
+        <CopyBlock>
+          <Paragraph>
+            Platforma already offered table views for analyzing sequences, but
+            users needed a dedicated workspace for more detailed visual
+            comparison. They could also use MSA tools in other software. The CEO
+            initiated the project to bring this capability into Platforma.
+          </Paragraph>
+          <Paragraph>
+            MSA arranges biological sequences so researchers can compare
+            corresponding positions. For example, a scientist reviewing antibody
+            candidates can inspect where their sequences differ and use a tree
+            to explore relationships between them. This helps them examine
+            diversity within the candidate set.
+          </Paragraph>
+          <Paragraph>
+            These tasks required different visual priorities: reading individual
+            sequence characters, seeing broader patterns, or examining related
+            information alongside the alignment.
+          </Paragraph>
+        </CopyBlock>
+      </Section>
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Keeping scientific conventions familiar">
+        <CopyBlock>
+          <Paragraph>
+            The CEO demonstrated real workflows and explained the required
+            functionality. I also reviewed five or six competing MSA tools to
+            understand established ways of presenting alignments, heatmaps,
+            trees, consensus views, and sequence logos.
+          </Paragraph>
+          <Paragraph>
+            Scientists defined which information needed to be compared; I
+            decided how to arrange and navigate it. I kept familiar scientific
+            representations and focused my design work on layout, visibility,
+            and information density. I reused Platforma’s design-system
+            components and created new components where needed.
+          </Paragraph>
+        </CopyBlock>
+      </Section>
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Choosing the views relevant to the task">
+        <CopyBlock>
+          <Paragraph>
+            Showing every analytical view at once would leave less space for the
+            information relevant to the current task. I designed controls that
+            let researchers show or hide individual views—including trees,
+            metadata columns, heatmaps, consensus views, and sequence logos—as
+            their focus changed.
+          </Paragraph>
+          <Paragraph>
+            This let researchers adjust the workspace around the information
+            they needed to compare. Label columns could also be pinned to keep
+            reference information visible during navigation.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          {...msaImages["2"]}
+          alt="MSA workspace displaying a tree, label columns, heatmap, and alignment together"
+        />
+        <Gap size={spacing.article.mediaGap} />
+        <figure>
           <ArticleImage
-            alt="MSA workspace overview"
-            className="aspect-[2428/1558]"
-            src={images.msaFig1}
+            {...msaImages["3"]}
+            alt="Widget configuration controls for analytical views"
           />
-        </Section>
-
-        <Gap size={spacing.article.sectionGap} />
-
-        <Section title="Insights">
-          <CopyBlock>
-            <Paragraph>
-              The design was informed through customer discussions, product
-              exploration sessions, and observation of real analysis workflows.
-            </Paragraph>
-            <Paragraph>Key themes included:</Paragraph>
+          <Gap size={spacing.article.mediaToCaptionGap} />
+          <figcaption
+            className="[&_ul]:mb-0"
+            style={{ color: colors.text.secondary }}
+          >
             <List>
-              <li>Different researchers focus on different aspects of the same dataset.</li>
-              <li>Analytical priorities change throughout the investigation.</li>
-              <li>Large alignments require both overview and detailed inspection modes.</li>
-              <li>Important metadata must remain visible during navigation.</li>
+              <li>
+                Choose which analytical views to display for the current task.
+              </li>
             </List>
-          </CopyBlock>
-        </Section>
+          </figcaption>
+        </figure>
+        <Gap size={spacing.article.mediaGap} />
+      </Section>
+      <Gap size={spacing.article.sectionGap} />
 
-        <Gap size={spacing.article.sectionGap} />
-
-        <Section title="Challenge">
-          <CopyBlock>
-            <Paragraph>
-              Researchers use sequence alignments for different analytical goals,
-              often within the same session. Some focus on sequence conservation
-              and mutations. Others investigate metadata, diversity metrics, or
-              evolutionary relationships.
-            </Paragraph>
-            <Paragraph>
-              A single static layout could not efficiently support all workflows.
-            </Paragraph>
-            <Paragraph>
-              The challenge was to design a workspace that could adapt to
-              different research tasks while preserving context and avoiding
-              unnecessary visual complexity.
-            </Paragraph>
-          </CopyBlock>
-        </Section>
-
-        <Gap size={spacing.article.sectionGap} />
-
-        <Section title="Design principles">
-          <CopyBlock>
-            <Paragraph>
-              Rather than creating separate tools for different analysis tasks, I
-              focused on building a flexible workspace that adapts to the user’s
-              objective.
-            </Paragraph>
-            <Paragraph>The design was guided by four principles:</Paragraph>
-          </CopyBlock>
-          <Gap size={spacing.article.subsectionGap} />
-          <Subsection title="Adaptability">
-            <Paragraph>
-              The workspace should support different analytical goals without
-              requiring separate interfaces.
-            </Paragraph>
-          </Subsection>
-          <Gap size={spacing.article.subsectionGap} />
-          <Subsection title="Progressive detail">
-            <Paragraph>
-              Users should be able to switch between overview and detailed
-              inspection modes.
-            </Paragraph>
-          </Subsection>
-          <Gap size={spacing.article.subsectionGap} />
-          <Subsection title="Context preservation">
-            <Paragraph>
-              Important metadata should remain accessible while navigating large
-              datasets.
-            </Paragraph>
-          </Subsection>
-          <Gap size={spacing.article.subsectionGap} />
-          <Subsection title="User control">
-            <Paragraph>
-              Researchers should be able to customize the workspace according to
-              their investigation needs.
-            </Paragraph>
-          </Subsection>
-        </Section>
-
-        <Gap size={spacing.article.sectionGap} />
-
-        <Section title="Key improvements">
-          <Subsection title="One workspace, multiple analytical tasks">
-            <CopyBlock>
-              <Paragraph>
-                Designed the workspace as a collection of independent analytical
-                layers rather than a fixed visualization.
-              </Paragraph>
-              <Paragraph>Researchers can enable or disable:</Paragraph>
-              <List>
-                <li>Trees</li>
-                <li>Metadata columns</li>
-                <li>Heatmaps</li>
-                <li>Consensus views</li>
-                <li>Sequence logos</li>
-              </List>
-              <Paragraph>
-                Depending on the analysis objective. This allows the same
-                workspace to support different research workflows without
-                requiring separate tools or layouts.
-              </Paragraph>
-            </CopyBlock>
-          </Subsection>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            alt="MSA workspace analytical layers"
-            className="aspect-[2428/1558]"
-            src={images.msaFig2}
-          />
-          <Gap size={spacing.article.mediaGap} />
-          <Gap size={spacing.article.subsectionGap} />
-
-          <Subsection title="Progressive detail through density controls">
-            <CopyBlock>
-              <Paragraph>
-                Sequence alignments often contain hundreds of rows and thousands
-                of positions.
-              </Paragraph>
-              <Paragraph>
-                Showing maximum detail at all times creates unnecessary visual
-                noise and makes navigation more difficult.
-              </Paragraph>
-              <Paragraph>
-                Introduced collapsible states for both the heatmap and alignment grid.
-              </Paragraph>
-              <Paragraph>Researchers can switch between:</Paragraph>
-              <List>
-                <li>Overview mode for pattern recognition.</li>
-                <li>Detailed mode for sequence-level inspection.</li>
-              </List>
-            </CopyBlock>
-          </Subsection>
-          <Gap size={spacing.article.mediaGap} />
-          <p style={labelStyle}>Heatmap</p>
-          <Gap size={spacing.article.mediaToCaptionGap} />
-          <ArticleImage
-            alt="Expanded heatmap mode"
-            className="aspect-[2428/1558]"
-            src={images.msaFig3}
-          />
-          <Gap size={spacing.article.mediaToCaptionGap} />
-          <List>
-            <li>Expanded mode reveals labels and detailed values.</li>
-          </List>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            alt="Collapsed heatmap mode"
-            className="aspect-[2428/1558]"
-            src={images.msaFig4}
-          />
-          <Gap size={spacing.article.mediaToCaptionGap} />
-          <List>
-            <li>Collapsed mode compresses cells into a fixed-width overview.</li>
-          </List>
-          <Gap size={spacing.article.mediaGap} />
-          <p style={labelStyle}>Alignment grid</p>
-          <Gap size={spacing.article.mediaToCaptionGap} />
-          <ArticleImage
-            alt="Expanded alignment grid mode"
-            className="aspect-[2428/1558]"
-            src={images.msaFig5}
-          />
-          <Gap size={spacing.article.mediaToCaptionGap} />
-          <List>
-            <li>Expanded mode supports detailed sequence inspection.</li>
-          </List>
-          <Gap size={spacing.article.mediaGap} />
-          <ArticleImage
-            alt="Collapsed alignment grid mode"
-            className="aspect-[2424/1554]"
-            src={images.msaFig6}
-          />
-          <Gap size={spacing.article.mediaToCaptionGap} />
-          <List>
-            <li>
-              Collapsed mode removes sequence characters and displays alignment
-              patterns at scale.
-            </li>
-          </List>
-        </Section>
-
-        <Gap size={spacing.article.sectionGap} />
-
-        <Section title="My role">
+      <Section title="Changing information density after user feedback">
+        <CopyBlock>
           <Paragraph>
-            Led the design of the MSA Workspace end-to-end, including workflow
-            architecture, interaction design, information density strategies,
-            component design, and developer documentation. Worked closely with
-            engineering throughout implementation and validation.
+            User feedback revealed a limitation: with large datasets, the
+            heatmap and alignment became too wide to view comfortably together.
+            Showing or hiding a view did not address the need to compare both at
+            once.
           </Paragraph>
-        </Section>
-
-        <Gap size={spacing.article.sectionGap} />
-
-        <Section title="Outcome">
           <Paragraph>
-            Created a flexible analytical environment that supports multiple
-            sequence analysis workflows while balancing information density,
-            context preservation, and usability. The workspace adapts to
-            different research goals without forcing researchers to switch
-            between separate tools or interfaces.
+            I designed expanded and collapsed states for each view. Expanded MSA
+            displayed individual sequence characters and could show the
+            consensus and sequence logo. Collapsing MSA hid the characters and
+            those three supporting views, retaining a compact color-pattern
+            overview. The heatmap similarly offered detailed and compressed
+            states.
           </Paragraph>
-        </Section>
+          <Paragraph>
+            This gave researchers a way to devote more space to one view while
+            keeping an overview of the other. The tradeoff was between readable
+            detail and visible coverage: compact views supported scanning
+            patterns, while expanded views supported closer inspection.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <figure>
+          <ArticleImage
+            {...msaImages["4"]}
+            alt="Expanded sequence alignment beside a compact heatmap"
+          />
+          <Gap size={spacing.article.mediaToCaptionGap} />
+          <figcaption
+            className="[&_ul]:mb-0"
+            style={{ color: colors.text.secondary }}
+          >
+            <List>
+              <li>
+                Individual sequence characters and supporting views are visible;
+                the compact heatmap leaves more room for sequence inspection.
+              </li>
+            </List>
+          </figcaption>
+        </figure>
+        <Gap size={spacing.article.mediaGap} />
+        <figure>
+          <ArticleImage
+            {...msaImages["5"]}
+            alt="Compact sequence alignment beside an expanded heatmap"
+          />
+          <Gap size={spacing.article.mediaToCaptionGap} />
+          <figcaption
+            className="[&_ul]:mb-0"
+            style={{ color: colors.text.secondary }}
+          >
+            <List>
+              <li>
+                Sequence characters, consensus, and sequence logo are hidden,
+                leaving a compact pattern overview beside the expanded heatmap.
+              </li>
+            </List>
+          </figcaption>
+        </figure>
+        <Gap size={spacing.article.mediaGap} />
+      </Section>
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Reviewing tasks and supporting implementation">
+        <CopyBlock>
+          <Paragraph>
+            I reviewed the design by working through documented biological tasks
+            with step-by-step instructions. This let me check the workspace
+            against the activities it needed to support.
+          </Paragraph>
+          <Paragraph>
+            After the CEO approved the design, I wrote documentation and walked
+            engineering through the behavior. We reviewed the design together,
+            and I stayed closely involved during implementation to clarify
+            interactions and answer questions.
+          </Paragraph>
+        </CopyBlock>
+      </Section>
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="What shipped">
+        <CopyBlock>
+          <Paragraph>
+            The team implemented and released the MSA workspace, adding
+            dedicated visual sequence comparison alongside Platforma’s table
+            views. I owned the interface design from the initial layout through
+            component creation, documentation, and engineering collaboration.
+          </Paragraph>
+          <Paragraph>
+            The project brought the screen-space problem into focus: researchers
+            needed control over both which views were visible and how much
+            detail each view displayed. The resulting design addressed those
+            needs through visibility controls and compact views.
+          </Paragraph>
+        </CopyBlock>
+      </Section>
     </ArticleShell>
   );
 }

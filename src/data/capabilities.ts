@@ -7,7 +7,7 @@ export const capabilities = [
       {
         id: "msa-workspace",
         label: "MSA workspace",
-        title: "Designing a workspace for complex sequence analysis",
+        title: "Designing a flexible workspace for sequence analysis",
         description:
           "Designing a flexible analysis workspace that helps researchers navigate dense biological data through adaptive layouts, visual controls, and contextual workflows.",
       },
