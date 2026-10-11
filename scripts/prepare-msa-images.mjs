@@ -8,14 +8,15 @@ const sharp = require(require.resolve("sharp", {
 }));
 const assets = resolve(import.meta.dirname, "../public/capabilities");
 const article = process.argv[2] ?? "msa";
-if (!["msa", "data-mapping", "aml", "mass-payout"].includes(article)) {
+if (!["msa", "data-mapping", "aml", "mass-payout", "design-to-production"].includes(article)) {
   throw new Error(`Unknown article image set: ${article}`);
 }
 const prefix = article === "msa" ? "msa-fig" : article;
 const manifest = {};
 
 // Keep the 2x PNG exports as masters; encode all delivered sizes losslessly.
-for (let figure = 1; figure <= (article === "aml" ? 4 : 5); figure++) {
+const figureCount = article === "design-to-production" ? 2 : article === "aml" ? 4 : 5;
+for (let figure = 1; figure <= figureCount; figure++) {
   const base = resolve(assets, `${prefix}-${figure}`);
   const source = `${base}.png`;
   const { width, height } = await sharp(source).metadata();

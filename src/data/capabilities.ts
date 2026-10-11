@@ -99,7 +99,7 @@ export const capabilities = [
       {
         id: "portfolio-design-to-production",
         label: "Portfolio workflow",
-        title: "From design system to production with AI-assisted development",
+        title: "Taking my portfolio from Figma to production with AI",
         description:
           "Designing and building a production portfolio by connecting Figma systems, code components, AI-assisted development, and modern frontend workflows.",
       },

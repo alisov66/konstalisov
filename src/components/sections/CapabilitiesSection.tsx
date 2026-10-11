@@ -8,6 +8,7 @@ import msaImages from "@/data/msa-images.json";
 import dataMappingImages from "@/data/data-mapping-images.json";
 import amlImages from "@/data/aml-images.json";
 import massPayoutImages from "@/data/mass-payout-images.json";
+import designToProductionImages from "@/data/design-to-production-images.json";
 
 import ExploreMenu, {
   type ExploreMenuCapability,
@@ -38,14 +39,6 @@ const images = {
   scalingPlatforma2: "/capabilities/scaling-platforma-2.png",
   scalingPlatforma3: "/capabilities/scaling-platforma-3.png",
   scalingPlatforma4: "/capabilities/scaling-platforma-4.png",
-  portfolioFig1: "/capabilities/portfolio-fig-1.png",
-  portfolioFig2: "/capabilities/portfolio-fig-2.png",
-  portfolioFig3: "/capabilities/portfolio-fig-3.png",
-  portfolioFig4: "/capabilities/portfolio-fig-4.png",
-  portfolioFig5: "/capabilities/portfolio-fig-5.png",
-  portfolioFig6: "/capabilities/portfolio-fig-6.png",
-  portfolioFig7: "/capabilities/portfolio-fig-7.png",
-  portfolioFig8: "/capabilities/portfolio-fig-8.png",
 };
 
 const menuCapabilities: ExploreMenuCapability[] = capabilities.map(
@@ -1924,350 +1917,148 @@ function MassPayoutArticle() {
   );
 }
 
+function ArticleWorkflow({
+  rows,
+}: {
+  rows: readonly (readonly [string, string])[];
+}) {
+  return (
+    <ol className="list-none" style={typeStyle(typography.article.body)}>
+      {rows.map(([step, detail], index) => (
+        <li
+          key={step}
+          className="flex flex-wrap items-start gap-[var(--base-5)] py-[var(--base-3)]"
+          style={{
+            borderBottom:
+              index < rows.length - 1
+                ? `${colors.border.width.thin} solid ${colors.border.secondary}`
+                : undefined,
+          }}
+        >
+          <span
+            className="min-w-0 flex-1"
+            style={{
+              ...typeStyle(typography.article.bodyStrong),
+              color: colors.text.secondary,
+            }}
+          >
+            {index + 1}. {step}
+          </span>
+          <p className="min-w-[240px] flex-1">{detail}</p>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 function DesignToProductionArticle() {
   return (
     <ArticleShell>
-      <H1>From design system to production with AI-assisted development</H1>
+      <H1>Taking my portfolio from Figma to production with AI</H1>
       <Gap size={spacing.article.h1Gap} />
 
-      <Section title="Context">
+      <Paragraph>
+        I designed and built this portfolio independently, taking it from the first
+        element in Figma to a published website in approximately two months.
+        ChatGPT and Codex supported the work; I owned the design, directed
+        implementation, tested the result, and decided when changes were ready to
+        ship. The project established a workflow for maintaining the design system
+        across Figma and code and reviewing updates in a separate preview
+        environment, Demo, before releasing them to production.
+      </Paragraph>
+      <Gap size={spacing.base[4]} />
+      <ArticleSummary
+        rows={[
+          ["Product", "Personal portfolio · responsive website"],
+          ["My role", "Sole designer and builder · design, implementation direction, QA, and release"],
+          ["Team", "Built independently with ChatGPT and Codex; no other contributors"],
+          ["Timeline", "Approximately 2 months from initial design to first published version"],
+          ["Tools", "Figma, ChatGPT, Codex in VS Code, Next.js, Tailwind CSS, GitHub, Vercel"],
+          ["Status", "Live · maintained through ongoing updates"],
+        ]}
+      />
+      <Gap size={spacing.article.mediaGap} />
+      <ArticleImage
+        {...designToProductionImages["1"]}
+        alt="The published portfolio displayed across desktop, tablet, and mobile"
+      />
+      <Gap size={spacing.article.mediaGap} />
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Carrying the design system into code">
         <CopyBlock>
           <Paragraph>
-            I wanted my portfolio to do more than present finished work. I
-            treated it as a product I could take from information architecture
-            and visual design through implementation and production.
+            I wanted a portfolio I could continue to develop as my work evolved.
+            That meant bringing its design foundations and reusable components
+            into the implementation, including typography, colors, spacing, and
+            responsive behavior.
           </Paragraph>
           <Paragraph>
-            Instead of using a website builder or handing the design to a
-            developer, I built it with Figma, Next.js, Tailwind CSS, GitHub,
-            Vercel, ChatGPT, and Codex in VS Code.
+            One practical challenge was translating variable names between
+            environments. Figma used slashes to organize variables into groups.
+            I wanted to preserve that structure while giving the corresponding
+            code tokens names appropriate to their environment. I implemented the
+            mapping with Codex, and I subsequently updated variables and components
+            while keeping the design system consistent across Figma and code.
           </Paragraph>
           <Paragraph>
-            The goal was not to become a frontend engineer, but to understand how
-            design decisions translate into implementation, keep design and code
-            aligned, and explore how AI-assisted development could extend what I
-            could ship independently.
+            Updates are deliberate: when I change a design, I ask Codex to inspect
+            the relevant screens, components, or variables and update their code
+            counterparts. The project context identifies where those elements are
+            stored. I review the resulting implementation before it reaches
+            production.
           </Paragraph>
         </CopyBlock>
         <Gap size={spacing.article.mediaGap} />
         <ArticleImage
-          alt="Portfolio homepage in Figma and production"
-          className="aspect-[3594/1916]"
-          src={images.portfolioFig1}
+          {...designToProductionImages["2"]}
+          alt="Matching Figma tokens and reusable ButtonPrimary components with their implementation in code"
         />
+        <Gap size={spacing.article.mediaGap} />
       </Section>
-
       <Gap size={spacing.article.sectionGap} />
 
-      <Section title="Insights">
-        <CopyBlock>
-          <Paragraph>
-            Building the portfolio exposed several recurring gaps between design
-            and implementation.
-          </Paragraph>
-        </CopyBlock>
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Design systems should survive implementation">
-          <CopyBlock>
-            <Paragraph>
-              A system can be carefully structured in Figma while the production
-              interface gradually diverges from it.
-            </Paragraph>
-            <Paragraph>
-              Its real value appears when the same foundations, components, and
-              rules are maintained across both environments.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="Implementation knowledge improves design decisions">
-          <Paragraph>
-            Understanding component structure, responsive behavior, tokens, and
-            technical constraints helped me design solutions that were more
-            realistic to build and maintain.
-          </Paragraph>
-        </Subsection>
-        <Gap size={spacing.article.subsectionGap} />
-        <Subsection title="AI changes how far a designer can take an idea">
-          <Paragraph>
-            AI-assisted development allowed me to participate much deeper in
-            implementation while keeping design intent and product judgment under
-            my control.
-          </Paragraph>
-        </Subsection>
+      <Section title="Reviewing changes from design to release">
+        <Paragraph>
+          ChatGPT supported reasoning and specification, while Codex worked in the
+          codebase. I used the following workflow to keep design decisions,
+          implementation review, and release approval under my control.
+        </Paragraph>
+        <Gap size={spacing.base[4]} />
+        <ArticleWorkflow
+          rows={[
+            ["Update design", "Screens, components, variables"],
+            ["Inspect changes", "Codex proposes updates"],
+            ["Review scope", "I approve the update list"],
+            ["Build on Demo", "Codex applies changes"],
+            ["Test and refine", "I check visuals and behavior"],
+            ["Ship to production", "I approve the release"],
+          ]}
+        />
+        <Gap size={spacing.article.h2Gap} />
+        <Paragraph>
+          On Demo, I checked visual accuracy, sizes, interactive states, and links,
+          supported by a dedicated QA chat using guidance I provided. When
+          something needed improvement, I requested another iteration and tested
+          it again before approving release.
+        </Paragraph>
       </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Challenge">
-        <CopyBlock>
-          <Paragraph>
-            Create a portfolio in which design and implementation remained part
-            of the same system.
-          </Paragraph>
-          <Paragraph>That meant:</Paragraph>
-          <List>
-            <li>
-              translating the Figma design system into reusable code
-              foundations;
-            </li>
-            <li>
-              keeping typography, spacing, colors, grids, and responsive
-              behavior consistent across environments;
-            </li>
-            <li>
-              building reusable components instead of one-off page
-              implementations;
-            </li>
-            <li>using AI without losing control over design intent;</li>
-            <li>supporting safe iteration before production;</li>
-            <li>and shipping the result as a real production website.</li>
-          </List>
-          <Paragraph>
-            The goal was not to reproduce Figma in code, but to preserve design
-            decisions all the way to production.
-          </Paragraph>
-        </CopyBlock>
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Design principles">
-        <Subsection title="One system, two environments">
-          <CopyBlock>
-            <Paragraph>
-              Figma and code should express the same design logic.
-            </Paragraph>
-            <Paragraph>
-              Variables in Figma became tokens in code, and reusable Figma
-              components were mirrored by reusable interface components wherever
-              practical.
-            </Paragraph>
-            <Paragraph>
-              The implementation was treated as another representation of the
-              design system rather than a separate artifact.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Design system variables shared between Figma and code"
-          className="aspect-square"
-          src={images.portfolioFig2}
-        />
-        <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-
-        <Subsection title="Keep intent and judgment in the loop">
-          <CopyBlock>
-            <Paragraph>
-              AI worked best when design intent, interaction behavior,
-              constraints, and expected outcomes were explicit.
-            </Paragraph>
-            <Paragraph>
-              Before implementation, I worked through the problem, structure,
-              and trade-offs, then used ChatGPT and Codex to extend execution
-              rather than replace understanding.
-            </Paragraph>
-            <Paragraph>
-              I reviewed both behavior and code, iterating until the result
-              matched the intended experience.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="AI-assisted design and development workflow"
-          className="aspect-[2840/944]"
-          src={images.portfolioFig3}
-        />
-        <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-
-        <Subsection title="Treat production as part of the design process">
-          <CopyBlock>
-            <Paragraph>
-              A feature was not finished when it looked correct locally.
-            </Paragraph>
-            <Paragraph>
-              It also needed to work responsively, survive deployment, preserve
-              links and metadata, and behave correctly in production.
-            </Paragraph>
-            <Paragraph>
-              Staging, QA, and production became part of the same iterative loop
-              as design.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Production deployment workflow"
-          className="aspect-[3401/2932]"
-          src={images.portfolioFig4}
-        />
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Key improvements">
-        <Subsection title="Build a shared design system across Figma and code">
-          <CopyBlock>
-            <Paragraph>
-              The portfolio began with a structured design system in Figma.
-            </Paragraph>
-            <Paragraph>
-              Typography, spacing, colors, radii, grids, and responsive modes
-              were defined as variables rather than repeated values, then
-              represented in code through shared tokens and reusable foundations.
-            </Paragraph>
-            <Paragraph>
-              This made design-to-code consistency something that could be
-              maintained rather than manually checked on every screen.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Shared typography, spacing, and color tokens"
-          className="aspect-[1636/744]"
-          src={images.portfolioFig5}
-        />
-        <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-
-        <Subsection title="Translate components rather than screenshots">
-          <CopyBlock>
-            <Paragraph>
-              The implementation was built around reusable components instead of
-              reproducing individual frames.
-            </Paragraph>
-            <Paragraph>
-              Navigation, capability tabs, article layouts, buttons, and other
-              recurring patterns were treated as systems with states and
-              responsive behavior.
-            </Paragraph>
-            <Paragraph>
-              When a component already existed in Figma, Codex could inspect it
-              as implementation context, helping preserve the relationship
-              between the designed component and the production version.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Reusable component translation from Figma to code"
-          className="aspect-[2872/2164]"
-          src={images.portfolioFig6}
-        />
-        <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-
-        <Subsection title="Create an AI-assisted design-to-development workflow">
-          <Paragraph>
-            The workflow developed into a repeatable loop:
-          </Paragraph>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Repeatable AI-assisted product workflow"
-          className="aspect-[2680/2416]"
-          src={images.portfolioFig7}
-        />
-        <Gap size={spacing.article.mediaGap} />
-        <CopyBlock>
-          <Paragraph>
-            ChatGPT supported reasoning and specification, Figma remained the
-            source of design intent, Codex worked directly in the codebase
-            through VS Code, and GitHub and Vercel supported versioning and
-            deployment.
-          </Paragraph>
-          <Paragraph>
-            The important part was not any individual AI tool, but maintaining
-            human control over intent while delegating parts of execution.
-          </Paragraph>
-        </CopyBlock>
-        <Gap size={spacing.article.subsectionGap} />
-
-        <Subsection title="Build a production workflow for safe, responsive shipping">
-          <CopyBlock>
-            <Paragraph>
-              Once the portfolio moved beyond an experiment, changes were tested
-              locally and through deployment previews before reaching
-              production.
-            </Paragraph>
-            <Paragraph>
-              This made it possible to validate responsive behavior, navigation,
-              links, downloadable assets, metadata, Open Graph previews, and
-              domain configuration without using the live site as the testing
-              environment.
-            </Paragraph>
-            <Paragraph>
-              Responsive behavior was also treated as a system: shared
-              breakpoints and design-system modes controlled how typography,
-              spacing, layout, and content density adapted across viewport
-              sizes.
-            </Paragraph>
-            <Paragraph>
-              <strong>
-                Once changes reached production, the live site became another
-                source of design feedback. Reviewing real pages and sharing
-                contexts led to further refinements, turning the process into a
-                continuous loop:
-              </strong>
-            </Paragraph>
-            <Paragraph>
-              <strong>Design → Build → Ship → Observe → Refine</strong>
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Production previews and deployment workflow"
-          className="aspect-[4096/1789]"
-          src={images.portfolioFig8}
-        />
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="My role">
-        <CopyBlock>
-          <Paragraph>
-            I owned the portfolio end to end: information architecture, visual
-            design, design system, implementation direction, QA, and production
-            release.
-          </Paragraph>
-          <Paragraph>
-            I used ChatGPT for product reasoning and specification, Codex in VS
-            Code for implementation, and GitHub and Vercel for versioning,
-            previews, and deployment.
-          </Paragraph>
-          <Paragraph>
-            My role remained that of a Product Designer, but with greater
-            ownership over how design decisions were translated into the final
-            product.
-          </Paragraph>
-        </CopyBlock>
-      </Section>
-
       <Gap size={spacing.article.sectionGap} />
 
       <Section title="Outcome">
         <CopyBlock>
           <Paragraph>
-            The result is the production portfolio you are using now, built from
-            the same design system defined in Figma and maintained through
-            reusable code foundations.
+            The result is the live portfolio you are reading. I delivered its
+            first version independently in approximately two months and have
+            continued updating its variables, components, and content through
+            the same workflow.
           </Paragraph>
           <Paragraph>
-            The project gave me a repeatable workflow for taking ideas from
-            design intent through implementation, validation, and production.
-          </Paragraph>
-          <Paragraph>
-            It also changed how I work: implementation awareness and AI-assisted
-            development now help me prototype further, communicate more
-            precisely with engineers, and take greater responsibility for what
-            ultimately ships.
+            The project gave me practical experience translating design decisions
+            into a working website and maintaining it after release. AI extended
+            what I could implement independently; defining the experience,
+            evaluating the output, and deciding what to ship remained my
+            responsibility.
           </Paragraph>
         </CopyBlock>
       </Section>
