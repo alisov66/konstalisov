@@ -14,10 +14,21 @@ for (let figure = 1; figure <= 5; figure++) {
   const base = resolve(assets, `msa-fig-${figure}`);
   const source = `${base}.png`;
   const { width, height } = await sharp(source).metadata();
+  const { channels } = await sharp(source).ensureAlpha().stats();
+  if (channels[3].min !== 0 || channels[3].max !== 255) {
+    throw new Error(`Figure ${figure}: expected transparent background and visible artwork`);
+  }
   const result = await sharp(source).webp({ lossless: true, effort: 6 })
     .toFile(`${base}.webp`);
   const original = await sharp(source).ensureAlpha().raw().toBuffer();
   const decoded = await sharp(`${base}.webp`).ensureAlpha().raw().toBuffer();
+  // WebP may discard invisible RGB values, but alpha and visible pixels must match.
+  for (let pixel = 0; pixel < original.length; pixel += 4) {
+    if (original[pixel + 3] === 0 && decoded[pixel + 3] === 0) {
+      original.fill(0, pixel, pixel + 3);
+      decoded.fill(0, pixel, pixel + 3);
+    }
+  }
   if (!original.equals(decoded)) {
     throw new Error(`Figure ${figure}: lossless pixel verification failed`);
   }
