@@ -1,14 +1,14 @@
 {
   "1": {
     "src": "/capabilities/website-redesign-1.webp",
-    "width": 7006,
-    "height": 2143,
-    "srcSet": "/capabilities/website-redesign-1-640.webp 640w, /capabilities/website-redesign-1-960.webp 960w, /capabilities/website-redesign-1-1640.webp 1640w, /capabilities/website-redesign-1.webp 7006w"
+    "width": 5580,
+    "height": 5676,
+    "srcSet": "/capabilities/website-redesign-1-640.webp 640w, /capabilities/website-redesign-1-960.webp 960w, /capabilities/website-redesign-1-1640.webp 1640w, /capabilities/website-redesign-1.webp 5580w"
   },
   "2": {
     "src": "/capabilities/website-redesign-2.webp",
     "width": 5296,
-    "height": 3914,
+    "height": 4202,
     "srcSet": "/capabilities/website-redesign-2-640.webp 640w, /capabilities/website-redesign-2-960.webp 960w, /capabilities/website-redesign-2-1640.webp 1640w, /capabilities/website-redesign-2.webp 5296w"
   }
 }
