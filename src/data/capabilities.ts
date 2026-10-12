@@ -28,7 +28,7 @@ export const capabilities = [
       {
         id: "scalable-header-architecture",
         label: "Application architecture",
-        title: "Designing a scalable application architecture for complex workflows",
+        title: "Unifying headers across Platforma’s workflows",
         description:
           "Creating a reusable application structure that supports multiple product contexts, navigation patterns, and complex workflows across Platforma applications.",
       },

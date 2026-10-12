@@ -9,6 +9,7 @@ import dataMappingImages from "@/data/data-mapping-images.json";
 import amlImages from "@/data/aml-images.json";
 import massPayoutImages from "@/data/mass-payout-images.json";
 import designToProductionImages from "@/data/design-to-production-images.json";
+import unifyingHeadersImages from "@/data/unifying-headers-images.json";
 
 import ExploreMenu, {
   type ExploreMenuCapability,
@@ -24,13 +25,6 @@ import {
 import { colors, spacing, typography } from "@/styles";
 
 const images = {
-  headerArchitecture: "/capabilities/header-architecture.png",
-  dialogHeader: "/capabilities/dialog-header.png",
-  sheetHeader: "/capabilities/sheet-header.png",
-  workspaceHeader: "/capabilities/workspace-header.png",
-  hierarchy: "/capabilities/hierarchy.png",
-  msaHeader: "/capabilities/msa-header.png",
-  unifyingHeadersFig7: "/capabilities/unifying-headers-7.png",
   complexDecisions1: "/capabilities/complex-decisions-1.png",
   complexDecisions2: "/capabilities/complex-decisions-2.png",
   complexDecisions3: "/capabilities/complex-decisions-3.png",
@@ -734,264 +728,111 @@ function DataMappingArticle() {
 }
 
 function DesignSystemsArticle() {
-  const labelStyle = {
-    ...typeStyle(typography.article.body),
-    fontWeight: typography.fontWeight.semibold,
-  };
-
   return (
     <ArticleShell>
-      <H1>Designing a scalable application architecture for complex workflows</H1>
+      <H1>Unifying headers across Platforma’s workflows</H1>
       <Gap size={spacing.article.h1Gap} />
 
-      <Section title="Context">
+      <Paragraph>
+        Platforma’s table blocks, charts, dialogs, and sheets had accumulated
+        different header layouts and usage rules. With a new sequence-analysis
+        workspace on the way, I initiated a redesign around a shared header
+        component with variants for different contexts.
+      </Paragraph>
+      <Gap size={spacing.base[4]} />
+      <ArticleSummary
+        rows={[
+          ["Product", "Platforma — biological data analysis software by MiLaboratories"],
+          ["My role", "Sole product designer; initiated and led the redesign"],
+          ["Scope", "Shared header component, context variants, behavior specifications, documentation, and implementation review"],
+          ["Collaboration", "Engineers and stakeholders"],
+          ["Timeline", "Approximately five days for the redesign and discussions, alongside other tasks"],
+          ["Status", "Shipped across all blocks, workspaces, dialogs, and sheets; available to SDK developers"],
+        ]}
+      />
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Establishing a shared structure">
         <CopyBlock>
           <Paragraph>
-            Platforma contains dialogs, side sheets, and analytical workspaces
-            used across multiple applications.
+            Existing headers differed in control placement, spacing, and padding.
+            The upcoming multiple sequence alignment (MSA) workspace added another
+            context to support. I proposed a shared component that internal teams
+            and developers using Platforma’s SDK could reuse.
           </Paragraph>
           <Paragraph>
-            As the platform evolved, header patterns diverged. Similar
-            interfaces used different hierarchy levels, layouts, and action
-            placement rules.
+            I defined a consistent structure for titles, supporting information,
+            and controls, with variants that adapted to each context. For blocks
+            and fullscreen workspaces, the specification made those differences
+            explicit: the workspace variant included a collapse action and
+            adjusted spacing while retaining the shared structure.
           </Paragraph>
           <Paragraph>
-            At the same time, new analytical tools such as the MSA Workspace
-            introduced requirements that existing patterns could not support.
+            Configuration-based subtitles already existed in Platforma. I
+            preserved their optional, user-editable behavior as part of the header
+            specification.
           </Paragraph>
         </CopyBlock>
         <Gap size={spacing.article.mediaGap} />
         <ArticleImage
-          alt="Scalable header architecture"
-          className="aspect-[1776/1760] w-[450px] max-w-full"
-          src={images.headerArchitecture}
+          {...unifyingHeadersImages["1"]}
+          alt="Separate Platforma header layouts unified into a shared component with block and workspace variants"
         />
+        <Gap size={spacing.article.mediaGap} />
       </Section>
-
       <Gap size={spacing.article.sectionGap} />
 
-      <Section title="Challenge">
-        <Paragraph>
-          Create a reusable header architecture that supports dialogs, side
-          sheets, and complex analytical workspaces while maintaining consistency
-          and enabling future applications to build on the same foundation.
-        </Paragraph>
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Design principles">
+      <Section title="Defining behavior when space is limited">
         <CopyBlock>
           <Paragraph>
-            Rather than creating one universal header, I focused on building a
-            family of related patterns that share common rules while adapting to
-            different contexts.
+            Block titles could be long, and the number of actions varied between
+            tools. I worked through layout alternatives with engineering and
+            documented how the header should allocate space.
           </Paragraph>
-          <Paragraph>The system was guided by three principles:</Paragraph>
-          <List>
-            <li>
-              Consistency — users should recognize actions and navigation
-              everywhere.
-            </li>
-            <li>
-              Context awareness — dialogs, sheets, and workspaces require
-              different levels of interaction.
-            </li>
-            <li>
-              Scalability — future workflows should extend existing patterns
-              instead of introducing new ones.
-            </li>
-          </List>
-        </CopyBlock>
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Key improvements">
-        <Subsection title="Header architecture instead of a single component">
           <Paragraph>
-            Rather than creating a universal header component, I introduced a
-            family of specialized patterns designed for different interface
-            contexts.
+            The title used the space available before the controls and truncated
+            to one line when necessary. Controls fitted their content and could
+            not be pushed out of the header row by a long title. In the compact
+            layout, action buttons switched to icons without labels to preserve
+            space. Optional subtitles also remained on one line.
           </Paragraph>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <p style={labelStyle}>Dialog header</p>
-        <Gap size={spacing.article.mediaToCaptionGap} />
-        <ArticleImage
-          alt="Dialog header pattern"
-          className="aspect-[2984/1904]"
-          src={images.dialogHeader}
-        />
-        <Gap size={spacing.article.mediaToCaptionGap} />
-        <List>
-          <li>
-            Optimized for focused, short-lived workflows with a clear primary
-            task and close action.
-          </li>
-        </List>
-        <Gap size={spacing.article.mediaGap} />
-        <p style={labelStyle}>Sheet header</p>
-        <Gap size={spacing.article.mediaToCaptionGap} />
-        <ArticleImage
-          alt="Sheet header pattern"
-          className="aspect-[2984/1904]"
-          src={images.sheetHeader}
-        />
-        <Gap size={spacing.article.mediaToCaptionGap} />
-        <List>
-          <li>
-            Supports contextual editing while preserving visibility of the
-            underlying workspace.
-          </li>
-        </List>
-        <Gap size={spacing.article.mediaGap} />
-        <p style={labelStyle}>Workspace header</p>
-        <Gap size={spacing.article.mediaToCaptionGap} />
-        <ArticleImage
-          alt="Workspace header pattern"
-          className="aspect-[2984/1904]"
-          src={images.workspaceHeader}
-        />
-        <Gap size={spacing.article.mediaToCaptionGap} />
-        <List>
-          <li>
-            Accommodates navigation, actions, controls, and workspace-specific
-            tools within complex analytical environments.
-          </li>
-        </List>
-
-        <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-
-        <Subsection title="Consistent hierarchy across the platform">
-          <CopyBlock>
-            <Paragraph>
-              Established hierarchy levels that communicate the scope and
-              importance of each interface context.
-            </Paragraph>
-            <List>
-              <li>
-                Workspace Header → <strong>H2</strong>, establishing the primary
-                hierarchy level for analytical environments.
-              </li>
-              <li>
-                Dialog Header → <strong>H2</strong>, representing a primary task
-                context.
-              </li>
-              <li>
-                Sheet Header → <strong>H3</strong>, indicating a subordinate
-                context within a workspace.
-              </li>
-            </List>
-          </CopyBlock>
-        </Subsection>
+          <Paragraph>
+            For block and workspace headers, the minimum width matched Platforma’s
+            744px working-area minimum. Below that width, the surrounding container
+            handled horizontal scrolling. This kept the header row’s height and
+            control layout predictable, with scrolling as the trade-off on
+            narrower views.
+          </Paragraph>
+        </CopyBlock>
         <Gap size={spacing.article.mediaGap} />
         <ArticleImage
-          alt="Header hierarchy model"
-          className="aspect-[2790/902]"
-          src={images.hierarchy}
+          {...unifyingHeadersImages["2"]}
+          alt="Header title truncation and icon-only actions at the minimum 744px working-area width"
         />
-
         <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-
-        <Subsection title="Predictable action placement">
-          <CopyBlock>
-            <Paragraph>
-              Defined a structured header layout that organizes actions
-              according to their role and importance.
-            </Paragraph>
-            <Paragraph>The pattern includes:</Paragraph>
-            <List>
-              <li>Title area</li>
-              <li>Primary actions</li>
-              <li>Action groups</li>
-              <li>Workspace controls</li>
-              <li>Responsive wrapping behavior</li>
-            </List>
-            <Paragraph>
-              This reduced implementation ambiguity, improved consistency across
-              applications, and ensured actions remain predictable regardless of
-              context.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Predictable header action placement"
-          className="aspect-[2560/460]"
-          src={images.msaHeader}
-        />
-
-        <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-
-        <Subsection title="Extensible architecture for future workflows">
-          <CopyBlock>
-            <Paragraph>
-              Established hierarchy, action placement, and interaction patterns
-              created a reusable foundation for future analytical workflows.
-            </Paragraph>
-            <Paragraph>
-              This reduced design debt, improved consistency, and accelerated
-              the delivery of new product capabilities.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Extensible header architecture"
-          className="aspect-[2560/460]"
-          src={images.unifyingHeadersFig7}
-        />
-        <Gap size={spacing.article.mediaToCaptionGap} />
-        <List>
-          <li>
-            A common header foundation scales from simple dialogs to complex
-            analytical workspaces.
-          </li>
-        </List>
       </Section>
-
       <Gap size={spacing.article.sectionGap} />
 
-      <Section title="Implementation">
-        <List>
-          <li>Defined component architecture</li>
-          <li>Documented usage rules</li>
-          <li>Established hierarchy guidelines</li>
-          <li>Defined action placement rules</li>
-          <li>Supported responsive behavior</li>
-          <li>Worked with developers on implementation</li>
-        </List>
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="My role">
-        <List>
-          <li>Research and problem definition</li>
-          <li>Header architecture design</li>
-          <li>Component specification</li>
-          <li>Responsive behavior</li>
-          <li>Documentation and implementation guidelines</li>
-          <li>Developer collaboration</li>
-        </List>
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Outcome">
-        <List>
-          <li>Unified header patterns across dialogs, sheets, and workspaces</li>
-          <li>Reduced need for one-off header solutions</li>
-          <li>Established reusable hierarchy and action placement rules</li>
-          <li>
-            Enabled future analytical applications to build on a shared
-            architecture
-          </li>
-        </List>
+      <Section title="Documenting, shipping, and reviewing">
+        <CopyBlock>
+          <Paragraph>
+            I documented the component’s structure, variants, optional content,
+            sizing, and overflow behavior in an implementation ticket. Engineers
+            used it alongside direct discussions throughout development. I
+            reviewed the implemented result and worked with them on corrections.
+          </Paragraph>
+          <Paragraph>
+            The redesign shipped across all blocks, workspaces, dialogs, and
+            sheets. Developers subsequently built working blocks without asking
+            me for clarification about header usage — an encouraging practical
+            signal, although I did not collect formal feedback or measure
+            development speed.
+          </Paragraph>
+          <Paragraph>
+            The delivered result was a shared header component with documented
+            usage rules, adopted across Platforma and available to SDK developers.
+          </Paragraph>
+        </CopyBlock>
       </Section>
     </ArticleShell>
   );
