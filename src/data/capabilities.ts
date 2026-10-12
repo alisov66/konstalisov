@@ -64,7 +64,7 @@ export const capabilities = [
         id: "platforma-product-platform",
         label: "Platform evolution",
         title:
-          "Scaling Platforma from startup website to enterprise product platform",
+          "Redesigning Platforma’s website for different audiences",
         description:
           "Restructuring a scientific software ecosystem into a coherent enterprise platform through information architecture, product communication, and strategic content design.",
       },

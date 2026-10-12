@@ -10,6 +10,7 @@ import amlImages from "@/data/aml-images.json";
 import massPayoutImages from "@/data/mass-payout-images.json";
 import designToProductionImages from "@/data/design-to-production-images.json";
 import unifyingHeadersImages from "@/data/unifying-headers-images.json";
+import websiteRedesignImages from "@/data/website-redesign-images.json";
 
 import ExploreMenu, {
   type ExploreMenuCapability,
@@ -29,10 +30,6 @@ const images = {
   complexDecisions2: "/capabilities/complex-decisions-2.png",
   complexDecisions3: "/capabilities/complex-decisions-3.png",
   complexDecisions4: "/capabilities/complex-decisions-4.png",
-  scalingPlatforma1: "/capabilities/scaling-platforma-1.png",
-  scalingPlatforma2: "/capabilities/scaling-platforma-2.png",
-  scalingPlatforma3: "/capabilities/scaling-platforma-3.png",
-  scalingPlatforma4: "/capabilities/scaling-platforma-4.png",
 };
 
 const menuCapabilities: ExploreMenuCapability[] = capabilities.map(
@@ -1043,278 +1040,136 @@ function DocumentationCollaborationArticle() {
 function ProductDesignScaleArticle() {
   return (
     <ArticleShell>
-      <H1>Scaling Platforma from startup website to enterprise product platform</H1>
+      <H1>Redesigning Platforma’s website for different audiences</H1>
       <Gap size={spacing.article.h1Gap} />
-      <Paragraph>
-        Platforma had grown from a startup product into a complex ecosystem of
-        scientific workflows, deployment options, and developer tools. The
-        website no longer reflected the scale of the platform or helped visitors
-        understand how its components fit together.
-      </Paragraph>
-
+      <CopyBlock>
+        <Paragraph>
+          Platforma had expanded into biological research workflows, developer
+          tools, and enterprise deployment options, but its website still offered
+          brief explanations of a much smaller product. The CEO initiated a
+          redesign to support product evaluation and encourage demo and pilot
+          conversations ahead of a marketing campaign.
+        </Paragraph>
+        <Paragraph>
+          As the sole designer, I restructured the information, designed the pages
+          and graphics, and built the website in Framer, taking the complete
+          redesign through launch in approximately one month.
+        </Paragraph>
+      </CopyBlock>
+      <Gap size={spacing.base[4]} />
+      <ArticleSummary
+        rows={[
+          ["Product", "Platforma — biological data analysis software by MiLaboratories"],
+          ["My role", "Sole designer; information architecture, page design, graphics, and Framer implementation"],
+          ["Collaboration", "CEO, GTM lead, support team, and a front-end engineer for forms requiring backend connections"],
+          ["Timeline", "Approximately one month for the redesign and build, timed to a marketing campaign"],
+          ["Status", "Complete redesign shipped; followed by launch fixes and homepage experimentation"],
+          ["Website", (
+            <a
+              key="platforma"
+              href="https://platforma.bio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-dotted underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--border-focus)]"
+              style={{ color: colors.text.accent }}
+            >
+              platforma.bio
+            </a>
+          )],
+        ]}
+      />
       <Gap size={spacing.article.sectionGap} />
 
-      <Section title="Context">
+      <Section title="Giving each workflow room to explain its value">
         <CopyBlock>
-          <Paragraph>Platforma had evolved beyond its original positioning.</Paragraph>
           <Paragraph>
-            The company was no longer an early-stage startup with a small set of
-            capabilities. The platform had expanded into a comprehensive
-            ecosystem including:
-          </Paragraph>
-          <List>
-            <li>multiple scientific workflows</li>
-            <li>deployment options</li>
-            <li>SDK and extensibility</li>
-            <li>enterprise infrastructure</li>
-            <li>academic and commercial audiences</li>
-          </List>
-          <Paragraph>
-            The existing website no longer reflected the maturity of the
-            product.
+            Previously, solutions shared one page, with only two or three
+            paragraphs describing each. That left little room to explain how
+            Platforma supported tasks such as antibody discovery, immune research,
+            and multi-omics analysis.
           </Paragraph>
           <Paragraph>
-            Information was difficult to navigate, product capabilities were
-            fragmented across pages, and the overall experience did not
-            communicate the scale of the platform.
+            I created a Solutions hub with a dedicated page for each workflow,
+            combining detailed explanations with workflow examples. Discussions
+            with the CEO, who regularly spoke with customers, alongside support
+            and the GTM lead, informed the audience needs behind the structure.
+          </Paragraph>
+          <Paragraph>
+            I also created an Application Notes page to bring together case
+            studies, application notes, and technical notes. This gave visitors a
+            dedicated place to explore practical examples and more detailed
+            material.
           </Paragraph>
         </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          alt="Platforma Solutions hub, dedicated research workflow pages, and Application Notes"
+          {...websiteRedesignImages["1"]}
+        />
+        <Gap size={spacing.article.mediaGap} />
       </Section>
 
       <Gap size={spacing.article.sectionGap} />
 
-      <Section title="Challenge">
+      <Section title="Separating scientific value from technical evaluation">
         <CopyBlock>
           <Paragraph>
-            Platforma had grown into a broad ecosystem of scientific workflows,
-            platform capabilities, deployment options, developer tools, and
-            resources — but the website did not communicate how these pieces
-            connected.
+            Scientists needed to understand the research workflows, while
+            enterprise evaluators needed information about infrastructure,
+            security, and deployment. Developers needed to understand how they
+            could extend the product. Academic researchers also had a separate
+            route to request access.
           </Paragraph>
           <Paragraph>
-            The challenge was to create an information architecture that could
-            represent the product as one coherent platform while remaining
-            understandable to audiences with different goals and levels of
-            technical expertise.
+            Under Platform, I organized the technical information into three
+            pages: Overview, Deployment, and SDK. Each addressed a different
+            question: how the platform fits together, how an organization can run
+            it, and how technical teams can build on it.
+          </Paragraph>
+          <Paragraph>
+            I designed the page structures and all diagrams and illustrations to
+            work alongside the explanations. The CEO defined the positioning,
+            supplied the initial copy, and checked technical accuracy; we refined
+            the text together during implementation.
           </Paragraph>
         </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <ArticleImage
+          alt="Platforma Overview, Deployment, and SDK pages with explanatory diagrams"
+          {...websiteRedesignImages["2"]}
+        />
+        <Gap size={spacing.article.mediaGap} />
       </Section>
 
       <Gap size={spacing.article.sectionGap} />
 
-      <Section title="Design principles">
-        <Subsection title="Design the product ecosystem, not individual pages">
-          <CopyBlock>
-            <Paragraph>
-              The website was treated as a connected product ecosystem rather
-              than a collection of marketing pages.
-            </Paragraph>
-            <Paragraph>Content was organized around:</Paragraph>
-            <List>
-              <li>Solutions</li>
-              <li>Platform</li>
-              <li>Resources</li>
-              <li>Company</li>
-            </List>
-            <Paragraph>
-              This structure helped visitors understand how individual
-              capabilities relate to the broader platform.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Platforma product ecosystem navigation model"
-          className="aspect-[2916/672]"
-          src={images.scalingPlatforma1}
-        />
-        <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-
-        <Subsection title="Make complex technology understandable">
-          <CopyBlock>
-            <Paragraph>
-              Platforma includes concepts that are unfamiliar to many visitors:
-            </Paragraph>
-            <List>
-              <li>deployment architecture</li>
-              <li>enterprise infrastructure</li>
-              <li>SDK and extensibility</li>
-              <li>scientific workflows</li>
-            </List>
-            <Paragraph>
-              Rather than burying these concepts inside marketing content, the
-              redesign introduced dedicated platform pages that explain how the
-              system works and how its components relate to one another.
-            </Paragraph>
-            <Paragraph>
-              This allows visitors to learn the system progressively and build a
-              clearer mental model of how the platform works.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Platform overview explanation"
-          className="aspect-[2760/1350]"
-          src={images.scalingPlatforma2}
-        />
-        <Gap size={spacing.article.mediaToCaptionGap} />
-        <List>
-          <li>
-            The Platform Overview page transformed a complex technical
-            architecture into a simple mental model built around infrastructure,
-            user experience, and extensibility.
-          </li>
-        </List>
-        <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-
-        <Subsection title="Organize content around user goals">
-          <CopyBlock>
-            <Paragraph>Visitors arrive with different intentions.</Paragraph>
-            <Paragraph>The website needed to support:</Paragraph>
-            <List>
-              <li>scientists evaluating solutions</li>
-              <li>technical users exploring platform capabilities</li>
-              <li>enterprise buyers assessing deployment options</li>
-              <li>academic users requesting access</li>
-            </List>
-            <Paragraph>
-              Information architecture was designed around visitor intent rather
-              than internal company structure, helping different audiences
-              quickly reach the content most relevant to them.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Platforma visitor intent map"
-          className="aspect-[1560/816]"
-          src={images.scalingPlatforma3}
-        />
-        <Gap size={spacing.article.mediaGap} />
-        <Gap size={spacing.article.subsectionGap} />
-
-        <Subsection title="Build trust through transparency">
-          <CopyBlock>
-            <Paragraph>
-              Enterprise customers need confidence before engaging with a
-              platform.
-            </Paragraph>
-            <Paragraph>The redesign introduced dedicated pages explaining:</Paragraph>
-            <List>
-              <li>deployment models</li>
-              <li>infrastructure options</li>
-              <li>security considerations</li>
-              <li>platform architecture</li>
-              <li>open ecosystem principles</li>
-            </List>
-            <Paragraph>
-              Rather than hiding these topics inside marketing content, the
-              redesign made them visible and understandable.
-            </Paragraph>
-            <Paragraph>
-              This reduced ambiguity and helped visitors evaluate whether
-              Platforma could fit their technical and organizational
-              requirements.
-            </Paragraph>
-          </CopyBlock>
-        </Subsection>
-        <Gap size={spacing.article.mediaGap} />
-        <ArticleImage
-          alt="Platforma deployment and trust pages"
-          className="aspect-[2762/1792]"
-          src={images.scalingPlatforma4}
-        />
-        <Gap size={spacing.article.mediaToCaptionGap} />
-        <List>
-          <li>
-            Dedicated platform and deployment pages made infrastructure,
-            deployment options, and operational requirements transparent,
-            helping enterprise teams evaluate Platforma with confidence.
-          </li>
-        </List>
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Why it mattered">
-        <List>
-          <li>
-            Unified a fragmented product ecosystem into a coherent platform
-            story.
-          </li>
-          <li>
-            Reduced the gap between scientific workflows, platform capabilities,
-            and deployment infrastructure.
-          </li>
-          <li>Made enterprise requirements visible and understandable.</li>
-          <li>
-            Created a scalable information architecture capable of supporting
-            future solutions and platform growth.
-          </li>
-        </List>
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="My role">
-        <List>
-          <li>
-            Led the redesign of Platforma’s website from information
-            architecture through final UI design.
-          </li>
-          <li>
-            Defined the platform information architecture, navigation model, and
-            page hierarchy.
-          </li>
-          <li>
-            Designed key product communication pages including Platform
-            Overview, Deployment, SDK, Solutions, and Resources.
-          </li>
-          <li>
-            Established a scalable structure capable of supporting future
-            products, workflows, and platform growth.
-          </li>
-          <li>
-            Collaborated with leadership, marketing, and engineering teams to
-            align product messaging with business goals.
-          </li>
-        </List>
-      </Section>
-
-      <Gap size={spacing.article.sectionGap} />
-
-      <Section title="Outcome">
+      <Section title="Building, launching, and refining">
         <CopyBlock>
           <Paragraph>
-            The redesign transformed Platforma’s website from a collection of
-            product pages into a structured platform ecosystem.
+            I implemented the website in Framer, using ChatGPT to challenge my
+            reasoning and help with development. A front-end engineer supported
+            the forms that required backend connections. After launch, teammates
+            reported issues such as broken links and images failing to load,
+            which I corrected promptly.
           </Paragraph>
-          <Paragraph>The new information architecture:</Paragraph>
-          <List>
-            <li>
-              connected scientific workflows, platform capabilities, and
-              deployment infrastructure into a coherent story
-            </li>
-            <li>
-              made technical and enterprise concepts easier to discover and
-              understand
-            </li>
-            <li>
-              created dedicated entry points for scientists, technical users,
-              enterprise buyers, and academic researchers
-            </li>
-            <li>
-              established a scalable foundation capable of supporting future
-              solutions and platform growth
-            </li>
-          </List>
           <Paragraph>
-            The result was a website that communicates Platforma as a unified
-            product ecosystem rather than a collection of individual features,
-            creating a foundation that can scale alongside the product itself.
+            We then compared four homepage hero variants for an
+            antibody-discovery audience, using different combinations of
+            headlines, supporting copy, calls to action, and imagery. The team
+            tracked engagement and onward navigation and retained the version
+            judged to perform best.
+          </Paragraph>
+          <Paragraph>
+            The CEO also relayed positive feedback from customer meetings,
+            specifically about the website’s information structure. This provided
+            qualitative support for the redesign; I do not have figures
+            establishing its effect on demo or pilot requests.
+          </Paragraph>
+          <Paragraph>
+            The delivered website brought workflow explanations, technical
+            evaluation, and supporting resources into a shared structure, with
+            routes for visitors to explore the product, request a demo, or apply
+            for academic access.
           </Paragraph>
         </CopyBlock>
       </Section>
