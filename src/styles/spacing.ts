@@ -46,6 +46,20 @@ const rawSpacing = {
 
 export const spacing = {
   raw: rawSpacing,
+  wrap: {
+    padding: { lg: "var(--wrap-padding-lg)", m: "var(--wrap-padding-m)", s: "var(--wrap-padding-s)" },
+  },
+  block: {
+    padding: { lg: "var(--block-padding-lg)", m: "var(--block-padding-m)" },
+  },
+  card: {
+    padding: { lg: "var(--card-padding-lg)", m: "var(--card-padding-m)" },
+    gap: { lg: "var(--card-gap-lg)", m: "var(--card-gap-m)", s: "var(--card-gap-s)" },
+  },
+  button: {
+    padding: { lg: "var(--button-padding-lg)", m: "var(--button-padding-m)" },
+  },
+  maxWidth: { layout: "var(--max-width-layout)", text: "var(--max-width-text)" },
 
   base: {
     1: rawSpacing.general["base/1"],

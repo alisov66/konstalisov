@@ -11,6 +11,7 @@ export const colors = {
     beige: "var(--bg-beige)",
     beigeSoft: "var(--bg-beige-soft)",
     beigeLight: "var(--bg-beige-light)",
+    beigeLight50: "var(--bg-beige-light-50)",
     gray: "var(--bg-gray)",
   },
 
@@ -24,6 +25,7 @@ export const colors = {
   border: {
     primary: "var(--border-primary)",
     secondary: "var(--border-secondary)",
+    tertiary: "var(--border-tertiary)",
     focus: "var(--border-focus)",
     width: {
       thin: "var(--border-width-thin)",

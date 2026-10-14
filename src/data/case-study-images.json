@@ -1,0 +1,32 @@
+{
+  "data-mapping": {
+    "src": "/case-studies/data-mapping.webp",
+    "width": 1328,
+    "height": 830,
+    "srcSet": "/case-studies/data-mapping-640.webp 640w, /case-studies/data-mapping.webp 1328w"
+  },
+  "msa-workspace": {
+    "src": "/case-studies/msa-workspace.webp",
+    "width": 4096,
+    "height": 2560,
+    "srcSet": "/case-studies/msa-workspace-640.webp 640w, /case-studies/msa-workspace-960.webp 960w, /case-studies/msa-workspace-1640.webp 1640w, /case-studies/msa-workspace.webp 4096w"
+  },
+  "mass-payout": {
+    "src": "/case-studies/mass-payout.webp",
+    "width": 4096,
+    "height": 2560,
+    "srcSet": "/case-studies/mass-payout-640.webp 640w, /case-studies/mass-payout-960.webp 960w, /case-studies/mass-payout-1640.webp 1640w, /case-studies/mass-payout.webp 4096w"
+  },
+  "aml": {
+    "src": "/case-studies/aml.webp",
+    "width": 4096,
+    "height": 2560,
+    "srcSet": "/case-studies/aml-640.webp 640w, /case-studies/aml-960.webp 960w, /case-studies/aml-1640.webp 1640w, /case-studies/aml.webp 4096w"
+  },
+  "profile-photo": {
+    "src": "/case-studies/profile-photo.webp",
+    "width": 700,
+    "height": 726,
+    "srcSet": "/case-studies/profile-photo-640.webp 640w, /case-studies/profile-photo.webp 700w"
+  }
+}

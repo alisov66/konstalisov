@@ -1,9 +1,6 @@
-"use client";
-
-import type { CSSProperties, ReactNode } from "react";
-import { useCallback, useEffect, useRef } from "react";
-import { sendGAEvent } from "@next/third-parties/google";
-import { track } from "@vercel/analytics";
+import type { ReactNode } from "react";
+import type { ArticleId } from "@/data/capabilities";
+import { colors, spacing, typography } from "@/styles";
 import msaImages from "@/data/msa-images.json";
 import dataMappingImages from "@/data/data-mapping-images.json";
 import amlImages from "@/data/aml-images.json";
@@ -12,18 +9,6 @@ import designToProductionImages from "@/data/design-to-production-images.json";
 import unifyingHeadersImages from "@/data/unifying-headers-images.json";
 import websiteRedesignImages from "@/data/website-redesign-images.json";
 
-import ExploreMenu, {
-  type ExploreMenuCapability,
-} from "@/components/ui/ExploreMenu";
-import {
-  capabilities,
-  defaultCapabilityId,
-  getArticleById,
-  getCapabilityById,
-  type ArticleId,
-  type CapabilityId,
-} from "@/data/capabilities";
-import { colors, spacing, typography } from "@/styles";
 
 const images = {
   complexDecisions1: "/capabilities/complex-decisions-1.png",
@@ -32,22 +17,6 @@ const images = {
   complexDecisions4: "/capabilities/complex-decisions-4.png",
 };
 
-const menuCapabilities: ExploreMenuCapability[] = capabilities.map(
-  (capability) => ({
-    articles: capability.articles.map((article) => ({
-      href: `/capabilities/${capability.id}/${article.id}`,
-      id: article.id,
-      label: article.label,
-    })),
-    href: `/capabilities/${capability.id}/${capability.defaultArticle}`,
-    id: capability.id,
-    label: capability.label,
-  }),
-);
-
-const headerClearance = 136;
-
-type StyleVars = CSSProperties & Record<`--${string}`, string | number>;
 
 function typeStyle(token: {
   fontSize: string | number;
@@ -143,25 +112,25 @@ function ArticleImage({
 
 function H1({ children }: { children: ReactNode }) {
   return (
-    <h3 style={typeStyle(typography.article.h1)}>
+    <h1 style={typeStyle(typography.article.h1)}>
       {children}
-    </h3>
+    </h1>
   );
 }
 
 function H2({ children }: { children: ReactNode }) {
   return (
-    <h4 style={typeStyle(typography.article.h2)}>
+    <h2 style={typeStyle(typography.article.h2)}>
       {children}
-    </h4>
+    </h2>
   );
 }
 
 function H3({ children }: { children: ReactNode }) {
   return (
-    <h5 style={typeStyle(typography.article.h3)}>
+    <h3 style={typeStyle(typography.article.h3)}>
       {children}
-    </h5>
+    </h3>
   );
 }
 
@@ -2124,7 +2093,7 @@ function EmptyArticle({ label }: { label: string }) {
   );
 }
 
-function ActiveArticle({ articleId }: { articleId: ArticleId }) {
+export default function ArticleContent({ articleId }: { articleId: ArticleId }) {
   if (articleId === "portfolio-design-system") {
     return <PortfolioDesignSystemArticle />;
   }
@@ -2162,160 +2131,4 @@ function ActiveArticle({ articleId }: { articleId: ArticleId }) {
   }
 
   return <EmptyArticle label="Article" />;
-}
-
-export interface CapabilitiesSectionProps {
-  articleId?: ArticleId;
-  scrollToArticleOnMount?: boolean;
-  showIntroduction?: boolean;
-  trackCapabilitiesView?: boolean;
-  value?: CapabilityId;
-}
-
-export function CapabilitiesIntroduction() {
-  return (
-    <section className="flex w-full flex-col items-start bg-[var(--bg-beige)] px-[var(--padding-side)] pb-[var(--base-10)] pt-[112px] min-[768px]:pt-[var(--base-32)]">
-      <div className="flex w-full max-w-[820px] flex-col items-start gap-[var(--base-6)]">
-        <h1
-          className="w-full text-[var(--text-accent)]"
-          style={typeStyle(typography.heading.h1)}
-        >
-          Capabilities
-        </h1>
-        <p
-          className="w-full text-[var(--text-primary)]"
-          style={typeStyle(typography.body.m)}
-        >
-          Explore the core areas of my product design practice. Each capability
-          brings together one or more case studies that demonstrate how I
-          approach complex product challenges — from expert workflows and
-          scalable design systems to enterprise platforms and mobile
-          experiences.
-        </p>
-      </div>
-    </section>
-  );
-}
-
-export default function CapabilitiesSection({
-  articleId,
-  scrollToArticleOnMount = false,
-  showIntroduction = true,
-  trackCapabilitiesView = false,
-  value = defaultCapabilityId,
-}: CapabilitiesSectionProps) {
-  const sectionRef = useRef<HTMLElement>(null);
-  const articleRef = useRef<HTMLDivElement>(null);
-  const exploreMenuRef = useRef<HTMLDivElement>(null);
-  const selectedCapability =
-    getCapabilityById(value) || getCapabilityById(defaultCapabilityId)!;
-  const currentValue = selectedCapability.id;
-  const currentArticle =
-    (articleId && getArticleById(selectedCapability, articleId)) ||
-    getArticleById(selectedCapability, selectedCapability.defaultArticle)!;
-
-  const sectionStyle: StyleVars = {
-    "--capabilities-column-gap": "100px",
-    "--capabilities-article-min-width": "var(--article-max-width)",
-    "--capabilities-menu-width": "277px",
-  };
-
-  const scrollArticleToStart = useCallback(() => {
-    const article = articleRef.current;
-
-    if (!article) {
-      return;
-    }
-
-    const html = document.documentElement;
-    const exploreMenu = exploreMenuRef.current;
-    const stackedMenuClearance =
-      exploreMenu && window.innerWidth < 1280 ? exploreMenu.offsetHeight : 0;
-    const top =
-      article.getBoundingClientRect().top +
-      window.scrollY -
-      headerClearance -
-      stackedMenuClearance;
-
-    html.classList.add("no-smooth-scroll");
-    window.scrollTo({ top, left: 0, behavior: "auto" });
-    requestAnimationFrame(() => {
-      html.classList.remove("no-smooth-scroll");
-    });
-  }, []);
-
-  useEffect(() => {
-    if (!scrollToArticleOnMount) {
-      return;
-    }
-
-    const frame = requestAnimationFrame(scrollArticleToStart);
-
-    return () => {
-      cancelAnimationFrame(frame);
-    };
-  }, [
-    currentArticle.id,
-    currentValue,
-    scrollArticleToStart,
-    scrollToArticleOnMount,
-  ]);
-
-  useEffect(() => {
-    if (trackCapabilitiesView) {
-      sendGAEvent("event", "capabilities_view");
-    }
-  }, [trackCapabilitiesView]);
-
-  function handleCapabilityValueChange(nextValue: string) {
-    const selectedCapability = getCapabilityById(nextValue);
-
-    if (selectedCapability) {
-      sendGAEvent("event", "capability_click", {
-        capability_name: selectedCapability.id.replaceAll("-", "_"),
-      });
-    }
-
-    if (selectedCapability && selectedCapability.id !== currentValue) {
-      track("case_study_view", { project: selectedCapability.label });
-    }
-
-    scrollArticleToStart();
-  }
-
-  function handleArticleValueChange(nextValue: string) {
-    if (nextValue !== currentArticle.id) {
-      track("case_study_view", { project: nextValue });
-    }
-
-    scrollArticleToStart();
-  }
-
-  return (
-    <>
-      {showIntroduction ? <CapabilitiesIntroduction /> : null}
-      <section
-        id="work"
-        className="mb-[var(--base-20)] flex w-full flex-col items-start gap-0 bg-[var(--bg-beige)] px-[var(--padding-side)] min-[1280px]:flex-row min-[1280px]:gap-[var(--capabilities-column-gap)]"
-        ref={sectionRef}
-        style={sectionStyle}
-      >
-        <ExploreMenu
-          articleValue={currentArticle.id}
-          capabilities={menuCapabilities}
-          capabilityValue={currentValue}
-          onArticleValueChange={handleArticleValueChange}
-          onCapabilityValueChange={handleCapabilityValueChange}
-          ref={exploreMenuRef}
-        />
-
-        <div
-          ref={articleRef}
-          className="flex min-w-0 flex-1 scroll-mt-[var(--base-10)] flex-col items-start pt-[var(--base-5)] min-[1280px]:min-w-[var(--capabilities-article-min-width)] min-[1280px]:pt-[var(--base-10)]"
-        >
-          <ActiveArticle articleId={currentArticle.id} />
-        </div>
-      </section>
-    </>
-  );
 }

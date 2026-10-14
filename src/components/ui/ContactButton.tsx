@@ -1,135 +1,22 @@
 "use client";
 
-import type {
-  AnchorHTMLAttributes,
-  CSSProperties,
-  FocusEventHandler,
-  MouseEventHandler,
-  ReactNode,
-} from "react";
-import { useCallback, useState } from "react";
+import type { AnchorHTMLAttributes } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
+import SelectionFrame from "./SelectionFrame";
 
-import { typography } from "@/styles";
+export type ContactButtonProps = AnchorHTMLAttributes<HTMLAnchorElement>;
 
-const maxRotateX = 8;
-const maxRotateY = 10;
-
-type ContactButtonStyle = CSSProperties & {
-  "--contact-button-transform"?: string;
-};
-
-export interface ContactButtonProps
-  extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  children: ReactNode;
-}
-
-function typeStyle(token: {
-  fontSize: string | number;
-  lineHeight: string | number;
-  fontWeight: string | number;
-}) {
-  return {
-    fontSize: token.fontSize,
-    lineHeight: token.lineHeight,
-    fontWeight: token.fontWeight,
-  };
-}
-
-export default function ContactButton({
-  children,
-  className,
-  onBlur,
-  onClick,
-  onFocus,
-  onMouseLeave,
-  onMouseMove,
-  style,
-  ...props
-}: ContactButtonProps) {
-  const [transform, setTransform] = useState(
-    "perspective(800px) rotateX(0deg) rotateY(0deg)",
-  );
-
-  const updateTransform = useCallback(
-    (element: HTMLElement, clientX: number, clientY: number) => {
-      const rect = element.getBoundingClientRect();
-      const offsetX = (clientX - rect.left) / rect.width;
-      const offsetY = (clientY - rect.top) / rect.height;
-      const lookX = Math.max(-1, Math.min(1, offsetX * 2 - 1));
-      const lookY = Math.max(-1, Math.min(1, offsetY * 2 - 1));
-      const rotateX = -lookY * maxRotateX;
-      const rotateY = lookX * maxRotateY;
-
-      setTransform(
-        `perspective(800px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`,
-      );
-    },
-    [],
-  );
-
-  const resetTransform = useCallback(() => {
-    setTransform("perspective(800px) rotateX(0deg) rotateY(0deg)");
-  }, []);
-
-  const handleMouseMove: MouseEventHandler<HTMLAnchorElement> = (event) => {
-    updateTransform(event.currentTarget, event.clientX, event.clientY);
-    onMouseMove?.(event);
-  };
-
-  const handleMouseLeave: MouseEventHandler<HTMLAnchorElement> = (event) => {
-    resetTransform();
-    onMouseLeave?.(event);
-  };
-
-  const handleFocus: FocusEventHandler<HTMLAnchorElement> = (event) => {
-    setTransform("perspective(800px) rotateX(0deg) rotateY(0deg)");
-    onFocus?.(event);
-  };
-
-  const handleBlur: FocusEventHandler<HTMLAnchorElement> = (event) => {
-    resetTransform();
-    onBlur?.(event);
-  };
-
-  const handleClick: MouseEventHandler<HTMLAnchorElement> = (event) => {
-    if (props.href?.startsWith("mailto:")) {
-      sendGAEvent("event", "contact_click");
-    }
-
-    if (props.href?.startsWith("https://www.linkedin.com/")) {
-      sendGAEvent("event", "linkedin_click");
-    }
-
-    onClick?.(event);
-  };
-
+export default function ContactButton({ children, className, onClick, ...props }: ContactButtonProps) {
   return (
-    <a
-      {...props}
-      className={[
-        "contact-button group flex h-full min-h-0 w-full items-center justify-center rounded-[var(--xl)] bg-[var(--bg-beige-light)] p-[var(--base-6)] text-center text-[var(--text-primary)] no-underline",
-        "transition-[background-color,box-shadow,transform] duration-300 ease-out hover:bg-[var(--button-fill-accent)] focus-visible:bg-[var(--button-fill-accent)] focus-visible:shadow-[inset_0_0_0_var(--border-width-medium)_var(--border-focus)] focus-visible:outline-none",
-        className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
-      onBlur={handleBlur}
-      onClick={handleClick}
-      onFocus={handleFocus}
-      onMouseLeave={handleMouseLeave}
-      onMouseMove={handleMouseMove}
-      style={
-        {
-          "--contact-button-transform": transform,
-          transform: "var(--contact-button-transform)",
-          transformStyle: "preserve-3d",
-          ...typeStyle(typography.button.mStrong),
-          ...style,
-        } as ContactButtonStyle
-      }
-    >
-      <span>{children}</span>
+    <a {...props} className={["button-contact", className].filter(Boolean).join(" ")}
+      onClick={(event) => {
+        onClick?.(event);
+        if (!event.defaultPrevented) {
+          if (props.href?.startsWith("mailto:")) sendGAEvent("event", "contact_click");
+          if (props.href?.includes("linkedin.com")) sendGAEvent("event", "linkedin_click");
+        }
+      }}>
+      <span className="button-contact__label">{children}<SelectionFrame /></span>
     </a>
   );
 }

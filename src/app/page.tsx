@@ -1,95 +1,21 @@
-import HeroNavigation from "@/components/ui/HeroNavigation";
 import { pageMetadata } from "@/app/seo";
-import { typography } from "@/styles";
-import Image from "next/image";
-
-const imgPic = "/konstantin-avatar.png";
+import NavigationHeader from "@/components/ui/NavigationHeader";
+import Footer from "@/components/ui/Footer";
+import { HomeHero, MyWorkSection, HomeAboutSection, GetInTouchSection } from "@/components/sections/HomeSections";
 
 export const metadata = pageMetadata({
   title: "Konstantin Alisov | Product Designer",
-  description:
-    "Product designer specializing in complex workflows, design systems, enterprise software, and AI-assisted product development. Based in Bilbao, Spain.",
+  description: "Product designer specializing in complex workflows, design systems, enterprise software, and AI-assisted product development. Based in Bilbao, Spain.",
   path: "/",
   image: "/og/home.png",
 });
 
-const heroItems = [
-  { id: "capabilities", label: "Capabilities", href: "/capabilities" },
-  { id: "about", label: "About", href: "/about" },
-  { id: "contact", label: "Contact", href: "/contact" },
-  { id: "cv", label: "CV", href: "/cv" },
-];
-
-function typeStyle(token: {
-  fontSize: string | number;
-  lineHeight: string | number;
-  fontWeight: string | number;
-}) {
-  return {
-    fontSize: token.fontSize,
-    lineHeight: token.lineHeight,
-    fontWeight: token.fontWeight,
-  };
-}
-
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[var(--bg-beige)] text-[var(--text-primary)]">
-      <section
-        className="hero-section mx-auto flex min-h-screen w-full max-w-[1024px] flex-col items-center px-[var(--padding-side)]"
-      >
-        <div className="flex w-full flex-col items-center gap-[var(--base-3)]">
-          <div className="relative size-[80px] shrink-0 overflow-hidden">
-            <Image
-              alt=""
-              className="absolute inset-0 size-full object-cover"
-              fill
-              preload
-              sizes="80px"
-              src={imgPic}
-            />
-          </div>
-
-          <div className="flex w-full flex-col items-center gap-[var(--base-1)] text-center">
-            <h1
-              className="text-[var(--text-primary)]"
-              style={typeStyle(typography.heading.h4)}
-            >
-              Konstantin Alisov
-            </h1>
-            <p
-              className="text-[var(--text-secondary)]"
-              style={typeStyle(typography.body.m)}
-            >
-              Product designer
-            </p>
-          </div>
-        </div>
-
-        <div className="flex w-full flex-col items-center gap-[var(--base-6)] text-center">
-          <h2
-            className="w-full text-[var(--text-accent)]"
-            style={typeStyle(typography.heading.h1)}
-          >
-            Designing clarity
-            <br />
-            in complex systems
-          </h2>
-
-          <p
-            className="max-w-[640px] text-[var(--text-primary)]"
-            style={typeStyle(typography.body.m)}
-          >
-            The industries changed, but the challenge stayed the same:
-            <br />
-            helping people understand what to do next.
-          </p>
-        </div>
-
-        <HeroNavigation
-          items={heroItems}
-        />
-      </section>
-    </main>
+    <>
+      <NavigationHeader />
+      <main><HomeHero /><MyWorkSection /><HomeAboutSection /><GetInTouchSection /></main>
+      <Footer />
+    </>
   );
 }

@@ -8,6 +8,7 @@ const rawRadius = {
 
 export const radius = {
   raw: rawRadius,
+  card: { xl: "var(--card-xl)" },
 
   sm: rawRadius.sm,
   md: rawRadius.md,

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./redesign.css";
 
 :root {
   /* Figma variables: Color / Mode 1 */
@@ -11,6 +12,7 @@
   --bg-beige: #eceae6;
   --bg-beige-soft: #f5f2eb;
   --bg-beige-light: #faf8f2;
+  --bg-beige-light-50: rgba(250, 248, 242, 0.5);
   --bg-gray: #fafafa;
 
   --button-fill-accent: #ffc450;
@@ -20,6 +22,7 @@
 
   --border-primary: #111111;
   --border-secondary: #a2a0a0;
+  --border-tertiary: #d4d1d1;
   --border-focus: #c9652a;
 
   /* Figma variables: Border Width / Mode 1 */
@@ -134,7 +137,23 @@
   --article-media-gap: 40px; /* article/mediaGap */
   --article-section-gap: 64px; /* article/sectionGap */
   --article-chapter-gap: 80px; /* article/chapterGap */
-  --padding-side: 120px; /* padding/side */
+  --wrap-padding-lg: 120px;
+  --wrap-padding-m: 80px;
+  --wrap-padding-s: 40px;
+  --card-padding-lg: 40px;
+  --card-padding-m: 20px;
+  --block-padding-lg: 40px;
+  --block-padding-m: 20px;
+  --card-gap-lg: 40px;
+  --card-gap-m: 20px;
+  --card-gap-s: 12px;
+  --button-padding-lg: 24px;
+  --button-padding-m: 16px;
+  --max-width-layout: 1488px;
+  --max-width-text: 812px;
+  --padding-side: var(--wrap-padding-lg);
+  --card-xl: 40px;
+  --navigation-height: 92px;
 
   /* Figma variables: Radius / Mode 1 */
   --sm: 4px; /* sm */
@@ -195,7 +214,18 @@
     --article-media-gap: 32px;
     --article-section-gap: 48px;
     --article-chapter-gap: 64px;
-    --padding-side: 40px;
+    --wrap-padding-lg: 40px;
+    --wrap-padding-m: 28px;
+    --wrap-padding-s: 20px;
+    --card-padding-lg: 20px;
+    --card-padding-m: 16px;
+    --block-padding-lg: 28px;
+    --block-padding-m: 16px;
+    --card-gap-lg: 20px;
+    --card-gap-m: 16px;
+    --card-gap-s: 8px;
+    --card-xl: 24px;
+    --navigation-height: 76px;
   }
 }
 
@@ -236,7 +266,18 @@
     --article-media-gap: 32px;
     --article-section-gap: 48px;
     --article-chapter-gap: 64px;
-    --padding-side: 16px;
+    --wrap-padding-lg: 16px;
+    --wrap-padding-m: 16px;
+    --wrap-padding-s: 8px;
+    --card-padding-lg: 12px;
+    --card-padding-m: 12px;
+    --block-padding-lg: 20px;
+    --block-padding-m: 12px;
+    --card-gap-lg: 12px;
+    --card-gap-m: 12px;
+    --card-gap-s: 8px;
+    --card-xl: 16px;
+    --navigation-height: 76px;
   }
 }
 
