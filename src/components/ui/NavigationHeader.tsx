@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { sendGAEvent } from "@next/third-parties/google";
 import { emailHref, linkedInHref } from "@/data/contact";
 import ButtonNavigation from "./ButtonNavigation";
 import MenuButton from "./MenuButton";
+import LogoHeader from "./LogoHeader";
 
 export interface NavigationHeaderProps {
   alwaysVisible?: boolean;
@@ -48,10 +47,7 @@ export default function NavigationHeader({ className }: NavigationHeaderProps) {
     <header ref={headerRef} className={["site-header", className].filter(Boolean).join(" ")} data-open={open}>
       <div className="site-header__inner">
         <div className="site-header__row">
-          <Link href="/" className="site-header__identity" aria-label="Konstantin Alisov, homepage" onClick={() => setOpen(false)}>
-            <Image src="/case-studies/avatar.png" width={52} height={52} alt="" unoptimized preload />
-            <span><strong>Konstantin Alisov</strong><span>Product designer</span></span>
-          </Link>
+          <LogoHeader onClick={() => setOpen(false)} />
           <MenuButton className="site-header__toggle" open={open} onOpenChange={setOpen} aria-controls="site-navigation" />
         </div>
         <nav id="site-navigation" aria-label="Main navigation" className="site-header__links">
