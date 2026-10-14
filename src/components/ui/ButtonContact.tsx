@@ -3,12 +3,15 @@
 import type { AnchorHTMLAttributes } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
 import SelectionFrame from "./SelectionFrame";
+import usePressState from "./usePressState";
 
-export type ContactButtonProps = AnchorHTMLAttributes<HTMLAnchorElement>;
+export type ButtonContactProps = AnchorHTMLAttributes<HTMLAnchorElement>;
 
-export default function ContactButton({ children, className, onClick, ...props }: ContactButtonProps) {
+export default function ButtonContact({ children, className, onClick, ...props }: ButtonContactProps) {
+  const pressProps = usePressState<HTMLAnchorElement>(props);
+
   return (
-    <a {...props} className={["button-contact", className].filter(Boolean).join(" ")}
+    <a {...props} {...pressProps} className={["button-contact", className].filter(Boolean).join(" ")}
       onClick={(event) => {
         onClick?.(event);
         if (!event.defaultPrevented) {

@@ -1,6 +1,9 @@
+"use client";
+
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 import Link from "next/link";
 import SelectionFrame from "./SelectionFrame";
+import usePressState from "./usePressState";
 
 type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & { href: string; disabled?: never };
 type NativeButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
@@ -9,11 +12,12 @@ export type ButtonProps = (AnchorProps | NativeButtonProps) & { selected?: boole
 export default function Button({ variant, selected, className, children, ...props }: ButtonProps & {
   variant: "primary" | "secondary" | "navigation";
 }) {
+  const pressProps = usePressState<HTMLAnchorElement | HTMLButtonElement>(props);
   const classes = [`button-${variant}`, variant === "navigation" ? "" : "design-button", className].filter(Boolean).join(" ");
   const content = <><span className="button-label">{children}</span>{variant !== "navigation" && <SelectionFrame />}</>;
 
   if (props.href !== undefined) {
-    return <Link {...props} className={classes} data-selected={selected || undefined}>{content}</Link>;
+    return <Link {...props} {...pressProps} className={classes} data-selected={selected || undefined}>{content}</Link>;
   }
-  return <button {...props} type={props.type ?? "button"} className={classes} data-selected={selected || undefined}>{content}</button>;
+  return <button {...props} {...pressProps} type={props.type ?? "button"} className={classes} data-selected={selected || undefined}>{content}</button>;
 }

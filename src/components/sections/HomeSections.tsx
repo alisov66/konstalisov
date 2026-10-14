@@ -1,6 +1,6 @@
 import ButtonPrimary from "@/components/ui/ButtonPrimary";
 import ButtonSecondary from "@/components/ui/ButtonSecondary";
-import ContactButton from "@/components/ui/ContactButton";
+import ButtonContact from "@/components/ui/ButtonContact";
 import CaseStudyGrid from "./CaseStudyGrid";
 import { coreCaseStudies } from "@/data/case-studies";
 import { emailHref, linkedInHref } from "@/data/contact";
@@ -75,8 +75,8 @@ export function GetInTouchSection() {
       <div className="page-container">
         <div className="section-title"><h2 id="contact-title" style={typeStyle(typography.heading.h2)}>Get in touch</h2></div>
         <div className="home-contact__actions">
-          <ContactButton href={emailHref}>Email me</ContactButton>
-          <ContactButton href={linkedInHref} target="_blank" rel="noopener noreferrer">LinkedIn</ContactButton>
+          <ButtonContact href={emailHref}>Email me</ButtonContact>
+          <ButtonContact href={linkedInHref} target="_blank" rel="noopener noreferrer">LinkedIn</ButtonContact>
         </div>
       </div>
     </section>

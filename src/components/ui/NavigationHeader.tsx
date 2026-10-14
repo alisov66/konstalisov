@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { sendGAEvent } from "@next/third-parties/google";
 import { emailHref, linkedInHref } from "@/data/contact";
 import ButtonNavigation from "./ButtonNavigation";
-import MenuButton from "./MenuButton";
-import LogoHeader from "./LogoHeader";
+import ButtonMenuMobile from "./ButtonMenuMobile";
+import ButtonLogo from "./ButtonLogo";
 
 export interface NavigationHeaderProps {
   alwaysVisible?: boolean;
@@ -32,7 +32,7 @@ export default function NavigationHeader({ className }: NavigationHeaderProps) {
     function escape(event: KeyboardEvent) {
       if (event.key === "Escape" && open) {
         setOpen(false);
-        headerRef.current?.querySelector<HTMLButtonElement>(".menu-button")?.focus();
+        headerRef.current?.querySelector<HTMLButtonElement>(".button-menu-mobile")?.focus();
       }
     }
     document.addEventListener("pointerdown", dismiss);
@@ -47,8 +47,8 @@ export default function NavigationHeader({ className }: NavigationHeaderProps) {
     <header ref={headerRef} className={["site-header", className].filter(Boolean).join(" ")} data-open={open}>
       <div className="site-header__inner">
         <div className="site-header__row">
-          <LogoHeader onClick={() => setOpen(false)} />
-          <MenuButton className="site-header__toggle" open={open} onOpenChange={setOpen} aria-controls="site-navigation" />
+          <ButtonLogo onClick={() => setOpen(false)} />
+          <ButtonMenuMobile className="site-header__toggle" open={open} onOpenChange={setOpen} aria-controls="site-navigation" />
         </div>
         <nav id="site-navigation" aria-label="Main navigation" className="site-header__links">
           {links.map((link) => (

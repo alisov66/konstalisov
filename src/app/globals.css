@@ -24,6 +24,12 @@
   --border-secondary: #a2a0a0;
   --border-tertiary: #d4d1d1;
   --border-focus: #c9652a;
+  --border-focus-soft: #d38f68;
+
+  /* Figma button prototype transitions. */
+  --button-transition-duration: 150ms;
+  --menu-transition-duration: 300ms;
+  --button-transition-easing: ease-out;
 
   /* Figma variables: Border Width / Mode 1 */
   --border-width-thin: 1px;
@@ -345,65 +351,6 @@ html.no-smooth-scroll * {
   position: relative;
 }
 
-.menu-button__line {
-  background: var(--border-primary);
-  height: 1px;
-  position: absolute;
-  top: 50%;
-  transform-origin: center;
-}
-
-.menu-button__line--top {
-  left: calc(50% - 8px);
-  width: 16px;
-}
-
-.menu-button__line--bottom {
-  left: calc(50% - 6px);
-  width: 12px;
-}
-
-.menu-button[data-state="menu"] .menu-button__line--top {
-  transform: translateY(-4.5px);
-}
-
-.menu-button[data-state="menu"] .menu-button__line--bottom {
-  left: calc(50% - 6px);
-  transform: translateY(4.5px);
-}
-
-.menu-button[data-state="cross"] .menu-button__line--top {
-  transform: translateY(-0.5px) rotate(45deg);
-}
-
-.menu-button[data-state="cross"] .menu-button__line--bottom {
-  left: calc(50% - 8px);
-  transform: translateY(-0.5px) rotate(-45deg);
-  width: 16px;
-}
-
-.menu-button[data-state="menuToCross"] .menu-button__line--top {
-  animation: menu-button-top-menu-to-cross 300ms linear forwards;
-}
-
-.menu-button[data-state="menuToCross"] .menu-button__line--bottom {
-  animation:
-    menu-button-bottom-menu-to-cross-transform 300ms linear forwards,
-    menu-button-bottom-menu-to-cross-width 300ms linear forwards,
-    menu-button-bottom-menu-to-cross-left 300ms linear forwards;
-}
-
-.menu-button[data-state="crossToMenu"] .menu-button__line--top {
-  animation: menu-button-top-cross-to-menu 300ms linear forwards;
-}
-
-.menu-button[data-state="crossToMenu"] .menu-button__line--bottom {
-  animation:
-    menu-button-bottom-cross-to-menu-transform 300ms linear forwards,
-    menu-button-bottom-cross-to-menu-width 300ms linear forwards,
-    menu-button-bottom-cross-to-menu-left 300ms linear forwards;
-}
-
 .navigation-header-mobile-actions {
   grid-template-rows: 0fr;
   opacity: 0;
@@ -432,100 +379,7 @@ html.no-smooth-scroll * {
   pointer-events: auto;
 }
 
-@keyframes menu-button-top-menu-to-cross {
-  0%,
-  47.51% {
-    transform: translateY(-4.5px) rotate(0deg);
-  }
-
-  100% {
-    transform: translateY(-0.5px) rotate(45deg);
-  }
-}
-
-@keyframes menu-button-bottom-menu-to-cross-transform {
-  0%,
-  47.51% {
-    transform: translateY(4.5px) rotate(0deg);
-  }
-
-  100% {
-    transform: translateY(-0.5px) rotate(-45deg);
-  }
-}
-
-@keyframes menu-button-bottom-menu-to-cross-width {
-  from {
-    width: 12px;
-  }
-
-  to {
-    width: 16px;
-  }
-}
-
-@keyframes menu-button-bottom-menu-to-cross-left {
-  from {
-    left: calc(50% - 6px);
-  }
-
-  to {
-    left: calc(50% - 8px);
-  }
-}
-
-@keyframes menu-button-top-cross-to-menu {
-  0%,
-  48.65% {
-    transform: translateY(-0.5px) rotate(45deg);
-  }
-
-  100% {
-    transform: translateY(-4.5px) rotate(0deg);
-  }
-}
-
-@keyframes menu-button-bottom-cross-to-menu-transform {
-  0%,
-  48.65% {
-    transform: translateY(-0.5px) rotate(-45deg);
-  }
-
-  100% {
-    transform: translateY(4.5px) rotate(0deg);
-  }
-}
-
-@keyframes menu-button-bottom-cross-to-menu-width {
-  0%,
-  48.65% {
-    width: 16px;
-  }
-
-  100% {
-    width: 12px;
-  }
-}
-
-@keyframes menu-button-bottom-cross-to-menu-left {
-  0%,
-  48.65% {
-    left: calc(50% - 8px);
-  }
-
-  100% {
-    left: calc(50% - 6px);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .menu-button[data-state="menuToCross"] .menu-button__line--top,
-  .menu-button[data-state="menuToCross"] .menu-button__line--bottom,
-  .menu-button[data-state="crossToMenu"] .menu-button__line--top,
-  .menu-button[data-state="crossToMenu"] .menu-button__line--bottom {
-    animation-duration: 1ms;
-  }
-
   .navigation-header-mobile-actions {
     transition-duration: 1ms;
   }

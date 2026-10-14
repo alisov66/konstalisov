@@ -27,6 +27,7 @@ export const colors = {
     secondary: "var(--border-secondary)",
     tertiary: "var(--border-tertiary)",
     focus: "var(--border-focus)",
+    focusSoft: "var(--border-focus-soft)",
     width: {
       thin: "var(--border-width-thin)",
       medium: "var(--border-width-medium)",
