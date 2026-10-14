@@ -7,7 +7,8 @@ const sharp = require(require.resolve("sharp", { paths: [dirname(require.resolve
 const root = resolve(import.meta.dirname, "../public/case-studies");
 const manifest = {};
 
-for (const name of ["data-mapping", "msa-workspace", "mass-payout", "aml", "profile-photo"]) {
+const studies = ["data-mapping", "msa-workspace", "mass-payout", "aml"];
+for (const name of [...studies, ...studies.map(name => `${name}-hover`), "profile-photo"]) {
   const source = resolve(root, `${name}.png`);
   const { width, height } = await sharp(source).metadata();
   const result = await sharp(source).webp({ lossless: true, effort: 6 }).toFile(resolve(root, `${name}.webp`));

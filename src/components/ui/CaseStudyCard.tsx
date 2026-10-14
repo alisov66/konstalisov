@@ -7,6 +7,7 @@ import SelectionFrame from "./SelectionFrame";
 export default function CaseStudyCard({ study, headingLevel = 3 }: { study: CaseStudy; headingLevel?: 2 | 3 }) {
   const Heading = headingLevel === 2 ? "h2" : "h3";
   const image = study.image ? images[study.slug as keyof typeof images] : undefined;
+  const hoverImage = study.image ? images[`${study.slug}-hover` as keyof typeof images] : undefined;
   return (
     <Link href={study.href} className={`case-study-card case-study-card--${study.category}`} aria-labelledby={`card-${study.slug}`}>
       {image && (
@@ -14,7 +15,9 @@ export default function CaseStudyCard({ study, headingLevel = 3 }: { study: Case
           <div className="case-study-card__image">
             {/* The illustration repeats the linked title; keep the accessible name concise. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img {...image} alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) calc(100vw - 56px), (max-width: 1439px) calc(100vw - 120px), 664px" />
+            <img {...image} className="case-study-card__image-default" alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) calc(100vw - 56px), (max-width: 1439px) calc((100vw - 80px) / 2 - 40px), 664px" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            {hoverImage && <img {...hoverImage} className="case-study-card__image-hover" alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) calc(100vw - 56px), (max-width: 1439px) calc((100vw - 80px) / 2 - 32px), 704px" />}
             <SelectionFrame />
           </div>
         </div>

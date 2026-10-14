@@ -23,6 +23,30 @@
     "height": 2560,
     "srcSet": "/case-studies/aml-640.webp 640w, /case-studies/aml-960.webp 960w, /case-studies/aml-1640.webp 1640w, /case-studies/aml.webp 4096w"
   },
+  "data-mapping-hover": {
+    "src": "/case-studies/data-mapping-hover.webp",
+    "width": 1408,
+    "height": 880,
+    "srcSet": "/case-studies/data-mapping-hover-640.webp 640w, /case-studies/data-mapping-hover.webp 1408w"
+  },
+  "msa-workspace-hover": {
+    "src": "/case-studies/msa-workspace-hover.webp",
+    "width": 4096,
+    "height": 2560,
+    "srcSet": "/case-studies/msa-workspace-hover-640.webp 640w, /case-studies/msa-workspace-hover-960.webp 960w, /case-studies/msa-workspace-hover-1640.webp 1640w, /case-studies/msa-workspace-hover.webp 4096w"
+  },
+  "mass-payout-hover": {
+    "src": "/case-studies/mass-payout-hover.webp",
+    "width": 4096,
+    "height": 2560,
+    "srcSet": "/case-studies/mass-payout-hover-640.webp 640w, /case-studies/mass-payout-hover-960.webp 960w, /case-studies/mass-payout-hover-1640.webp 1640w, /case-studies/mass-payout-hover.webp 4096w"
+  },
+  "aml-hover": {
+    "src": "/case-studies/aml-hover.webp",
+    "width": 4096,
+    "height": 2560,
+    "srcSet": "/case-studies/aml-hover-640.webp 640w, /case-studies/aml-hover-960.webp 960w, /case-studies/aml-hover-1640.webp 1640w, /case-studies/aml-hover.webp 4096w"
+  },
   "profile-photo": {
     "src": "/case-studies/profile-photo.webp",
     "width": 700,
