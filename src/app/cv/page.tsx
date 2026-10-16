@@ -1,8 +1,11 @@
+import type { ReactNode } from "react";
 import Footer from "@/components/ui/Footer";
 import CvDownloadButton from "@/components/ui/CvDownloadButton";
 import NavigationHeader from "@/components/ui/NavigationHeader";
+import { GetInTouchSection } from "@/components/sections/HomeSections";
 import { pageMetadata } from "@/app/seo";
-import { typography } from "@/styles";
+import { typography, typeStyle } from "@/styles";
+import "./cv.css";
 
 const cvPdfHref = "/Konstantin-Alisov-CV.pdf";
 
@@ -31,14 +34,14 @@ const experience = [
     roles: [
       {
         title: "Product Designer",
-        dates: "May 2025 - Aug 2026",
+        dates: "May 2025 \u2014 Aug 2026",
         summary:
-          "Sole Product Designer for Platforma, an enterprise software ecosystem for immunology and bioinformatics. Owned product design across desktop applications, web services, design systems, technical documentation, and product communication, helping researchers navigate complex analytical workflows with confidence.",
+          "Sole product designer for an enterprise scientific software ecosystem, responsible for desktop and web experiences, shared interface components, and the public product website.",
         details: [
-          "Designed complex analytical workflows, including Data Mapping and sequence analysis, helping researchers navigate metadata compatibility, dense biological datasets, and advanced visualizations with greater clarity and confidence.",
-          "Built a scalable design system with reusable components, interaction patterns, and implementation documentation, improving consistency and reducing one-off interface decisions across Platforma desktop applications and web services.",
-          "Led the redesign of Platforma's public enterprise website, transforming a collection of products into a coherent enterprise platform story for customers and partners.",
-          "Created technical documentation and product specifications that reduced ambiguity and strengthened collaboration between design, product, engineering, and marketing.",
+          "Designed analytical workspaces that let researchers compare complex data, configure visualizations, and adjust layouts and information density to suit different tasks.",
+          "Used recordings of customer sessions and feedback from scientists to identify interaction problems, make compatibility rules visible earlier, and revise restrictions that limited valid choices.",
+          "Built reusable components and documented their behavior across application views, dialogs, and sheets, supporting both internal engineers and developers using the SDK.",
+          "Redesigned the product website\u2019s information architecture and built it in Framer, creating distinct paths for scientific and technical audiences. Collaborated with the CEO on content and technical accuracy, with engineering support for form integrations.",
         ],
       },
     ],
@@ -48,28 +51,25 @@ const experience = [
     roles: [
       {
         title: "Product Designer",
-        dates: "Jul 2023 - May 2025",
+        dates: "Jul 2023 \u2014 May 2025",
         summary:
-          "Owned product design from discovery through delivery, partnering with founders and product teams to define product direction, structure complex systems, and validate solutions before implementation.",
+          "Owned end-to-end design across web and mobile products, including B2B platforms, CRM and internal tools, logistics, fintech, accommodation, and dating apps. Worked closely with founders, product managers, and engineers from problem definition through implementation.",
         details: [
-          "Led end-to-end product design from discovery through delivery, aligning business goals, user needs, and technical feasibility throughout the product lifecycle.",
-          "Shaped product direction through close collaboration with founders, product managers, and engineers, enabling faster and better-informed product decisions.",
-          "Designed information architecture for products with complex workflows and business logic, making sophisticated functionality easier to understand and navigate.",
-          "Designed mobile financial product workflows involving blockchain transactions, AML verification, staking, and multi-account management, translating complex financial concepts into intuitive user experiences.",
-          "Created prototypes and product documentation that aligned stakeholders earlier and accelerated product decisions before implementation.",
+          "Helped define product requirements and proposed solutions based on user needs, stakeholder input, and technical constraints.",
+          "Structured complex workflows and information architecture, defining navigation, interaction rules, and validation and recovery states.",
+          "Used prototypes to review proposed workflows with stakeholders, then revised designs using customer feedback and findings from implementation.",
+          "Worked closely with engineers through delivery, documenting behavior, reviewing implemented interfaces, and refining components and edge cases.",
         ],
       },
       {
         title: "UX/UI Designer",
-        dates: "Dec 2020 - Jun 2023",
+        dates: "Dec 2020 \u2014 Jun 2023",
         summary:
-          "Designed web and mobile interfaces across multiple industries, translating business requirements into usable, visually consistent products while building strong foundations in interaction design and UI systems.",
+          "Designed web and mobile interfaces across business software and consumer applications, adapting layouts and interactions to different audiences and product requirements.",
         details: [
-          "Designed responsive web and mobile interfaces across fintech, logistics, healthcare, and enterprise software, balancing usability with business and technical requirements.",
-          "Designed user flows, wireframes, prototypes, and high-fidelity interfaces that transformed complex requirements into intuitive user experiences.",
-          "Established reusable UI patterns and scalable design system foundations, improving consistency across digital products.",
-          "Collaborated closely with product managers and developers throughout the product lifecycle, ensuring design decisions remained practical and feasible.",
-          "Delivered user-centered solutions balancing business goals, technical constraints, and usability to support successful product delivery.",
+          "Translated business requirements into user flows, wireframes, interactive prototypes, and detailed interface designs.",
+          "Established reusable UI patterns and component foundations for consistent experiences across screens and devices.",
+          "Worked with product managers and developers to resolve interaction details and adapt designs to technical constraints.",
         ],
       },
     ],
@@ -79,15 +79,12 @@ const experience = [
     roles: [
       {
         title: "UX/UI Designer",
-        dates: "Apr 2017 - Dec 2020",
+        dates: "Apr 2017 \u2014 Dec 2020",
         summary:
-          "Independent design practice focused on websites and digital experiences for small businesses, combining UX thinking, information architecture, and visual design from concept through delivery.",
+          "Designed websites and digital experiences for small businesses across hospitality, retail, and creative industries.",
         details: [
-          "Delivered end-to-end website design, from discovery and information architecture to visual design and developer handoff, ensuring a smooth transition from concept to implementation.",
-          "Designed responsive websites and digital experiences for businesses across hospitality, retail, and creative industries, helping clients establish clear and effective digital presences.",
-          "Designed user flows, wireframes, prototypes, and high-fidelity interfaces that translated business goals into intuitive customer experiences.",
-          "Partnered directly with founders and business owners to define goals and translate them into effective digital experiences.",
-          "Managed independent client relationships from project scoping through delivery, ensuring clear communication and successful project execution.",
+          "Worked directly with business owners to define goals, organize content, and design responsive websites from initial structure through visual design.",
+          "Managed project scope, client feedback, and developer handoff throughout delivery.",
         ],
       },
     ],
@@ -98,12 +95,12 @@ const education = [
   {
     place: "Skillbox",
     title: "UX/UI Design Program",
-    dates: "May 2016 - Apr 2017",
+    dates: "May 2016 \u2014 Apr 2017",
   },
   {
     place: "Ural State Technical University",
     title: "Economics studies",
-    dates: "Sep 2005 - Mar 2008",
+    dates: "Sep 2005 \u2014 Mar 2008",
   },
 ];
 
@@ -127,8 +124,8 @@ const tools = [
   },
   {
     title: "AI-assisted development",
-    tags: ["ChatGPT", "Codex", "VS Code"],
-    note: "Using AI-assisted development to prototype ideas, understand implementation, and collaborate more effectively with engineers. This portfolio was designed by me and built using AI-assisted workflows with Next.js, Tailwind CSS, GitHub, and Vercel.",
+    tags: ["Figma agent", "ChatGPT", "Codex", "VS Code"],
+    note: "Using AI-assisted development to prototype ideas, understand implementation, and collaborate more effectively with engineers. My portfolio was designed by me and built using AI-assisted workflows with Next.js, Tailwind CSS, GitHub, and Vercel.",
   },
   {
     title: "Collaboration",
@@ -151,58 +148,42 @@ const languages = [
   },
 ];
 
-function typeStyle(token: {
-  fontSize: string | number;
-  lineHeight: string | number;
-  fontWeight: string | number;
+function CvSection({
+  id,
+  title,
+  children,
+}: {
+  id: string;
+  title: string;
+  children: ReactNode;
 }) {
-  return {
-    fontSize: token.fontSize,
-    lineHeight: token.lineHeight,
-    fontWeight: token.fontWeight,
-  };
-}
-
-function SectionHeading({ children }: { children: string }) {
   return (
-    <h2
-      className="text-[var(--text-accent)]"
-      style={typeStyle(typography.heading.h3)}
-    >
-      {children}
-    </h2>
+    <section className="page-band" aria-labelledby={id}>
+      <div className="page-container cv-panel">
+        <div className="section-title cv-section-title">
+          <h2 id={id} style={typeStyle(typography.heading.h3)}>{title}</h2>
+        </div>
+        {children}
+      </div>
+    </section>
   );
 }
 
 function SkillTags({ tags }: { tags: string[] }) {
   return (
-    <div className="flex w-full max-w-[820px] flex-wrap gap-[var(--base-2)]">
+    <ul className="cv-tags" style={typeStyle(typography.body.m)}>
       {tags.map((tag) => (
-        <span
-          className="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-[var(--pill)] bg-[var(--bg-beige-soft)] px-[var(--base-3)] py-[var(--base-1)] text-[var(--text-primary)] [word-break:break-word]"
-          key={tag}
-          style={typeStyle(typography.body.m)}
-        >
-          {tag}
-        </span>
+        <li key={tag}>{tag}</li>
       ))}
-    </div>
+    </ul>
   );
 }
 
 function AccentSummary({ children }: { children: string }) {
   return (
-    <div className="flex w-full max-w-[832px] items-stretch gap-[var(--base-2)]">
-      <span
-        aria-hidden
-        className="w-[4px] shrink-0 rounded-[var(--pill)] bg-[var(--button-fill-accent)]"
-      />
-      <p
-        className="max-w-[820px] text-[var(--text-primary)]"
-        style={typeStyle(typography.body.m)}
-      >
-        {children}
-      </p>
+    <div className="cv-summary">
+      <span aria-hidden="true" className="cv-summary__bar" />
+      <p style={typeStyle(typography.body.m)}>{children}</p>
     </div>
   );
 }
@@ -210,7 +191,7 @@ function AccentSummary({ children }: { children: string }) {
 function ParagraphList({ items }: { items: string[] }) {
   return (
     <ul
-      className="flex max-w-[820px] list-disc flex-col gap-[var(--base-2)] pl-[30px] text-[var(--text-primary)]"
+      className="cv-bullets"
       style={typeStyle(typography.body.m)}
     >
       {items.map((item) => (
@@ -234,187 +215,115 @@ function ExperienceRole({
   title: string;
 }) {
   return (
-    <article className="flex w-full flex-col gap-[var(--base-4)]">
-      <div className="flex flex-wrap gap-x-[var(--base-6)] gap-y-[var(--base-1)]">
-        <h4
-          className="text-[var(--text-primary)]"
-          style={typeStyle(typography.heading.h5)}
-        >
-          {title}
-        </h4>
-        <p
-          className="text-[var(--text-secondary)]"
-          style={typeStyle(typography.body.m)}
-        >
-          {dates}
-        </p>
+    <div className="cv-role">
+      <div className="cv-row cv-role__heading">
+        <h4 style={typeStyle(typography.heading.h5)}>{title}</h4>
+        <p style={typeStyle(typography.body.s)}>{dates}</p>
       </div>
-
-      <AccentSummary>{summary}</AccentSummary>
-      <ParagraphList items={details} />
-    </article>
+      <div className="cv-role__summary"><AccentSummary>{summary}</AccentSummary></div>
+      <div className="cv-role__details"><ParagraphList items={details} /></div>
+    </div>
   );
 }
 
 function CompactEntry({
-  meta,
+  caption,
+  dates,
   title,
 }: {
-  meta: string;
+  caption: string;
+  dates: string;
   title: string;
 }) {
   return (
-    <div className="flex flex-col gap-[var(--base-2)]">
-      <h3
-        className="text-[var(--text-primary)]"
-        style={typeStyle(typography.heading.h5)}
-      >
-        {title}
-      </h3>
-      <p
-        className="whitespace-pre-line text-[var(--text-primary)]"
-        style={typeStyle(typography.body.m)}
-      >
-        {meta}
-      </p>
+    <div className="cv-entry">
+      <h3 style={typeStyle(typography.heading.h5)}>{title}</h3>
+      <div className="cv-entry__caption">
+        <p style={typeStyle(typography.body.m)}>{caption}</p>
+        <p style={typeStyle(typography.body.s)}>{dates}</p>
+      </div>
     </div>
   );
 }
 
 export default function CvPage() {
   return (
-    <main className="min-h-screen bg-[var(--bg-beige)] text-[var(--text-primary)]">
+    <main className="cv-page">
       <NavigationHeader alwaysVisible />
-      <section className="flex w-full flex-col items-start gap-[var(--base-10)] px-[var(--padding-side)] pb-[var(--base-20)] pt-[112px] min-[768px]:items-center min-[768px]:pt-[var(--base-32)]">
-        <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
-          <div className="flex w-full flex-col gap-[var(--base-6)]">
-            <h1
-              className="text-[var(--text-accent)]"
-              style={typeStyle(typography.heading.h1)}
-            >
-              Konstantin Alisov
-            </h1>
-
-            <div className="flex flex-col gap-[var(--base-2)]">
-              <p
-                className="text-[var(--text-primary)]"
-                style={{
-                  ...typeStyle(typography.body.m),
-                  fontWeight: typography.fontWeight.semibold,
-                }}
-              >
-                Product Designer
-              </p>
-              <div
-                className="flex flex-col gap-[var(--base-1)] text-[var(--text-secondary)]"
-                style={typeStyle(typography.body.m)}
-              >
-                <p>Bilbao, Spain</p>
-                <p>Updated: Sep 2026</p>
+      <section className="cv-hero" aria-labelledby="cv-title">
+        <div className="page-container">
+          <div className="cv-hero__content">
+            <div className="cv-hero__title">
+              <h1 id="cv-title" style={typeStyle(typography.heading.h1)}>Konstantin Alisov</h1>
+              <div className="cv-hero__info" style={typeStyle(typography.body.m)}>
+                <p style={{ fontWeight: typography.fontWeight.semibold }}>Senior Product Designer</p>
+                <p className="cv-caption">Bilbao, Spain</p>
               </div>
             </div>
+            <p className="cv-hero__description" style={typeStyle(typography.body.m)}>
+              Product designer with 9+ years of experience across web and mobile products.
+              <br />I turn complex requirements into clear workflows and reusable interface patterns,
+              working closely with product and engineering teams. My work spans understanding user
+              needs, interaction design, design systems, and implementation review.
+            </p>
+            <CvDownloadButton href={cvPdfHref} />
           </div>
-
-          <p
-            className="max-w-[820px] whitespace-pre-line text-[var(--text-primary)]"
-            style={typeStyle(typography.body.m)}
-          >
-            Product designer with 9+ years of experience designing enterprise
-            software, complex workflows, and information-rich interfaces.
-            {"\n"}I transform ambiguous requirements into scalable products
-            through systems thinking, strong UX foundations, and close
-            collaboration with product and engineering. I use AI-assisted
-            development to prototype ideas, better understand implementation,
-            and collaborate more effectively with engineers.
-          </p>
-
-          <CvDownloadButton href={cvPdfHref} />
-        </section>
-
-        <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
-          <SectionHeading>Core expertise</SectionHeading>
-          <SkillTags tags={coreExpertise} />
-        </section>
-
-        <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
-          <SectionHeading>Experience</SectionHeading>
-
-          <div className="flex w-full flex-col gap-[var(--base-10)]">
-            {experience.map((company) => (
-              <section className="flex w-full flex-col gap-[var(--base-4)]" key={company.company}>
-                <h3
-                  className="text-[var(--text-secondary)]"
-                  style={typeStyle(typography.heading.h4)}
-                >
-                  {company.company}
-                </h3>
-                <div className="flex w-full flex-col gap-[var(--base-6)]">
-                  {company.roles.map((role) => (
-                    <ExperienceRole key={`${company.company}-${role.title}`} {...role} />
-                  ))}
-                </div>
-              </section>
-            ))}
-          </div>
-        </section>
-
-        <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
-          <SectionHeading>Education & training</SectionHeading>
-          <div className="flex flex-col gap-[var(--base-6)]">
-            {education.map((item) => (
-              <CompactEntry
-                key={item.place}
-                meta={`${item.title}\n${item.dates}`}
-                title={item.place}
-              />
-            ))}
-          </div>
-        </section>
-
-        <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
-          <SectionHeading>Certifications</SectionHeading>
-          <div className="flex flex-col gap-[var(--base-6)]">
-            {certifications.map((item) => (
-              <CompactEntry
-                key={item.title}
-                meta={`${item.issuer}\n${item.dates}`}
-                title={item.title}
-              />
-            ))}
-          </div>
-        </section>
-
-        <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
-          <SectionHeading>Tools & workflow</SectionHeading>
-          <div className="flex flex-col gap-[var(--base-6)]">
-            {tools.map((group) => (
-              <div className="flex flex-col gap-[var(--base-3)]" key={group.title}>
-                <h3
-                  className="text-[var(--text-primary)]"
-                  style={typeStyle(typography.heading.h5)}
-                >
-                  {group.title}
-                </h3>
-                <SkillTags tags={group.tags} />
-                {group.note ? <AccentSummary>{group.note}</AccentSummary> : null}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="flex w-full max-w-[820px] flex-col gap-[var(--base-6)]">
-          <SectionHeading>Languages</SectionHeading>
-          <div className="flex flex-col gap-[var(--base-6)]">
-            {languages.map((item) => (
-              <CompactEntry
-                key={item.language}
-                meta={item.level}
-                title={item.language}
-              />
-            ))}
-          </div>
-        </section>
+        </div>
       </section>
+
+      <CvSection id="cv-expertise" title="Core expertise">
+        <div className="cv-row cv-expertise"><SkillTags tags={coreExpertise} /></div>
+      </CvSection>
+
+      <CvSection id="cv-experience" title="Experience">
+        {experience.map((company, index) => (
+          <section key={company.company} aria-labelledby={`cv-company-${index}`}>
+            <div className="cv-row cv-company">
+              <h3 id={`cv-company-${index}`} style={typeStyle(typography.heading.h4)}>{company.company}</h3>
+            </div>
+            {company.roles.map((role) => <ExperienceRole key={role.title} {...role} />)}
+          </section>
+        ))}
+      </CvSection>
+
+      <CvSection id="cv-education" title="Education & training">
+        <div className="cv-entries">
+          {education.map((item) => (
+            <CompactEntry key={item.place} title={item.place} caption={item.title} dates={item.dates} />
+          ))}
+        </div>
+      </CvSection>
+
+      <CvSection id="cv-certifications" title="Certifications">
+        <div className="cv-entries">
+          {certifications.map((item) => (
+            <CompactEntry key={item.title} title={item.title} caption={item.issuer} dates={item.dates} />
+          ))}
+        </div>
+      </CvSection>
+
+      <CvSection id="cv-tools" title="Tools & workflow">
+        {tools.map((group) => (
+          <section className="cv-row cv-tool-group" key={group.title} aria-label={group.title}>
+            <h3 style={typeStyle(typography.heading.h5)}>{group.title}</h3>
+            <SkillTags tags={group.tags} />
+            {group.note ? <div className="cv-tool-group__note"><AccentSummary>{group.note}</AccentSummary></div> : null}
+          </section>
+        ))}
+      </CvSection>
+
+      <CvSection id="cv-languages" title="Languages">
+        <div className="cv-entries cv-entries--languages">
+          {languages.map((item) => (
+            <div className="cv-entry" key={item.language}>
+              <h3 style={typeStyle(typography.heading.h5)}>{item.language}</h3>
+              <p style={typeStyle(typography.body.m)}>{item.level}</p>
+            </div>
+          ))}
+        </div>
+      </CvSection>
+
+      <GetInTouchSection />
       <Footer />
     </main>
   );
