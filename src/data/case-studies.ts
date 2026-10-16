@@ -65,7 +65,8 @@ export const caseStudies = capabilities.flatMap((capability) =>
       ogImage: `/og/capabilities/${capability.id}/${article.id}.png`,
     };
   }),
-).sort((a, b) => a.order - b.order);
+).filter((study) => study.category !== "unlisted")
+  .sort((a, b) => a.order - b.order);
 
 export type CaseStudy = (typeof caseStudies)[number];
 export const coreCaseStudies = caseStudies.filter((study) => study.category === "core");
