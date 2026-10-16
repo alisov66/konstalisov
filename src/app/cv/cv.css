@@ -20,7 +20,7 @@
 .cv-row { box-shadow: inset 0 var(--border-width-thin) var(--border-secondary); }
 .cv-company, .cv-role__heading { padding: var(--block-padding-m) var(--block-padding-lg); }
 .cv-company h3 { max-width: var(--max-width-text); color: var(--text-accent); }
-.cv-role__heading { display: flex; flex-wrap: wrap; align-items: center; gap: var(--base-3); }
+.cv-role__heading { display: flex; flex-wrap: wrap; align-items: center; gap: var(--base-3); box-shadow: inset 0 var(--border-width-thin) var(--border-secondary), inset 0 calc(-1 * var(--border-width-thin)) var(--border-secondary); }
 .cv-role__heading p { color: var(--text-secondary); }
 .cv-role__summary { padding: var(--block-padding-lg) var(--block-padding-lg) var(--block-padding-m); }
 .cv-role__details { padding: var(--block-padding-m) var(--block-padding-lg) var(--block-padding-lg); }
