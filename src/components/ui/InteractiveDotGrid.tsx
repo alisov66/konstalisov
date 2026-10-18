@@ -14,6 +14,7 @@ const scene = {
   maxRotation: Math.PI / 4,
   circleDiameter: 200,
   maskBlur: 80,
+  followTime: 120,
 };
 
 // The first and last rows are clipped in the Figma grid; its final row is inset.
@@ -42,7 +43,10 @@ export default function InteractiveDotGrid() {
     const contexts = [baseContext, accentContext];
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const point = { x: scene.size / 2, y: scene.size / 2 };
+    const circle = { ...point };
     let active = false;
+    let followPointer = false;
+    let previousFrameTime = 0;
     let frame = 0;
     let width = 0;
     let gray = "";
@@ -50,14 +54,25 @@ export default function InteractiveDotGrid() {
     const maskSize = scene.circleDiameter + scene.maskBlur * 2;
     const radius = maskSize / 2;
 
-    function draw() {
+    function draw(time: number) {
       frame = 0;
       if (!width) return;
+      let following = false;
+      if (active && followPointer && !reducedMotion.matches) {
+        // Time-based easing gives the same trailing motion at different refresh rates.
+        const elapsed = Math.max(0, Math.min(64, time - previousFrameTime));
+        const progress = 1 - Math.exp(-elapsed / scene.followTime);
+        circle.x += (point.x - circle.x) * progress;
+        circle.y += (point.y - circle.y) * progress;
+        following = Math.hypot(point.x - circle.x, point.y - circle.y) > 0.1;
+      }
+      if (!following) Object.assign(circle, point);
+      previousFrameTime = time;
       const scale = base!.width / scene.size;
       const displayScale = width / scene.size;
       root!.dataset.active = String(active);
       accent!.style.maskSize = `${maskSize * displayScale}px ${maskSize * displayScale}px`;
-      accent!.style.maskPosition = `${(point.x - radius) * displayScale}px ${(point.y - radius) * displayScale}px`;
+      accent!.style.maskPosition = `${(circle.x - radius) * displayScale}px ${(circle.y - radius) * displayScale}px`;
 
       for (const context of contexts) {
         context.setTransform(scale, 0, 0, scale, 0, 0);
@@ -70,7 +85,7 @@ export default function InteractiveDotGrid() {
       }
 
       for (const dot of dots) {
-        const distance = Math.hypot(dot.x - point.x, dot.y - point.y);
+        const distance = Math.hypot(dot.x - circle.x, dot.y - circle.y);
         const proximity = active && !reducedMotion.matches ? Math.max(0, 1 - distance / radius) : 0;
         const influence = proximity * proximity * (3 - 2 * proximity);
         const size = scene.dotSize + (scene.maxDotSize - scene.dotSize) * influence;
@@ -98,6 +113,7 @@ export default function InteractiveDotGrid() {
         context.fill();
         context.restore();
       }
+      if (following) requestDraw();
     }
 
     function requestDraw() {
@@ -118,11 +134,25 @@ export default function InteractiveDotGrid() {
     }
 
     function updatePointer(event: PointerEvent) {
+      const wasActive = active;
       const bounds = root!.getBoundingClientRect();
       point.x = (event.clientX - bounds.left) * scene.size / bounds.width;
       point.y = (event.clientY - bounds.top) * scene.size / bounds.height;
       active = point.x >= scene.grid.x && point.x <= scene.grid.x + scene.grid.width
         && point.y >= scene.grid.y && point.y <= scene.grid.y + scene.grid.height;
+      followPointer = event.pointerType === "mouse";
+      if (active && !wasActive && followPointer && !reducedMotion.matches) {
+        const offset = scene.circleDiameter / 2;
+        const entry = [
+          { distance: point.x - scene.grid.x, x: -offset, y: 0 },
+          { distance: scene.grid.x + scene.grid.width - point.x, x: offset, y: 0 },
+          { distance: point.y - scene.grid.y, x: 0, y: -offset },
+          { distance: scene.grid.y + scene.grid.height - point.y, x: 0, y: offset },
+        ].sort((a, b) => a.distance - b.distance)[0];
+        circle.x = point.x + entry.x;
+        circle.y = point.y + entry.y;
+      }
+      if (!frame) previousFrameTime = performance.now();
       requestDraw();
     }
 
@@ -143,6 +173,7 @@ export default function InteractiveDotGrid() {
       if (!root!.matches(":focus-visible")) return;
       point.x = scene.size / 2;
       point.y = scene.size / 2;
+      followPointer = false;
       active = true;
       requestDraw();
     }
@@ -158,6 +189,7 @@ export default function InteractiveDotGrid() {
       const direction = directions[event.key];
       if (!direction) return;
       event.preventDefault();
+      followPointer = false;
       point.x = Math.min(scene.grid.x + scene.grid.width, Math.max(scene.grid.x, point.x + direction[0] * scene.spacing));
       point.y = Math.min(scene.grid.y + scene.grid.height, Math.max(scene.grid.y, point.y + direction[1] * scene.spacing));
       active = true;
