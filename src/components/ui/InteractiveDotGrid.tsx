@@ -91,6 +91,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
     let pulseAmount = 0;
     let pulseStart = Infinity;
     let pulseTimer = 0;
+    let pulseReady = false;
     const shape = { stretch: 1, angle: 0 };
     const pointerVelocity = { speed: 0, angle: 0, time: 0 };
     let previousPointer: { x: number; y: number; time: number } | null = null;
@@ -128,12 +129,15 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       window.clearTimeout(pulseTimer);
       pulseTimer = 0;
       pulseStart = Infinity;
+      pulseReady = false;
       if (!canPulse()) return;
       pulseStart = performance.now() + scene.pulseDelay;
       // Let the animation loop sleep while waiting for the idle delay.
       pulseTimer = window.setTimeout(() => {
         pulseTimer = 0;
         if (!canPulse()) return;
+        // The next frame timestamp can predate this timer; keep readiness latched until movement.
+        pulseReady = true;
         previousFrameTime = performance.now();
         requestDraw();
       }, scene.pulseDelay);
@@ -219,9 +223,9 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       }
       shape.stretch = Math.max(1 / scene.maxStretch, Math.min(scene.maxStretch, shape.stretch));
       if (!following) Object.assign(circle, point);
-      const pulsing = canPulse() && !buttonMotion && time >= pulseStart;
+      const pulsing = canPulse() && !buttonMotion && pulseReady;
       const targetPulse = pulsing
-        ? scene.pulseAmplitude * Math.sin((time - pulseStart) * Math.PI * 2 / scene.pulsePeriod)
+        ? scene.pulseAmplitude * Math.sin(Math.max(0, time - pulseStart) * Math.PI * 2 / scene.pulsePeriod)
         : 0;
       const pulseProgress = 1 - Math.exp(-Math.max(0, Math.min(64, time - previousFrameTime)) / scene.shapeTime);
       if (!active || !followPointer || reducedMotion.matches || (hoveredButton && circleScale === 0)) {
@@ -408,6 +412,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       followScale = 1;
       pulseAmount = 0;
       pulseStart = Infinity;
+      pulseReady = false;
       window.clearTimeout(pulseTimer);
       pulseTimer = 0;
       shape.stretch = 1;
