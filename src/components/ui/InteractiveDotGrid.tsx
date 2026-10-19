@@ -15,6 +15,11 @@ const scene = {
   circleDiameter: 200,
   maskBlur: 80,
   followTime: 120,
+  shapeTime: 65,
+  speedIdleTime: 32,
+  speedDecayTime: 90,
+  speedForMaxStretch: 1.5,
+  maxStretch: 1.65,
   buttonEnterTime: 300,
   buttonExitTime: 300,
 };
@@ -78,6 +83,8 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
     let hoveredButton: HTMLElement | null = null;
     let circleScale = 1;
     const shape = { stretch: 1, angle: 0 };
+    const pointerVelocity = { speed: 0, angle: 0, time: 0 };
+    let previousPointer: { x: number; y: number; time: number } | null = null;
     let buttonMotion: {
       x: number;
       y: number;
@@ -113,6 +120,8 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         circleScale = hoveredButton ? 0 : 1;
         shape.stretch = 1;
         shape.angle = 0;
+        pointerVelocity.speed = 0;
+        previousPointer = null;
       } else if (active && buttonMotion) {
         const progress = Math.min(1, Math.max(0, (time - buttonMotion.start) / buttonMotion.duration));
         const ease = buttonMotion.targetScale === 0 ? 1 - easeIn(1 - progress) : easeIn(progress);
@@ -142,8 +151,22 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         const progress = 1 - Math.exp(-elapsed / scene.followTime);
         circle.x += (point.x - circle.x) * progress;
         circle.y += (point.y - circle.y) * progress;
-        following = Math.hypot(point.x - circle.x, point.y - circle.y) > 0.1;
+        const speed = pointerVelocity.speed
+          * Math.exp(-Math.max(0, time - pointerVelocity.time - scene.speedIdleTime) / scene.speedDecayTime);
+        const targetStretch = 1 + (scene.maxStretch - 1) * Math.min(1, speed / scene.speedForMaxStretch);
+        const shapeProgress = 1 - Math.exp(-elapsed / scene.shapeTime);
+        shape.stretch += (targetStretch - shape.stretch) * shapeProgress;
+        // An ellipse has the same axis in both directions, avoiding a spin on reversal.
+        const turn = Math.atan2(
+          Math.sin(2 * (pointerVelocity.angle - shape.angle)),
+          Math.cos(2 * (pointerVelocity.angle - shape.angle)),
+        ) / 2;
+        shape.angle += turn * shapeProgress;
+        const deforming = Math.abs(shape.stretch - 1) > 0.001;
+        if (!deforming) shape.stretch = 1;
+        following = Math.hypot(point.x - circle.x, point.y - circle.y) > 0.1 || deforming;
       }
+      shape.stretch = Math.max(1 / scene.maxStretch, Math.min(scene.maxStretch, shape.stretch));
       if (!following) Object.assign(circle, point);
       previousFrameTime = time;
       const scale = base!.width / sceneWidth;
@@ -266,6 +289,20 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       const button = variant === "hero" && followPointer && event.target instanceof Element
         ? event.target.closest<HTMLElement>("[data-dot-grid-absorb] a, [data-dot-grid-absorb] button")
         : null;
+      const now = performance.now();
+      if (followPointer && wasActive && !button && button === hoveredButton && previousPointer) {
+        const elapsed = Math.max(1, Math.min(64, now - previousPointer.time));
+        const dx = point.x - previousPointer.x;
+        const dy = point.y - previousPointer.y;
+        // Measure in CSS pixels per millisecond so device density and grid scaling do not affect the response.
+        const speed = Math.hypot(dx, dy) * width / sceneWidth / elapsed;
+        pointerVelocity.speed += (speed - pointerVelocity.speed) * (1 - Math.exp(-elapsed / scene.shapeTime));
+        if (speed > 0.01) pointerVelocity.angle = Math.atan2(dy, dx);
+      } else {
+        pointerVelocity.speed = 0;
+      }
+      pointerVelocity.time = now;
+      previousPointer = followPointer ? { x: point.x, y: point.y, time: now } : null;
       if (button !== hoveredButton) {
         hoveredButton = button;
         buttonMotion = {
@@ -303,6 +340,8 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       circleScale = 1;
       shape.stretch = 1;
       shape.angle = 0;
+      pointerVelocity.speed = 0;
+      previousPointer = null;
       requestDraw();
     }
 
