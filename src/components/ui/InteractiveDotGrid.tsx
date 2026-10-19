@@ -15,6 +15,8 @@ const scene = {
   circleDiameter: 200,
   maskBlur: 80,
   followTime: 120,
+  buttonEnterTime: 180,
+  buttonExitTime: 280,
 };
 
 // The first and last rows are clipped in the Figma grid; its final row is inset.
@@ -58,6 +60,16 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
     let dots = prototypeDots;
     let restColor = "";
     let hoverColor = "";
+    let hoveredButton: HTMLElement | null = null;
+    let circleScale = 1;
+    let buttonMotion: {
+      x: number;
+      y: number;
+      scale: number;
+      targetScale: number;
+      start: number;
+      duration: number;
+    } | null = null;
     const maskSize = scene.circleDiameter + scene.maskBlur * 2;
     const radius = maskSize / 2;
 
@@ -65,7 +77,25 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       frame = 0;
       if (!width) return;
       let following = false;
-      if (active && followPointer && !reducedMotion.matches) {
+      if (reducedMotion.matches || !followPointer) {
+        buttonMotion = null;
+        circleScale = hoveredButton ? 0 : 1;
+      } else if (active && buttonMotion) {
+        const progress = Math.min(1, Math.max(0, (time - buttonMotion.start) / buttonMotion.duration));
+        const ease = 1 - (1 - progress) ** 3;
+        // A small overshoot makes the circle pop back out before normal following resumes.
+        const scaleEase = buttonMotion.targetScale === 1
+          ? 1 + 2 * (progress - 1) ** 3 + (progress - 1) ** 2
+          : ease;
+        circle.x = buttonMotion.x + (point.x - buttonMotion.x) * ease;
+        circle.y = buttonMotion.y + (point.y - buttonMotion.y) * ease;
+        circleScale = buttonMotion.scale + (buttonMotion.targetScale - buttonMotion.scale) * scaleEase;
+        following = progress < 1;
+        if (!following) {
+          circleScale = buttonMotion.targetScale;
+          buttonMotion = null;
+        }
+      } else if (active && followPointer && !reducedMotion.matches) {
         // Time-based easing gives the same trailing motion at different refresh rates.
         const elapsed = Math.max(0, Math.min(64, time - previousFrameTime));
         const progress = 1 - Math.exp(-elapsed / scene.followTime);
@@ -77,9 +107,11 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       previousFrameTime = time;
       const scale = base!.width / sceneWidth;
       const displayScale = width / sceneWidth;
+      const visibleRadius = radius * circleScale;
       root!.dataset.active = String(active);
-      accent!.style.maskSize = `${maskSize * displayScale}px ${maskSize * displayScale}px`;
-      accent!.style.maskPosition = `${(circle.x - radius) * displayScale}px ${(circle.y - radius) * displayScale}px`;
+      accent!.style.opacity = String(active ? Math.min(1, circleScale) : 0);
+      accent!.style.maskSize = `${maskSize * circleScale * displayScale}px ${maskSize * circleScale * displayScale}px`;
+      accent!.style.maskPosition = `${(circle.x - visibleRadius) * displayScale}px ${(circle.y - visibleRadius) * displayScale}px`;
 
       for (const context of contexts) {
         context.setTransform(scale, 0, 0, base!.height / sceneHeight, 0, 0);
@@ -93,7 +125,8 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
 
       for (const dot of dots) {
         const distance = Math.hypot(dot.x - circle.x, dot.y - circle.y);
-        const proximity = active && !reducedMotion.matches ? Math.max(0, 1 - distance / radius) : 0;
+        const proximity = active && !reducedMotion.matches && visibleRadius > 0
+          ? Math.max(0, 1 - distance / visibleRadius) : 0;
         const influence = proximity * proximity * (3 - 2 * proximity);
         const size = scene.dotSize + (scene.maxDotSize - scene.dotSize) * influence;
         const half = size / 2;
@@ -172,6 +205,25 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         circle.x = point.x + entry.x;
         circle.y = point.y + entry.y;
       }
+      const button = variant === "hero" && followPointer && event.target instanceof Element
+        ? event.target.closest<HTMLElement>("[data-dot-grid-absorb] a, [data-dot-grid-absorb] button")
+        : null;
+      if (button !== hoveredButton) {
+        hoveredButton = button;
+        buttonMotion = {
+          x: circle.x,
+          y: circle.y,
+          scale: circleScale,
+          targetScale: button ? 0 : 1,
+          start: performance.now(),
+          duration: button ? scene.buttonEnterTime : scene.buttonExitTime,
+        };
+      }
+      if (button) {
+        const buttonBounds = button.getBoundingClientRect();
+        point.x = (buttonBounds.left + buttonBounds.width / 2 - bounds.left) * sceneWidth / bounds.width;
+        point.y = (buttonBounds.top + buttonBounds.height / 2 - bounds.top) * sceneHeight / bounds.height;
+      }
       if (!frame) previousFrameTime = performance.now();
       requestDraw();
     }
@@ -186,6 +238,9 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
 
     function reset() {
       active = false;
+      hoveredButton = null;
+      buttonMotion = null;
+      circleScale = 1;
       requestDraw();
     }
 

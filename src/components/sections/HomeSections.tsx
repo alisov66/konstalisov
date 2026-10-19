@@ -17,7 +17,7 @@ export function HomeHero() {
           <h1 style={typeStyle(typography.heading.h1)}>Designing clarity<br />in complex systems</h1>
           <p style={typeStyle(typography.body.m)}>I take projects from understanding user needs through design to implementation, working closely with product and engineering teams.</p>
         </div>
-        <div className="home-hero__actions">
+        <div className="home-hero__actions" data-dot-grid-absorb>
           <ButtonPrimary href="/case-studies">Case studies</ButtonPrimary>
           <ButtonSecondary href="/cv">CV</ButtonSecondary>
         </div>
