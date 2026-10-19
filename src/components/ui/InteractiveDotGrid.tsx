@@ -24,6 +24,9 @@ const scene = {
   maxStretch: 1.65,
   buttonEnterTime: 300,
   buttonExitTime: 300,
+  pulseDelay: 3000,
+  pulsePeriod: 2400,
+  pulseAmplitude: 0.05,
 };
 
 // Resolve CSS ease-in (0.42, 0, 1, 1); ease-out is its time-reversed curve.
@@ -85,6 +88,9 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
     let hoveredButton: HTMLElement | null = null;
     let circleScale = 1;
     let followScale = 1;
+    let pulseAmount = 0;
+    let pulseStart = Infinity;
+    let pulseTimer = 0;
     const shape = { stretch: 1, angle: 0 };
     const pointerVelocity = { speed: 0, angle: 0, time: 0 };
     let previousPointer: { x: number; y: number; time: number } | null = null;
@@ -113,6 +119,31 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
 
     maskImage.onload = prepareMask;
     maskImage.src = "/interactive-grid/hover-mask.svg";
+
+    function canPulse() {
+      return active && followPointer && !hoveredButton && !reducedMotion.matches && !document.hidden;
+    }
+
+    function armPulse() {
+      window.clearTimeout(pulseTimer);
+      pulseTimer = 0;
+      pulseStart = Infinity;
+      if (!canPulse()) return;
+      pulseStart = performance.now() + scene.pulseDelay;
+      // Let the animation loop sleep while waiting for the idle delay.
+      pulseTimer = window.setTimeout(() => {
+        pulseTimer = 0;
+        if (!canPulse()) return;
+        previousFrameTime = performance.now();
+        requestDraw();
+      }, scene.pulseDelay);
+    }
+
+    function motionPreferenceChanged() {
+      pulseAmount = 0;
+      armPulse();
+      requestDraw();
+    }
 
     function draw(time: number) {
       frame = 0;
@@ -188,9 +219,22 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       }
       shape.stretch = Math.max(1 / scene.maxStretch, Math.min(scene.maxStretch, shape.stretch));
       if (!following) Object.assign(circle, point);
+      const pulsing = canPulse() && !buttonMotion && time >= pulseStart;
+      const targetPulse = pulsing
+        ? scene.pulseAmplitude * Math.sin((time - pulseStart) * Math.PI * 2 / scene.pulsePeriod)
+        : 0;
+      const pulseProgress = 1 - Math.exp(-Math.max(0, Math.min(64, time - previousFrameTime)) / scene.shapeTime);
+      if (!active || !followPointer || reducedMotion.matches || (hoveredButton && circleScale === 0)) {
+        pulseAmount = 0;
+      } else {
+        pulseAmount += (targetPulse - pulseAmount) * pulseProgress;
+      }
+      const pulseSettling = Math.abs(pulseAmount) > 0.0001;
+      if (!pulsing && !pulseSettling) pulseAmount = 0;
       previousFrameTime = time;
       const scale = base!.width / sceneWidth;
-      const visibleRadius = radius * circleScale;
+      const visibleScale = circleScale * (1 + pulseAmount);
+      const visibleRadius = radius * visibleScale;
       root!.dataset.active = String(active);
       const shapeCosine = Math.cos(shape.angle);
       const shapeSine = Math.sin(shape.angle);
@@ -247,13 +291,13 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         accentContext!.globalAlpha = Math.min(1, circleScale);
         accentContext!.translate(circle.x, circle.y);
         accentContext!.rotate(shape.angle);
-        accentContext!.scale(circleScale * shape.stretch, circleScale / shape.stretch);
+        accentContext!.scale(visibleScale * shape.stretch, visibleScale / shape.stretch);
         accentContext!.drawImage(maskStamp, -radius, -radius, maskSize, maskSize);
         accentContext!.restore();
       } else {
         accentContext!.clearRect(0, 0, sceneWidth, sceneHeight);
       }
-      if (following) requestDraw();
+      if (following || pulsing || pulseSettling) requestDraw();
     }
 
     function requestDraw() {
@@ -310,6 +354,8 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         ? event.target.closest<HTMLElement>("[data-dot-grid-absorb] a, [data-dot-grid-absorb] button")
         : null;
       const now = performance.now();
+      const moved = !previousPointer || point.x !== previousPointer.x || point.y !== previousPointer.y;
+      const buttonChanged = button !== hoveredButton;
       if (followPointer && wasActive && !button && button === hoveredButton && previousPointer) {
         const elapsed = Math.max(1, Math.min(64, now - previousPointer.time));
         const dx = point.x - previousPointer.x;
@@ -341,6 +387,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         point.x = (buttonBounds.left + buttonBounds.width / 2 - bounds.left) * sceneWidth / bounds.width;
         point.y = (buttonBounds.top + buttonBounds.height / 2 - bounds.top) * sceneHeight / bounds.height;
       }
+      if (moved || !wasActive || buttonChanged) armPulse();
       if (!frame) previousFrameTime = performance.now();
       requestDraw();
     }
@@ -359,6 +406,10 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       buttonMotion = null;
       circleScale = 1;
       followScale = 1;
+      pulseAmount = 0;
+      pulseStart = Infinity;
+      window.clearTimeout(pulseTimer);
+      pulseTimer = 0;
       shape.stretch = 1;
       shape.angle = 0;
       pointerVelocity.speed = 0;
@@ -407,11 +458,13 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
     window.addEventListener("blur", reset);
     window.addEventListener("resize", resize);
     window.addEventListener("scroll", reset, { passive: true });
-    reducedMotion.addEventListener("change", requestDraw);
+    reducedMotion.addEventListener("change", motionPreferenceChanged);
+    document.addEventListener("visibilitychange", reset);
     resize();
 
     return () => {
       maskImage.onload = null;
+      window.clearTimeout(pulseTimer);
       cancelAnimationFrame(frame);
       observer.disconnect();
       eventTarget.removeEventListener("pointerenter", enter);
@@ -426,7 +479,8 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       window.removeEventListener("blur", reset);
       window.removeEventListener("resize", resize);
       window.removeEventListener("scroll", reset);
-      reducedMotion.removeEventListener("change", requestDraw);
+      reducedMotion.removeEventListener("change", motionPreferenceChanged);
+      document.removeEventListener("visibilitychange", reset);
     };
   }, [variant]);
 
