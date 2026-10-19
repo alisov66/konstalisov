@@ -26,7 +26,7 @@ const scene = {
   buttonExitTime: 300,
   pulseDelay: 3000,
   pulsePeriod: 2400,
-  pulseAmplitude: 0.05,
+  pulseAmplitude: 0.15,
 };
 
 // Resolve CSS ease-in (0.42, 0, 1, 1); ease-out is its time-reversed curve.
