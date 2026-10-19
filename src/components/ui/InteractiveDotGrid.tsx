@@ -115,7 +115,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         shape.angle = 0;
       } else if (active && buttonMotion) {
         const progress = Math.min(1, Math.max(0, (time - buttonMotion.start) / buttonMotion.duration));
-        const ease = buttonMotion.targetScale === 0 ? easeIn(progress) : 1 - easeIn(1 - progress);
+        const ease = buttonMotion.targetScale === 0 ? 1 - easeIn(1 - progress) : easeIn(progress);
         circle.x = buttonMotion.x + (point.x - buttonMotion.x) * ease;
         circle.y = buttonMotion.y + (point.y - buttonMotion.y) * ease;
         circleScale = buttonMotion.scale + (buttonMotion.targetScale - buttonMotion.scale) * ease;
