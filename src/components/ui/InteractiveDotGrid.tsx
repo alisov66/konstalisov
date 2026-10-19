@@ -15,9 +15,24 @@ const scene = {
   circleDiameter: 200,
   maskBlur: 80,
   followTime: 120,
-  buttonEnterTime: 180,
-  buttonExitTime: 280,
+  buttonEnterTime: 200,
+  buttonExitTime: 200,
 };
+
+// Resolve CSS ease-in (0.42, 0, 1, 1); ease-out is its time-reversed curve.
+function easeIn(progress: number) {
+  if (progress <= 0 || progress >= 1) return progress;
+  let low = 0;
+  let high = 1;
+  for (let step = 0; step < 16; step++) {
+    const t = (low + high) / 2;
+    const x = 1.26 * (1 - t) ** 2 * t + 3 * (1 - t) * t ** 2 + t ** 3;
+    if (x < progress) low = t;
+    else high = t;
+  }
+  const t = (low + high) / 2;
+  return 3 * t ** 2 - 2 * t ** 3;
+}
 
 // The first and last rows are clipped in the Figma grid; its final row is inset.
 const prototypeDots = Array.from({ length: scene.rows }, (_, row) => {
@@ -62,6 +77,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
     let hoverColor = "";
     let hoveredButton: HTMLElement | null = null;
     let circleScale = 1;
+    const shape = { stretch: 1, angle: 0 };
     let buttonMotion: {
       x: number;
       y: number;
@@ -69,9 +85,24 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       targetScale: number;
       start: number;
       duration: number;
+      stretch: number;
+      angle: number;
     } | null = null;
     const maskSize = scene.circleDiameter + scene.maskBlur * 2;
     const radius = maskSize / 2;
+    const maskImage = new Image();
+    const maskStamp = document.createElement("canvas");
+    const maskContext = maskStamp.getContext("2d");
+
+    function prepareMask() {
+      if (!maskContext || !maskImage.complete || !maskImage.naturalWidth) return;
+      maskStamp.width = maskStamp.height = Math.round(maskSize * Math.min(window.devicePixelRatio, 2));
+      maskContext.drawImage(maskImage, 0, 0, maskStamp.width, maskStamp.height);
+      requestDraw();
+    }
+
+    maskImage.onload = prepareMask;
+    maskImage.src = "/interactive-grid/hover-mask.svg";
 
     function draw(time: number) {
       frame = 0;
@@ -80,19 +111,29 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       if (reducedMotion.matches || !followPointer) {
         buttonMotion = null;
         circleScale = hoveredButton ? 0 : 1;
+        shape.stretch = 1;
+        shape.angle = 0;
       } else if (active && buttonMotion) {
         const progress = Math.min(1, Math.max(0, (time - buttonMotion.start) / buttonMotion.duration));
-        const ease = 1 - (1 - progress) ** 3;
-        // A small overshoot makes the circle pop back out before normal following resumes.
-        const scaleEase = buttonMotion.targetScale === 1
-          ? 1 + 2 * (progress - 1) ** 3 + (progress - 1) ** 2
-          : ease;
+        const ease = buttonMotion.targetScale === 0 ? easeIn(progress) : 1 - easeIn(1 - progress);
         circle.x = buttonMotion.x + (point.x - buttonMotion.x) * ease;
         circle.y = buttonMotion.y + (point.y - buttonMotion.y) * ease;
-        circleScale = buttonMotion.scale + (buttonMotion.targetScale - buttonMotion.scale) * scaleEase;
+        circleScale = buttonMotion.scale + (buttonMotion.targetScale - buttonMotion.scale) * ease;
+        const dx = point.x - buttonMotion.x;
+        const dy = point.y - buttonMotion.y;
+        const travel = Math.min(1, Math.hypot(dx, dy) / (scene.circleDiameter / 2));
+        const wave = Math.sin(progress * Math.PI * 2);
+        // Stretch along travel, then squash on arrival, while preserving the ellipse's area.
+        shape.stretch = buttonMotion.stretch + (1 - buttonMotion.stretch) * ease
+          + wave * (wave > 0 ? 0.65 : 0.3) * travel;
+        const direction = Math.atan2(dy, dx);
+        const turn = Math.atan2(Math.sin(direction - buttonMotion.angle), Math.cos(direction - buttonMotion.angle));
+        shape.angle = Math.abs(buttonMotion.stretch - 1) < 0.001
+          ? direction : buttonMotion.angle + turn * ease;
         following = progress < 1;
         if (!following) {
           circleScale = buttonMotion.targetScale;
+          shape.stretch = 1;
           buttonMotion = null;
         }
       } else if (active && followPointer && !reducedMotion.matches) {
@@ -106,12 +147,10 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       if (!following) Object.assign(circle, point);
       previousFrameTime = time;
       const scale = base!.width / sceneWidth;
-      const displayScale = width / sceneWidth;
       const visibleRadius = radius * circleScale;
       root!.dataset.active = String(active);
-      accent!.style.opacity = String(active ? Math.min(1, circleScale) : 0);
-      accent!.style.maskSize = `${maskSize * circleScale * displayScale}px ${maskSize * circleScale * displayScale}px`;
-      accent!.style.maskPosition = `${(circle.x - visibleRadius) * displayScale}px ${(circle.y - visibleRadius) * displayScale}px`;
+      const shapeCosine = Math.cos(shape.angle);
+      const shapeSine = Math.sin(shape.angle);
 
       for (const context of contexts) {
         context.setTransform(scale, 0, 0, base!.height / sceneHeight, 0, 0);
@@ -124,7 +163,12 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       }
 
       for (const dot of dots) {
-        const distance = Math.hypot(dot.x - circle.x, dot.y - circle.y);
+        const dx = dot.x - circle.x;
+        const dy = dot.y - circle.y;
+        const distance = Math.hypot(
+          (dx * shapeCosine + dy * shapeSine) / shape.stretch,
+          (-dx * shapeSine + dy * shapeCosine) * shape.stretch,
+        );
         const proximity = active && !reducedMotion.matches && visibleRadius > 0
           ? Math.max(0, 1 - distance / visibleRadius) : 0;
         const influence = proximity * proximity * (3 - 2 * proximity);
@@ -152,6 +196,19 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         context.fillStyle = index === 0 ? restColor : hoverColor;
         context.fill();
         context.restore();
+      }
+      // Transform the original soft mask, leaving the grid itself unrotated.
+      if (active && visibleRadius > 0 && maskStamp.width && maskImage.complete) {
+        accentContext!.save();
+        accentContext!.globalCompositeOperation = "destination-in";
+        accentContext!.globalAlpha = Math.min(1, circleScale);
+        accentContext!.translate(circle.x, circle.y);
+        accentContext!.rotate(shape.angle);
+        accentContext!.scale(circleScale * shape.stretch, circleScale / shape.stretch);
+        accentContext!.drawImage(maskStamp, -radius, -radius, maskSize, maskSize);
+        accentContext!.restore();
+      } else {
+        accentContext!.clearRect(0, 0, sceneWidth, sceneHeight);
       }
       if (following) requestDraw();
     }
@@ -183,6 +240,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       const style = getComputedStyle(root!);
       restColor = style.getPropertyValue("--dot-grid-rest").trim();
       hoverColor = style.getPropertyValue("--dot-grid-hover").trim();
+      prepareMask();
       reset();
     }
 
@@ -217,6 +275,8 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
           targetScale: button ? 0 : 1,
           start: performance.now(),
           duration: button ? scene.buttonEnterTime : scene.buttonExitTime,
+          stretch: shape.stretch,
+          angle: shape.angle,
         };
       }
       if (button) {
@@ -241,6 +301,8 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       hoveredButton = null;
       buttonMotion = null;
       circleScale = 1;
+      shape.stretch = 1;
+      shape.angle = 0;
       requestDraw();
     }
 
@@ -289,6 +351,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
     resize();
 
     return () => {
+      maskImage.onload = null;
       cancelAnimationFrame(frame);
       observer.disconnect();
       eventTarget.removeEventListener("pointerenter", enter);
