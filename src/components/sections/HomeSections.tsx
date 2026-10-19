@@ -1,6 +1,7 @@
 import ButtonPrimary from "@/components/ui/ButtonPrimary";
 import ButtonSecondary from "@/components/ui/ButtonSecondary";
 import ButtonContact from "@/components/ui/ButtonContact";
+import InteractiveDotGrid from "@/components/ui/InteractiveDotGrid";
 import CaseStudyGrid from "./CaseStudyGrid";
 import { coreCaseStudies } from "@/data/case-studies";
 import { emailHref, linkedInHref } from "@/data/contact";
@@ -10,6 +11,7 @@ import { typography, typeStyle } from "@/styles";
 export function HomeHero() {
   return (
     <section className="home-hero">
+      <InteractiveDotGrid variant="hero" />
       <div className="page-container home-hero__content">
         <div className="home-hero__text">
           <h1 style={typeStyle(typography.heading.h1)}>Designing clarity<br />in complex systems</h1>

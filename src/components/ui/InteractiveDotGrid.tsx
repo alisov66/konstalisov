@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useId, useRef } from "react";
 import "./InteractiveDotGrid.css";
 
 const scene = {
@@ -18,7 +18,7 @@ const scene = {
 };
 
 // The first and last rows are clipped in the Figma grid; its final row is inset.
-const dots = Array.from({ length: scene.rows }, (_, row) => {
+const prototypeDots = Array.from({ length: scene.rows }, (_, row) => {
   const inset = row === scene.rows - 1 ? 7 : 0;
   return Array.from({ length: scene.columns - inset * 2 }, (_, column) => ({
     x: scene.grid.x + (column + inset) * scene.spacing + 4,
@@ -26,7 +26,8 @@ const dots = Array.from({ length: scene.rows }, (_, row) => {
   }));
 }).flat();
 
-export default function InteractiveDotGrid() {
+export default function InteractiveDotGrid({ variant = "playground" }: { variant?: "playground" | "hero" }) {
+  const instructionsId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
   const baseRef = useRef<HTMLCanvasElement>(null);
   const accentRef = useRef<HTMLCanvasElement>(null);
@@ -36,6 +37,7 @@ export default function InteractiveDotGrid() {
     const base = baseRef.current;
     const accent = accentRef.current;
     if (!root || !base || !accent) return;
+    const eventTarget = variant === "hero" ? root.parentElement! : root;
     const baseContext = base.getContext("2d");
     const accentContext = accent.getContext("2d");
     if (!baseContext || !accentContext) return;
@@ -49,8 +51,13 @@ export default function InteractiveDotGrid() {
     let previousFrameTime = 0;
     let frame = 0;
     let width = 0;
-    let gray = "";
-    let orange = "";
+    let height = 0;
+    let sceneWidth = scene.size;
+    let sceneHeight = scene.size;
+    let grid = { ...scene.grid };
+    let dots = prototypeDots;
+    let restColor = "";
+    let hoverColor = "";
     const maskSize = scene.circleDiameter + scene.maskBlur * 2;
     const radius = maskSize / 2;
 
@@ -68,18 +75,18 @@ export default function InteractiveDotGrid() {
       }
       if (!following) Object.assign(circle, point);
       previousFrameTime = time;
-      const scale = base!.width / scene.size;
-      const displayScale = width / scene.size;
+      const scale = base!.width / sceneWidth;
+      const displayScale = width / sceneWidth;
       root!.dataset.active = String(active);
       accent!.style.maskSize = `${maskSize * displayScale}px ${maskSize * displayScale}px`;
       accent!.style.maskPosition = `${(circle.x - radius) * displayScale}px ${(circle.y - radius) * displayScale}px`;
 
       for (const context of contexts) {
-        context.setTransform(scale, 0, 0, scale, 0, 0);
-        context.clearRect(0, 0, scene.size, scene.size);
+        context.setTransform(scale, 0, 0, base!.height / sceneHeight, 0, 0);
+        context.clearRect(0, 0, sceneWidth, sceneHeight);
         context.save();
         context.beginPath();
-        context.rect(scene.grid.x, scene.grid.y, scene.grid.width, scene.grid.height);
+        context.rect(grid.x, grid.y, grid.width, grid.height);
         context.clip();
         context.beginPath();
       }
@@ -109,7 +116,7 @@ export default function InteractiveDotGrid() {
       }
 
       for (const [index, context] of contexts.entries()) {
-        context.fillStyle = index === 0 ? gray : orange;
+        context.fillStyle = index === 0 ? restColor : hoverColor;
         context.fill();
         context.restore();
       }
@@ -121,33 +128,46 @@ export default function InteractiveDotGrid() {
     }
 
     function resize() {
-      width = root!.getBoundingClientRect().width;
-      const pixels = Math.round(width * window.devicePixelRatio);
+      const bounds = root!.getBoundingClientRect();
+      width = bounds.width;
+      height = bounds.height;
+      if (variant === "hero") {
+        sceneWidth = width;
+        sceneHeight = height;
+        grid = { x: 0, y: 0, width, height };
+        // Extend the pattern at its original spacing instead of stretching the square prototype.
+        dots = Array.from({ length: Math.ceil(height / scene.spacing) }, (_, row) =>
+          Array.from({ length: Math.ceil(width / scene.spacing) }, (_, column) => ({
+            x: column * scene.spacing + scene.spacing / 2,
+            y: row * scene.spacing + scene.spacing / 2,
+          })),
+        ).flat();
+      }
       for (const canvas of [base!, accent!]) {
-        canvas.width = pixels;
-        canvas.height = pixels;
+        canvas.width = Math.round(width * window.devicePixelRatio);
+        canvas.height = Math.round(height * window.devicePixelRatio);
       }
       const style = getComputedStyle(root!);
-      gray = style.getPropertyValue("--border-tertiary").trim();
-      orange = style.getPropertyValue("--border-focus").trim();
+      restColor = style.getPropertyValue("--dot-grid-rest").trim();
+      hoverColor = style.getPropertyValue("--dot-grid-hover").trim();
       reset();
     }
 
     function updatePointer(event: PointerEvent) {
       const wasActive = active;
       const bounds = root!.getBoundingClientRect();
-      point.x = (event.clientX - bounds.left) * scene.size / bounds.width;
-      point.y = (event.clientY - bounds.top) * scene.size / bounds.height;
-      active = point.x >= scene.grid.x && point.x <= scene.grid.x + scene.grid.width
-        && point.y >= scene.grid.y && point.y <= scene.grid.y + scene.grid.height;
+      point.x = (event.clientX - bounds.left) * sceneWidth / bounds.width;
+      point.y = (event.clientY - bounds.top) * sceneHeight / bounds.height;
+      active = point.x >= grid.x && point.x <= grid.x + grid.width
+        && point.y >= grid.y && point.y <= grid.y + grid.height;
       followPointer = event.pointerType === "mouse";
       if (active && !wasActive && followPointer && !reducedMotion.matches) {
         const offset = scene.circleDiameter / 2;
         const entry = [
-          { distance: point.x - scene.grid.x, x: -offset, y: 0 },
-          { distance: scene.grid.x + scene.grid.width - point.x, x: offset, y: 0 },
-          { distance: point.y - scene.grid.y, x: 0, y: -offset },
-          { distance: scene.grid.y + scene.grid.height - point.y, x: 0, y: offset },
+          { distance: point.x - grid.x, x: -offset, y: 0 },
+          { distance: grid.x + grid.width - point.x, x: offset, y: 0 },
+          { distance: point.y - grid.y, x: 0, y: -offset },
+          { distance: grid.y + grid.height - point.y, x: 0, y: offset },
         ].sort((a, b) => a.distance - b.distance)[0];
         circle.x = point.x + entry.x;
         circle.y = point.y + entry.y;
@@ -171,8 +191,8 @@ export default function InteractiveDotGrid() {
 
     function focus() {
       if (!root!.matches(":focus-visible")) return;
-      point.x = scene.size / 2;
-      point.y = scene.size / 2;
+      point.x = sceneWidth / 2;
+      point.y = sceneHeight / 2;
       followPointer = false;
       active = true;
       requestDraw();
@@ -190,20 +210,20 @@ export default function InteractiveDotGrid() {
       if (!direction) return;
       event.preventDefault();
       followPointer = false;
-      point.x = Math.min(scene.grid.x + scene.grid.width, Math.max(scene.grid.x, point.x + direction[0] * scene.spacing));
-      point.y = Math.min(scene.grid.y + scene.grid.height, Math.max(scene.grid.y, point.y + direction[1] * scene.spacing));
+      point.x = Math.min(grid.x + grid.width, Math.max(grid.x, point.x + direction[0] * scene.spacing));
+      point.y = Math.min(grid.y + grid.height, Math.max(grid.y, point.y + direction[1] * scene.spacing));
       active = true;
       requestDraw();
     }
 
     const observer = new ResizeObserver(resize);
     observer.observe(root);
-    root.addEventListener("pointerenter", enter);
-    root.addEventListener("pointermove", updatePointer);
-    root.addEventListener("pointerdown", updatePointer);
-    root.addEventListener("pointerup", release);
-    root.addEventListener("pointercancel", reset);
-    root.addEventListener("pointerleave", reset);
+    eventTarget.addEventListener("pointerenter", enter);
+    eventTarget.addEventListener("pointermove", updatePointer);
+    eventTarget.addEventListener("pointerdown", updatePointer);
+    eventTarget.addEventListener("pointerup", release);
+    eventTarget.addEventListener("pointercancel", reset);
+    eventTarget.addEventListener("pointerleave", reset);
     root.addEventListener("focus", focus);
     root.addEventListener("blur", reset);
     root.addEventListener("keydown", keyDown);
@@ -216,12 +236,12 @@ export default function InteractiveDotGrid() {
     return () => {
       cancelAnimationFrame(frame);
       observer.disconnect();
-      root.removeEventListener("pointerenter", enter);
-      root.removeEventListener("pointermove", updatePointer);
-      root.removeEventListener("pointerdown", updatePointer);
-      root.removeEventListener("pointerup", release);
-      root.removeEventListener("pointercancel", reset);
-      root.removeEventListener("pointerleave", reset);
+      eventTarget.removeEventListener("pointerenter", enter);
+      eventTarget.removeEventListener("pointermove", updatePointer);
+      eventTarget.removeEventListener("pointerdown", updatePointer);
+      eventTarget.removeEventListener("pointerup", release);
+      eventTarget.removeEventListener("pointercancel", reset);
+      eventTarget.removeEventListener("pointerleave", reset);
       root.removeEventListener("focus", focus);
       root.removeEventListener("blur", reset);
       root.removeEventListener("keydown", keyDown);
@@ -230,11 +250,11 @@ export default function InteractiveDotGrid() {
       window.removeEventListener("scroll", reset);
       reducedMotion.removeEventListener("change", requestDraw);
     };
-  }, []);
+  }, [variant]);
 
   return (
-    <div className="interactive-dot-grid" ref={rootRef} role="group" tabIndex={0} aria-label="Interactive dot grid" aria-describedby="dot-grid-instructions">
-      <span id="dot-grid-instructions" className="sr-only">Move the pointer across the grid, or use the arrow keys to move the highlight. Press Escape to clear it.</span>
+    <div className={`interactive-dot-grid interactive-dot-grid--${variant}`} ref={rootRef} role={variant === "hero" ? undefined : "group"} tabIndex={variant === "hero" ? undefined : 0} aria-hidden={variant === "hero" ? true : undefined} aria-label={variant === "hero" ? undefined : "Interactive dot grid"} aria-describedby={variant === "hero" ? undefined : instructionsId}>
+      {variant === "playground" && <span id={instructionsId} className="sr-only">Move the pointer across the grid, or use the arrow keys to move the highlight. Press Escape to clear it.</span>}
       <canvas ref={baseRef} aria-hidden="true" />
       <canvas className="interactive-dot-grid__accent" ref={accentRef} aria-hidden="true" />
     </div>

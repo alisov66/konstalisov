@@ -150,13 +150,15 @@
 .site-footer > div { display: flex; align-items: center; justify-content: space-between; gap: var(--base-4); min-height: var(--base-7); }
 
 .home-hero {
+  position: relative;
+  isolation: isolate;
   display: flex;
   align-items: center;
   min-height: 800px;
   padding: var(--wrap-padding-lg);
   background: var(--bg-beige-soft);
 }
-.home-hero__content { display: flex; flex-direction: column; gap: var(--base-20); }
+.home-hero__content { position: relative; display: flex; flex-direction: column; gap: var(--base-20); }
 .home-hero__text { display: flex; flex-direction: column; gap: var(--base-6); }
 .home-hero__text > * { max-width: var(--max-width-text); }
 .home-hero h1 { color: var(--text-accent); overflow-wrap: anywhere; }
