@@ -84,6 +84,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
     let hoverColor = "";
     let hoveredButton: HTMLElement | null = null;
     let circleScale = 1;
+    let followScale = 1;
     const shape = { stretch: 1, angle: 0 };
     const pointerVelocity = { speed: 0, angle: 0, time: 0 };
     let previousPointer: { x: number; y: number; time: number } | null = null;
@@ -120,13 +121,14 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       if (reducedMotion.matches || !followPointer) {
         buttonMotion = null;
         circleScale = hoveredButton ? 0 : 1;
+        followScale = 1;
         shape.stretch = 1;
         shape.angle = 0;
         pointerVelocity.speed = 0;
         previousPointer = null;
-      } else if (active && buttonMotion) {
+      } else if (active && buttonMotion?.targetScale === 0) {
         const progress = Math.min(1, Math.max(0, (time - buttonMotion.start) / buttonMotion.duration));
-        const ease = buttonMotion.targetScale === 0 ? 1 - easeIn(1 - progress) : easeIn(progress);
+        const ease = 1 - easeIn(1 - progress);
         circle.x = buttonMotion.x + (point.x - buttonMotion.x) * ease;
         circle.y = buttonMotion.y + (point.y - buttonMotion.y) * ease;
         circleScale = buttonMotion.scale + (buttonMotion.targetScale - buttonMotion.scale) * ease;
@@ -160,7 +162,16 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         const targetScale = 1 - (1 - scene.minFollowScale) * speedRatio;
         const shapeProgress = 1 - Math.exp(-elapsed / scene.shapeTime);
         shape.stretch += (targetStretch - shape.stretch) * shapeProgress;
-        circleScale += (targetScale - circleScale) * shapeProgress;
+        followScale += (targetScale - followScale) * shapeProgress;
+        if (buttonMotion?.targetScale === 1) {
+          // Only reveal the highlight; its position and speed response already use normal following.
+          const reveal = Math.min(1, Math.max(0, (time - buttonMotion.start) / buttonMotion.duration));
+          const ease = 1 - easeIn(1 - reveal);
+          circleScale = buttonMotion.scale + (followScale - buttonMotion.scale) * ease;
+          if (reveal === 1) buttonMotion = null;
+        } else {
+          circleScale = followScale;
+        }
         // An ellipse has the same axis in both directions, avoiding a spin on reversal.
         const turn = Math.atan2(
           Math.sin(2 * (pointerVelocity.angle - shape.angle)),
@@ -171,8 +182,9 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         if (!deforming) {
           shape.stretch = 1;
           circleScale = 1;
+          followScale = 1;
         }
-        following = Math.hypot(point.x - circle.x, point.y - circle.y) > 0.1 || deforming;
+        following = Math.hypot(point.x - circle.x, point.y - circle.y) > 0.1 || deforming || buttonMotion !== null;
       }
       shape.stretch = Math.max(1 / scene.maxStretch, Math.min(scene.maxStretch, shape.stretch));
       if (!following) Object.assign(circle, point);
@@ -346,6 +358,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       hoveredButton = null;
       buttonMotion = null;
       circleScale = 1;
+      followScale = 1;
       shape.stretch = 1;
       shape.angle = 0;
       pointerVelocity.speed = 0;
