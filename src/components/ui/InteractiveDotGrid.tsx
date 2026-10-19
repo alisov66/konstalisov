@@ -27,6 +27,9 @@ const scene = {
   pulseDelay: 3000,
   pulsePeriod: 2400,
   pulseAmplitude: 0.15,
+  routePacketSize: 4,
+  routeStepTime: 90,
+  routeFadeTime: 120,
 };
 
 // Resolve CSS ease-in (0.42, 0, 1, 1); ease-out is its time-reversed curve.
@@ -58,16 +61,20 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
   const rootRef = useRef<HTMLDivElement>(null);
   const baseRef = useRef<HTMLCanvasElement>(null);
   const accentRef = useRef<HTMLCanvasElement>(null);
+  const routeRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const root = rootRef.current;
     const base = baseRef.current;
     const accent = accentRef.current;
-    if (!root || !base || !accent) return;
+    const route = routeRef.current;
+    if (!root || !base || !accent || !route) return;
     const eventTarget = variant === "hero" ? root.parentElement! : root;
     const baseContext = base.getContext("2d");
     const accentContext = accent.getContext("2d");
-    if (!baseContext || !accentContext) return;
+    const routeContext = route.getContext("2d");
+    if (!baseContext || !accentContext || !routeContext) return;
+    const routeTarget = variant === "hero" ? eventTarget.querySelector<HTMLElement>("[data-dot-grid-target]") : null;
 
     const contexts = [baseContext, accentContext];
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -92,6 +99,9 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
     let pulseStart = Infinity;
     let pulseTimer = 0;
     let pulseReady = false;
+    let routeDots: { x: number; y: number }[] = [];
+    let routeOpacity = 0;
+    let routeStart = 0;
     const shape = { stretch: 1, angle: 0 };
     const pointerVelocity = { speed: 0, angle: 0, time: 0 };
     let previousPointer: { x: number; y: number; time: number } | null = null;
@@ -147,6 +157,28 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       pulseAmount = 0;
       armPulse();
       requestDraw();
+    }
+
+    function createRoute() {
+      if (!routeTarget) return [];
+      const bounds = root!.getBoundingClientRect();
+      const target = routeTarget.getBoundingClientRect();
+      const cell = (position: number, extent: number) => Math.max(0, Math.min(
+        Math.ceil(extent / scene.spacing) - 1,
+        Math.round((position - scene.spacing / 2) / scene.spacing),
+      ));
+      const from = { x: cell(circle.x, sceneWidth), y: cell(circle.y, sceneHeight) };
+      const to = {
+        x: cell((target.left + target.width / 2 - bounds.left) * sceneWidth / bounds.width, sceneWidth),
+        y: cell((target.top + target.height / 2 - bounds.top) * sceneHeight / bounds.height, sceneHeight),
+      };
+      const steps = Math.max(Math.abs(to.x - from.x), Math.abs(to.y - from.y));
+      if (!steps) return [];
+      // One connected row of existing grid dots, ordered from the circle to the button.
+      return Array.from({ length: steps + 1 }, (_, index) => ({
+        x: (Math.round(from.x + (to.x - from.x) * index / steps) + 0.5) * scene.spacing,
+        y: (Math.round(from.y + (to.y - from.y) * index / steps) + 0.5) * scene.spacing,
+      }));
     }
 
     function draw(time: number) {
@@ -235,6 +267,16 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       }
       const pulseSettling = Math.abs(pulseAmount) > 0.0001;
       if (!pulsing && !pulseSettling) pulseAmount = 0;
+      if (pulsing && routeTarget && !routeDots.length) {
+        routeDots = createRoute();
+        routeStart = time;
+      }
+      const routeProgress = 1 - Math.exp(-Math.max(0, Math.min(64, time - previousFrameTime)) / scene.routeFadeTime);
+      routeOpacity += ((pulsing && routeTarget ? 1 : 0) - routeOpacity) * routeProgress;
+      if (!active || !followPointer || reducedMotion.matches || (hoveredButton && circleScale === 0) || routeOpacity < 0.001) {
+        routeOpacity = 0;
+        if (!pulsing) routeDots = [];
+      }
       previousFrameTime = time;
       const scale = base!.width / sceneWidth;
       const visibleScale = circleScale * (1 + pulseAmount);
@@ -301,7 +343,22 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       } else {
         accentContext!.clearRect(0, 0, sceneWidth, sceneHeight);
       }
-      if (following || pulsing || pulseSettling) requestDraw();
+      routeContext!.setTransform(scale, 0, 0, base!.height / sceneHeight, 0, 0);
+      routeContext!.clearRect(0, 0, sceneWidth, sceneHeight);
+      if (routeDots.length && routeOpacity > 0) {
+        const head = Math.floor(Math.max(0, time - routeStart) / scene.routeStepTime)
+          % (routeDots.length + scene.routePacketSize);
+        routeContext!.save();
+        routeContext!.fillStyle = hoverColor;
+        for (const [index, dot] of routeDots.entries()) {
+          const highlighted = index <= head && index > head - scene.routePacketSize;
+          const size = scene.dotSize + (highlighted ? 3 : 1);
+          routeContext!.globalAlpha = routeOpacity * (highlighted ? 1 : 0.4 + pulseAmount / scene.pulseAmplitude * 0.08);
+          routeContext!.fillRect(dot.x - size / 2, dot.y - size / 2, size, size);
+        }
+        routeContext!.restore();
+      }
+      if (following || pulsing || pulseSettling || routeOpacity > 0) requestDraw();
     }
 
     function requestDraw() {
@@ -324,7 +381,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
           })),
         ).flat();
       }
-      for (const canvas of [base!, accent!]) {
+      for (const canvas of [base!, accent!, route!]) {
         canvas.width = Math.round(width * window.devicePixelRatio);
         canvas.height = Math.round(height * window.devicePixelRatio);
       }
@@ -415,6 +472,8 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       pulseReady = false;
       window.clearTimeout(pulseTimer);
       pulseTimer = 0;
+      routeDots = [];
+      routeOpacity = 0;
       shape.stretch = 1;
       shape.angle = 0;
       pointerVelocity.speed = 0;
@@ -494,6 +553,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       {variant === "playground" && <span id={instructionsId} className="sr-only">Move the pointer across the grid, or use the arrow keys to move the highlight. Press Escape to clear it.</span>}
       <canvas ref={baseRef} aria-hidden="true" />
       <canvas className="interactive-dot-grid__accent" ref={accentRef} aria-hidden="true" />
+      <canvas className="interactive-dot-grid__route" ref={routeRef} aria-hidden="true" />
     </div>
   );
 }

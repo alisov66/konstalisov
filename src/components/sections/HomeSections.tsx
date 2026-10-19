@@ -18,7 +18,7 @@ export function HomeHero() {
           <p style={typeStyle(typography.body.m)}>I take projects from understanding user needs through design to implementation, working closely with product and engineering teams.</p>
         </div>
         <div className="home-hero__actions" data-dot-grid-absorb>
-          <ButtonPrimary href="/case-studies">Case studies</ButtonPrimary>
+          <ButtonPrimary href="/case-studies" data-dot-grid-target>Case studies</ButtonPrimary>
           <ButtonSecondary href="/cv">CV</ButtonSecondary>
         </div>
       </div>
