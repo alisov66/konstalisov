@@ -15,8 +15,8 @@ const scene = {
   circleDiameter: 200,
   maskBlur: 80,
   followTime: 120,
-  buttonEnterTime: 200,
-  buttonExitTime: 200,
+  buttonEnterTime: 500,
+  buttonExitTime: 500,
 };
 
 // Resolve CSS ease-in (0.42, 0, 1, 1); ease-out is its time-reversed curve.
