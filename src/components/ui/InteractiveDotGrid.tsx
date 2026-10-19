@@ -19,6 +19,8 @@ const scene = {
   speedIdleTime: 32,
   speedDecayTime: 90,
   speedForMaxStretch: 1.5,
+  minFollowScale: 0.65,
+  maxFollowStretch: 1.3,
   maxStretch: 1.65,
   buttonEnterTime: 300,
   buttonExitTime: 300,
@@ -145,7 +147,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
           shape.stretch = 1;
           buttonMotion = null;
         }
-      } else if (active && followPointer && !reducedMotion.matches) {
+      } else if (active && followPointer && !reducedMotion.matches && !hoveredButton) {
         // Time-based easing gives the same trailing motion at different refresh rates.
         const elapsed = Math.max(0, Math.min(64, time - previousFrameTime));
         const progress = 1 - Math.exp(-elapsed / scene.followTime);
@@ -153,17 +155,23 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         circle.y += (point.y - circle.y) * progress;
         const speed = pointerVelocity.speed
           * Math.exp(-Math.max(0, time - pointerVelocity.time - scene.speedIdleTime) / scene.speedDecayTime);
-        const targetStretch = 1 + (scene.maxStretch - 1) * Math.min(1, speed / scene.speedForMaxStretch);
+        const speedRatio = Math.min(1, speed / scene.speedForMaxStretch);
+        const targetStretch = 1 + (scene.maxFollowStretch - 1) * speedRatio;
+        const targetScale = 1 - (1 - scene.minFollowScale) * speedRatio;
         const shapeProgress = 1 - Math.exp(-elapsed / scene.shapeTime);
         shape.stretch += (targetStretch - shape.stretch) * shapeProgress;
+        circleScale += (targetScale - circleScale) * shapeProgress;
         // An ellipse has the same axis in both directions, avoiding a spin on reversal.
         const turn = Math.atan2(
           Math.sin(2 * (pointerVelocity.angle - shape.angle)),
           Math.cos(2 * (pointerVelocity.angle - shape.angle)),
         ) / 2;
         shape.angle += turn * shapeProgress;
-        const deforming = Math.abs(shape.stretch - 1) > 0.001;
-        if (!deforming) shape.stretch = 1;
+        const deforming = Math.abs(shape.stretch - 1) > 0.001 || Math.abs(circleScale - 1) > 0.001;
+        if (!deforming) {
+          shape.stretch = 1;
+          circleScale = 1;
+        }
         following = Math.hypot(point.x - circle.x, point.y - circle.y) > 0.1 || deforming;
       }
       shape.stretch = Math.max(1 / scene.maxStretch, Math.min(scene.maxStretch, shape.stretch));
