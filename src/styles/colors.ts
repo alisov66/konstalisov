@@ -21,6 +21,13 @@ export const colors = {
     fillLight: "var(--button-fill-light)",
     textPrimary: "var(--button-text-primary)",
     textSecondary: "var(--button-text-secondary)",
+    switcher: {
+      default: "var(--switcher-default)",
+      hover: "var(--switcher-hover)",
+      handle: "var(--switcher-handle)",
+      iconActive: "var(--switcher-icon-active)",
+      iconInactive: "var(--switcher-icon-inactive)",
+    },
   },
 
   border: {

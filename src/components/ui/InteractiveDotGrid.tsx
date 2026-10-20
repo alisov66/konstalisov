@@ -471,6 +471,8 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
     window.addEventListener("scroll", reset, { passive: true });
     reducedMotion.addEventListener("change", motionPreferenceChanged);
     darkTheme.addEventListener("change", updateColors);
+    const themeObserver = new MutationObserver(updateColors);
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     document.addEventListener("visibilitychange", reset);
     resize();
 
@@ -493,6 +495,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       window.removeEventListener("scroll", reset);
       reducedMotion.removeEventListener("change", motionPreferenceChanged);
       darkTheme.removeEventListener("change", updateColors);
+      themeObserver.disconnect();
       document.removeEventListener("visibilitychange", reset);
     };
   }, [variant]);

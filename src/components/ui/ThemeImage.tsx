@@ -1,4 +1,7 @@
+"use client";
+
 import type { ImgHTMLAttributes } from "react";
+import { useTheme } from "./ThemeProvider";
 
 export type ImageSource = {
   src: string;
@@ -13,11 +16,12 @@ type ThemeImageProps = ImgHTMLAttributes<HTMLImageElement> & {
 };
 
 export default function ThemeImage({ dark, sizes, alt, ...props }: ThemeImageProps) {
+  const { theme } = useTheme();
   return (
     <picture className="block">
       {dark && (
         <source
-          media="(prefers-color-scheme: dark)"
+          media={theme === null ? "(prefers-color-scheme: dark)" : theme === "dark" ? "all" : "not all"}
           srcSet={dark.srcSet ?? dark.src}
           sizes={sizes}
           width={dark.width}

@@ -7,6 +7,7 @@ import { emailHref, linkedInHref } from "@/data/contact";
 import ButtonNavigation from "./ButtonNavigation";
 import ButtonMenuMobile from "./ButtonMenuMobile";
 import ButtonLogo from "./ButtonLogo";
+import Switcher from "./Switcher";
 
 export interface NavigationHeaderProps {
   alwaysVisible?: boolean;
@@ -50,17 +51,20 @@ export default function NavigationHeader({ className }: NavigationHeaderProps) {
           <ButtonLogo onClick={() => setOpen(false)} />
           <ButtonMenuMobile className="site-header__toggle" open={open} onOpenChange={setOpen} aria-controls="site-navigation" />
         </div>
-        <nav id="site-navigation" aria-label="Main navigation" className="site-header__links">
-          {links.map((link) => (
-            <ButtonNavigation key={link.href} href={link.href}
-              aria-current={pathname === link.href ? "page" : undefined}
-              target={link.href === linkedInHref ? "_blank" : undefined}
-              rel={link.href === linkedInHref ? "noopener noreferrer" : undefined}
-              onClick={() => { setOpen(false); if (link.event) sendGAEvent("event", link.event); }}>
-              {link.label}
-            </ButtonNavigation>
-          ))}
-        </nav>
+        <div id="site-navigation" className="site-header__menu">
+          <nav aria-label="Main navigation" className="site-header__links">
+            {links.map((link) => (
+              <ButtonNavigation key={link.href} href={link.href}
+                aria-current={pathname === link.href ? "page" : undefined}
+                target={link.href === linkedInHref ? "_blank" : undefined}
+                rel={link.href === linkedInHref ? "noopener noreferrer" : undefined}
+                onClick={() => { setOpen(false); if (link.event) sendGAEvent("event", link.event); }}>
+                {link.label}
+              </ButtonNavigation>
+            ))}
+          </nav>
+          <Switcher />
+        </div>
       </div>
     </header>
   );

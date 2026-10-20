@@ -23,6 +23,12 @@
   --button-text-primary: #111111;
   --button-text-secondary: #111111;
 
+  --switcher-default: #ffc450;
+  --switcher-hover: #f4d69b;
+  --switcher-handle: #111111;
+  --switcher-icon-active: #fafafa;
+  --switcher-icon-inactive: #111111;
+
   --border-primary: #111111;
   --border-secondary: #a2a0a0;
   --border-tertiary: #d4d1d1;
@@ -189,7 +195,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     color-scheme: dark;
 
     /* Figma variables: Color / Dark */
@@ -214,6 +220,27 @@
     --border-focus: #ffa469;
     --border-focus-soft: #bc825b;
   }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --text-primary: #f5f2eb;
+  --text-secondary: #c7c2b7;
+  --text-tertiary: #a8a193;
+  --text-inverted: #181714;
+  --text-accent: #ffa469;
+  --bg-beige: #181714;
+  --bg-beige-soft: #201f1b;
+  --bg-beige-light: #292722;
+  --bg-beige-light-50: rgba(41, 39, 34, 0.5);
+  --bg-gray: #292722;
+  --button-fill-light: #353127;
+  --button-text-secondary: #f5f2eb;
+  --border-primary: #898276;
+  --border-secondary: #514b42;
+  --border-tertiary: #39352e;
+  --border-focus: #ffa469;
+  --border-focus-soft: #bc825b;
 }
 
 @media (min-width: 768px) and (max-width: 1439px) {

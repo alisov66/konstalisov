@@ -1,0 +1,95 @@
+.switcher {
+  --switcher-handle-left: var(--base-1);
+  --switcher-hover-left: var(--base-1);
+  --switcher-sun-color: var(--switcher-icon-active);
+  --switcher-moon-color: var(--switcher-icon-inactive);
+  --switcher-moon-rotation: 0deg;
+  --switcher-duration: var(--button-transition-duration);
+  --switcher-easing: ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: calc(var(--base-16) + var(--base-1));
+  height: var(--base-13);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+:root[data-theme="dark"] .switcher {
+  --switcher-handle-left: var(--base-9);
+  --switcher-hover-left: var(--base-8);
+  --switcher-sun-color: var(--switcher-icon-inactive);
+  --switcher-moon-color: var(--switcher-icon-active);
+  --switcher-moon-rotation: -90deg;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .switcher {
+    --switcher-handle-left: var(--base-9);
+    --switcher-hover-left: var(--base-8);
+    --switcher-sun-color: var(--switcher-icon-inactive);
+    --switcher-moon-color: var(--switcher-icon-active);
+    --switcher-moon-rotation: -90deg;
+  }
+}
+
+.switcher__track {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: var(--base-8);
+  border-radius: var(--pill);
+  overflow: hidden;
+  background: var(--switcher-default);
+}
+.switcher__handle {
+  position: absolute;
+  left: var(--switcher-handle-left);
+  top: var(--base-1);
+  width: var(--base-7);
+  height: var(--base-6);
+  border-radius: var(--pill);
+  background: var(--switcher-handle);
+}
+.switcher__icon {
+  position: absolute;
+  top: var(--base-2);
+  width: var(--base-4);
+  height: var(--base-4);
+  mask: var(--switcher-icon) center / contain no-repeat;
+}
+.switcher__sun {
+  --switcher-icon: url("/switcher/sun.svg");
+  left: calc(var(--base-2) + var(--border-width-medium));
+  background: var(--switcher-sun-color);
+}
+.switcher__moon {
+  --switcher-icon: url("/switcher/moon.svg");
+  right: calc(var(--base-2) + var(--border-width-medium));
+  background: var(--switcher-moon-color);
+  transform: rotate(var(--switcher-moon-rotation));
+}
+.switcher[data-animated="true"] .switcher__track {
+  transition: background-color var(--switcher-duration) var(--switcher-easing);
+}
+.switcher[data-animated="true"] .switcher__handle {
+  transition: left var(--switcher-duration) var(--switcher-easing), width var(--switcher-duration) var(--switcher-easing);
+}
+.switcher[data-animated="true"] .switcher__icon {
+  transition: background-color var(--switcher-duration) var(--switcher-easing), transform var(--switcher-duration) var(--switcher-easing);
+}
+.switcher[data-toggling="true"] {
+  --switcher-duration: 200ms;
+  --switcher-easing: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.switcher[data-hover="true"] .switcher__track { background: var(--switcher-hover); }
+.switcher[data-hover="true"] .switcher__handle { left: var(--switcher-hover-left); width: var(--base-8); }
+.switcher:focus-visible { outline: none; }
+.switcher:focus-visible .switcher__track { outline: var(--border-width-medium) solid var(--border-focus); }
+
+@media (prefers-reduced-motion: reduce) {
+  .switcher[data-animated="true"] :is(.switcher__track, .switcher__handle, .switcher__icon) { transition: none; }
+}
