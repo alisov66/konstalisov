@@ -19,7 +19,8 @@ export const colors = {
     fillAccent: "var(--button-fill-accent)",
     fillAccentMuted: "var(--button-fill-accent-muted)",
     fillLight: "var(--button-fill-light)",
-    text: "var(--button-text)",
+    textPrimary: "var(--button-text-primary)",
+    textSecondary: "var(--button-text-secondary)",
   },
 
   border: {

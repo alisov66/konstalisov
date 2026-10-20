@@ -37,7 +37,7 @@
   font-size: var(--button-medium-size);
   line-height: var(--button-medium-line);
   font-weight: var(--font-weight-medium);
-  color: var(--button-text);
+  color: var(--button-text-secondary);
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -55,7 +55,7 @@
   background: var(--button-surface);
   transition: background-color var(--button-transition-duration) var(--button-transition-easing);
 }
-.button-primary { --button-surface: var(--button-fill-accent); --button-hover-surface: var(--button-fill-accent-muted); }
+.button-primary { --button-surface: var(--button-fill-accent); --button-hover-surface: var(--button-fill-accent-muted); color: var(--button-text-primary); }
 .button-secondary { --button-surface: var(--bg-beige-light); --button-hover-surface: var(--bg-beige-soft); }
 .design-button:focus-visible { outline: none; }
 .design-button:focus-visible::before { box-shadow: inset 0 0 0 var(--border-width-medium) var(--border-focus); }
@@ -64,7 +64,7 @@
 .button-navigation {
   padding: var(--button-padding-m) var(--button-padding-lg);
   border-radius: var(--pill);
-  transition: background-color var(--button-transition-duration) var(--button-transition-easing);
+  transition: background-color var(--button-transition-duration) var(--button-transition-easing), color var(--button-transition-duration) var(--button-transition-easing);
 }
 .button-navigation:focus-visible, .button-logo:focus-visible {
   outline: var(--border-width-medium) solid var(--border-focus);
@@ -119,8 +119,9 @@
   border: 0;
   border-radius: var(--lg);
   background: transparent;
+  color: var(--button-text-secondary);
   cursor: pointer;
-  transition: background-color var(--menu-transition-duration) var(--button-transition-easing);
+  transition: background-color var(--menu-transition-duration) var(--button-transition-easing), color var(--menu-transition-duration) var(--button-transition-easing);
 }
 .button-menu-mobile:focus-visible { outline: none; box-shadow: inset 0 0 0 var(--border-width-medium) var(--border-focus); }
 .button-menu-mobile:disabled { cursor: not-allowed; opacity: 0.5; }
@@ -129,7 +130,7 @@
   position: absolute;
   left: 50%;
   height: var(--border-width-medium);
-  background: var(--border-primary);
+  background: currentColor;
   transform: translateX(-50%);
   transition: top var(--menu-transition-duration) var(--button-transition-easing), width var(--menu-transition-duration) var(--button-transition-easing), transform var(--menu-transition-duration) var(--button-transition-easing);
 }
@@ -199,7 +200,7 @@
   padding: var(--card-padding-lg);
   transition: padding 300ms ease-out;
 }
-.case-study-card__image { width: 100%; aspect-ratio: 416 / 260; position: relative; transition: background-color 300ms ease-out; }
+.case-study-card__image { width: 100%; aspect-ratio: 416 / 260; position: relative; background: var(--bg-beige-light-50); transition: background-color 300ms ease-out; }
 .case-study-card__image img { display: block; width: 100%; height: 100%; object-fit: contain; transition: opacity 300ms ease-out; }
 .case-study-card__image .case-study-card__image-hover { position: absolute; inset: 0; opacity: 0; }
 .case-study-card__image > .selection-frame { inset: calc(-1 * var(--border-width-medium)); }
@@ -230,16 +231,18 @@
   height: 540px;
   min-width: 0;
   background: var(--button-fill-light);
+  color: var(--button-text-secondary);
   box-shadow: inset 0 0 0 var(--border-width-thin) var(--border-secondary);
   font-size: var(--button-large-size);
   line-height: var(--button-large-line);
   font-weight: var(--font-weight-medium);
 }
-.button-contact__label { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; text-align: center; transition: background-color var(--button-transition-duration) var(--button-transition-easing); }
+.button-contact__label { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; text-align: center; transition: background-color var(--button-transition-duration) var(--button-transition-easing), color var(--button-transition-duration) var(--button-transition-easing); }
 .button-contact:focus-visible { outline: none; z-index: 1; box-shadow: inset 0 0 0 var(--border-width-medium) var(--border-focus); }
 
 .case-studies-page { padding: var(--navigation-height) var(--wrap-padding-lg) var(--wrap-padding-lg); }
 .case-studies-page__title { border-top: var(--border-width-thin) solid var(--border-secondary); gap: var(--base-6); }
+.case-studies-page__title p { color: var(--text-primary); }
 .more-studies-title { padding: var(--block-padding-m) var(--block-padding-lg); border-inline: var(--border-width-thin) solid var(--border-secondary); }
 .case-study-page { padding: var(--navigation-height) var(--wrap-padding-lg) var(--wrap-padding-lg); }
 .case-study-page__article { max-width: var(--article-max-width); margin-inline: auto; padding-block: var(--block-padding-lg); }
@@ -252,15 +255,15 @@
   .button-logo:hover .button-logo__image--hover { opacity: 1; }
   .design-button:not(:disabled):hover::before { background: var(--button-hover-surface); }
   .design-button:not(:disabled):hover > .selection-frame { opacity: 1; }
-  .button-navigation:not(:disabled):hover { background: var(--button-fill-accent); }
+  .button-navigation:not(:disabled):hover { background: var(--button-fill-accent); color: var(--button-text-primary); }
   .case-study-card:hover { background: var(--bg-gray); }
   .case-study-card:hover .case-study-card__view { color: var(--text-accent); }
   .case-study-card:hover .case-study-card__media { padding: var(--card-padding-m); }
-  .case-study-card:hover .case-study-card__image { background: var(--button-fill-accent-muted); }
+  .case-study-card:hover .case-study-card__image { background: var(--bg-gray); }
   .case-study-card:hover .case-study-card__image-default { opacity: 0; }
   .case-study-card:hover .case-study-card__image-hover { opacity: 1; }
   .case-study-card:hover .selection-frame { opacity: 1; }
-  .button-contact:hover .button-contact__label { background: var(--button-fill-accent-muted); }
+  .button-contact:hover .button-contact__label { background: var(--button-fill-accent-muted); color: var(--button-text-primary); }
   .button-contact:hover .selection-frame { opacity: 1; }
 }
 
@@ -269,14 +272,14 @@
 .design-button:not(:disabled):is(:active, [data-state="press"]) { --selection-frame-color: var(--border-focus-soft); }
 .design-button:not(:disabled):is(:active, [data-state="press"])::before { background: var(--button-surface); }
 .design-button:not(:disabled):is(:active, [data-state="press"]) > .selection-frame { opacity: 1; }
-.button-navigation:not(:disabled):is(:active, [data-state="press"]) { background: var(--button-fill-accent-muted); }
+.button-navigation:not(:disabled):is(:active, [data-state="press"]) { background: var(--button-fill-accent-muted); color: var(--button-text-primary); }
 .button-contact:is(:active, [data-state="press"]) { --selection-frame-color: var(--border-focus-soft); }
-.button-contact:is(:active, [data-state="press"]) .button-contact__label { background: var(--button-fill-accent); }
+.button-contact:is(:active, [data-state="press"]) .button-contact__label { background: var(--button-fill-accent); color: var(--button-text-primary); }
 .button-contact:is(:active, [data-state="press"]) .selection-frame { opacity: 1; }
 .button-logo:is(:active, [data-state="press"]), .button-logo:is(:active, [data-state="press"]) .button-logo__text > span { color: var(--text-accent); }
 .button-logo:is(:active, [data-state="press"]) .button-logo__image--default, .button-logo:is(:active, [data-state="press"]) .button-logo__image--hover { opacity: 0; }
 .button-logo:is(:active, [data-state="press"]) .button-logo__image--press { opacity: 1; }
-.button-menu-mobile:not(:disabled):is(:active, [data-state="press"]) { background: var(--button-fill-accent); }
+.button-menu-mobile:not(:disabled):is(:active, [data-state="press"]) { background: var(--button-fill-accent); color: var(--button-text-primary); }
 
 @media (max-width: 1439px) {
   .case-studies-page__title { margin-top: var(--base-4); }

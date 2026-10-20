@@ -22,7 +22,7 @@ export function getTabButtonStyle(
   selected = false,
   level: TabButtonLevel = "capability",
 ): TabButtonStyle {
-  const textColor = colors.button.text;
+  const textColor = selected ? colors.button.textPrimary : colors.button.textSecondary;
   const selectedBackground =
     level === "article"
       ? colors.button.fillAccent

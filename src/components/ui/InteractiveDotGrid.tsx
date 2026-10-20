@@ -71,6 +71,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
 
     const contexts = [baseContext, accentContext];
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
     const point = { x: scene.size / 2, y: scene.size / 2 };
     const circle = { ...point };
     let active = false;
@@ -308,6 +309,13 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       if (!frame) frame = requestAnimationFrame(draw);
     }
 
+    function updateColors() {
+      const style = getComputedStyle(root!);
+      restColor = style.getPropertyValue("--dot-grid-rest").trim();
+      hoverColor = style.getPropertyValue("--dot-grid-hover").trim();
+      requestDraw();
+    }
+
     function resize() {
       const bounds = root!.getBoundingClientRect();
       width = bounds.width;
@@ -328,9 +336,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         canvas.width = Math.round(width * window.devicePixelRatio);
         canvas.height = Math.round(height * window.devicePixelRatio);
       }
-      const style = getComputedStyle(root!);
-      restColor = style.getPropertyValue("--dot-grid-rest").trim();
-      hoverColor = style.getPropertyValue("--dot-grid-hover").trim();
+      updateColors();
       prepareMask();
       reset();
     }
@@ -464,6 +470,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
     window.addEventListener("resize", resize);
     window.addEventListener("scroll", reset, { passive: true });
     reducedMotion.addEventListener("change", motionPreferenceChanged);
+    darkTheme.addEventListener("change", updateColors);
     document.addEventListener("visibilitychange", reset);
     resize();
 
@@ -485,6 +492,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       window.removeEventListener("resize", resize);
       window.removeEventListener("scroll", reset);
       reducedMotion.removeEventListener("change", motionPreferenceChanged);
+      darkTheme.removeEventListener("change", updateColors);
       document.removeEventListener("visibilitychange", reset);
     };
   }, [variant]);
