@@ -1,28 +1,20 @@
-import { createRequire } from "node:module";
-import { dirname, resolve } from "node:path";
-import { writeFile } from "node:fs/promises";
+import { resolve } from "node:path";
+import { readFile, writeFile } from "node:fs/promises";
+import { prepareResponsiveImage } from "./lib/prepare-responsive-image.mjs";
 
-const require = createRequire(import.meta.url);
-const sharp = require(require.resolve("sharp", { paths: [dirname(require.resolve("next/package.json"))] }));
 const root = resolve(import.meta.dirname, "../public/case-studies");
-const manifest = {};
+const manifestPath = resolve(root, "../../src/data/case-study-images.json");
+const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 
 const studies = ["data-mapping", "msa-workspace", "mass-payout", "aml"];
-for (const name of [...studies, ...studies.map(name => `${name}-hover`), "profile-photo"]) {
-  const source = resolve(root, `${name}.png`);
-  const { width, height } = await sharp(source).metadata();
-  const result = await sharp(source).webp({ lossless: true, effort: 6 }).toFile(resolve(root, `${name}.webp`));
-  const variants = [];
-  for (const size of [640, 960, 1640]) {
-    if (size >= width) continue;
-    const buffer = await sharp(source).resize({ width: size }).webp({ lossless: true, effort: 6 }).toBuffer();
-    if (buffer.length < result.size * 0.9) {
-      await writeFile(resolve(root, `${name}-${size}.webp`), buffer);
-      variants.push(`/case-studies/${name}-${size}.webp ${size}w`);
-    }
+for (const name of [...studies, ...studies.map(name => `${name}-hover`)]) {
+  // Retain a retina-sized candidate even when its byte size exceeds the highly compressible master.
+  const options = { requiredSizes: [1640] };
+  const light = await prepareResponsiveImage(resolve(root, `${name}.png`), `/case-studies/${name}`, options);
+  const dark = await prepareResponsiveImage(resolve(root, `${name}-dark.png`), `/case-studies/${name}-dark`, options);
+  if (light.width !== dark.width || light.height !== dark.height) {
+    throw new Error(`${name}: light and dark image dimensions must match`);
   }
-  const src = `/case-studies/${name}.webp`;
-  manifest[name] = { src, width, height, srcSet: [...variants, `${src} ${width}w`].join(", ") };
-  console.log(`${name}: ${width}x${height}, ${result.size} bytes`);
+  manifest[name] = { ...light, dark };
 }
-await writeFile(resolve(root, "../../src/data/case-study-images.json"), `${JSON.stringify(manifest, null, 2)}\n`);
+await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);

@@ -3,30 +3,60 @@
     "src": "/capabilities/data-mapping-1.webp",
     "width": 2960,
     "height": 2040,
-    "srcSet": "/capabilities/data-mapping-1-640.webp 640w, /capabilities/data-mapping-1.webp 2960w"
+    "srcSet": "/capabilities/data-mapping-1-640.webp 640w, /capabilities/data-mapping-1.webp 2960w",
+    "dark": {
+      "src": "/capabilities/data-mapping-1-dark.webp",
+      "width": 2960,
+      "height": 2040,
+      "srcSet": "/capabilities/data-mapping-1-dark-640.webp 640w, /capabilities/data-mapping-1-dark.webp 2960w"
+    }
   },
   "2": {
     "src": "/capabilities/data-mapping-2.webp",
     "width": 1370,
     "height": 1648,
-    "srcSet": "/capabilities/data-mapping-2.webp 1370w"
+    "srcSet": "/capabilities/data-mapping-2.webp 1370w",
+    "dark": {
+      "src": "/capabilities/data-mapping-2-dark.webp",
+      "width": 1370,
+      "height": 1648,
+      "srcSet": "/capabilities/data-mapping-2-dark.webp 1370w"
+    }
   },
   "3": {
     "src": "/capabilities/data-mapping-3.webp",
     "width": 1936,
     "height": 1784,
-    "srcSet": "/capabilities/data-mapping-3.webp 1936w"
+    "srcSet": "/capabilities/data-mapping-3.webp 1936w",
+    "dark": {
+      "src": "/capabilities/data-mapping-3-dark.webp",
+      "width": 1936,
+      "height": 1784,
+      "srcSet": "/capabilities/data-mapping-3-dark.webp 1936w"
+    }
   },
   "4": {
     "src": "/capabilities/data-mapping-4.webp",
     "width": 1930,
     "height": 1560,
-    "srcSet": "/capabilities/data-mapping-4.webp 1930w"
+    "srcSet": "/capabilities/data-mapping-4.webp 1930w",
+    "dark": {
+      "src": "/capabilities/data-mapping-4-dark.webp",
+      "width": 1930,
+      "height": 1560,
+      "srcSet": "/capabilities/data-mapping-4-dark.webp 1930w"
+    }
   },
   "5": {
     "src": "/capabilities/data-mapping-5.webp",
     "width": 1222,
     "height": 1144,
-    "srcSet": "/capabilities/data-mapping-5.webp 1222w"
+    "srcSet": "/capabilities/data-mapping-5.webp 1222w",
+    "dark": {
+      "src": "/capabilities/data-mapping-5-dark.webp",
+      "width": 1222,
+      "height": 1144,
+      "srcSet": "/capabilities/data-mapping-5-dark.webp 1222w"
+    }
   }
 }

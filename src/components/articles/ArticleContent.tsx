@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { ArticleId } from "@/data/capabilities";
 import { colors, spacing, typography } from "@/styles";
+import ThemeImage, { type ImageSource } from "@/components/ui/ThemeImage";
 import msaImages from "@/data/msa-images.json";
 import dataMappingImages from "@/data/data-mapping-images.json";
 import amlImages from "@/data/aml-images.json";
@@ -74,6 +75,7 @@ function ArticleImage({
   width,
   height,
   srcSet,
+  dark,
 }: {
   src: string;
   alt: string;
@@ -81,12 +83,13 @@ function ArticleImage({
   width?: number;
   height?: number;
   srcSet?: string;
+  dark?: ImageSource;
 }) {
   const hasExplicitWidth = /\bw-(?:\[|full\b)/.test(className || "");
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
+    <ThemeImage
+      dark={dark}
       alt={alt}
       className={[
         "block object-contain",

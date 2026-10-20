@@ -3,12 +3,24 @@
     "src": "/capabilities/unifying-headers-1.webp",
     "width": 2696,
     "height": 2646,
-    "srcSet": "/capabilities/unifying-headers-1-640.webp 640w, /capabilities/unifying-headers-1-960.webp 960w, /capabilities/unifying-headers-1.webp 2696w"
+    "srcSet": "/capabilities/unifying-headers-1-640.webp 640w, /capabilities/unifying-headers-1-960.webp 960w, /capabilities/unifying-headers-1.webp 2696w",
+    "dark": {
+      "src": "/capabilities/unifying-headers-1-dark.webp",
+      "width": 2696,
+      "height": 2646,
+      "srcSet": "/capabilities/unifying-headers-1-dark-640.webp 640w, /capabilities/unifying-headers-1-dark-960.webp 960w, /capabilities/unifying-headers-1-dark.webp 2696w"
+    }
   },
   "2": {
     "src": "/capabilities/unifying-headers-2.webp",
     "width": 2400,
     "height": 1514,
-    "srcSet": "/capabilities/unifying-headers-2-640.webp 640w, /capabilities/unifying-headers-2.webp 2400w"
+    "srcSet": "/capabilities/unifying-headers-2-640.webp 640w, /capabilities/unifying-headers-2.webp 2400w",
+    "dark": {
+      "src": "/capabilities/unifying-headers-2-dark.webp",
+      "width": 2400,
+      "height": 1514,
+      "srcSet": "/capabilities/unifying-headers-2-dark-640.webp 640w, /capabilities/unifying-headers-2-dark.webp 2400w"
+    }
   }
 }

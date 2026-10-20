@@ -1,51 +1,99 @@
 {
   "data-mapping": {
     "src": "/case-studies/data-mapping.webp",
-    "width": 1328,
-    "height": 830,
-    "srcSet": "/case-studies/data-mapping-640.webp 640w, /case-studies/data-mapping.webp 1328w"
+    "width": 6000,
+    "height": 3750,
+    "srcSet": "/case-studies/data-mapping-640.webp 640w, /case-studies/data-mapping-960.webp 960w, /case-studies/data-mapping-1640.webp 1640w, /case-studies/data-mapping.webp 6000w",
+    "dark": {
+      "src": "/case-studies/data-mapping-dark.webp",
+      "width": 6000,
+      "height": 3750,
+      "srcSet": "/case-studies/data-mapping-dark-640.webp 640w, /case-studies/data-mapping-dark-960.webp 960w, /case-studies/data-mapping-dark-1640.webp 1640w, /case-studies/data-mapping-dark.webp 6000w"
+    }
   },
   "msa-workspace": {
     "src": "/case-studies/msa-workspace.webp",
-    "width": 4096,
-    "height": 2560,
-    "srcSet": "/case-studies/msa-workspace-640.webp 640w, /case-studies/msa-workspace-960.webp 960w, /case-studies/msa-workspace-1640.webp 1640w, /case-studies/msa-workspace.webp 4096w"
+    "width": 6000,
+    "height": 3750,
+    "srcSet": "/case-studies/msa-workspace-640.webp 640w, /case-studies/msa-workspace-960.webp 960w, /case-studies/msa-workspace-1640.webp 1640w, /case-studies/msa-workspace.webp 6000w",
+    "dark": {
+      "src": "/case-studies/msa-workspace-dark.webp",
+      "width": 6000,
+      "height": 3750,
+      "srcSet": "/case-studies/msa-workspace-dark-640.webp 640w, /case-studies/msa-workspace-dark-960.webp 960w, /case-studies/msa-workspace-dark-1640.webp 1640w, /case-studies/msa-workspace-dark.webp 6000w"
+    }
   },
   "mass-payout": {
     "src": "/case-studies/mass-payout.webp",
-    "width": 4096,
-    "height": 2560,
-    "srcSet": "/case-studies/mass-payout-640.webp 640w, /case-studies/mass-payout-960.webp 960w, /case-studies/mass-payout-1640.webp 1640w, /case-studies/mass-payout.webp 4096w"
+    "width": 6000,
+    "height": 3750,
+    "srcSet": "/case-studies/mass-payout-640.webp 640w, /case-studies/mass-payout-960.webp 960w, /case-studies/mass-payout-1640.webp 1640w, /case-studies/mass-payout.webp 6000w",
+    "dark": {
+      "src": "/case-studies/mass-payout-dark.webp",
+      "width": 6000,
+      "height": 3750,
+      "srcSet": "/case-studies/mass-payout-dark-640.webp 640w, /case-studies/mass-payout-dark-960.webp 960w, /case-studies/mass-payout-dark-1640.webp 1640w, /case-studies/mass-payout-dark.webp 6000w"
+    }
   },
   "aml": {
     "src": "/case-studies/aml.webp",
-    "width": 4096,
-    "height": 2560,
-    "srcSet": "/case-studies/aml-640.webp 640w, /case-studies/aml-960.webp 960w, /case-studies/aml-1640.webp 1640w, /case-studies/aml.webp 4096w"
+    "width": 6000,
+    "height": 3750,
+    "srcSet": "/case-studies/aml-640.webp 640w, /case-studies/aml-960.webp 960w, /case-studies/aml-1640.webp 1640w, /case-studies/aml.webp 6000w",
+    "dark": {
+      "src": "/case-studies/aml-dark.webp",
+      "width": 6000,
+      "height": 3750,
+      "srcSet": "/case-studies/aml-dark-640.webp 640w, /case-studies/aml-dark-960.webp 960w, /case-studies/aml-dark-1640.webp 1640w, /case-studies/aml-dark.webp 6000w"
+    }
   },
   "data-mapping-hover": {
     "src": "/case-studies/data-mapping-hover.webp",
-    "width": 1408,
-    "height": 880,
-    "srcSet": "/case-studies/data-mapping-hover-640.webp 640w, /case-studies/data-mapping-hover.webp 1408w"
+    "width": 6000,
+    "height": 3750,
+    "srcSet": "/case-studies/data-mapping-hover-640.webp 640w, /case-studies/data-mapping-hover-960.webp 960w, /case-studies/data-mapping-hover-1640.webp 1640w, /case-studies/data-mapping-hover.webp 6000w",
+    "dark": {
+      "src": "/case-studies/data-mapping-hover-dark.webp",
+      "width": 6000,
+      "height": 3750,
+      "srcSet": "/case-studies/data-mapping-hover-dark-640.webp 640w, /case-studies/data-mapping-hover-dark-960.webp 960w, /case-studies/data-mapping-hover-dark-1640.webp 1640w, /case-studies/data-mapping-hover-dark.webp 6000w"
+    }
   },
   "msa-workspace-hover": {
     "src": "/case-studies/msa-workspace-hover.webp",
-    "width": 4096,
-    "height": 2560,
-    "srcSet": "/case-studies/msa-workspace-hover-640.webp 640w, /case-studies/msa-workspace-hover-960.webp 960w, /case-studies/msa-workspace-hover-1640.webp 1640w, /case-studies/msa-workspace-hover.webp 4096w"
+    "width": 6000,
+    "height": 3750,
+    "srcSet": "/case-studies/msa-workspace-hover-640.webp 640w, /case-studies/msa-workspace-hover-960.webp 960w, /case-studies/msa-workspace-hover-1640.webp 1640w, /case-studies/msa-workspace-hover.webp 6000w",
+    "dark": {
+      "src": "/case-studies/msa-workspace-hover-dark.webp",
+      "width": 6000,
+      "height": 3750,
+      "srcSet": "/case-studies/msa-workspace-hover-dark-640.webp 640w, /case-studies/msa-workspace-hover-dark-1640.webp 1640w, /case-studies/msa-workspace-hover-dark.webp 6000w"
+    }
   },
   "mass-payout-hover": {
     "src": "/case-studies/mass-payout-hover.webp",
-    "width": 4096,
-    "height": 2560,
-    "srcSet": "/case-studies/mass-payout-hover-640.webp 640w, /case-studies/mass-payout-hover-960.webp 960w, /case-studies/mass-payout-hover-1640.webp 1640w, /case-studies/mass-payout-hover.webp 4096w"
+    "width": 6000,
+    "height": 3750,
+    "srcSet": "/case-studies/mass-payout-hover-640.webp 640w, /case-studies/mass-payout-hover-960.webp 960w, /case-studies/mass-payout-hover-1640.webp 1640w, /case-studies/mass-payout-hover.webp 6000w",
+    "dark": {
+      "src": "/case-studies/mass-payout-hover-dark.webp",
+      "width": 6000,
+      "height": 3750,
+      "srcSet": "/case-studies/mass-payout-hover-dark-640.webp 640w, /case-studies/mass-payout-hover-dark-960.webp 960w, /case-studies/mass-payout-hover-dark-1640.webp 1640w, /case-studies/mass-payout-hover-dark.webp 6000w"
+    }
   },
   "aml-hover": {
     "src": "/case-studies/aml-hover.webp",
-    "width": 4096,
-    "height": 2560,
-    "srcSet": "/case-studies/aml-hover-640.webp 640w, /case-studies/aml-hover-960.webp 960w, /case-studies/aml-hover-1640.webp 1640w, /case-studies/aml-hover.webp 4096w"
+    "width": 6000,
+    "height": 3750,
+    "srcSet": "/case-studies/aml-hover-640.webp 640w, /case-studies/aml-hover-960.webp 960w, /case-studies/aml-hover-1640.webp 1640w, /case-studies/aml-hover.webp 6000w",
+    "dark": {
+      "src": "/case-studies/aml-hover-dark.webp",
+      "width": 6000,
+      "height": 3750,
+      "srcSet": "/case-studies/aml-hover-dark-640.webp 640w, /case-studies/aml-hover-dark-960.webp 960w, /case-studies/aml-hover-dark-1640.webp 1640w, /case-studies/aml-hover-dark.webp 6000w"
+    }
   },
   "profile-photo": {
     "src": "/case-studies/profile-photo.webp",

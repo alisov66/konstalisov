@@ -3,12 +3,24 @@
     "src": "/capabilities/design-to-production-1.webp",
     "width": 3571,
     "height": 1893,
-    "srcSet": "/capabilities/design-to-production-1-640.webp 640w, /capabilities/design-to-production-1-960.webp 960w, /capabilities/design-to-production-1.webp 3571w"
+    "srcSet": "/capabilities/design-to-production-1-640.webp 640w, /capabilities/design-to-production-1-960.webp 960w, /capabilities/design-to-production-1.webp 3571w",
+    "dark": {
+      "src": "/capabilities/design-to-production-1-dark.webp",
+      "width": 3571,
+      "height": 1893,
+      "srcSet": "/capabilities/design-to-production-1-dark-640.webp 640w, /capabilities/design-to-production-1-dark-960.webp 960w, /capabilities/design-to-production-1-dark.webp 3571w"
+    }
   },
   "2": {
     "src": "/capabilities/design-to-production-2.webp",
     "width": 2476,
     "height": 1704,
-    "srcSet": "/capabilities/design-to-production-2-640.webp 640w, /capabilities/design-to-production-2.webp 2476w"
+    "srcSet": "/capabilities/design-to-production-2-640.webp 640w, /capabilities/design-to-production-2.webp 2476w",
+    "dark": {
+      "src": "/capabilities/design-to-production-2-dark.webp",
+      "width": 2476,
+      "height": 1704,
+      "srcSet": "/capabilities/design-to-production-2-dark-640.webp 640w, /capabilities/design-to-production-2-dark.webp 2476w"
+    }
   }
 }
