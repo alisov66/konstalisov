@@ -9,6 +9,7 @@ import massPayoutImages from "@/data/mass-payout-images.json";
 import designToProductionImages from "@/data/design-to-production-images.json";
 import unifyingHeadersImages from "@/data/unifying-headers-images.json";
 import websiteRedesignImages from "@/data/website-redesign-images.json";
+import blockSubtitlesImages from "@/data/block-subtitles-images.json";
 
 
 const images = {
@@ -169,10 +170,10 @@ function Subsection({
   );
 }
 
-function ArticleShell({ children }: { children: ReactNode }) {
+function ArticleShell({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <article
-      className="w-full"
+      className={`w-full ${className}`}
       style={{ maxWidth: spacing.article.maxWidth }}
     >
       {children}
@@ -692,6 +693,152 @@ function DataMappingArticle() {
         </CopyBlock>
       </Section>
       <Gap size={spacing.article.sectionGap} />
+    </ArticleShell>
+  );
+}
+
+function BlockSubtitlesArticle() {
+  return (
+    <ArticleShell className="[&_p:last-child]:mb-0! [&_figcaption_ul]:mb-0!">
+      <H1>Finding the right analysis in a growing workspace</H1>
+      <Gap size={spacing.article.h1Gap} />
+
+      <CopyBlock>
+        <Paragraph>
+          Researchers using Platforma had to open similarly named analysis blocks
+          one by one to identify their configurations. I designed block subtitles
+          and search so those differences were visible and searchable directly in
+          the navigation panel. Working with the CTO, I refined the subtitle
+          behavior to provide useful defaults while preserving custom labels.
+        </Paragraph>
+      </CopyBlock>
+      <Gap size={spacing.base[4]} />
+      <ArticleSummary
+        rows={[
+          ["Product", "Platforma, MiLaboratories"],
+          ["My role", "Product Designer responsible for subtitle behavior, search interactions, and UI"],
+          ["Scope", "Block identification and search in the workspace panel"],
+          ["Timeline", "December 2025–January 2026 · approximately one month"],
+          ["Delivery", "Subtitles and search released to users"],
+        ]}
+      />
+      <Gap size={spacing.article.mediaGap} />
+      <figure>
+        <ArticleImage
+          {...blockSubtitlesImages["1"]}
+          alt="Before and after Platforma’s workspace navigation: similarly named blocks gain subtitles showing their configuration differences"
+        />
+        <Gap size={spacing.article.mediaToCaptionGap} />
+        <figcaption className="[&_ul]:mb-0" style={{ color: colors.text.secondary }}>
+          <List>
+            <li>
+              The same block titles, with configuration details visible in the
+              updated panel. Workspace content omitted for clarity.
+            </li>
+          </List>
+        </figcaption>
+      </figure>
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Making similar blocks distinguishable">
+        <CopyBlock>
+          <Paragraph>
+            Platforma lets researchers analyze biological data through
+            configurable blocks. A workspace can contain several instances of the
+            same block with different settings. I observed users opening these
+            blocks individually because their titles did not reveal those
+            differences.
+          </Paragraph>
+          <Paragraph>
+            My initial proposal was to let users write custom subtitles. However,
+            that would require them to label blocks before navigation became
+            easier. After discussing the approach with the CTO, we agreed to
+            populate subtitles with each block’s key configuration by default.
+          </Paragraph>
+          <Paragraph>
+            Default subtitles updated when settings changed. Users could replace
+            them with their own wording, which subsequent configuration changes
+            would leave untouched. Resetting a subtitle restored the current
+            configuration details and automatic updates.
+          </Paragraph>
+        </CopyBlock>
+      </Section>
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Making configuration searchable">
+        <CopyBlock>
+          <Paragraph>
+            Subtitles exposed the differences between blocks; search let
+            researchers use those differences to find the one they needed.
+          </Paragraph>
+          <Paragraph>
+            I designed search to match both titles and subtitles. Combining words
+            narrowed the results, while highlighted matches showed why each block
+            appeared. For example, “usage” found both V/J Usage blocks, while
+            “usage heavy” returned the one configured for Heavy.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <figure>
+          <ArticleImage
+            {...blockSubtitlesImages["2"]}
+            alt="Searching for usage finds two V/J Usage blocks; adding heavy narrows the results to the matching configuration"
+          />
+          <Gap size={spacing.article.mediaToCaptionGap} />
+          <figcaption className="[&_ul]:mb-0" style={{ color: colors.text.primary }}>
+            <List>
+              <li>
+                Adding a configuration detail narrows the results without
+                opening either block.
+              </li>
+            </List>
+          </figcaption>
+        </figure>
+        <Gap size={spacing.article.mediaGap} />
+        <CopyBlock>
+          <Paragraph>
+            Platforma already used tags to help users find blocks in the Add
+            Block menu. I reused those categories in workspace search, giving
+            users a familiar way to find relevant blocks.
+          </Paragraph>
+          <Paragraph>
+            Typing “#” opened tag suggestions. Users could select multiple tags
+            to find blocks matching any selected tag, then combine tags with text
+            to refine the results.
+          </Paragraph>
+        </CopyBlock>
+        <Gap size={spacing.article.mediaGap} />
+        <figure>
+          <ArticleImage
+            {...blockSubtitlesImages["3"]}
+            alt="Four tag-search steps: browse suggestions with #, narrow suggestions, select IGHeavy, and add TCRBeta to the filter"
+          />
+          <Gap size={spacing.article.mediaToCaptionGap} />
+          <figcaption className="[&_ul]:mb-0" style={{ color: colors.text.primary }}>
+            <List>
+              <li>From browsing tag suggestions to applying multiple tags.</li>
+            </List>
+          </figcaption>
+        </figure>
+      </Section>
+      <Gap size={spacing.article.sectionGap} />
+
+      <Section title="Delivery and feedback">
+        <CopyBlock>
+          <Paragraph>
+            Subtitles and search shipped in two stages over approximately one
+            month. Researchers could now inspect key configuration details in the
+            panel and find blocks by title, subtitle, or existing tags.
+          </Paragraph>
+          <Paragraph>
+            We received positive feedback from users who used the changes. The
+            delivered functionality addressed the behavior I had observed:
+            opening blocks just to discover which configuration each contained.
+          </Paragraph>
+        </CopyBlock>
+      </Section>
+      {/* The shared page wrapper supplies the rest of the chapter gap. */}
+      <Gap size={`calc(${spacing.article.chapterGap} - ${spacing.block.padding.lg})`} />
     </ArticleShell>
   );
 }
@@ -2097,6 +2244,10 @@ function EmptyArticle({ label }: { label: string }) {
 }
 
 export default function ArticleContent({ articleId }: { articleId: ArticleId }) {
+  if (articleId === "block-subtitles") {
+    return <BlockSubtitlesArticle />;
+  }
+
   if (articleId === "portfolio-design-system") {
     return <PortfolioDesignSystemArticle />;
   }

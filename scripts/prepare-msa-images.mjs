@@ -3,14 +3,14 @@ import { writeFile } from "node:fs/promises";
 import { prepareResponsiveImage } from "./lib/prepare-responsive-image.mjs";
 const assets = resolve(import.meta.dirname, "../public/capabilities");
 const article = process.argv[2] ?? "msa";
-if (!["msa", "data-mapping", "aml", "mass-payout", "design-to-production", "unifying-headers", "website-redesign"].includes(article)) {
+if (!["msa", "data-mapping", "aml", "mass-payout", "design-to-production", "unifying-headers", "website-redesign", "block-subtitles"].includes(article)) {
   throw new Error(`Unknown article image set: ${article}`);
 }
 const prefix = article === "msa" ? "msa-fig" : article;
 const manifest = {};
 
-// Keep both themes' 2x PNG masters; use the same lossless pipeline for every image.
-const figureCount = ["design-to-production", "unifying-headers", "website-redesign"].includes(article) ? 2 : article === "aml" ? 4 : 5;
+// Keep original PNG masters and prepare theme-specific images where supplied.
+const figureCount = article === "block-subtitles" ? 3 : ["design-to-production", "unifying-headers", "website-redesign"].includes(article) ? 2 : article === "aml" ? 4 : 5;
 for (let figure = 1; figure <= figureCount; figure++) {
   const name = `${prefix}-${figure}`;
   const light = await prepareResponsiveImage(resolve(assets, `${name}.png`), `/capabilities/${name}`);

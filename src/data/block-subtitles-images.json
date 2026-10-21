@@ -1,0 +1,38 @@
+{
+  "1": {
+    "src": "/capabilities/block-subtitles-1.webp",
+    "width": 2644,
+    "height": 1914,
+    "srcSet": "/capabilities/block-subtitles-1.webp 2644w",
+    "dark": {
+      "src": "/capabilities/block-subtitles-1-dark.webp",
+      "width": 2644,
+      "height": 1914,
+      "srcSet": "/capabilities/block-subtitles-1-dark.webp 2644w"
+    }
+  },
+  "2": {
+    "src": "/capabilities/block-subtitles-2.webp",
+    "width": 1729,
+    "height": 836,
+    "srcSet": "/capabilities/block-subtitles-2.webp 1729w",
+    "dark": {
+      "src": "/capabilities/block-subtitles-2-dark.webp",
+      "width": 1729,
+      "height": 836,
+      "srcSet": "/capabilities/block-subtitles-2-dark.webp 1729w"
+    }
+  },
+  "3": {
+    "src": "/capabilities/block-subtitles-3.webp",
+    "width": 1937,
+    "height": 1102,
+    "srcSet": "/capabilities/block-subtitles-3.webp 1937w",
+    "dark": {
+      "src": "/capabilities/block-subtitles-3-dark.webp",
+      "width": 1937,
+      "height": 1102,
+      "srcSet": "/capabilities/block-subtitles-3-dark.webp 1937w"
+    }
+  }
+}

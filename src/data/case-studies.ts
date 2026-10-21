@@ -2,11 +2,12 @@ import { capabilities, type ArticleId } from "./capabilities";
 
 type Presentation = {
   slug: string;
-  category: "core" | "supporting" | "unlisted";
+  category: "core" | "supporting" | "article-only" | "unlisted";
   order: number;
   cardTitle?: string;
   cardDescription?: string;
   image?: string;
+  ogImage?: string;
 };
 
 const presentation: Record<ArticleId, Presentation> = {
@@ -51,6 +52,10 @@ const presentation: Record<ArticleId, Presentation> = {
   },
   "portfolio-design-system": { slug: "portfolio-design-system", category: "unlisted", order: 7 },
   "complex-product-decisions": { slug: "complex-product-decisions", category: "unlisted", order: 8 },
+  "block-subtitles": {
+    slug: "block-subtitles", category: "article-only", order: 9,
+    ogImage: "/og/capabilities.png",
+  },
 };
 
 export const caseStudies = capabilities.flatMap((capability) =>
@@ -62,7 +67,7 @@ export const caseStudies = capabilities.flatMap((capability) =>
       capabilityId: capability.id,
       href: `/case-studies/${card.slug}`,
       legacyPath: `/capabilities/${capability.id}/${article.id}`,
-      ogImage: `/og/capabilities/${capability.id}/${article.id}.png`,
+      ogImage: card.ogImage ?? `/og/capabilities/${capability.id}/${article.id}.png`,
     };
   }),
 ).filter((study) => study.category !== "unlisted")

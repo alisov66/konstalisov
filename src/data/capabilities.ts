@@ -18,6 +18,13 @@ export const capabilities = [
         description:
           "Redesigning data mapping as a guided experience that helps researchers connect biological variables, understand compatibility, and configure workflows with confidence.",
       },
+      {
+        id: "block-subtitles",
+        label: "Block subtitles and search",
+        title: "Finding the right analysis in a growing workspace",
+        description:
+          "Making similarly named analysis blocks distinguishable through configuration-based subtitles and search by title, subtitle, and tags in Platforma’s workspace.",
+      },
     ],
   },
   {
