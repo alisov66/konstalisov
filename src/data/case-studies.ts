@@ -2,7 +2,7 @@ import { capabilities, type ArticleId } from "./capabilities";
 
 type Presentation = {
   slug: string;
-  category: "core" | "supporting" | "article-only" | "unlisted";
+  category: "core" | "supporting" | "unlisted";
   order: number;
   cardTitle?: string;
   cardDescription?: string;
@@ -53,7 +53,9 @@ const presentation: Record<ArticleId, Presentation> = {
   "portfolio-design-system": { slug: "portfolio-design-system", category: "unlisted", order: 7 },
   "complex-product-decisions": { slug: "complex-product-decisions", category: "unlisted", order: 8 },
   "block-subtitles": {
-    slug: "block-subtitles", category: "article-only", order: 9,
+    slug: "block-subtitles", category: "supporting", order: 9,
+    cardTitle: "Making similar analysis blocks easier to find",
+    cardDescription: "Helping researchers identify and find the right analysis through automatic configuration subtitles and search, without opening blocks one by one.",
     ogImage: "/og/capabilities.png",
   },
 };

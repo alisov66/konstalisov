@@ -171,8 +171,9 @@
 .case-study-grid--supporting { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; }
 /* Adjacent inset strokes share one pixel instead of adding their widths. */
 .case-study-grid:not(.case-study-grid--supporting) > :nth-child(even),
-.case-study-grid--supporting > :not(:first-child) { margin-left: calc(-1 * var(--border-width-thin)); }
+.case-study-grid--supporting > :not(:nth-child(3n + 1)) { margin-left: calc(-1 * var(--border-width-thin)); }
 .case-study-grid:not(.case-study-grid--supporting) > :nth-child(n + 3) { margin-top: calc(-1 * var(--border-width-thin)); }
+.case-study-grid--supporting > :nth-child(n + 4) { margin-top: calc(-1 * var(--border-width-thin)); }
 .case-study-card {
   position: relative;
   display: flex;
@@ -190,9 +191,10 @@
   box-shadow: inset 0 0 0 var(--border-width-medium) var(--border-focus);
 }
 .case-study-card--core:nth-child(1), .case-study-card--supporting:first-child { border-top-left-radius: 0; }
-.case-study-card--core:nth-child(2), .case-study-card--supporting:last-child { border-top-right-radius: 0; }
+.case-study-card--core:nth-child(2), .case-study-card--supporting:nth-child(3) { border-top-right-radius: 0; }
 .case-study-card--core:nth-child(3) { border-bottom-left-radius: 0; }
 .case-study-card--core:nth-child(4) { border-bottom-right-radius: 0; }
+.case-study-card--supporting:nth-child(3n + 1):last-child { border-bottom-left-radius: 0; }
 .case-study-card__media {
   width: 100%;
   aspect-ratio: 744 / 495;
