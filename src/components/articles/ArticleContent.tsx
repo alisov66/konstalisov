@@ -1304,11 +1304,11 @@ function MobileExperiencesArticle() {
       <CopyBlock>
         <Paragraph>
           TR.ENERGY users had to open a separate AML tab to check address risk.
-          I brought the latest result onto asset cards, distinguishing unchecked,
-          current, and outdated reports. After release, stakeholders reported
-          increased use of paid checks. Feedback also revealed different needs:
-          frequent users welcomed the summary, while some less frequent users
-          found it added clutter. I designed a global visibility setting in response.
+          I brought risk scores and report freshness onto asset cards, with clear
+          actions for running a check or viewing a report. After launch, the PM
+          reported an increase in successfully completed paid AML checks. User
+          feedback also revealed different needs, leading me to add a global
+          setting for hiding the summary from the wallet overview.
         </Paragraph>
       </CopyBlock>
       <Gap size={spacing.base[4]} />
@@ -1468,7 +1468,7 @@ function MobileExperiencesArticle() {
       <Gap size={spacing.article.mediaGap} />
       <Gap size={spacing.article.sectionGap} />
 
-      <Section title="Implementation and feedback">
+      <Section title="Delivery and reported results">
         <CopyBlock>
           <Paragraph>
             I worked with frontend engineers through implementation, refining
@@ -1477,17 +1477,19 @@ function MobileExperiencesArticle() {
             and insufficient funds.
           </Paragraph>
           <Paragraph>
-            After the initial release, stakeholders reported more Check-button
-            taps and completed paid checks. I do not have analytics to quantify
-            the increase or isolate the design’s contribution. After the
-            visibility update, I personally read positive feedback shared by
-            support: users welcomed the option to hide AML information.
-            Comprehension and task completion were not measured.
+            After the initial release, the PM reported an increase in the number
+            of successfully completed paid AML checks. This was a positive
+            business signal for the goal of making the existing checking service
+            more visible and accessible from the wallet overview.
           </Paragraph>
           <Paragraph>
-            The project highlighted a trade-off: information valuable to frequent
-            users can add clutter for others. Making the summary optional let users
-            adapt the wallet overview to their needs.
+            The release also showed that AML information had different value for
+            different users. Frequent users welcomed the summary, while some less
+            frequent users found it added clutter. After we shipped the global
+            visibility setting, I personally read positive feedback shared by
+            support about the option to hide AML information. The update preserved
+            direct access for users who needed it and gave others a simpler wallet
+            overview.
           </Paragraph>
         </CopyBlock>
       </Section>
