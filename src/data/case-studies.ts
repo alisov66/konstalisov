@@ -25,8 +25,8 @@ const presentation: Record<ArticleId, Presentation> = {
   },
   "mass-payout": {
     slug: "mass-payout", category: "core", order: 2,
-    cardTitle: "Simplifying payouts to multiple recipients",
-    cardDescription: "Helping teams import recipient lists from spreadsheets, review payout details, and pay multiple people in a single workflow.",
+    cardTitle: "Designing a mobile batch-payment workflow",
+    cardDescription: "Taking teams from individual transfers to a batch workflow, with recipient validation, funding, review, and recovery from interruptions.",
     image: "/case-studies/mass-payout.webp",
   },
   "tron-financial-operations": {

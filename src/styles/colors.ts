@@ -21,6 +21,7 @@ export const colors = {
     fillLight: "var(--button-fill-light)",
     textPrimary: "var(--button-text-primary)",
     textSecondary: "var(--button-text-secondary)",
+    textAccent: "var(--button-text-accent)",
     switcher: {
       default: "var(--switcher-default)",
       hover: "var(--switcher-hover)",

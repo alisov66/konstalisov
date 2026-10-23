@@ -203,13 +203,13 @@
   padding: var(--card-padding-lg);
   transition: padding 300ms ease-out;
 }
-.case-study-card__image { width: 100%; aspect-ratio: 416 / 260; position: relative; background: var(--bg-beige-light-50); transition: background-color 300ms ease-out; }
+.case-study-card__image { width: 100%; aspect-ratio: 416 / 260; position: relative; transition: background-color 300ms ease-out; }
 .case-study-card__image img { display: block; width: 100%; height: 100%; object-fit: contain; transition: opacity 300ms ease-out; }
 .case-study-card__image .case-study-card__image-hover { position: absolute; inset: 0; opacity: 0; }
 .case-study-card__image > .selection-frame { inset: calc(-1 * var(--border-width-medium)); }
 .case-study-card__copy { display: flex; flex-direction: column; gap: var(--card-gap-s); padding: var(--card-padding-m) var(--card-padding-lg) var(--card-padding-lg); }
-.case-study-card__copy h2, .case-study-card__copy h3 { color: var(--text-accent); overflow-wrap: anywhere; }
-.case-study-card__view { color: var(--text-tertiary); padding: 0 var(--card-gap-lg) var(--card-gap-lg); margin-top: auto; }
+.case-study-card__copy h2, .case-study-card__copy h3 { color: var(--text-primary); overflow-wrap: anywhere; transition: color 300ms ease-out; }
+.case-study-card__view { color: var(--text-secondary); padding: 0 var(--card-gap-lg) var(--card-gap-lg); margin-top: auto; transition: color 300ms ease-out; }
 .case-study-card--supporting { gap: var(--card-gap-lg); padding: var(--card-padding-lg); }
 .case-study-card--supporting .case-study-card__copy, .case-study-card--supporting .case-study-card__view { padding: 0; }
 
@@ -260,7 +260,9 @@
   .design-button:not(:disabled):hover > .selection-frame { opacity: 1; }
   .button-navigation:not(:disabled):hover { background: var(--button-fill-accent); color: var(--button-text-primary); }
   .case-study-card:hover { background: var(--bg-gray); }
-  .case-study-card:hover .case-study-card__view { color: var(--text-accent); }
+  .case-study-card:hover .case-study-card__copy h2,
+  .case-study-card:hover .case-study-card__copy h3,
+  .case-study-card:hover .case-study-card__view { color: var(--button-text-accent); }
   .case-study-card:hover .case-study-card__media { padding: var(--card-padding-m); }
   .case-study-card:hover .case-study-card__image { background: var(--bg-gray); }
   .case-study-card:hover .case-study-card__image-default { opacity: 0; }
@@ -327,5 +329,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .design-button::before, .selection-frame, .selection-frame i, .case-study-card, .case-study-card__media, .case-study-card__image, .case-study-card__image img, .button-contact__label,
+  .case-study-card__copy h2, .case-study-card__copy h3, .case-study-card__view,
   .button-navigation, .button-logo, .button-logo__avatar img, .button-logo__text > span, .button-menu-mobile, .button-menu-mobile__line { transition: none; }
 }

@@ -22,6 +22,7 @@
   --button-fill-light: #faf8f2;
   --button-text-primary: #111111;
   --button-text-secondary: #111111;
+  --button-text-accent: #b24e13;
 
   --switcher-default: #ffc450;
   --switcher-hover: #f4d69b;
@@ -213,6 +214,7 @@
 
     --button-fill-light: #353127;
     --button-text-secondary: #f5f2eb;
+    --button-text-accent: #ffa469;
 
     --border-primary: #898276;
     --border-secondary: #514b42;
@@ -236,6 +238,7 @@
   --bg-gray: #292722;
   --button-fill-light: #353127;
   --button-text-secondary: #f5f2eb;
+  --button-text-accent: #ffa469;
   --border-primary: #898276;
   --border-secondary: #514b42;
   --border-tertiary: #39352e;
