@@ -24,11 +24,7 @@
 }
 
 @media (max-width: 1439px) {
-  .hero-illustration { width: 100%; max-width: 400px; height: auto; aspect-ratio: 464 / 209; }
+  .hero-illustration { width: 100%; max-width: 400px; height: auto; aspect-ratio: 464 / 209; align-self: flex-start; }
   .hero-illustration__layout--desktop { display: none; }
   .hero-illustration__layout--stacked { display: block; }
-}
-
-@media (min-width: 768px) and (max-width: 1439px) {
-  .hero-illustration { align-self: flex-start; }
 }
