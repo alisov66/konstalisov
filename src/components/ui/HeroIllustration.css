@@ -1,0 +1,30 @@
+.hero-illustration {
+  position: relative;
+  flex: none;
+  width: 418px;
+  height: 440px;
+  pointer-events: none;
+}
+
+.hero-illustration__layout { position: absolute; inset: 0; display: none; }
+.hero-illustration__layout--desktop { display: block; }
+.hero-illustration__layer {
+  position: absolute;
+  display: block;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+@media (min-width: 1728px) {
+  .hero-illustration { width: 485px; }
+  .hero-illustration__layout--desktop { display: none; }
+  .hero-illustration__layout--xl { display: block; }
+}
+
+@media (max-width: 1439px) {
+  .hero-illustration { width: 100%; height: auto; aspect-ratio: 464 / 209; }
+  .hero-illustration__layout--desktop { display: none; }
+  .hero-illustration__layout--stacked { display: block; }
+}

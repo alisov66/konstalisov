@@ -1,0 +1,371 @@
+{
+  "xl": {
+    "width": 485,
+    "height": 440,
+    "layers": [
+      {
+        "id": "2356:279476",
+        "src": "/hero-illustration/xl-1.svg",
+        "x": 329.814453125,
+        "y": 55.42431640625,
+        "width": 69.82935333251953,
+        "height": 70.07544708251953,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279477",
+        "src": "/hero-illustration/xl-2.svg",
+        "x": 359.42138671875,
+        "y": 204.8662109375,
+        "width": 65.740234375,
+        "height": 93.8447265625,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279478",
+        "src": "/hero-illustration/xl-3.svg",
+        "x": 6.277469158172607,
+        "y": 242.49974060058594,
+        "width": 33.554073333740234,
+        "height": 86.65553283691406,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279479",
+        "src": "/hero-illustration/xl-4.svg",
+        "x": 76.87158203125,
+        "y": 55.23686599731445,
+        "width": 101.97113800048828,
+        "height": 101.75922393798828,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279480",
+        "src": "/hero-illustration/xl-5.svg",
+        "x": 123.00008392333984,
+        "y": 371.29296875,
+        "width": 163.8387908935547,
+        "height": 62.773128509521484,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279481",
+        "src": "/hero-illustration/xl-6.svg",
+        "x": 155.9384765625,
+        "y": 158,
+        "width": 126.12287139892578,
+        "height": 138,
+        "color": "var(--bg-beige-light)"
+      },
+      {
+        "id": "2356:279482",
+        "src": "/hero-illustration/xl-7.svg",
+        "x": 155.4386749267578,
+        "y": 157.5,
+        "width": 127.12236022949219,
+        "height": 139,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279483",
+        "src": "/hero-illustration/xl-8.svg",
+        "x": 187.7666015625,
+        "y": 219.146484375,
+        "width": 62.814453125,
+        "height": 18.7998046875,
+        "color": "var(--text-accent)"
+      },
+      {
+        "id": "2356:279484",
+        "src": "/hero-illustration/xl-9.svg",
+        "x": 33.63671875,
+        "y": 351.35546875,
+        "width": 86.478515625,
+        "height": 31.8720703125,
+        "color": "var(--text-primary)"
+      },
+      {
+        "id": "2356:279485",
+        "src": "/hero-illustration/xl-10.svg",
+        "x": 8.955078125,
+        "y": 182.244140625,
+        "width": 54.7255859375,
+        "height": 31.6318359375,
+        "color": "var(--text-primary)"
+      },
+      {
+        "id": "2356:279486",
+        "src": "/hero-illustration/xl-11.svg",
+        "x": 206.6943359375,
+        "y": 8.5517578125,
+        "width": 90.2216796875,
+        "height": 31.7607421875,
+        "color": "var(--text-primary)"
+      },
+      {
+        "id": "2356:279487",
+        "src": "/hero-illustration/xl-12.svg",
+        "x": 285.642578125,
+        "y": 319.4658203125,
+        "width": 70.697265625,
+        "height": 31.759765625,
+        "color": "var(--text-primary)"
+      },
+      {
+        "id": "2356:279488",
+        "src": "/hero-illustration/xl-13.svg",
+        "x": 362.1572265625,
+        "y": 147.8583984375,
+        "width": 116.8115234375,
+        "height": 34.16015625,
+        "color": "var(--text-primary)"
+      }
+    ]
+  },
+  "desktop": {
+    "width": 418,
+    "height": 440,
+    "layers": [
+      {
+        "id": "2356:279491",
+        "src": "/hero-illustration/desktop-1.svg",
+        "x": 145.938720703125,
+        "y": 151,
+        "width": 126.12287139892578,
+        "height": 138,
+        "color": "var(--bg-beige-light)"
+      },
+      {
+        "id": "2356:279492",
+        "src": "/hero-illustration/desktop-2.svg",
+        "x": 145.4389190673828,
+        "y": 150.5,
+        "width": 127.12236022949219,
+        "height": 139,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279493",
+        "src": "/hero-illustration/desktop-3.svg",
+        "x": 177.6201171875,
+        "y": 212.5,
+        "width": 62.814453125,
+        "height": 18.7998046875,
+        "color": "var(--text-accent)"
+      },
+      {
+        "id": "2356:279494",
+        "src": "/hero-illustration/desktop-4.svg",
+        "x": 163.978515625,
+        "y": 3.400390625,
+        "width": 90.2216796875,
+        "height": 31.759765625,
+        "color": "var(--text-primary)"
+      },
+      {
+        "id": "2356:279495",
+        "src": "/hero-illustration/desktop-5.svg",
+        "x": 265.4248046875,
+        "y": 20.0830078125,
+        "width": 100.9392318725586,
+        "height": 171.4169158935547,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279496",
+        "src": "/hero-illustration/desktop-6.svg",
+        "x": 300.736328125,
+        "y": 204.2802734375,
+        "width": 116.810546875,
+        "height": 34.16015625,
+        "color": "var(--text-primary)"
+      },
+      {
+        "id": "2356:279497",
+        "src": "/hero-illustration/desktop-7.svg",
+        "x": 254.49998474121094,
+        "y": 250.5,
+        "width": 105.50001525878906,
+        "height": 176.0869140625,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279498",
+        "src": "/hero-illustration/desktop-8.svg",
+        "x": 173.076171875,
+        "y": 403.400390625,
+        "width": 70.6982421875,
+        "height": 31.759765625,
+        "color": "var(--text-primary)"
+      },
+      {
+        "id": "2356:279499",
+        "src": "/hero-illustration/desktop-9.svg",
+        "x": 63.326377868652344,
+        "y": 359.4999694824219,
+        "width": 99.21463775634766,
+        "height": 60.98830795288086,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279500",
+        "src": "/hero-illustration/desktop-10.svg",
+        "x": 15.912109375,
+        "y": 313.2880859375,
+        "width": 86.4775390625,
+        "height": 31.8720703125,
+        "color": "var(--text-primary)"
+      },
+      {
+        "id": "2356:279501",
+        "src": "/hero-illustration/desktop-11.svg",
+        "x": 51.6636962890625,
+        "y": 139.49978637695312,
+        "width": 14.727216720581055,
+        "height": 161.01290893554688,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279502",
+        "src": "/hero-illustration/desktop-12.svg",
+        "x": 32.302734375,
+        "y": 93.5283203125,
+        "width": 54.7255859375,
+        "height": 31.6318359375,
+        "color": "var(--text-primary)"
+      },
+      {
+        "id": "2356:279503",
+        "src": "/hero-illustration/desktop-13.svg",
+        "x": 66.212890625,
+        "y": 14.112536430358887,
+        "width": 88.28728485107422,
+        "height": 66.78248596191406,
+        "color": "var(--border-focus)"
+      }
+    ]
+  },
+  "stacked": {
+    "width": 358,
+    "height": 161.2543182373047,
+    "layers": [
+      {
+        "id": "2356:279955",
+        "src": "/hero-illustration/stacked-1.svg",
+        "x": 137.33604431152344,
+        "y": 45.521575927734375,
+        "width": 76.90625,
+        "height": 70.48509216308594,
+        "color": "var(--bg-beige-light)"
+      },
+      {
+        "id": "2356:279956",
+        "src": "/hero-illustration/stacked-2.svg",
+        "x": 136.9502410888672,
+        "y": 45.135772705078125,
+        "width": 77.6781234741211,
+        "height": 71.25697326660156,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279957",
+        "src": "/hero-illustration/stacked-3.svg",
+        "x": 151.7025909423828,
+        "y": 74.84052276611328,
+        "width": 48.464599609375,
+        "height": 14.505022048950195,
+        "color": "var(--text-accent)"
+      },
+      {
+        "id": "2356:279958",
+        "src": "/hero-illustration/stacked-4.svg",
+        "x": 303.303466796875,
+        "y": 68.20547485351562,
+        "width": 54.54659652709961,
+        "height": 24.504302978515625,
+        "color": "var(--text-primary)"
+      },
+      {
+        "id": "2356:279959",
+        "src": "/hero-illustration/stacked-5.svg",
+        "x": 141.5277557373047,
+        "y": 136.015380859375,
+        "width": 67.59817504882812,
+        "height": 24.590951919555664,
+        "color": "var(--text-primary)"
+      },
+      {
+        "id": "2356:279960",
+        "src": "/hero-illustration/stacked-6.svg",
+        "x": 0.3209775686264038,
+        "y": 68.30418395996094,
+        "width": 43.11271286010742,
+        "height": 24.40559959411621,
+        "color": "var(--text-primary)"
+      },
+      {
+        "id": "2356:279961",
+        "src": "/hero-illustration/stacked-7.svg",
+        "x": 63.973995208740234,
+        "y": 0.30892208218574524,
+        "width": 69.6106948852539,
+        "height": 24.504302978515625,
+        "color": "var(--text-primary)"
+      },
+      {
+        "id": "2356:279962",
+        "src": "/hero-illustration/stacked-8.svg",
+        "x": 197.4524383544922,
+        "y": 0.987797200679779,
+        "width": 90.12538146972656,
+        "height": 26.3563289642334,
+        "color": "var(--text-primary)"
+      },
+      {
+        "id": "2356:279963",
+        "src": "/hero-illustration/stacked-9.svg",
+        "x": 142.73707580566406,
+        "y": 7.434635639190674,
+        "width": 47.83614730834961,
+        "height": 11.363466262817383,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279964",
+        "src": "/hero-illustration/stacked-10.svg",
+        "x": 217.96343994140625,
+        "y": 104.51505279541016,
+        "width": 112.7730484008789,
+        "height": 50.07611846923828,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279965",
+        "src": "/hero-illustration/stacked-11.svg",
+        "x": 21.061742782592773,
+        "y": 8.97778034210205,
+        "width": 36.03293991088867,
+        "height": 49.302181243896484,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279966",
+        "src": "/hero-illustration/stacked-12.svg",
+        "x": 16.378040313720703,
+        "y": 103.77369689941406,
+        "width": 117.48597717285156,
+        "height": 45.90727233886719,
+        "color": "var(--border-focus)"
+      },
+      {
+        "id": "2356:279967",
+        "src": "/hero-illustration/stacked-13.svg",
+        "x": 296.18017578125,
+        "y": 13.392605781555176,
+        "width": 39.31663513183594,
+        "height": 45.631099700927734,
+        "color": "var(--border-focus)"
+      }
+    ]
+  }
+}

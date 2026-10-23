@@ -2,6 +2,7 @@ import ButtonPrimary from "@/components/ui/ButtonPrimary";
 import ButtonSecondary from "@/components/ui/ButtonSecondary";
 import ButtonContact from "@/components/ui/ButtonContact";
 import InteractiveDotGrid from "@/components/ui/InteractiveDotGrid";
+import HeroIllustration from "@/components/ui/HeroIllustration";
 import CaseStudyGrid from "./CaseStudyGrid";
 import { coreCaseStudies } from "@/data/case-studies";
 import { emailHref, linkedInHref } from "@/data/contact";
@@ -12,15 +13,18 @@ export function HomeHero() {
   return (
     <section className="home-hero">
       <InteractiveDotGrid variant="hero" />
-      <div className="page-container home-hero__content">
-        <div className="home-hero__text">
-          <h1 style={typeStyle(typography.heading.h1)}>Designing clarity<br />in complex systems</h1>
-          <p style={typeStyle(typography.body.m)}>I take projects from understanding user needs through design to implementation, working closely with product and engineering teams.</p>
+      <div className="page-container home-hero__layout">
+        <div className="home-hero__content">
+          <div className="home-hero__text">
+            <h1 style={typeStyle(typography.heading.h1)}>Designing clarity<br />in complex systems</h1>
+            <p style={typeStyle(typography.body.m)}>I take projects from understanding user needs through design to implementation, working closely with product and engineering teams.</p>
+          </div>
+          <div className="home-hero__actions" data-dot-grid-absorb>
+            <ButtonPrimary href="/case-studies">Case studies</ButtonPrimary>
+            <ButtonSecondary href="/cv">CV</ButtonSecondary>
+          </div>
         </div>
-        <div className="home-hero__actions" data-dot-grid-absorb>
-          <ButtonPrimary href="/case-studies">Case studies</ButtonPrimary>
-          <ButtonSecondary href="/cv">CV</ButtonSecondary>
-        </div>
+        <HeroIllustration />
       </div>
     </section>
   );
