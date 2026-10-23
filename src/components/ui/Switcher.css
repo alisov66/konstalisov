@@ -85,7 +85,6 @@
   --switcher-duration: 200ms;
   --switcher-easing: cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
-.switcher[data-hover="true"] .switcher__track { background: var(--switcher-hover); }
 .switcher[data-hover="true"] .switcher__handle { left: var(--switcher-hover-left); width: var(--base-8); }
 .switcher:focus-visible { outline: none; }
 .switcher:focus-visible .switcher__track { outline: var(--border-width-medium) solid var(--border-focus); }
