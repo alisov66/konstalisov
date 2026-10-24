@@ -10,7 +10,7 @@ const scene = {
   rows: 33,
   spacing: 16,
   dotSize: 4,
-  maxDotSize: 8,
+  maxDotSize: 12,
   maxRotation: Math.PI / 4,
   circleDiameter: 200,
   maskBlur: 80,
