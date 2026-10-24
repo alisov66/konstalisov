@@ -12,6 +12,8 @@ const scene = {
   dotSize: 4,
   maxDotSize: 8,
   maxRotation: Math.PI / 4,
+  maxDisplacement: 6,
+  springFrequency: 22,
   circleDiameter: 200,
   maskBlur: 80,
   followTime: 120,
@@ -53,6 +55,10 @@ const prototypeDots = Array.from({ length: scene.rows }, (_, row) => {
   }));
 }).flat();
 
+function createDot(x: number, y: number) {
+  return { x, y, offsetX: 0, offsetY: 0, velocityX: 0, velocityY: 0 };
+}
+
 export default function InteractiveDotGrid({ variant = "playground" }: { variant?: "playground" | "hero" }) {
   const instructionsId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
@@ -83,7 +89,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
     let sceneWidth = scene.size;
     let sceneHeight = scene.size;
     let grid = { ...scene.grid };
-    let dots = prototypeDots;
+    let dots = prototypeDots.map(({ x, y }) => createDot(x, y));
     let restColor = "";
     let hoverColor = "";
     let hoveredButton: HTMLElement | null = null;
@@ -153,7 +159,9 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
     function draw(time: number) {
       frame = 0;
       if (!width) return;
+      const delta = Math.max(0, Math.min(64, time - previousFrameTime)) / 1000;
       let following = false;
+      let elasticMoving = false;
       if (reducedMotion.matches || !followPointer) {
         buttonMotion = null;
         circleScale = hoveredButton ? 0 : 1;
@@ -243,6 +251,8 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       root!.dataset.active = String(active);
       const shapeCosine = Math.cos(shape.angle);
       const shapeSine = Math.sin(shape.angle);
+      const elasticEnabled = variant === "hero" && followPointer && !reducedMotion.matches;
+      const springDecay = Math.exp(-scene.springFrequency * delta);
 
       for (const context of contexts) {
         context.setTransform(scale, 0, 0, base!.height / sceneHeight, 0, 0);
@@ -266,9 +276,47 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         const influence = proximity * proximity * (3 - 2 * proximity);
         const size = scene.dotSize + (scene.maxDotSize - scene.dotSize) * influence;
         const half = size / 2;
+        const radialDistance = Math.hypot(dx, dy);
+        const displacement = elasticEnabled
+          ? scene.maxDisplacement * influence * Math.min(1, radialDistance / (scene.spacing * 2))
+          : 0;
+        const targetX = radialDistance ? dx / radialDistance * displacement : 0;
+        const targetY = radialDistance ? dy / radialDistance * displacement : 0;
+
+        if (!elasticEnabled) {
+          dot.offsetX = dot.offsetY = dot.velocityX = dot.velocityY = 0;
+        } else if (displacement || dot.offsetX || dot.offsetY || dot.velocityX || dot.velocityY) {
+          // Exact critically damped spring integration avoids frame-rate-dependent overshoot.
+          const offsetX = dot.offsetX - targetX;
+          const offsetY = dot.offsetY - targetY;
+          const impulseX = dot.velocityX + scene.springFrequency * offsetX;
+          const impulseY = dot.velocityY + scene.springFrequency * offsetY;
+          dot.offsetX = targetX + (offsetX + impulseX * delta) * springDecay;
+          dot.offsetY = targetY + (offsetY + impulseY * delta) * springDecay;
+          dot.velocityX = (dot.velocityX - scene.springFrequency * impulseX * delta) * springDecay;
+          dot.velocityY = (dot.velocityY - scene.springFrequency * impulseY * delta) * springDecay;
+
+          const limit = Math.min(1, scene.maxDisplacement / Math.max(scene.maxDisplacement, Math.hypot(dot.offsetX, dot.offsetY)));
+          dot.offsetX *= limit;
+          dot.offsetY *= limit;
+          dot.velocityX *= limit;
+          dot.velocityY *= limit;
+
+          if (Math.hypot(dot.offsetX - targetX, dot.offsetY - targetY) < 0.01
+            && Math.hypot(dot.velocityX, dot.velocityY) < 0.05) {
+            dot.offsetX = targetX;
+            dot.offsetY = targetY;
+            dot.velocityX = dot.velocityY = 0;
+          } else {
+            elasticMoving = true;
+          }
+        }
+
+        const x = dot.x + dot.offsetX;
+        const y = dot.y + dot.offsetY;
 
         if (!influence) {
-          for (const context of contexts) context.rect(dot.x - half, dot.y - half, size, size);
+          for (const context of contexts) context.rect(x - half, y - half, size, size);
           continue;
         }
 
@@ -276,10 +324,10 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         const cosine = Math.cos(angle) * half;
         const sine = Math.sin(angle) * half;
         for (const context of contexts) {
-          context.moveTo(dot.x - cosine + sine, dot.y - sine - cosine);
-          context.lineTo(dot.x + cosine + sine, dot.y + sine - cosine);
-          context.lineTo(dot.x + cosine - sine, dot.y + sine + cosine);
-          context.lineTo(dot.x - cosine - sine, dot.y - sine + cosine);
+          context.moveTo(x - cosine + sine, y - sine - cosine);
+          context.lineTo(x + cosine + sine, y + sine - cosine);
+          context.lineTo(x + cosine - sine, y + sine + cosine);
+          context.lineTo(x - cosine - sine, y - sine + cosine);
           context.closePath();
         }
       }
@@ -302,7 +350,7 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
       } else {
         accentContext!.clearRect(0, 0, sceneWidth, sceneHeight);
       }
-      if (following || pulsing || pulseSettling) requestDraw();
+      if (following || pulsing || pulseSettling || elasticMoving) requestDraw();
     }
 
     function requestDraw() {
@@ -326,10 +374,10 @@ export default function InteractiveDotGrid({ variant = "playground" }: { variant
         grid = { x: 0, y: 0, width, height };
         // Extend the pattern at its original spacing instead of stretching the square prototype.
         dots = Array.from({ length: Math.ceil(height / scene.spacing) }, (_, row) =>
-          Array.from({ length: Math.ceil(width / scene.spacing) }, (_, column) => ({
-            x: column * scene.spacing + scene.spacing / 2,
-            y: row * scene.spacing + scene.spacing / 2,
-          })),
+          Array.from({ length: Math.ceil(width / scene.spacing) }, (_, column) => createDot(
+            column * scene.spacing + scene.spacing / 2,
+            row * scene.spacing + scene.spacing / 2,
+          )),
         ).flat();
       }
       for (const canvas of [base!, accent!]) {
