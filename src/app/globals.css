@@ -17,6 +17,9 @@
   --bg-beige-light-50: rgba(250, 248, 242, 0.5);
   --bg-gray: #fafafa;
 
+  /* Opaque equivalent of the glass surface over the page background. */
+  --browser-surface: color-mix(in srgb, var(--bg-beige-light), var(--bg-beige));
+
   --button-fill-accent: #ffc450;
   --button-fill-accent-muted: #f4d69b;
   --button-fill-light: #faf8f2;
@@ -356,6 +359,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--browser-surface);
 }
 
 html.no-smooth-scroll,
@@ -801,12 +805,19 @@ html.no-smooth-scroll * {
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--bg-beige);
+  background: var(--browser-surface);
   color: var(--text-primary);
   font-family: var(--font-family);
   font-size: var(--body-medium-size);
   line-height: var(--body-medium-line);
   font-weight: var(--body-medium-weight);
+}
+
+.site-canvas {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background: var(--bg-beige);
 }
 
 h1,

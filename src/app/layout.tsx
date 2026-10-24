@@ -81,7 +81,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <JsonLd data={structuredData} />
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <div className="site-canvas">{children}</div>
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
         {process.env.NEXT_PUBLIC_GA_ID ? (
