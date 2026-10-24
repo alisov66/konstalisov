@@ -9,6 +9,7 @@ export const colors = {
 
   background: {
     beige: "var(--bg-beige)",
+    beige1: "var(--bg-beige-1)",
     beigeSoft: "var(--bg-beige-soft)",
     beigeLight: "var(--bg-beige-light)",
     beigeLight50: "var(--bg-beige-light-50)",

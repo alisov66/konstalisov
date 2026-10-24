@@ -12,18 +12,14 @@
   --text-accent: #c9652a;
 
   --bg-beige: #eceae6;
+  --bg-beige-1: rgba(236, 234, 230, 0.01); /* Figma: --bg-beige-1% */
   --bg-beige-soft: #f5f2eb;
   --bg-beige-light: #faf8f2;
   --bg-beige-light-50: rgba(250, 248, 242, 0.5);
   --bg-gray: #fafafa;
 
-  /* Opaque equivalent of the glass surface over the page background. */
-  --browser-surface: color-mix(in srgb, var(--bg-beige-light), var(--bg-beige));
-
-  --safe-area-top: env(safe-area-inset-top, 0px);
-  --safe-area-right: env(safe-area-inset-right, 0px);
-  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
-  --safe-area-left: env(safe-area-inset-left, 0px);
+  /* Opaque base for the 1% beige header and footer surfaces. */
+  --browser-surface: var(--bg-beige);
 
   --button-fill-accent: #ffc450;
   --button-fill-accent-muted: #f4d69b;
@@ -215,6 +211,7 @@
     --text-accent: #ffa469;
 
     --bg-beige: #181714;
+    --bg-beige-1: rgba(24, 23, 20, 0.01);
     --bg-beige-soft: #201f1b;
     --bg-beige-light: #292722;
     --bg-beige-light-50: rgba(41, 39, 34, 0.5);
@@ -240,6 +237,7 @@
   --text-inverted: #181714;
   --text-accent: #ffa469;
   --bg-beige: #181714;
+  --bg-beige-1: rgba(24, 23, 20, 0.01);
   --bg-beige-soft: #201f1b;
   --bg-beige-light: #292722;
   --bg-beige-light-50: rgba(41, 39, 34, 0.5);
@@ -822,12 +820,7 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: var(--safe-area-top) var(--safe-area-right) 0 var(--safe-area-left);
   background: var(--bg-beige);
-}
-
-.site-canvas:not(:has(.site-footer)) {
-  padding-bottom: var(--safe-area-bottom);
 }
 
 h1,
