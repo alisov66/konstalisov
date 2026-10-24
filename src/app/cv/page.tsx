@@ -17,74 +17,71 @@ export const metadata = pageMetadata({
   image: "/og/cv.png",
 });
 
-const coreExpertise = [
-  "Complex workflow design",
-  "Enterprise software",
-  "System thinking",
-  "Information architecture",
-  "Design systems",
-  "Cross-functional collaboration",
-  "Product discovery",
-  "Technical documentation",
-];
-
 const experience = [
   {
     company: "MiLaboratories",
+    description:
+      "Biotechnology software company developing tools for biological data analysis, including Platforma.",
     roles: [
       {
         title: "Product Designer",
-        dates: "May 2025 \u2014 Aug 2026",
+        dates: "May 2025 — Aug 2026",
         summary:
-          "Sole product designer for an enterprise scientific software ecosystem, responsible for desktop and web experiences, shared interface components, and the public product website.",
+          "Sole product designer for Platforma, scientific software for biologists and bioinformaticians. Owned desktop and web experiences, shared interface components, and the product website, collaborating with scientists, engineers, and company leadership.",
         details: [
-          "Designed analytical workspaces that let researchers compare complex data, configure visualizations, and adjust layouts and information density to suit different tasks.",
-          "Used recordings of customer sessions and feedback from scientists to identify interaction problems, make compatibility rules visible earlier, and revise restrictions that limited valid choices.",
-          "Built reusable components and documented their behavior across application views, dialogs, and sheets, supporting both internal engineers and developers using the SDK.",
-          "Redesigned the product website\u2019s information architecture and built it in Framer, creating distinct paths for scientific and technical audiences. Collaborated with the CEO on content and technical accuracy, with engineering support for form integrations.",
+          "Designed a sequence-analysis workspace from the ground up, with two task-specific presets and adjustable layouts for exploring sequence alignments and lineage relationships.",
+          "Shaped research questions and observation priorities for CEO-led customer sessions involving 50+ biologists and bioinformaticians. Used session recordings and scientist feedback to redesign data selection and visualization configuration, making compatibility rules visible before selection and removing restrictions that blocked valid choices.",
+          "Introduced automatic, editable block subtitles and search to help users distinguish similar analyses without opening each block.",
+          "Built 20+ reusable interface components and documented their behavior for internal engineers and developers building blocks with Platforma’s SDK.",
+          "Redesigned the product website’s information architecture and built it in Framer, creating distinct paths for scientific and technical audiences. Worked with the CEO on content and engineers on form integrations.",
         ],
       },
     ],
   },
   {
     company: "Alliance Professional Developers (APD)",
+    description:
+      "Software development company building web and mobile products for clients across financial services, logistics, and other industries.",
     roles: [
       {
         title: "Product Designer",
-        dates: "Jul 2023 \u2014 May 2025",
+        dates: "Jul 2023 — May 2025",
         summary:
-          "Owned end-to-end design across web and mobile products, including B2B platforms, CRM and internal tools, logistics, fintech, accommodation, and dating apps. Worked closely with founders, product managers, and engineers from problem definition through implementation.",
+          "Owned end-to-end design across financial services, logistics, and operational products. Worked with founders, product managers, and engineers to define problems, shape requirements, and deliver web and mobile experiences.",
         details: [
-          "Helped define product requirements and proposed solutions based on user needs, stakeholder input, and technical constraints.",
-          "Structured complex workflows and information architecture, defining navigation, interaction rules, and validation and recovery states.",
-          "Used prototypes to review proposed workflows with stakeholders, then revised designs using customer feedback and findings from implementation.",
-          "Worked closely with engineers through delivery, documenting behavior, reviewing implemented interfaces, and refining components and edge cases.",
+          "Designed TR.ENERGY mobile workflows for transfers, staking, multiple accounts, and paid AML checks. Added risk scores and report freshness to wallet asset cards; the PM reported more successfully completed paid checks after release.",
+          "Designed Crypto Office batch payouts covering funding, recipient entry, review, and draft saving. Added spreadsheet import and Google Sheets support based on feedback from 15 customer representatives working with teams of 50–100 people.",
+          "Designed a CRM and customer-facing application for a logistics and freight business. Mapped user journeys and detailed flows to connect internal operations with customer needs and align requirements with product managers and engineers.",
+          "Conducted 100+ usability testing sessions across my tenure at APD, evaluating workflows with customers and identifying interaction problems.",
+          "Mentored two designers through weekly design reviews and supported engineers with interaction documentation and implementation feedback.",
         ],
       },
       {
         title: "UX/UI Designer",
-        dates: "Dec 2020 \u2014 Jun 2023",
+        dates: "Dec 2020 — Jun 2023",
         summary:
-          "Designed web and mobile interfaces across business software and consumer applications, adapting layouts and interactions to different audiences and product requirements.",
+          "Designed web and mobile interfaces for business software and consumer applications, translating requirements into user flows, prototypes, and detailed designs for development.",
         details: [
-          "Translated business requirements into user flows, wireframes, interactive prototypes, and detailed interface designs.",
-          "Established reusable UI patterns and component foundations for consistent experiences across screens and devices.",
-          "Worked with product managers and developers to resolve interaction details and adapt designs to technical constraints.",
+          "Designed 1,000+ screens across multiple projects, creating reusable UI components and responsive layouts to maintain consistency within each product.",
+          "Structured navigation and screen flows through wireframes and interactive prototypes. Presented design rationale to product managers and stakeholders and refined solutions based on their feedback.",
+          "Checked color contrast and keyboard interactions during design to support accessibility before developer handoff.",
+          "Prepared developer handoffs specifying interface states and interaction behavior, resolving design details with engineers as technical constraints emerged.",
         ],
       },
     ],
   },
   {
     company: "Freelance",
+    description: null,
     roles: [
       {
         title: "UX/UI Designer",
-        dates: "Apr 2017 \u2014 Dec 2020",
+        dates: "Apr 2017 — Dec 2020",
         summary:
-          "Designed websites and digital experiences for small businesses across hospitality, retail, and creative industries.",
+          "Worked directly with small business owners in hospitality, retail, and creative industries, managing website design projects from initial brief through developer handoff.",
         details: [
-          "Worked directly with business owners to define goals, organize content, and design responsive websites from initial structure through visual design.",
-          "Managed project scope, client feedback, and developer handoff throughout delivery.",
+          "Designed 30+ responsive websites, translating business goals into clear site structures, content hierarchies, and visual designs for desktop and mobile.",
+          "Managed project scope and client feedback, prepared designs for development, and worked with developers to resolve implementation details.",
         ],
       },
     ],
@@ -120,12 +117,28 @@ const certifications = [
 const tools = [
   {
     title: "Design",
+    tags: [
+      "Complex workflow design",
+      "System thinking",
+      "Product discovery",
+      "Interaction design",
+      "Information architecture",
+      "Design systems",
+      "Prototyping",
+      "User flows",
+      "Technical documentation",
+      "Product design",
+      "Usability testing",
+    ],
+  },
+  {
+    title: "Design tools",
     tags: ["Figma", "FigJam", "Adobe Illustrator", "Rive", "Spline"],
   },
   {
     title: "AI-assisted development",
     tags: ["Figma agent", "ChatGPT", "Codex", "VS Code"],
-    note: "Using AI-assisted development to prototype ideas, understand implementation, and collaborate more effectively with engineers. My portfolio was designed by me and built using AI-assisted workflows with Next.js, Tailwind CSS, GitHub, and Vercel.",
+    note: "Designed and built my portfolio with AI-assisted workflows using Next.js and Tailwind CSS, deployed on Vercel.",
   },
   {
     title: "Collaboration",
@@ -257,30 +270,33 @@ export default function CvPage() {
               <h1 id="cv-title" style={typeStyle(typography.heading.h1)}>Konstantin Alisov</h1>
               <div className="cv-hero__info" style={typeStyle(typography.body.m)}>
                 <p style={{ fontWeight: typography.fontWeight.semibold }}>Senior Product Designer</p>
-                <p className="cv-caption">Bilbao, Spain</p>
+                <p className="cv-caption">Bilbao, Spain • Open to remote opportunities and relocation.</p>
               </div>
             </div>
             <p className="cv-hero__description" style={typeStyle(typography.body.m)}>
-              Product designer with 9+ years of experience across web and mobile products.
-              <br />I turn complex requirements into clear workflows and reusable interface patterns,
-              working closely with product and engineering teams. My work spans understanding user
-              needs, interaction design, design systems, and implementation review.
+              Senior Product Designer with 9+ years of experience across B2B and B2C web and mobile products,
+              including scientific software and financial services. I turn complex requirements into clear
+              workflows and reusable interface systems, owning design from discovery through implementation
+              in close collaboration with product and engineering teams. My experience includes building
+              analytical workspaces from the ground up, conducting customer usability testing, and translating
+              research findings into interaction improvements.
             </p>
             <CvDownloadButton href={cvPdfHref} />
           </div>
         </div>
       </section>
 
-      <CvSection id="cv-expertise" title="Core expertise">
-        <div className="cv-row cv-expertise"><SkillTags tags={coreExpertise} /></div>
-      </CvSection>
-
       <CvSection id="cv-experience" title="Experience">
         {experience.map((company, index) => (
           <section key={company.company} aria-labelledby={`cv-company-${index}`}>
-            <div className="cv-row cv-company">
+            <div className={`cv-row cv-company${company.description ? " cv-company--with-description" : ""}`}>
               <h3 id={`cv-company-${index}`} style={typeStyle(typography.heading.h4)}>{company.company}</h3>
             </div>
+            {company.description ? (
+              <div className="cv-company-description">
+                <p style={typeStyle(typography.body.m)}>{company.description}</p>
+              </div>
+            ) : null}
             {company.roles.map((role) => <ExperienceRole key={role.title} {...role} />)}
           </section>
         ))}
@@ -294,15 +310,7 @@ export default function CvPage() {
         </div>
       </CvSection>
 
-      <CvSection id="cv-certifications" title="Certifications">
-        <div className="cv-entries">
-          {certifications.map((item) => (
-            <CompactEntry key={item.title} title={item.title} caption={item.issuer} dates={item.dates} />
-          ))}
-        </div>
-      </CvSection>
-
-      <CvSection id="cv-tools" title="Tools & workflow">
+      <CvSection id="cv-tools" title="Skills & technical competencies">
         {tools.map((group) => (
           <section className="cv-row cv-tool-group" key={group.title} aria-label={group.title}>
             <h3 style={typeStyle(typography.heading.h5)}>{group.title}</h3>
@@ -310,6 +318,14 @@ export default function CvPage() {
             {group.note ? <div className="cv-tool-group__note"><AccentSummary>{group.note}</AccentSummary></div> : null}
           </section>
         ))}
+      </CvSection>
+
+      <CvSection id="cv-certifications" title="Certifications">
+        <div className="cv-entries">
+          {certifications.map((item) => (
+            <CompactEntry key={item.title} title={item.title} caption={item.issuer} dates={item.dates} />
+          ))}
+        </div>
       </CvSection>
 
       <CvSection id="cv-languages" title="Languages">
