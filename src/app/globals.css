@@ -20,6 +20,11 @@
   /* Opaque equivalent of the glass surface over the page background. */
   --browser-surface: color-mix(in srgb, var(--bg-beige-light), var(--bg-beige));
 
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-right: env(safe-area-inset-right, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-left: env(safe-area-inset-left, 0px);
+
   --button-fill-accent: #ffc450;
   --button-fill-accent-muted: #f4d69b;
   --button-fill-light: #faf8f2;
@@ -817,7 +822,12 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
+  padding: var(--safe-area-top) var(--safe-area-right) 0 var(--safe-area-left);
   background: var(--bg-beige);
+}
+
+.site-canvas:not(:has(.site-footer)) {
+  padding-bottom: var(--safe-area-bottom);
 }
 
 h1,

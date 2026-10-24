@@ -8,7 +8,7 @@
   padding-inline: var(--wrap-padding-lg);
   padding-bottom: var(--wrap-padding-lg);
   border-top: var(--border-width-thin) solid var(--border-secondary);
-  scroll-margin-top: var(--navigation-height);
+  scroll-margin-top: calc(var(--navigation-height) + var(--safe-area-top));
 }
 
 .section-title {
@@ -95,7 +95,7 @@
   position: fixed;
   inset: 0 0 auto;
   z-index: 50;
-  padding: var(--block-padding-m) var(--wrap-padding-lg);
+  padding: calc(var(--block-padding-m) + var(--safe-area-top)) calc(var(--wrap-padding-lg) + var(--safe-area-right)) var(--block-padding-m) calc(var(--wrap-padding-lg) + var(--safe-area-left));
   background: color-mix(in srgb, var(--bg-beige) 1%, transparent);
   box-shadow: inset 0 calc(-1 * var(--border-width-thin)) var(--border-secondary);
   -webkit-backdrop-filter: blur(25px) saturate(120%);
@@ -145,7 +145,8 @@
 
 .site-footer {
   background: var(--bg-beige-light-50);
-  padding: var(--block-padding-lg) var(--wrap-padding-lg);
+  margin-inline: calc(-1 * var(--safe-area-left)) calc(-1 * var(--safe-area-right));
+  padding: var(--block-padding-lg) calc(var(--wrap-padding-lg) + var(--safe-area-right)) calc(var(--block-padding-lg) + var(--safe-area-bottom)) calc(var(--wrap-padding-lg) + var(--safe-area-left));
   border-top: var(--border-width-thin) solid var(--border-secondary);
   color: var(--text-secondary);
 }
@@ -288,7 +289,7 @@
 
 @media (max-width: 1439px) {
   .case-studies-page__title { margin-top: var(--base-4); }
-  .site-header { padding: var(--base-3) var(--base-4); }
+  .site-header { padding: calc(var(--base-3) + var(--safe-area-top)) calc(var(--base-4) + var(--safe-area-right)) var(--base-3) calc(var(--base-4) + var(--safe-area-left)); }
   .site-header__inner { flex-direction: column; align-items: stretch; gap: 0; }
   .site-header__row { flex: none; justify-content: space-between; }
   .site-header__toggle { display: flex; }
