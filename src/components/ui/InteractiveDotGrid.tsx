@@ -14,7 +14,7 @@ const scene = {
   maxRotation: Math.PI / 4,
   maxDisplacement: 6,
   springFrequency: 22,
-  circleDiameter: 100,
+  circleDiameter: 200,
   maskBlur: 80,
   followTime: 120,
   shapeTime: 65,

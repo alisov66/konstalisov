@@ -10,7 +10,7 @@
 
 .interactive-dot-grid--hero {
   --dot-grid-rest: var(--bg-beige);
-  --dot-grid-hover: var(--button-fill-accent);
+  --dot-grid-hover: var(--bg-beige-light);
   position: absolute;
   inset: 0;
   width: 100%;
