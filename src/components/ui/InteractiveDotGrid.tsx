@@ -14,7 +14,7 @@ const scene = {
   maxRotation: Math.PI / 4,
   maxDisplacement: 6,
   springFrequency: 22,
-  circleDiameter: 200,
+  circleDiameter: 100,
   maskBlur: 80,
   followTime: 120,
   shapeTime: 65,
@@ -28,7 +28,7 @@ const scene = {
   buttonExitTime: 300,
   pulseDelay: 3000,
   pulsePeriod: 2400,
-  pulseAmplitude: 0.15,
+  pulseAmplitude: 0.08,
 };
 
 // Resolve CSS ease-in (0.42, 0, 1, 1); ease-out is its time-reversed curve.
