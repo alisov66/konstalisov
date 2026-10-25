@@ -15,8 +15,8 @@ export default function CaseStudyCard({ study, headingLevel = 3 }: { study: Case
         <div className="case-study-card__media">
           <div className="case-study-card__image">
             {/* The illustration repeats the linked title; keep the accessible name concise. */}
-            <ThemeImage {...image} className="case-study-card__image-default" alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) calc(100vw - 56px), (max-width: 1439px) calc((100vw - 80px) / 2 - 40px), 664px" />
-            {hoverImage && <ThemeImage {...hoverImage} className="case-study-card__image-hover" alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) calc(100vw - 56px), (max-width: 1439px) calc((100vw - 80px) / 2 - 32px), 704px" />}
+            <ThemeImage {...image} className="case-study-card__image-default" alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) calc(100vw - 56px), (max-width: 1439px) calc((100vw - 80px) / 2 - 40px), (max-width: 1727px) calc((100vw - 240px) / 4 - 80px), 292px" />
+            {hoverImage && <ThemeImage {...hoverImage} className="case-study-card__image-hover" alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) calc(100vw - 56px), (max-width: 1439px) calc((100vw - 80px) / 2 - 32px), (max-width: 1727px) calc((100vw - 240px) / 4 - 40px), 332px" />}
             <SelectionFrame />
           </div>
         </div>
