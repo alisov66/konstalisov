@@ -63,7 +63,7 @@ export default function NavigationHeader({ className }: NavigationHeaderProps) {
               </ButtonNavigation>
             ))}
           </nav>
-          <Switcher />
+          <div className="site-header__switcher"><Switcher /></div>
         </div>
       </div>
     </header>
