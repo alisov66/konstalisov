@@ -1,18 +1,21 @@
 import Link from "next/link";
 import type { CaseStudy } from "@/data/case-studies";
 import artworks from "@/data/case-study-artwork.json";
-import { typography, typeStyle } from "@/styles";
+import { effects, typography, typeStyle } from "@/styles";
 import CaseStudyArtwork from "./CaseStudyArtwork";
 
 export default function CaseStudyCard({ study, headingLevel = 3 }: { study: CaseStudy; headingLevel?: 2 | 3 }) {
   const Heading = headingLevel === 2 ? "h2" : "h3";
   const artwork = artworks[study.slug as keyof typeof artworks];
+  const texture = study.category === "core"
+    ? { default: effects.texture.l1, hover: effects.texture.l2 }
+    : { default: effects.texture.m1, hover: effects.texture.m2 };
   return (
     <Link href={study.href} className={`case-study-card case-study-card--${study.category}`} aria-labelledby={`card-${study.slug}`}>
       <div className="case-study-card__content">
         {artwork && (
           <div className="case-study-card__media">
-            <CaseStudyArtwork artwork={artwork} />
+            <CaseStudyArtwork artwork={artwork} texture={texture} />
           </div>
         )}
         <div className="case-study-card__copy">

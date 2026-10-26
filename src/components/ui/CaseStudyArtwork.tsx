@@ -1,9 +1,23 @@
 "use client";
 
 import { useEffect, useId, useMemo, useRef } from "react";
+import type { TexturePreset, TextureTransition } from "@/styles/effects";
 
 type MorphTarget = { key: string; attribute: string; from: string; to: string };
-export type CardArtwork = { svg: string; targets: readonly MorphTarget[] };
+export type CardArtwork = {
+  svg: string;
+  targets: readonly MorphTarget[];
+  textureBounds: { x: number; y: number; width: number; height: number };
+};
+
+function textureValues(preset: TexturePreset) {
+  // Match Figma's native SVG export: reciprocal size and twice the radius.
+  return {
+    frequency: `${Math.fround(1 / Math.fround(preset.size.x))} ${Math.fround(1 / Math.fround(preset.size.y))}`,
+    scale: String(preset.radius * 2),
+    output: preset.clipToShape ? "clippedImage" : "displacedImage",
+  };
+}
 
 // CSS ease-out: cubic-bezier(0, 0, .58, 1), shared by the Figma card transitions.
 function easeOut(progress: number) {
@@ -32,10 +46,28 @@ function interpolate(target: MorphTarget, progress: number) {
   return target.to.split(" ").map((value, index) => from[index] + (Number(value) - from[index]) * progress).join(" ");
 }
 
-export default function CaseStudyArtwork({ artwork }: { artwork: CardArtwork }) {
+export default function CaseStudyArtwork({ artwork, texture }: { artwork: CardArtwork; texture: TextureTransition }) {
   const root = useRef<HTMLDivElement>(null);
   const id = useId();
-  const svg = useMemo(() => artwork.svg.replaceAll("__ARTWORK_ID__", `artwork-${id.replace(/[^a-zA-Z0-9_-]/g, "")}`), [artwork.svg, id]);
+  const svg = useMemo(() => {
+    const initial = textureValues(texture.default);
+    const bounds = artwork.textureBounds;
+    // Reserve room for both states so a larger radius is not clipped mid-morph.
+    const padding = Math.max(texture.default.radius, texture.hover.radius);
+    const values = {
+      __ARTWORK_ID__: `artwork-${id.replace(/[^a-zA-Z0-9_-]/g, "")}`,
+      __TEXTURE_FREQUENCY__: initial.frequency,
+      __TEXTURE_SCALE__: initial.scale,
+      __TEXTURE_OUTPUT__: initial.output,
+      __TEXTURE_X__: String(bounds.x - padding),
+      __TEXTURE_Y__: String(bounds.y - padding),
+      __TEXTURE_WIDTH__: String(bounds.width + padding * 2),
+      __TEXTURE_HEIGHT__: String(bounds.height + padding * 2),
+    };
+    let result = artwork.svg;
+    for (const [placeholder, value] of Object.entries(values)) result = result.replaceAll(placeholder, value);
+    return result;
+  }, [artwork, texture, id]);
 
   useEffect(() => {
     const element = root.current;
@@ -44,6 +76,13 @@ export default function CaseStudyArtwork({ artwork }: { artwork: CardArtwork }) 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const canHover = window.matchMedia("(hover: hover)");
     const targets = artwork.targets.map((target) => ({ ...target, node: element.querySelector(`[data-morph="${target.key}"]`) }));
+    const from = textureValues(texture.default);
+    const to = textureValues(texture.hover);
+    targets.push(
+      { key: "texture-frequency", attribute: "baseFrequency", from: from.frequency, to: to.frequency, node: element.querySelector('[data-texture="frequency"]') },
+      { key: "texture-radius", attribute: "scale", from: from.scale, to: to.scale, node: element.querySelector('[data-texture="displacement"]') },
+    );
+    const output = element.querySelector('[data-texture="output"]');
     let frame = 0;
     let progress = 0;
     let destination = 0;
@@ -53,6 +92,7 @@ export default function CaseStudyArtwork({ artwork }: { artwork: CardArtwork }) 
     const render = (value: number) => {
       progress = value;
       for (const target of targets) target.node?.setAttribute(target.attribute, interpolate(target, value));
+      output?.setAttribute("in", value < .5 ? from.output : to.output);
     };
     const tick = (now: number) => {
       const elapsed = Math.min(1, (now - start) / duration);
@@ -92,7 +132,7 @@ export default function CaseStudyArtwork({ artwork }: { artwork: CardArtwork }) 
       reducedMotion.removeEventListener("change", motionChange);
       canHover.removeEventListener("change", hoverChange);
     };
-  }, [artwork]);
+  }, [artwork, texture]);
 
   // Only trusted, locally exported Figma SVGs enter this component, never user HTML.
   return <div ref={root} className="case-study-artwork" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svg }} />;
