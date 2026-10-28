@@ -173,6 +173,14 @@ export const typography = {
     },
   },
 
+  link: {
+    s: {
+      ...rawTypography.body.s,
+      fontWeight: fontWeight.regular,
+      paragraphSpacing: 4,
+    },
+  },
+
   button: {
     m: {
       ...rawTypography.button.m,

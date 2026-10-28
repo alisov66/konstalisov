@@ -164,6 +164,8 @@
   --card-padding-m: 20px;
   --block-padding-lg: 40px;
   --block-padding-m: 20px;
+  --block-gap-lg: 24px;
+  --block-gap-m: 12px;
   --card-gap-lg: 40px;
   --card-gap-m: 20px;
   --card-gap-s: 12px;
@@ -294,6 +296,8 @@
     --card-padding-m: 16px;
     --block-padding-lg: 28px;
     --block-padding-m: 16px;
+    --block-gap-lg: 20px;
+    --block-gap-m: 12px;
     --card-gap-lg: 20px;
     --card-gap-m: 16px;
     --card-gap-s: 8px;
@@ -346,6 +350,8 @@
     --card-padding-m: 12px;
     --block-padding-lg: 20px;
     --block-padding-m: 12px;
+    --block-gap-lg: 16px;
+    --block-gap-m: 8px;
     --card-gap-lg: 12px;
     --card-gap-m: 12px;
     --card-gap-s: 8px;

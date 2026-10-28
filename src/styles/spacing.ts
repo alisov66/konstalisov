@@ -51,6 +51,7 @@ export const spacing = {
   },
   block: {
     padding: { lg: "var(--block-padding-lg)", m: "var(--block-padding-m)" },
+    gap: { lg: "var(--block-gap-lg)", m: "var(--block-gap-m)" },
   },
   card: {
     padding: { lg: "var(--card-padding-lg)", m: "var(--card-padding-m)" },
