@@ -31,7 +31,7 @@ export function MyWorkSection() {
     <section className="page-band" id="work" aria-labelledby="my-work-title">
       <div className="page-container">
         <div className="section-title">
-          <h2 id="my-work-title" style={typeStyle(typography.heading.h2)}>My work</h2>
+          <h2 id="my-work-title" style={typeStyle(typography.heading.h2)}>Selected case studies</h2>
           <p style={typeStyle(typography.body.m)}>Four projects exploring the problems, decisions,<br className="desktop-break" /> and iterations behind the finished product.</p>
         </div>
         <CaseStudyGrid studies={coreCaseStudies} variant="featured" />
