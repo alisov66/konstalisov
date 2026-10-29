@@ -225,24 +225,46 @@
 .case-study-card--supporting .case-study-card__copy { flex: 1; padding-left: 0; }
 .case-study-card--supporting .case-study-card__view { text-align: right; }
 
-.workflow-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; list-style: none; }
+.how-i-work .section-title { align-items: center; text-align: center; }
+.how-i-work .section-title p { max-width: calc(var(--max-width-text) + var(--base-2)); }
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) minmax(0, 1.5fr);
+  align-items: stretch;
+  list-style: none;
+  background: var(--bg-beige);
+}
+.workflow-grid > * {
+  min-width: 0;
+  box-shadow: inset 0 0 0 var(--border-width-thin) var(--border-secondary);
+}
+.workflow-grid > :not(:nth-child(1), :nth-child(4), :nth-child(8)) { margin-left: calc(-1 * var(--border-width-thin)); }
+.workflow-grid > :nth-child(n + 4) { margin-top: calc(-1 * var(--border-width-thin)); }
 .workflow-card {
   display: flex;
   flex-direction: column;
-  min-width: 0;
-  gap: var(--card-padding-lg);
-  padding: var(--card-gap-lg) var(--card-padding-lg);
-  background: var(--bg-beige);
-  box-shadow: inset 0 0 0 var(--border-width-thin) var(--border-secondary);
+  align-items: flex-start;
+  grid-column: span 2;
+  gap: var(--card-gap-s);
+  padding: var(--card-padding-m);
 }
-.workflow-card:nth-child(odd) { background: var(--bg-beige-soft); }
-.workflow-card:not(:nth-child(3n + 1)) { margin-left: calc(-1 * var(--border-width-thin)); }
-.workflow-card:nth-child(n + 4) { margin-top: calc(-1 * var(--border-width-thin)); }
-.workflow-card__number { width: 100%; color: var(--text-tertiary); }
-.workflow-card:nth-child(3n + 2) .workflow-card__number { text-align: center; }
-.workflow-card:nth-child(3n) .workflow-card__number { text-align: right; }
-.workflow-card__text { display: flex; flex-direction: column; gap: var(--card-gap-m); }
-.workflow-card__text h3, .workflow-card__text p { overflow-wrap: anywhere; }
+.workflow-card:is(:nth-child(3), :nth-child(10)) { grid-column: span 3; }
+.workflow-card h3, .workflow-card p { width: 100%; overflow-wrap: anywhere; }
+.workflow-card p { max-width: var(--max-width-text); }
+.workflow-artwork {
+  position: relative;
+  container-type: size;
+  --workflow-artwork-reference-width: 228.92308px;
+}
+.workflow-artwork__canvas {
+  position: absolute;
+  inset: 0;
+}
+.workflow-artwork__image {
+  transform: translate(50cqw, 50cqh)
+    scale(calc(100cqw / var(--workflow-artwork-reference-width)))
+    translate(var(--workflow-artwork-offset-x), var(--workflow-artwork-offset-y));
+}
 
 .home-about { display: grid; grid-template-columns: 430px minmax(0, 1fr); border: var(--border-width-thin) solid var(--border-secondary); }
 .home-about__photo { display: flex; align-items: center; justify-content: center; padding: var(--block-padding-lg); border-right: var(--border-width-thin) solid var(--border-secondary); }
@@ -314,10 +336,6 @@
 .button-menu-mobile:not(:disabled):is(:active, [data-state="press"]) { background: var(--button-fill-accent); color: var(--button-text-primary); }
 
 @media (max-width: 1439px) {
-  .workflow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .workflow-card:nth-child(odd) { margin-left: 0; }
-  .workflow-card:nth-child(n + 3) { margin-top: calc(-1 * var(--border-width-thin)); }
-  .workflow-card:nth-child(n) .workflow-card__number { text-align: left; }
   .case-study-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .case-study-card--supporting .case-study-card__content { flex-direction: column; }
   .case-study-card--supporting .case-study-card__media { padding-bottom: 0; }
@@ -348,8 +366,9 @@
 
 @media (max-width: 767px) {
   .workflow-grid { grid-template-columns: minmax(0, 1fr); }
-  .workflow-card:nth-child(n) { margin-left: 0; }
-  .workflow-card:not(:first-child) { margin-top: calc(-1 * var(--border-width-thin)); }
+  .workflow-grid > :nth-child(n) { grid-column: auto; margin-left: 0; }
+  .workflow-grid > :not(:first-child) { margin-top: calc(-1 * var(--border-width-thin)); }
+  .workflow-artwork { height: calc(var(--base-10) * 2.5); --workflow-artwork-reference-width: 686.76924px; }
   .home-hero__content { gap: var(--base-10); }
   .home-hero__actions { flex-direction: column; }
   .home-hero__actions > * { width: 100%; }
