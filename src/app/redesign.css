@@ -288,7 +288,7 @@
   display: flex;
   align-items: stretch;
   justify-content: center;
-  padding: var(--wrap-padding-m);
+  padding: var(--button-padding-m);
   height: 540px;
   min-width: 0;
   background: var(--bg-beige);
@@ -329,7 +329,6 @@
   .case-study-card:hover .case-study-card__copy h2,
   .case-study-card:hover .case-study-card__copy h3,
   .case-study-card:hover .case-study-card__view { color: var(--button-text-accent); }
-  .button-contact:hover { background: var(--button-fill-light); }
   .button-contact:hover .button-contact__label { background: var(--button-fill-accent-muted); color: var(--button-text-primary); }
   .button-contact:hover .selection-frame { opacity: 1; }
 }
@@ -340,7 +339,7 @@
 .design-button:not(:disabled):is(:active, [data-state="press"])::before { background: var(--button-surface); }
 .design-button:not(:disabled):is(:active, [data-state="press"]) > .selection-frame { opacity: 1; }
 .button-navigation:not(:disabled):is(:active, [data-state="press"]) { background: var(--button-fill-accent-muted); color: var(--button-text-primary); }
-.button-contact:is(:active, [data-state="press"]) { --selection-frame-color: var(--border-focus-soft); background: var(--button-fill-light); }
+.button-contact:is(:active, [data-state="press"]) { --selection-frame-color: var(--border-focus-soft); }
 .button-contact:is(:active, [data-state="press"]) .button-contact__label { background: var(--button-fill-accent); color: var(--button-text-primary); }
 .button-contact:is(:active, [data-state="press"]) .selection-frame { opacity: 1; }
 .button-logo:is(:active, [data-state="press"]), .button-logo:is(:active, [data-state="press"]) .button-logo__text > span { color: var(--text-accent); }
