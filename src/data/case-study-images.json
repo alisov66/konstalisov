@@ -95,6 +95,12 @@
       "srcSet": "/case-studies/aml-hover-dark-640.webp 640w, /case-studies/aml-hover-dark-960.webp 960w, /case-studies/aml-hover-dark-1640.webp 1640w, /case-studies/aml-hover-dark.webp 6000w"
     }
   },
+  "home-about-portrait": {
+    "src": "/about/home-portrait.webp",
+    "width": 832,
+    "height": 976,
+    "srcSet": "/about/home-portrait-640.webp 640w, /about/home-portrait.webp 832w"
+  },
   "profile-photo": {
     "src": "/case-studies/profile-photo.webp",
     "width": 700,

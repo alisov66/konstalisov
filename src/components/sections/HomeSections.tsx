@@ -49,7 +49,7 @@ export function HomeAboutSection() {
         <div className="home-about">
           <div className="home-about__photo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img {...images["profile-photo"]} alt="Konstantin Alisov" loading="lazy" decoding="async" sizes="(max-width: 767px) calc(100vw - 72px), (max-width: 1439px) 250px, 350px" />
+            <img {...images["home-about-portrait"]} alt="Konstantin Alisov" loading="lazy" decoding="async" sizes="(max-width: 767px) calc(100vw - 72px), (max-width: 1439px) calc((100vw - 80px) / 3 - 56px), (max-width: 1728px) calc((100vw - 240px) / 3 - 80px), 416px" />
           </div>
           <div className="home-about__content">
             <div className="home-about__text">
