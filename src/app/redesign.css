@@ -329,7 +329,7 @@
   .case-study-card:hover .case-study-card__copy h2,
   .case-study-card:hover .case-study-card__copy h3,
   .case-study-card:hover .case-study-card__view { color: var(--button-text-accent); }
-  .button-contact:hover .button-contact__label { background: var(--button-fill-accent-muted); color: var(--button-text-primary); }
+  .button-contact:hover .button-contact__label { background: var(--button-fill-light); color: var(--button-text-secondary); }
   .button-contact:hover .selection-frame { opacity: 1; }
 }
 
@@ -340,7 +340,7 @@
 .design-button:not(:disabled):is(:active, [data-state="press"]) > .selection-frame { opacity: 1; }
 .button-navigation:not(:disabled):is(:active, [data-state="press"]) { background: var(--button-fill-accent-muted); color: var(--button-text-primary); }
 .button-contact:is(:active, [data-state="press"]) { --selection-frame-color: var(--border-focus-soft); }
-.button-contact:is(:active, [data-state="press"]) .button-contact__label { background: var(--button-fill-accent); color: var(--button-text-primary); }
+.button-contact:is(:active, [data-state="press"]) .button-contact__label { background: var(--button-fill-accent-muted); color: var(--button-text-primary); }
 .button-contact:is(:active, [data-state="press"]) .selection-frame { opacity: 1; }
 .button-logo:is(:active, [data-state="press"]), .button-logo:is(:active, [data-state="press"]) .button-logo__text > span { color: var(--text-accent); }
 .button-logo:is(:active, [data-state="press"]) .button-logo__image--default, .button-logo:is(:active, [data-state="press"]) .button-logo__image--hover { opacity: 0; }
