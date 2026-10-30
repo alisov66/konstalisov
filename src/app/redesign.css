@@ -79,10 +79,15 @@
 .design-button:disabled { cursor: not-allowed; opacity: 0.5; }
 .button-label { position: relative; overflow-wrap: anywhere; }
 .button-navigation {
+  gap: var(--base-1);
   padding: var(--button-padding-m) var(--button-padding-lg);
   border-radius: var(--pill);
   transition: background-color var(--button-transition-duration) var(--button-transition-easing), color var(--button-transition-duration) var(--button-transition-easing);
 }
+.button-navigation > .button-icon { display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: var(--base-4); height: var(--base-4); }
+.button-navigation > .button-icon svg { display: block; max-width: 100%; max-height: 100%; }
+/* Match the flat diagonal tail in Figma's arrow. */
+.button-navigation__arrow path:last-child { stroke-linecap: butt; }
 .button-navigation:focus-visible, .button-logo:focus-visible {
   outline: var(--border-width-medium) solid var(--border-focus);
   outline-offset: calc(-1 * var(--border-width-medium));

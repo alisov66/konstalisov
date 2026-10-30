@@ -17,8 +17,8 @@ export interface NavigationHeaderProps {
 const links = [
   { label: "Case studies", href: "/case-studies" },
   { label: "CV", href: "/cv" },
-  { label: "Email", href: emailHref, event: "contact_click" },
-  { label: "LinkedIn", href: linkedInHref, event: "linkedin_click" },
+  { label: "Email", href: emailHref, event: "contact_click", showRightIcon: true },
+  { label: "LinkedIn", href: linkedInHref, event: "linkedin_click", showRightIcon: true },
 ];
 
 export default function NavigationHeader({ className }: NavigationHeaderProps) {
@@ -55,6 +55,7 @@ export default function NavigationHeader({ className }: NavigationHeaderProps) {
           <nav aria-label="Main navigation" className="site-header__links">
             {links.map((link) => (
               <ButtonNavigation key={link.href} href={link.href}
+                showRightIcon={link.showRightIcon}
                 aria-current={pathname === link.href ? "page" : undefined}
                 target={link.href === linkedInHref ? "_blank" : undefined}
                 rel={link.href === linkedInHref ? "noopener noreferrer" : undefined}
