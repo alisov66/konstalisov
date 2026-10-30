@@ -286,15 +286,22 @@
   padding: var(--wrap-padding-m);
   height: 540px;
   min-width: 0;
-  background: var(--button-fill-light);
+  background: transparent;
   color: var(--button-text-secondary);
   box-shadow: inset 0 0 0 var(--border-width-thin) var(--border-secondary);
   font-size: var(--button-large-size);
   line-height: var(--button-large-line);
   font-weight: var(--font-weight-medium);
+  transition: background-color var(--button-transition-duration) var(--button-transition-easing);
 }
 .button-contact__label { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; text-align: center; transition: background-color var(--button-transition-duration) var(--button-transition-easing), color var(--button-transition-duration) var(--button-transition-easing); }
-.button-contact:focus-visible { outline: none; z-index: 1; box-shadow: inset 0 0 0 var(--border-width-medium) var(--border-focus); }
+.button-contact .selection-frame {
+  border: 0;
+  outline: var(--border-width-medium) solid var(--selection-frame-color, var(--border-focus));
+  outline-offset: calc(-.5 * var(--border-width-medium));
+  transition: opacity var(--button-transition-duration) var(--button-transition-easing), outline-color var(--button-transition-duration) var(--button-transition-easing);
+}
+.button-contact:focus-visible { outline: var(--border-width-medium) solid var(--border-focus); outline-offset: 0; z-index: 1; box-shadow: none; }
 
 .case-studies-page { padding: var(--navigation-height) var(--wrap-padding-lg) var(--wrap-padding-lg); }
 .case-studies-page__title { border-top: var(--border-width-thin) solid var(--border-secondary); gap: var(--block-gap-lg); background: var(--bg-beige); }
@@ -317,6 +324,7 @@
   .case-study-card:hover .case-study-card__copy h2,
   .case-study-card:hover .case-study-card__copy h3,
   .case-study-card:hover .case-study-card__view { color: var(--button-text-accent); }
+  .button-contact:hover { background: var(--button-fill-light); }
   .button-contact:hover .button-contact__label { background: var(--button-fill-accent-muted); color: var(--button-text-primary); }
   .button-contact:hover .selection-frame { opacity: 1; }
 }
@@ -327,7 +335,7 @@
 .design-button:not(:disabled):is(:active, [data-state="press"])::before { background: var(--button-surface); }
 .design-button:not(:disabled):is(:active, [data-state="press"]) > .selection-frame { opacity: 1; }
 .button-navigation:not(:disabled):is(:active, [data-state="press"]) { background: var(--button-fill-accent-muted); color: var(--button-text-primary); }
-.button-contact:is(:active, [data-state="press"]) { --selection-frame-color: var(--border-focus-soft); }
+.button-contact:is(:active, [data-state="press"]) { --selection-frame-color: var(--border-focus-soft); background: var(--button-fill-light); }
 .button-contact:is(:active, [data-state="press"]) .button-contact__label { background: var(--button-fill-accent); color: var(--button-text-primary); }
 .button-contact:is(:active, [data-state="press"]) .selection-frame { opacity: 1; }
 .button-logo:is(:active, [data-state="press"]), .button-logo:is(:active, [data-state="press"]) .button-logo__text > span { color: var(--text-accent); }
@@ -387,7 +395,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .text-link { transition: none; }
-  .design-button::before, .selection-frame, .selection-frame i, .case-study-card, .button-contact__label,
+  .design-button::before, .selection-frame, .selection-frame i, .button-contact .selection-frame, .case-study-card, .button-contact, .button-contact__label,
   .case-study-card__copy h2, .case-study-card__copy h3, .case-study-card__view,
   .button-navigation, .button-logo, .button-logo__avatar img, .button-logo__text > span, .button-menu-mobile, .button-menu-mobile__line { transition: none; }
 }
