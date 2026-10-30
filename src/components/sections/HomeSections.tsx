@@ -77,8 +77,8 @@ export function GetInTouchSection() {
       <div className="page-container">
         <div className="section-title"><h2 id="contact-title" style={typeStyle(typography.heading.h2)}>Get in touch</h2></div>
         <div className="home-contact__actions">
-          <ButtonContact href={emailHref}>Email me ↗</ButtonContact>
-          <ButtonContact href={linkedInHref} target="_blank" rel="noopener noreferrer">LinkedIn ↗</ButtonContact>
+          <ButtonContact href={emailHref}>Email me</ButtonContact>
+          <ButtonContact href={linkedInHref} target="_blank" rel="noopener noreferrer">LinkedIn</ButtonContact>
         </div>
       </div>
     </section>

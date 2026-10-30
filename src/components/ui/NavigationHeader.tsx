@@ -17,8 +17,8 @@ export interface NavigationHeaderProps {
 const links = [
   { label: "Case studies", href: "/case-studies" },
   { label: "CV", href: "/cv" },
-  { label: "Email ↗", href: emailHref, event: "contact_click" },
-  { label: "LinkedIn ↗", href: linkedInHref, event: "linkedin_click" },
+  { label: "Email", href: emailHref, event: "contact_click" },
+  { label: "LinkedIn", href: linkedInHref, event: "linkedin_click" },
 ];
 
 export default function NavigationHeader({ className }: NavigationHeaderProps) {
